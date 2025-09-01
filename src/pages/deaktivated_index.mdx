@@ -1,0 +1,51 @@
+---
+title: KNIFE Preview
+description: Knowledge in Friendly Examples – prehľad a rýchla navigácia
+hide_table_of_contents: true
+---
+
+import Link from '@docusaurus/Link';
+export const localePrefix =
+  typeof window === 'undefined' ? '' :
+  (window.location.pathname.startsWith('/en') ? '/en' : '');
+
+# 🗂 KNIFE Preview  
+> Tento repozitár je súčasťou **KNIFE / CAS ekosystému**.
+---
+
+## 🔗 Prepojenia
+Repo patrí do organizácie **KNIFE-Framework**, vrstva **knife_overview**.
+---
+
+## 🚀 Rýchla navigácia (web)
+
+<ul>
+  <li>📑 <a href="https://knife-framework.github.io/knifes_overview/files/20250815-KNIFES_with_SFIA.ods">Zoznam KNIFES – Calc</a></li>
+  <li>📄 <Link to={`${localePrefix}/docs/sk/7Ds/01.D1-Management/02.Strategy/KNIFEsOverview`}>Zoznam hrubý</Link></li>
+  <li>📋 <Link to={`${localePrefix}/docs/sk/7Ds/01.D1-Management/02.Strategy/KNIFE_Overview_List`}>Zoznam s detailami – tabuľka</Link></li>
+  <li>📰 <Link to={`${localePrefix}/docs/sk/7Ds/01.D1-Management/02.Strategy/KNIFE_Overview_Details`}>Zoznam s detailami – blog</Link></li>
+</ul>
+
+---
+
+## 🧾 Popis
+**KNIFE** (Knowledge in Friendly Examples) je metodika na zdieľanie poznatkov v štruktúrovanej, prístupnej a znovupoužiteľnej forme. Tento web je náhľad.
+
+---
+
+## 📁 Štruktúra projektu
+- `docs/` – dokumentácia  
+- `src/` – zdrojový kód (ak existuje)  
+- `tags.yaml` – metadáta  
+- `meta.json` – pre AI, API alebo Pages
+
+
+
+---
+
+
+## 🔄 Workflow
+1. Pracuj v `dev`  
+2. Testuj lokálne – `npm run start`  
+3. Merge `dev → main`  
+4. Publikuj z `main`

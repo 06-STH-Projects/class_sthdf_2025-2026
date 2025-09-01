@@ -1,0 +1,165 @@
+<mxfile host="app.diagrams.net" modified="2025-08-21T00:00:00.000Z" agent="python" version="22.0.8" type="device">
+  <diagram id="page-ga4" name="1) GA4 – Hierarchy">
+    <mxGraphModel dx="1200" dy="800" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="900" math="0" shadow="0">
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+
+        <!-- Swimlane GA4 -->
+        <mxCell id="ga4-lane" value="GA4" style="swimlane;fontStyle=1;align=center;verticalAlign=top;startSize=32;fillColor=#fde0dc;strokeColor=#c62828;" vertex="1" parent="1">
+          <mxGeometry x="40" y="40" width="700" height="760" as="geometry"/>
+        </mxCell>
+
+        <!-- GA4 hierarchy -->
+        <mxCell id="ga4-acc" value="Account" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff;strokeColor=#c62828;" vertex="1" parent="ga4-lane">
+          <mxGeometry x="30" y="50" width="640" height="50" as="geometry"/>
+        </mxCell>
+        <mxCell id="ga4-prop" value="Property (Project / Domain)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff;strokeColor=#c62828;" vertex="1" parent="ga4-lane">
+          <mxGeometry x="30" y="120" width="640" height="50" as="geometry"/>
+        </mxCell>
+        <mxCell id="ga4-streams" value="Data Streams (Web / iOS / Android)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff;strokeColor=#c62828;" vertex="1" parent="ga4-lane">
+          <mxGeometry x="30" y="190" width="640" height="60" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="ga4-events" value="Events (Default + Custom)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff;" vertex="1" parent="ga4-lane">
+          <mxGeometry x="50" y="270" width="600" height="50" as="geometry"/>
+        </mxCell>
+        <mxCell id="ga4-params" value="Parameters (Auto + Custom)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff;" vertex="1" parent="ga4-lane">
+          <mxGeometry x="50" y="330" width="600" height="50" as="geometry"/>
+        </mxCell>
+        <mxCell id="ga4-metrics" value="Metrics &amp; Dimensions" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff;" vertex="1" parent="ga4-lane">
+          <mxGeometry x="50" y="390" width="600" height="50" as="geometry"/>
+        </mxCell>
+        <mxCell id="ga4-conv" value="Conversions (per Property)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff;" vertex="1" parent="ga4-lane">
+          <mxGeometry x="50" y="450" width="600" height="50" as="geometry"/>
+        </mxCell>
+        <mxCell id="ga4-aud" value="Audiences" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff;" vertex="1" parent="ga4-lane">
+          <mxGeometry x="50" y="510" width="600" height="50" as="geometry"/>
+        </mxCell>
+        <mxCell id="ga4-expl" value="Explorations (Funnels, Paths, Cohorts)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff;" vertex="1" parent="ga4-lane">
+          <mxGeometry x="30" y="580" width="640" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="ga4-std" value="Standard Reports (Acquisition, Engagement, Monetization)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff;" vertex="1" parent="ga4-lane">
+          <mxGeometry x="30" y="650" width="640" height="60" as="geometry"/>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+
+  <diagram id="page-gtm" name="2) GTM – Hierarchy">
+    <mxGraphModel dx="1200" dy="800" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="900" math="0" shadow="0">
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+
+        <!-- Swimlane GTM -->
+        <mxCell id="gtm-lane" value="Google Tag Manager" style="swimlane;fontStyle=1;align=center;verticalAlign=top;startSize=32;fillColor=#ffecb3;strokeColor=#ef6c00;" vertex="1" parent="1">
+          <mxGeometry x="40" y="40" width="700" height="760" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="gtm-acc" value="Account" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff;strokeColor=#ef6c00;" vertex="1" parent="gtm-lane">
+          <mxGeometry x="30" y="50" width="640" height="50" as="geometry"/>
+        </mxCell>
+        <mxCell id="gtm-cont" value="Container (per Site/App)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff;strokeColor=#ef6c00;" vertex="1" parent="gtm-lane">
+          <mxGeometry x="30" y="120" width="640" height="50" as="geometry"/>
+        </mxCell>
+        <mxCell id="gtm-tags" value="Tags (GA4 Config, GA4 Event, Ads, Custom HTML)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff;" vertex="1" parent="gtm-lane">
+          <mxGeometry x="50" y="190" width="600" height="50" as="geometry"/>
+        </mxCell>
+        <mxCell id="gtm-trig" value="Triggers (Page View, Click, Form, Custom Event)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff;" vertex="1" parent="gtm-lane">
+          <mxGeometry x="50" y="250" width="600" height="50" as="geometry"/>
+        </mxCell>
+        <mxCell id="gtm-vars" value="Variables (Built-in + Data Layer + Custom JS)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff;" vertex="1" parent="gtm-lane">
+          <mxGeometry x="50" y="310" width="600" height="50" as="geometry"/>
+        </mxCell>
+        <mxCell id="gtm-dl" value="Data Layer (contract medzi webom a GTM)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff;" vertex="1" parent="gtm-lane">
+          <mxGeometry x="30" y="380" width="640" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="gtm-prev" value="Preview &amp; Versions" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff;" vertex="1" parent="gtm-lane">
+          <mxGeometry x="30" y="450" width="640" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="gtm-pub" value="Publish" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff;" vertex="1" parent="gtm-lane">
+          <mxGeometry x="30" y="520" width="640" height="60" as="geometry"/>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+
+  <diagram id="page-map" name="3) Mapping GA4 ↔ GTM">
+    <mxGraphModel dx="1200" dy="800" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="900" math="0" shadow="0">
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+
+        <!-- GA4 lane -->
+        <mxCell id="map-ga4" value="GA4" style="swimlane;fontStyle=1;align=center;verticalAlign=top;startSize=28;fillColor=#fde0dc;strokeColor=#c62828;" vertex="1" parent="1">
+          <mxGeometry x="40" y="40" width="720" height="760" as="geometry"/>
+        </mxCell>
+        <mxCell id="map-prop" value="Property" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff;strokeColor=#c62828;" vertex="1" parent="map-ga4">
+          <mxGeometry x="30" y="50" width="660" height="50" as="geometry"/>
+        </mxCell>
+        <mxCell id="map-stream" value="Data Stream (Web) – Measurement ID (G-XXXXXXX)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff;" vertex="1" parent="map-ga4">
+          <mxGeometry x="30" y="120" width="660" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="map-events" value="Events" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff;" vertex="1" parent="map-ga4">
+          <mxGeometry x="50" y="200" width="620" height="50" as="geometry"/>
+        </mxCell>
+        <mxCell id="map-params" value="Parameters" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff;" vertex="1" parent="map-ga4">
+          <mxGeometry x="50" y="260" width="620" height="50" as="geometry"/>
+        </mxCell>
+        <mxCell id="map-metrics" value="Metrics &amp; Dimensions" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff;" vertex="1" parent="map-ga4">
+          <mxGeometry x="50" y="320" width="620" height="50" as="geometry"/>
+        </mxCell>
+        <mxCell id="map-conv" value="Conversions" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff;" vertex="1" parent="map-ga4">
+          <mxGeometry x="50" y="380" width="620" height="50" as="geometry"/>
+        </mxCell>
+        <mxCell id="map-aud" value="Audiences" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff;" vertex="1" parent="map-ga4">
+          <mxGeometry x="50" y="440" width="620" height="50" as="geometry"/>
+        </mxCell>
+
+        <!-- GTM lane -->
+        <mxCell id="map-gtm" value="GTM" style="swimlane;fontStyle=1;align=center;verticalAlign=top;startSize=28;fillColor=#ffecb3;strokeColor=#ef6c00;" vertex="1" parent="1">
+          <mxGeometry x="840" y="40" width="720" height="760" as="geometry"/>
+        </mxCell>
+        <mxCell id="map-cont" value="Container" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff;strokeColor=#ef6c00;" vertex="1" parent="map-gtm">
+          <mxGeometry x="30" y="50" width="660" height="50" as="geometry"/>
+        </mxCell>
+        <mxCell id="map-tagcfg" value="Tag: GA4 Configuration (uses Measurement ID)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff;" vertex="1" parent="map-gtm">
+          <mxGeometry x="30" y="120" width="660" height="50" as="geometry"/>
+        </mxCell>
+        <mxCell id="map-tagevt" value="Tag: GA4 Event (sends event + params)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff;" vertex="1" parent="map-gtm">
+          <mxGeometry x="30" y="180" width="660" height="50" as="geometry"/>
+        </mxCell>
+        <mxCell id="map-trig" value="Triggers (decide when tags fire)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff;" vertex="1" parent="map-gtm">
+          <mxGeometry x="30" y="240" width="660" height="50" as="geometry"/>
+        </mxCell>
+        <mxCell id="map-vars" value="Variables (provide values for params)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff;" vertex="1" parent="map-gtm">
+          <mxGeometry x="30" y="300" width="660" height="50" as="geometry"/>
+        </mxCell>
+        <mxCell id="map-dl" value="Data Layer (web → GTM contract)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff;" vertex="1" parent="map-gtm">
+          <mxGeometry x="30" y="360" width="660" height="50" as="geometry"/>
+        </mxCell>
+
+        <!-- Edges (mapping) -->
+        <mxCell id="e1" edge="1" source="map-stream" target="map-tagcfg" style="endArrow=block;strokeColor=#1e88e5;rounded=1;">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e2" edge="1" source="map-tagevt" target="map-events" style="endArrow=block;strokeColor=#1e88e5;rounded=1;">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e3" edge="1" source="map-vars" target="map-params" style="endArrow=block;strokeColor=#607d8b;rounded=1;">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e4" edge="1" source="map-events" target="map-metrics" style="endArrow=block;strokeColor=#607d8b;rounded=1;">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e5" edge="1" source="map-events" target="map-conv" style="endArrow=block;strokeColor=#607d8b;rounded=1;">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e6" edge="1" source="map-events" target="map-aud" style="endArrow=block;strokeColor=#607d8b;rounded=1;">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

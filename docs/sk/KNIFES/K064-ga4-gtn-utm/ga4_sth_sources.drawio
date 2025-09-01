@@ -1,0 +1,65 @@
+<mxfile host="app.diagrams.net">
+  <diagram name="GA4_STH_Sources" id="sth-sources">
+    <mxGraphModel dx="1420" dy="796" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+        
+        <!-- User -->
+        <mxCell id="user" value="👤 User" style="shape=ellipse;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="60" y="80" width="80" height="80" as="geometry"/>
+        </mxCell>
+        
+        <!-- Website -->
+        <mxCell id="site" value="🌐 agnicoli.org" style="shape=rectangle;rounded=1;fillColor=#ffe6cc;strokeColor=#d79b00;" vertex="1" parent="1">
+          <mxGeometry x="220" y="40" width="140" height="60" as="geometry"/>
+        </mxCell>
+
+        <!-- LinkedIn -->
+        <mxCell id="linkedin" value="🔗 LinkedIn" style="shape=rectangle;rounded=1;fillColor=#e1d5e7;strokeColor=#9673a6;" vertex="1" parent="1">
+          <mxGeometry x="220" y="120" width="140" height="60" as="geometry"/>
+        </mxCell>
+
+        <!-- YouTube -->
+        <mxCell id="yt" value="▶️ YouTube" style="shape=rectangle;rounded=1;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="1">
+          <mxGeometry x="220" y="200" width="140" height="60" as="geometry"/>
+        </mxCell>
+
+        <!-- GitHub -->
+        <mxCell id="gh" value="📂 GitHub" style="shape=rectangle;rounded=1;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="220" y="280" width="140" height="60" as="geometry"/>
+        </mxCell>
+
+        <!-- GTM -->
+        <mxCell id="gtm" value="📦 GTM (Tag Manager)" style="shape=rectangle;rounded=1;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1">
+          <mxGeometry x="440" y="140" width="160" height="60" as="geometry"/>
+        </mxCell>
+
+        <!-- GA4 -->
+        <mxCell id="ga4" value="📊 GA4 (Analytics)" style="shape=rectangle;rounded=1;fillColor=#cce5ff;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="660" y="140" width="160" height="60" as="geometry"/>
+        </mxCell>
+
+        <!-- DB -->
+        <mxCell id="db" value="🗄️ STH Repository/DB" style="shape=cylinder;fillColor=#f5f5f5;strokeColor=#666666;" vertex="1" parent="1">
+          <mxGeometry x="880" y="140" width="160" height="80" as="geometry"/>
+        </mxCell>
+
+        <!-- Connections -->
+        <mxCell id="e1" edge="1" parent="1" source="user" target="site"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e2" edge="1" parent="1" source="user" target="linkedin"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e3" edge="1" parent="1" source="user" target="yt"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e4" edge="1" parent="1" source="user" target="gh"><mxGeometry relative="1" as="geometry"/></mxCell>
+        
+        <mxCell id="e5" edge="1" parent="1" source="site" target="gtm"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e6" edge="1" parent="1" source="linkedin" target="gtm"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e7" edge="1" parent="1" source="yt" target="gtm"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e8" edge="1" parent="1" source="gh" target="gtm"><mxGeometry relative="1" as="geometry"/></mxCell>
+
+        <mxCell id="e9" edge="1" parent="1" source="gtm" target="ga4"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e10" edge="1" parent="1" source="ga4" target="db"><mxGeometry relative="1" as="geometry"/></mxCell>
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

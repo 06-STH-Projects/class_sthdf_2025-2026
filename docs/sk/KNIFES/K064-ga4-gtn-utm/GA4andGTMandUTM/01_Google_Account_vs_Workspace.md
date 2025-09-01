@@ -1,0 +1,3 @@
+# Google Account vs Google Workspace
+
+...

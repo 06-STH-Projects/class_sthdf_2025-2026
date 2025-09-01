@@ -1,0 +1,48 @@
+# labels.yml – seed labels for 999-github-management
+labels:
+  - name: urgent
+    color: ff0000
+    description: Highest priority
+  - name: high
+    color: d73a4a
+    description: Important
+  - name: medium
+    color: fbca04
+    description: Normal priority
+  - name: low
+    color: 0e8a16
+    description: Nice to have
+  - name: idea
+    color: a2eeef
+    description: Idea / Brain-dump
+  - name: research
+    color: bfdadc
+    description: Research / Investigation
+  - name: blocked
+    color: 7057ff
+    description: Blocked by dependency
+
+  - name: CAA-Core
+    color: 1d76db
+    description: Context Aware Approach – core
+  - name: GH-Admin
+    color: 5319e7
+    description: GitHub administration
+  - name: STH-Class
+    color: 0e8a16
+    description: System Thinking class
+  - name: Infra
+    color: 0366d6
+    description: Infrastructure / tooling
+  - name: Docs
+    color: 6f42c1
+    description: Documentation
+  - name: Automation
+    color: 5319e7
+    description: Scripts, Actions, integrations
+  - name: KNIFE-K044
+    color: 0052cc
+    description: KNIFE topic K044
+  - name: KNIFE-K053
+    color: 0052cc
+    description: KNIFE topic K053 (placeholder)

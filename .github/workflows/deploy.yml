@@ -1,0 +1,54 @@
+name: Deploy Docusaurus to GitHub Pages
+
+on:
+  push:
+    branches: [ main ]
+    paths:
+      - "docs/**"
+      - "src/**"
+      - "docusaurus.config.*"
+      - "package.json"
+      - "package-lock.json"
+      - "tsconfig.json"
+      - ".github/workflows/deploy.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  build:
+    # Spusť ak: manuálny dispatch ALEBO (USE_ACTIONS == true s defaultom na true),
+    # a commit správa neobsahuje [noactions]
+    if: ${{ (github.event_name == 'workflow_dispatch' || fromJSON(vars.USE_ACTIONS || 'true'))
+            && !contains(github.event.head_commit.message || '', '[noactions]') }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+      - run: npm ci
+      - run: npm run build
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: build
+
+  deploy:
+    needs: build
+    if: ${{ (github.event_name == 'workflow_dispatch' || fromJSON(vars.USE_ACTIONS || 'true'))
+            && !contains(github.event.head_commit.message || '', '[noactions]') }}
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4

@@ -1,0 +1,57 @@
+<?xml version='1.0' encoding='utf-8'?>
+<mxfile host="app.diagrams.net"><diagram name="GA4 Hierarchy" /><diagram name="GTM Hierarchy" /><diagram name="Mapping GA4 ↔ GTM">
+&lt;mxGraphModel&gt;&lt;root&gt;
+  &lt;mxCell id="0"/&gt;
+  &lt;mxCell id="1" parent="0"/&gt;
+  &lt;mxCell id="2" value="GA4 Data Stream" style="shape=rectangle;" vertex="1" parent="1"&gt;
+    &lt;mxGeometry x="20" y="40" width="120" height="40" as="geometry"/&gt;
+  &lt;/mxCell&gt;
+  &lt;mxCell id="3" value="GTM Config Tag" style="shape=rectangle;" vertex="1" parent="1"&gt;
+    &lt;mxGeometry x="300" y="40" width="140" height="40" as="geometry"/&gt;
+  &lt;/mxCell&gt;
+  &lt;mxCell id="4" edge="1" source="2" target="3" parent="1"&gt;
+    &lt;mxGeometry relative="1" as="geometry"/&gt;
+  &lt;/mxCell&gt;
+
+  &lt;mxCell id="5" value="GA4 Events" style="shape=ellipse;" vertex="1" parent="1"&gt;
+    &lt;mxGeometry x="20" y="120" width="120" height="40" as="geometry"/&gt;
+  &lt;/mxCell&gt;
+  &lt;mxCell id="6" value="GTM Event Tags" style="shape=ellipse;" vertex="1" parent="1"&gt;
+    &lt;mxGeometry x="300" y="120" width="140" height="40" as="geometry"/&gt;
+  &lt;/mxCell&gt;
+  &lt;mxCell id="7" edge="1" source="5" target="6" parent="1"&gt;
+    &lt;mxGeometry relative="1" as="geometry"/&gt;
+  &lt;/mxCell&gt;
+
+  &lt;mxCell id="8" value="GA4 Parameters" style="shape=ellipse;" vertex="1" parent="1"&gt;
+    &lt;mxGeometry x="20" y="200" width="120" height="40" as="geometry"/&gt;
+  &lt;/mxCell&gt;
+  &lt;mxCell id="9" value="GTM Variables" style="shape=ellipse;" vertex="1" parent="1"&gt;
+    &lt;mxGeometry x="300" y="200" width="140" height="40" as="geometry"/&gt;
+  &lt;/mxCell&gt;
+  &lt;mxCell id="10" edge="1" source="8" target="9" parent="1"&gt;
+    &lt;mxGeometry relative="1" as="geometry"/&gt;
+  &lt;/mxCell&gt;
+
+  &lt;mxCell id="11" value="GA4 Conversions" style="shape=ellipse;" vertex="1" parent="1"&gt;
+    &lt;mxGeometry x="20" y="280" width="120" height="40" as="geometry"/&gt;
+  &lt;/mxCell&gt;
+  &lt;mxCell id="12" value="Event Tags (marked)" style="shape=ellipse;" vertex="1" parent="1"&gt;
+    &lt;mxGeometry x="300" y="280" width="140" height="40" as="geometry"/&gt;
+  &lt;/mxCell&gt;
+  &lt;mxCell id="13" edge="1" source="12" target="11" parent="1"&gt;
+    &lt;mxGeometry relative="1" as="geometry"/&gt;
+  &lt;/mxCell&gt;
+
+  &lt;mxCell id="14" value="GA4 Audiences" style="shape=ellipse;" vertex="1" parent="1"&gt;
+    &lt;mxGeometry x="20" y="360" width="120" height="40" as="geometry"/&gt;
+  &lt;/mxCell&gt;
+  &lt;mxCell id="15" value="User Properties" style="shape=ellipse;" vertex="1" parent="1"&gt;
+    &lt;mxGeometry x="300" y="360" width="140" height="40" as="geometry"/&gt;
+  &lt;/mxCell&gt;
+  &lt;mxCell id="16" edge="1" source="15" target="14" parent="1"&gt;
+    &lt;mxGeometry relative="1" as="geometry"/&gt;
+  &lt;/mxCell&gt;
+
+&lt;/root&gt;&lt;/mxGraphModel&gt;
+</diagram></mxfile>

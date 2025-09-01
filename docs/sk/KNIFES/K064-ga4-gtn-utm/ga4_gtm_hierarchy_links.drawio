@@ -1,0 +1,247 @@
+<mxfile host="Electron" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/28.0.6 Chrome/138.0.7204.100 Electron/37.2.3 Safari/537.36" version="28.0.6">
+  <diagram id="ga4_gtm_hierarchy" name="Hierarchy">
+    <mxGraphModel dx="1743" dy="1187" grid="1" gridSize="1.1810999999999998" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="WmEjv27LeSnt8QOcfDzc-118" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="3.54" y="5.91" width="823.23" height="621.25" as="geometry" />
+        </mxCell>
+        <mxCell id="WmEjv27LeSnt8QOcfDzc-10" value="&lt;div style=&quot;&quot;&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;Google Tag Management&lt;/span&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;perimeterSpacing=998.8168999999999;fillColor=#d5e8d4;strokeColor=#82b366;align=center;verticalAlign=top;fontStyle=3;gradientColor=#97d077;" vertex="1" parent="1">
+          <mxGeometry x="327.15999999999997" y="155" width="201.97" height="425" as="geometry" />
+        </mxCell>
+        <mxCell id="WmEjv27LeSnt8QOcfDzc-8" value="&lt;div style=&quot;&quot;&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;Google Analytics&lt;/span&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;perimeterSpacing=998.8168999999999;fillColor=#fad7ac;strokeColor=#b46504;align=center;verticalAlign=top;fontStyle=3;gradientColor=#66FFFF;" vertex="1" parent="1">
+          <mxGeometry x="20" y="155" width="297.72" height="425" as="geometry" />
+        </mxCell>
+        <mxCell id="account" value="GA4 Account" style="rounded=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="1" vertex="1">
+          <mxGeometry x="130" y="260" width="120" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="property" value="Property (Project)" style="rounded=1;fillColor=#d5e8d4;strokeColor=#82b366;" parent="1" vertex="1">
+          <mxGeometry x="120" y="340" width="140" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="stream" value="Data Stream" style="rounded=1;fillColor=#fff2cc;strokeColor=#d6b656;" parent="1" vertex="1">
+          <mxGeometry x="120" y="420" width="140" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="events" value="Events" style="ellipse;fillColor=#f8cecc;strokeColor=#b85450;" parent="1" vertex="1">
+          <mxGeometry x="36.61" y="472.44" width="80" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="params" value="Parameters" style="ellipse;fillColor=#f8cecc;strokeColor=#b85450;" parent="1" vertex="1">
+          <mxGeometry x="48.43000000000001" y="517.32" width="100" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="metrics" value="Metrics &amp; Dimensions" style="ellipse;fillColor=#f8cecc;strokeColor=#b85450;" parent="1" vertex="1">
+          <mxGeometry x="151.18" y="527.95" width="140" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="gtm" value="Google Tag Manager" style="shape=datastore;fillColor=#e1d5e7;strokeColor=#9673a6;" parent="1" vertex="1">
+          <mxGeometry x="357.95" y="410" width="160" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="edge1" parent="1" source="account" target="property" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge2" parent="1" source="property" target="stream" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge3" parent="1" source="stream" target="events" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge4" parent="1" source="stream" target="params" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge5" parent="1" source="stream" target="metrics" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge6" parent="1" source="stream" target="gtm" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="WmEjv27LeSnt8QOcfDzc-1" value="GA4-Google analytics - Basic stucture" style="html=1;whiteSpace=wrap;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry x="281" y="40" width="398" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="WmEjv27LeSnt8QOcfDzc-2" value="&lt;b&gt;Author: &lt;/b&gt;Roman Kazička&lt;div&gt;&lt;b&gt;Created:&lt;/b&gt;&amp;nbsp;24.08.2025, 22:50&lt;/div&gt;&lt;div&gt;&lt;b&gt;Modified:&lt;/b&gt;&lt;/div&gt;" style="html=1;whiteSpace=wrap;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=9;align=left;verticalAlign=top;" vertex="1" parent="1">
+          <mxGeometry x="100" y="40" width="150" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="WmEjv27LeSnt8QOcfDzc-3" value="&lt;b&gt;Purpose:&lt;/b&gt;&lt;br&gt;GA4 is powerful tool for marketing statistics. Diagram provides basic information about 3 products for integral marketing statistics&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="html=1;whiteSpace=wrap;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=9;align=left;verticalAlign=top;" vertex="1" parent="1">
+          <mxGeometry x="99.21" y="94.49" width="492" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="WmEjv27LeSnt8QOcfDzc-9" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="WmEjv27LeSnt8QOcfDzc-5" target="account">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="WmEjv27LeSnt8QOcfDzc-5" value=" Google Account" style="rounded=1;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="130" y="180" width="120" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="WmEjv27LeSnt8QOcfDzc-7" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="WmEjv27LeSnt8QOcfDzc-6" target="gtm">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="WmEjv27LeSnt8QOcfDzc-6" value="GTM Account" style="rounded=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="377.95" y="253.94" width="120" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="WmEjv27LeSnt8QOcfDzc-11" value="&lt;div style=&quot;&quot;&gt;Campaign URL Builder&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;perimeterSpacing=998.8168999999999;fillColor=#dae8fc;strokeColor=#6c8ebf;align=center;verticalAlign=top;fontStyle=3;gradientColor=light-dark(#19e141, #ededed);" vertex="1" parent="1">
+          <mxGeometry x="535.04" y="152.5" width="287.01" height="425" as="geometry" />
+        </mxCell>
+        <mxCell id="WmEjv27LeSnt8QOcfDzc-61" value="Assets" style="childLayout=tableLayout;recursiveResize=0;strokeColor=#98bf21;fillColor=#A7C942;shadow=1;flipV=1;flipH=1;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="550.3900000000001" y="233.85999999999996" width="258.24899999999985" height="292.91" as="geometry" />
+        </mxCell>
+        <mxCell id="WmEjv27LeSnt8QOcfDzc-62" style="shape=tableRow;horizontal=0;startSize=0;swimlaneHead=0;swimlaneBody=0;top=0;left=0;bottom=0;right=0;dropTarget=0;collapsible=0;recursiveResize=0;expand=0;fontStyle=0;strokeColor=inherit;fillColor=#ffffff;fontSize=10;" vertex="1" parent="WmEjv27LeSnt8QOcfDzc-61">
+          <mxGeometry width="258.24899999999985" height="33" as="geometry" />
+        </mxCell>
+        <mxCell id="WmEjv27LeSnt8QOcfDzc-63" value="ID" style="connectable=0;recursiveResize=0;strokeColor=inherit;fillColor=#A7C942;align=center;fontStyle=1;fontColor=#FFFFFF;html=1;fontSize=10;" vertex="1" parent="WmEjv27LeSnt8QOcfDzc-62">
+          <mxGeometry width="46" height="33" as="geometry">
+            <mxRectangle width="46" height="33" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="WmEjv27LeSnt8QOcfDzc-64" value="Key Name" style="connectable=0;recursiveResize=0;strokeColor=inherit;fillColor=#A7C942;align=center;fontStyle=1;fontColor=#FFFFFF;html=1;fontSize=10;" vertex="1" parent="WmEjv27LeSnt8QOcfDzc-62">
+          <mxGeometry x="46" width="59" height="33" as="geometry">
+            <mxRectangle width="59" height="33" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="WmEjv27LeSnt8QOcfDzc-65" value="Description" style="connectable=0;recursiveResize=0;strokeColor=inherit;fillColor=#A7C942;align=center;fontStyle=1;fontColor=#FFFFFF;html=1;fontSize=10;" vertex="1" parent="WmEjv27LeSnt8QOcfDzc-62">
+          <mxGeometry x="105" width="153" height="33" as="geometry">
+            <mxRectangle width="153" height="33" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="WmEjv27LeSnt8QOcfDzc-66" value="" style="shape=tableRow;horizontal=0;startSize=0;swimlaneHead=0;swimlaneBody=0;top=0;left=0;bottom=0;right=0;dropTarget=0;collapsible=0;recursiveResize=0;expand=0;fontStyle=0;strokeColor=inherit;fillColor=#ffffff;fontSize=10;" vertex="1" parent="WmEjv27LeSnt8QOcfDzc-61">
+          <mxGeometry y="33" width="258.24899999999985" height="32" as="geometry" />
+        </mxCell>
+        <mxCell id="WmEjv27LeSnt8QOcfDzc-67" value="01" style="connectable=0;recursiveResize=0;strokeColor=inherit;fillColor=inherit;align=center;whiteSpace=wrap;html=1;fontSize=10;" vertex="1" parent="WmEjv27LeSnt8QOcfDzc-66">
+          <mxGeometry width="46" height="32" as="geometry">
+            <mxRectangle width="46" height="32" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="WmEjv27LeSnt8QOcfDzc-68" value="website URL" style="connectable=0;recursiveResize=0;strokeColor=inherit;fillColor=inherit;align=center;whiteSpace=wrap;html=1;fontSize=10;" vertex="1" parent="WmEjv27LeSnt8QOcfDzc-66">
+          <mxGeometry x="46" width="59" height="32" as="geometry">
+            <mxRectangle width="59" height="32" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="WmEjv27LeSnt8QOcfDzc-69" value="The full website URL (e.g. https://example.com)" style="connectable=0;recursiveResize=0;strokeColor=inherit;fillColor=inherit;align=center;whiteSpace=wrap;html=1;fontSize=10;" vertex="1" parent="WmEjv27LeSnt8QOcfDzc-66">
+          <mxGeometry x="105" width="153" height="32" as="geometry">
+            <mxRectangle width="153" height="32" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="WmEjv27LeSnt8QOcfDzc-70" value="" style="shape=tableRow;horizontal=0;startSize=0;swimlaneHead=0;swimlaneBody=0;top=0;left=0;bottom=0;right=0;dropTarget=0;collapsible=0;recursiveResize=0;expand=0;fontStyle=1;strokeColor=inherit;fillColor=#EAF2D3;fontSize=10;" vertex="1" parent="WmEjv27LeSnt8QOcfDzc-61">
+          <mxGeometry y="65" width="258.24899999999985" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="WmEjv27LeSnt8QOcfDzc-71" value="02" style="connectable=0;recursiveResize=0;strokeColor=inherit;fillColor=inherit;whiteSpace=wrap;html=1;fontSize=10;" vertex="1" parent="WmEjv27LeSnt8QOcfDzc-70">
+          <mxGeometry width="46" height="26" as="geometry">
+            <mxRectangle width="46" height="26" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="WmEjv27LeSnt8QOcfDzc-72" value="campaign ID" style="connectable=0;recursiveResize=0;strokeColor=inherit;fillColor=inherit;whiteSpace=wrap;html=1;fontSize=10;" vertex="1" parent="WmEjv27LeSnt8QOcfDzc-70">
+          <mxGeometry x="46" width="59" height="26" as="geometry">
+            <mxRectangle width="59" height="26" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="WmEjv27LeSnt8QOcfDzc-73" value="The ads campaign ID" style="connectable=0;recursiveResize=0;strokeColor=inherit;fillColor=inherit;whiteSpace=wrap;html=1;fontSize=10;" vertex="1" parent="WmEjv27LeSnt8QOcfDzc-70">
+          <mxGeometry x="105" width="153" height="26" as="geometry">
+            <mxRectangle width="153" height="26" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="WmEjv27LeSnt8QOcfDzc-74" value="" style="shape=tableRow;horizontal=0;startSize=0;swimlaneHead=0;swimlaneBody=0;top=0;left=0;bottom=0;right=0;dropTarget=0;collapsible=0;recursiveResize=0;expand=0;fontStyle=0;strokeColor=inherit;fillColor=#ffffff;fontSize=10;" vertex="1" parent="WmEjv27LeSnt8QOcfDzc-61">
+          <mxGeometry y="91" width="258.24899999999985" height="33" as="geometry" />
+        </mxCell>
+        <mxCell id="WmEjv27LeSnt8QOcfDzc-75" value="03" style="connectable=0;recursiveResize=0;strokeColor=inherit;fillColor=inherit;fontStyle=0;align=center;whiteSpace=wrap;html=1;fontSize=10;" vertex="1" parent="WmEjv27LeSnt8QOcfDzc-74">
+          <mxGeometry width="46" height="33" as="geometry">
+            <mxRectangle width="46" height="33" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="WmEjv27LeSnt8QOcfDzc-76" value="campaign source" style="connectable=0;recursiveResize=0;strokeColor=inherit;fillColor=inherit;fontStyle=0;align=center;whiteSpace=wrap;html=1;fontSize=10;" vertex="1" parent="WmEjv27LeSnt8QOcfDzc-74">
+          <mxGeometry x="46" width="59" height="33" as="geometry">
+            <mxRectangle width="59" height="33" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="WmEjv27LeSnt8QOcfDzc-77" value="The referrer (e.g. google, newsletter)" style="connectable=0;recursiveResize=0;strokeColor=inherit;fillColor=inherit;fontStyle=0;align=center;whiteSpace=wrap;html=1;fontSize=10;" vertex="1" parent="WmEjv27LeSnt8QOcfDzc-74">
+          <mxGeometry x="105" width="153" height="33" as="geometry">
+            <mxRectangle width="153" height="33" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="WmEjv27LeSnt8QOcfDzc-78" value="" style="shape=tableRow;horizontal=0;startSize=0;swimlaneHead=0;swimlaneBody=0;top=0;left=0;bottom=0;right=0;dropTarget=0;collapsible=0;recursiveResize=0;expand=0;fontStyle=1;strokeColor=inherit;fillColor=#EAF2D3;fontSize=10;" vertex="1" parent="WmEjv27LeSnt8QOcfDzc-61">
+          <mxGeometry y="124" width="258.24899999999985" height="31" as="geometry" />
+        </mxCell>
+        <mxCell id="WmEjv27LeSnt8QOcfDzc-79" value="04" style="connectable=0;recursiveResize=0;strokeColor=inherit;fillColor=inherit;whiteSpace=wrap;html=1;fontSize=10;" vertex="1" parent="WmEjv27LeSnt8QOcfDzc-78">
+          <mxGeometry width="46" height="31" as="geometry">
+            <mxRectangle width="46" height="31" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="WmEjv27LeSnt8QOcfDzc-80" value="campaign medium" style="connectable=0;recursiveResize=0;strokeColor=inherit;fillColor=inherit;whiteSpace=wrap;html=1;fontSize=10;" vertex="1" parent="WmEjv27LeSnt8QOcfDzc-78">
+          <mxGeometry x="46" width="59" height="31" as="geometry">
+            <mxRectangle width="59" height="31" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="WmEjv27LeSnt8QOcfDzc-81" value="Marketing medium (e.g. cpc, banner,email)" style="connectable=0;recursiveResize=0;strokeColor=inherit;fillColor=inherit;whiteSpace=wrap;html=1;fontSize=10;" vertex="1" parent="WmEjv27LeSnt8QOcfDzc-78">
+          <mxGeometry x="105" width="153" height="31" as="geometry">
+            <mxRectangle width="153" height="31" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="WmEjv27LeSnt8QOcfDzc-114" style="shape=tableRow;horizontal=0;startSize=0;swimlaneHead=0;swimlaneBody=0;top=0;left=0;bottom=0;right=0;dropTarget=0;collapsible=0;recursiveResize=0;expand=0;fontStyle=1;strokeColor=inherit;fillColor=#EAF2D3;fontSize=10;" vertex="1" parent="WmEjv27LeSnt8QOcfDzc-61">
+          <mxGeometry y="155" width="258.24899999999985" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="WmEjv27LeSnt8QOcfDzc-115" value="05" style="connectable=0;recursiveResize=0;strokeColor=inherit;fillColor=#FFFFFF;whiteSpace=wrap;html=1;fontSize=10;" vertex="1" parent="WmEjv27LeSnt8QOcfDzc-114">
+          <mxGeometry width="46" height="50" as="geometry">
+            <mxRectangle width="46" height="50" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="WmEjv27LeSnt8QOcfDzc-116" value="campaign name" style="connectable=0;recursiveResize=0;strokeColor=inherit;fillColor=#FFFFFF;whiteSpace=wrap;html=1;fontSize=10;" vertex="1" parent="WmEjv27LeSnt8QOcfDzc-114">
+          <mxGeometry x="46" width="59" height="50" as="geometry">
+            <mxRectangle width="59" height="50" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="WmEjv27LeSnt8QOcfDzc-117" value="Product, promo code, or slogan (e.g. &lt;b&gt;spring_sale&lt;/b&gt;). One of campaign name or campaigb ID are required" style="connectable=0;recursiveResize=0;strokeColor=inherit;fillColor=#FFFFFF;whiteSpace=wrap;html=1;fontSize=10;" vertex="1" parent="WmEjv27LeSnt8QOcfDzc-114">
+          <mxGeometry x="105" width="153" height="50" as="geometry">
+            <mxRectangle width="153" height="50" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="WmEjv27LeSnt8QOcfDzc-110" style="shape=tableRow;horizontal=0;startSize=0;swimlaneHead=0;swimlaneBody=0;top=0;left=0;bottom=0;right=0;dropTarget=0;collapsible=0;recursiveResize=0;expand=0;fontStyle=1;strokeColor=inherit;fillColor=#EAF2D3;fontSize=10;" vertex="1" parent="WmEjv27LeSnt8QOcfDzc-61">
+          <mxGeometry y="205" width="258.24899999999985" height="31" as="geometry" />
+        </mxCell>
+        <mxCell id="WmEjv27LeSnt8QOcfDzc-111" value="06" style="connectable=0;recursiveResize=0;strokeColor=inherit;fillColor=inherit;whiteSpace=wrap;html=1;fontSize=10;" vertex="1" parent="WmEjv27LeSnt8QOcfDzc-110">
+          <mxGeometry width="46" height="31" as="geometry">
+            <mxRectangle width="46" height="31" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="WmEjv27LeSnt8QOcfDzc-112" value="campaign term" style="connectable=0;recursiveResize=0;strokeColor=inherit;fillColor=inherit;whiteSpace=wrap;html=1;fontSize=10;" vertex="1" parent="WmEjv27LeSnt8QOcfDzc-110">
+          <mxGeometry x="46" width="59" height="31" as="geometry">
+            <mxRectangle width="59" height="31" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="WmEjv27LeSnt8QOcfDzc-113" value="Identify the paid keywords" style="connectable=0;recursiveResize=0;strokeColor=inherit;fillColor=inherit;whiteSpace=wrap;html=1;fontSize=10;" vertex="1" parent="WmEjv27LeSnt8QOcfDzc-110">
+          <mxGeometry x="105" width="153" height="31" as="geometry">
+            <mxRectangle width="153" height="31" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="WmEjv27LeSnt8QOcfDzc-106" style="shape=tableRow;horizontal=0;startSize=0;swimlaneHead=0;swimlaneBody=0;top=0;left=0;bottom=0;right=0;dropTarget=0;collapsible=0;recursiveResize=0;expand=0;fontStyle=1;strokeColor=inherit;fillColor=#EAF2D3;fontSize=10;" vertex="1" parent="WmEjv27LeSnt8QOcfDzc-61">
+          <mxGeometry y="236" width="258.24899999999985" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="WmEjv27LeSnt8QOcfDzc-107" value="07" style="connectable=0;recursiveResize=0;strokeColor=inherit;fillColor=#FFFFFF;whiteSpace=wrap;html=1;fontSize=10;" vertex="1" parent="WmEjv27LeSnt8QOcfDzc-106">
+          <mxGeometry width="46" height="26" as="geometry">
+            <mxRectangle width="46" height="26" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="WmEjv27LeSnt8QOcfDzc-108" value="campaign content" style="connectable=0;recursiveResize=0;strokeColor=inherit;fillColor=#FFFFFF;whiteSpace=wrap;html=1;fontSize=10;" vertex="1" parent="WmEjv27LeSnt8QOcfDzc-106">
+          <mxGeometry x="46" width="59" height="26" as="geometry">
+            <mxRectangle width="59" height="26" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="WmEjv27LeSnt8QOcfDzc-109" value="Use to differentiate ads" style="connectable=0;recursiveResize=0;strokeColor=inherit;fillColor=#FFFFFF;whiteSpace=wrap;html=1;fontSize=10;" vertex="1" parent="WmEjv27LeSnt8QOcfDzc-106">
+          <mxGeometry x="105" width="153" height="26" as="geometry">
+            <mxRectangle width="153" height="26" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="WmEjv27LeSnt8QOcfDzc-102" style="shape=tableRow;horizontal=0;startSize=0;swimlaneHead=0;swimlaneBody=0;top=0;left=0;bottom=0;right=0;dropTarget=0;collapsible=0;recursiveResize=0;expand=0;fontStyle=1;strokeColor=inherit;fillColor=#EAF2D3;fontSize=10;" vertex="1" parent="WmEjv27LeSnt8QOcfDzc-61">
+          <mxGeometry y="262" width="258.24899999999985" height="31" as="geometry" />
+        </mxCell>
+        <mxCell id="WmEjv27LeSnt8QOcfDzc-103" style="connectable=0;recursiveResize=0;strokeColor=inherit;fillColor=inherit;whiteSpace=wrap;html=1;fontSize=10;" vertex="1" parent="WmEjv27LeSnt8QOcfDzc-102">
+          <mxGeometry width="46" height="31" as="geometry">
+            <mxRectangle width="46" height="31" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="WmEjv27LeSnt8QOcfDzc-104" style="connectable=0;recursiveResize=0;strokeColor=inherit;fillColor=inherit;whiteSpace=wrap;html=1;fontSize=10;" vertex="1" parent="WmEjv27LeSnt8QOcfDzc-102">
+          <mxGeometry x="46" width="59" height="31" as="geometry">
+            <mxRectangle width="59" height="31" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="WmEjv27LeSnt8QOcfDzc-105" style="connectable=0;recursiveResize=0;strokeColor=inherit;fillColor=inherit;whiteSpace=wrap;html=1;fontSize=10;" vertex="1" parent="WmEjv27LeSnt8QOcfDzc-102">
+          <mxGeometry x="105" width="153" height="31" as="geometry">
+            <mxRectangle width="153" height="31" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
