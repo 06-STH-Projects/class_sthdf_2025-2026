@@ -5,12 +5,12 @@ import type * as Preset from '@docusaurus/preset-classic';
 const config: Config = {
   title: 'KNIFE Preview - Knowledge in Friendly Examples',
   tagline: 'Context Aware Approach',
-  url: 'https://knifes.systemthinking.sk',
+  url: 'https://06-sth-projects.github.io',
   baseUrl: '/',            // GH Pages repo base – ponechať
   favicon: 'img/favicon.ico',
 
-  organizationName: 'KNIFE-Framework',
-  projectName: 'knifes_overview',
+  organizationName: '06-STH-Projects',
+  projectName: 'class_sthdf_2025-2026',
   deploymentBranch: 'gh-pages',
   onBrokenLinks: 'warn',
   onBrokenMarkdownLinks: 'warn',
@@ -63,7 +63,7 @@ const config: Config = {
         { to: '/7Ds/', label: '7Ds (SK)', position: 'left' },
         { to: '/', label: 'Docs (SK)', position: 'left' },
         { to: '/en/', label: 'Docs (EN)', position: 'left' },
-        { href: 'https://github.com/KNIFE-Framework/knifes_overview', label: 'GitHub', position: 'right' },
+        { href: 'https://github.com/06-sth-projects/class_sthdf_2025-2026', label: 'GitHub', position: 'right' },
       ],
     },
     footer: {
