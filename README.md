@@ -2,7 +2,7 @@
 
 > Tento repozitár je súčasťou KNIFE/CAS ekosystému.
 - 20250902
- 
+   
 #Rýchla navigácia
 
 
