@@ -50,13 +50,13 @@ const config: Config = {
         theme: { customCss: require.resolve('./src/css/custom.css') },
       } satisfies Preset.Options,
     ],
-  ],
+  ], 
 // ⬇⬇⬇ PRIDANÉ: GA4 plugin
   plugins: [
     [
       '@docusaurus/plugin-google-gtag',
       {
-        trackingID: 'G-GVPTFWRR1P',
+        trackingID: 'G-PW6EL97EBP',
         anonymizeIP: true,
         // optional: odoslať page_view aj pri route zmenách (SPA)
         // respektíve default správanie už page views posiela
