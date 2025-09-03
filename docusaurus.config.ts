@@ -51,6 +51,18 @@ const config: Config = {
       } satisfies Preset.Options,
     ],
   ],
+// ⬇⬇⬇ PRIDANÉ: GA4 plugin
+  plugins: [
+    [
+      '@docusaurus/plugin-google-gtag',
+      {
+        trackingID: 'G-GVPTFWRR1P',
+        anonymizeIP: true,
+        // optional: odoslať page_view aj pri route zmenách (SPA)
+        // respektíve default správanie už page views posiela
+      },
+    ],
+  ],
 
   themeConfig: {
     image: 'img/logo.png',
