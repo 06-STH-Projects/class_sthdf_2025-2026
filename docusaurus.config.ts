@@ -3,8 +3,8 @@ import type {Config} from '@docusaurus/types';
 import type * as Preset from '@docusaurus/preset-classic';
 
 const config: Config = {
-  title: 'KNIFE Preview - Knowledge in Friendly Examples',
-  tagline: 'Context Aware Approach',
+  title: 'System Thinking in IT and Digital fabrication',
+  tagline: 'Context Aware Approach,STHDF', 
   url: 'https://06-sth-projects.github.io',
   baseUrl: '/',            // GH Pages repo base – ponechať
   favicon: 'img/favicon.ico',
@@ -67,14 +67,14 @@ const config: Config = {
   themeConfig: {
     image: 'img/logo.png',
     navbar: {
-      title: 'KNIFE',
-      logo: { alt: 'KNIFE Logo', src: 'img/logo.png' },
+      title: 'STHDF-2025-2026',
+      logo: { alt: 'STHDF Logo', src: 'img/logo.png' },
       items: [
         { to: '/', label: 'Home', position: 'left' }, // SK root
-        { to: '/sk/knifes/', label: 'KNIFES (SK)', position: 'left' },
-        { to: '/7Ds/', label: '7Ds (SK)', position: 'left' },
-        { to: '/', label: 'Docs (SK)', position: 'left' },
-        { to: '/en/', label: 'Docs (EN)', position: 'left' },
+    //    { to: '/sk/knifes/', label: 'KNIFES (SK)', position: 'left' },
+    //    { to: '/7Ds/', label: '7Ds (SK)', position: 'left' },
+    //    { to: '/', label: 'Docs (SK)', position: 'left' },
+    //    { to: '/en/', label: 'Docs (EN)', position: 'left' },
         { href: 'https://github.com/06-sth-projects/class_sthdf_2025-2026', label: 'GitHub', position: 'right' },
       ],
     },
