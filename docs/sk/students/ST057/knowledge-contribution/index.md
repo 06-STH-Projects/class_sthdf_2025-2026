@@ -1,0 +1,2 @@
+[🏠 Domov](../../../index.md) · [⬅️ Nahor](../)
+# ST057 — knowledge-contribution

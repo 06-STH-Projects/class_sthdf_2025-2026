@@ -1,46 +1,45 @@
 ---
 id: home
-title: KNIFE – Prehľad
-sidebar_label: Home
+title: 🌍 STHDF 2025 — System Thinking in IT & Digital Fabrication
+sidebar_position: 0
 ---
 
-# 🌍 KNIFE Framework – Knowledge in Friendly Examples
+> Welcome! Toto je výkladná skriňa ročníka **STHDF 2025–2026**.  
+> Nájdeš tu pravidlá kurzu, zadania, výstupy študentov a projekty.
 
-Vitaj v repozitári **KNIFE Framework**.  
-Tento priestor zhromažďuje príspevky typu *KNIFE* (Knowledge in Friendly Examples) a ďalšie podporné materiály.
-
----
-
-## 🗂 Obsah
-- 🇸🇰 [Slovenčina](./sk/index.md)
-- 🇬🇧 *English* (pripravené neskôr)
-
----
-
-💡 **Čo je KNIFE?**  
-Mikro-príspevok typu „mini-TEDx“:  
-- 🎯 Čo rieši (účel, cieľ)  
-- 🧩 Ako to rieši (princíp)  
-- 🧪 Ako to použiť (aplikácia)  
-
-Každý KNIFE má svoj vlastný folder a môže obsahovať text, obrázky, multimédiá alebo interaktívny obsah.
-# 👋 Vitajte v KNIFE Framework
-
-**KNIFE – Knowledge In Friendly Examples**  
-Praktické návody, koncepty a skúsenosti zbierané v rámci Context Aware Approach (CAA).
+## 🔎 Rýchla navigácia
+- 📘 **O predmete** → [About the Course](sk/class-sthdf/about/index.md)
+- 🧭 **Podmienky & Assignments** → [Assignments & Milestones](sk/class-sthdf/conditions/index.md)
+- 👩‍🎓 **Študentské výstupy** → [Students (ST001–ST060)](sk/students/README.md)
+- 🚀 **Projekty 2025** → [Projects (PRJ001–PRJ030)](projects/README.md)
+- ✨ **Showcase** → [Best of 2025](sk/class-sthdf/showcase/index.md)
 
 ---
 
-## 🔗 Rýchla navigácia na prehľady
+## 🧩 Čo sa učíme
 
-- [📋 Hrubý zoznam](./sk/KNIFES/KNIFEsOverview.md)
-- [📑 Tabuľka s detailmi](./sk/KNIFES/KNIFE_Overview_List.md)
-- [📘 Blogový štýl s detailmi](./sk/KNIFES/KNIFE_Overview_Details.md)
+* Tento rok nadviaže na minulý rok kde sme začali koncept 'Let It Grow'.
+Je to koncept použitý na proces dodávania akéhokoľvek riešenia, teda aj riešenia v IT.
+* Predmet je postavená na základoch STEM - Science, Technology, Engineering, Matematics
+  
+* Krátky úvod do metodík, ktoré používame:
+  - Základy CAA, CASol, CASys
+
+  - **7Ds**, **SDLC / V-Model**, **KNIFE – Knowledge in Friendly Examples**
+  - Praktický prístup *learning-by-doing* + tímová práca
 
 ---
 
-## 🌳 Vyber oblasť
+## ✅ Čo odovzdať (4 míľniky)
+1. **About Me** – osobné intro (aliasy, bez PII)  
+2. **Knowledge Contribution** – min. 1 príspevok (KNIFE štýl)  
+3. **Project Summary** – plán tímu/projektu (internal → potom public)  
+4. **Project Outcomes** – finálny výstup (repo/demo/stránka)
 
-- **KNIFES (SK)** – malé návody a koncepty → [KNIFES](./KNIFES/)
-- **7Ds (SK)** – metodický strom → [7Ds](./7Ds/)
-- **English docs** → [English version](/en/)
+> Detailný popis a termíny nájdeš v **[Assignments & Milestones]sk/class-sthdf/conditions/index.md)**.
+
+---
+
+## 🌐 Link-outs
+- 🎓 Hlavný portal: `sth-2025.systemthinking.sk`
+- 🧪 Sandboxy a demá: viď stránky projektov `PRJxxx`
