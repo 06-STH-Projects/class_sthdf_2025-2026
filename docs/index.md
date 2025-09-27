@@ -10,8 +10,8 @@ sidebar_position: 0
 ## 🔎 Rýchla navigácia
 - 📘 **O predmete** → [About the Course](sk/class-sthdf/about/index.md)
 - 🧭 **Podmienky & Assignments** → [Assignments & Milestones](sk/class-sthdf/conditions/index.md)
-- 👩‍🎓 **Študentské výstupy** → [Students (ST001–ST060)](sk/students/README.md)
-- 🚀 **Projekty 2025** → [Projects (PRJ001–PRJ030)](projects/README.md)
+- 👩‍🎓 **Študentské výstupy** → [Students (ST001–ST060)](sk/students/ST_INDEX.md)
+- 🚀 **Projekty 2025** → [Projects (PRJ001–PRJ030)](projects/PRJ_INDEX.md)
 - ✨ **Showcase** → [Best of 2025](sk/class-sthdf/showcase/index.md)
 
 ---
