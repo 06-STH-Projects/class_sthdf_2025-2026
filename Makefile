@@ -1,784 +1,705 @@
-# -------------------------
-# 📄 Makefile – Docusaurus + Git Utils (unified)
-# Date: 20250815-0950 (patched, cleaned 20250916)
-# Description: Inštalácia, build, testy, validácia a WorkTree deploy.
-# CESTA 2 (Actions) doplníme neskôr – tento Makefile je zámerne jednotný.
-#
-# ❗ Dôležité: pri deployi do worktree NIKDY nemaž priečinok/súbor .git.
-# Ak je worktree „rozbité“, použi:  make check-worktree  (self-healing)
-# -------------------------
+# ─────────────────────────────────────────────────────────
+# KNIFE / Docusaurus – Makefile (greenfield 2025-11-05)
+# Čistý základ pre: build, deploy (worktree), KNIFE, FM, 7Ds
+# ─────────────────────────────────────────────────────────
 
-# ❗ Worktree deploy vyžaduje lokálnu GIT autentikáciu k GitHubu.
-#    Bez platného HTTPS tokenu (osxkeychain) alebo SSH kľúča `git push` zlyhá.
-#    Pozri: make help-auth
-# Keď spustíš len `make`, ukáž help
-.DEFAULT_GOAL := help  # zobrazenie help pri samotnom `make`
-
+.DEFAULT_GOAL := help
 SHELL := /bin/bash
-NODE := node
-NPM  := npm
+NODE  := node
+NPM   := npm
 
-DOCS_DIR  := docs
-BUILD_DIR := build
+# ── Cesty (zostávajú kompatibilné s tvojou štruktúrou)
+CONTENT_DOCS_DIR := content/docs
+PUB_DOCUS_DIR    := publishing/docusaurus
+PUB_DOCS_DIR     := $(PUB_DOCUS_DIR)/docs
+PUB_BUILD_DIR    := $(PUB_DOCUS_DIR)/build
+CONTENT_ASSETS_DIR := $(CONTENT_DOCS_DIR)/assets
+PUB_STATIC_DIR     := $(PUB_DOCUS_DIR)/static
 
-# Build timestamp in UTC (used for footer "Last build")
+# i18n (voliteľne: DS_LOCALE=sk|en)
+DS_LOCALE ?=
+BUILD_LOCALE_OPT :=
+ifneq ($(strip $(DS_LOCALE)),)
+  BUILD_LOCALE_OPT := --locale $(DS_LOCALE)
+endif
+
+# Build voľby
 BUILD_DATE := $(shell date -u '+%Y-%m-%d %H:%M:%S UTC')
-# Release helpers (local tag push)
-BRANCH ?= main
-DATE   := $(shell date -u +%Y%m%d-%H%M%SZ)
-VERSION ?= v$(DATE)
-MSG     ?= Release $(VERSION)
+# Build info (optional: include "-dirty" suffix)
+TAG_INCLUDE_DIRTY ?= 0
+ifeq ($(TAG_INCLUDE_DIRTY),1)
+  RELEASE_TAG := $(shell git describe --tags --always --dirty 2>/dev/null || echo dev)
+else
+  # strip a possible "-dirty" suffix so builds don't fluctuate just because previews were regenerated
+  RELEASE_TAG := $(shell git describe --tags --always 2>/dev/null | sed 's/-dirty$$//' || echo dev)
+endif
+COMMIT_SHA := $(shell git rev-parse --short HEAD 2>/dev/null || echo local)
 
-# 🌿 Worktree deploy
-DEPLOY_BRANCH = gh-pages-docusaurus
-WORKTREE_DIR  = ../$(DEPLOY_BRANCH)
-PAGES_DIR     = $(WORKTREE_DIR)/docs   # <- GH Pages „/docs“ režim
+GITHUB_REPO_URL ?= https://github.com/KNIFE-Framework/knifes_overview
+# Derive repo name for GH Pages baseUrl (e.g., /knifes_overview/)
+REPO_NAME := $(notdir $(basename $(GITHUB_REPO_URL)))
+DEFAULT_SITE_URL := https://knifes.systemthinking.sk
+DEFAULT_BASE_URL := /
 
-# macOS sed (BSD) potrebuje -i ''
-SED_INPLACE := sed -E -i ''
-FIND_MD := find $(DOCS_DIR) -type f \( -name "*.md" -o -name "*.mdx" \)
 
-# KNIFES generator (CSV → MD)
-# default CSV (SSOT export)
-SCRIPTS_DIR := scripts
-CSV_DEFAULT := data/KNIFE-OVERVIEW-ONLY.csv
-# hlavný CSV (možno prebíjať v prostredí)
-CSV_OVERVIEW ?= $(CSV_DEFAULT)
-# fallback na overview, ak nie je zadané
-CSV_BACKFILL ?= $(CSV_OVERVIEW)
-
-# Minify toggle (default ON). Use: make build MINIFY=0  -> passes --no-minify
 MINIFY ?= 1
 BUILD_EXTRA :=
 ifeq ($(MINIFY),0)
   BUILD_EXTRA := --no-minify
 endif
 
+# Release / tags
+TAG               ?=
+RELEASE_TITLE     ?=
+RELEASE_NOTES_FILE ?= ReleaseNote.md
 
+# Build toggles
+SYNC_CONTENT ?= 1         # 1=generate overview + rsync before build (default); 0=skip (behave like bare CLI)
+KNIFE_DEBUG  ?= 0         # 1=pass --debug to knife_overview_generate.py
 
-.PHONY: \
-  help help-auth help-actions \
-  install dev clean build build-fast ci-build serve \
-  check-links check-links-hard check-links-fast check-links-full fix-links \
-  init-worktree check-worktree copy-build commit-deploy remove-worktree \
-  push-main deploy full-deploy worktree-status \
-  sandbox-from-main sandbox-from-worktree \
-  stash-save stash-list stash-apply stash-drop \
-  restore-folder restore-file restore-path restore-from-stash-file \
-  delete-dotpages \
-  actions-status actions-disable actions-enable \
-  quickstart mode doctor next-steps \
-  knifes-gen knife-new dev-gen build-gen \
-  gen-dry dry-verify \
-  knife-guid-backfill knife-meta-backfill \
-  knife-verify knife-verify-csv-docs knife-verify-frontmatter \
-  print-vars knife-audit-frontmatter \
-  fm-fix fm-fix-dry fm-fix-file fm-fix-file-dry fm-set-slug-file knife-fm-add-missing knife-fm-add-missing-dry \
-  release-ci release-ci-datetime \
-  commit push tag push-tag release release-auto release-commit check-version knife-finish knife-finish-dry upgrade-docusaurus
+# Worktree deploy → gh-pages-docusaurus:/docs
+DEPLOY_BRANCH := gh-pages-docusaurus
+WORKTREE_DIR  := ../$(DEPLOY_BRANCH)
+PAGES_DIR     := $(WORKTREE_DIR)/docs
 
-# -------------------------
-# 📌 Help
-# -------------------------
-help:
-	@echo "# #########################################################################"
-	@echo "#.                                        KNIFE Makefile v2 from 20250815 #"
-	@echo "# 📄 Makefile – Docusaurus + Git Utils (unified)                          #"
-	@echo "# Date: 20250815-0950 (patched, cleaned 20250916)                         #"
-	@echo "# Description: Inštalácia, build, testy, validácia a WorkTree deploy.     #"
-	@echo "# CESTA 2 (Actions) doplníme neskôr – tento Makefile je zámerne jednotný. #"
-	@echo "# ❗ Pri deployi do worktree NIKDY nemaž .git; oprav: make check-worktree  #"
-	@echo "# #########################################################################"
-	@echo "===== 🧭 UX – pamäťový ťahák ====="
-	@echo "  quickstart             - 3 kroky na bežný deň (najčastejší flow)"
-	@echo "  mode                   - Zistí, či ideš cez Worktree alebo Actions"
-	@echo "  doctor                 - Základná diagnostika (node/git/remote/worktree)"
-	@echo "  next-steps             - Odporúčanie ďalšieho kroku podľa stavu"
-	@echo "===== ⚙️ Actions toggles ====="
-	@echo "  actions-status         - Zobrazí, či je workflow zapnutý/vypnutý"
-	@echo "  actions-disable        - Dočasne vypne Actions (premenuje deploy.yml)"
-	@echo "  actions-enable         - Znovu zapne Actions"
-	@echo "  help-actions           - Krátky návod ku GitHub Pages (Actions)"
-	@echo "===== 📚 Docusaurus ====="
-	@echo "  install                - Nainštaluje docusaurus balíčky"
-	@echo "  dev                    - Spustí dev server"
-	@echo "  clean                  - Vyčistí cache a build adresáre"
-	@echo "  build                  - Build (MINIFY=$(MINIFY)); prepínateľné: make build MINIFY=0"
-	@echo "  build-fast             - Alias na 'make build MINIFY=0' (bez minify)"
-	@echo "  ci-build               - CI-friendly build bez minifikácie (alias na 'make build MINIFY=0')"
-	@echo "  serve                  - Lokálne naservíruj statický build"
-	@echo "  upgrade-docusaurus    - Upgrade Docusaurus balíčkov na poslednú verziu (@latest)"
-	@echo "===== 🚀 Release (CI) =====" 
-	@echo "  release-ci             - SemVer patch bump (npm version patch) + push tag → spustí CI release"
-	@echo "  release-ci-datetime    - Vytvorí tag vYYYYMMDD-HHMM (UTC) bez zmeny package.json a pushne ho"
-	@echo "                         Príklad: v20250925-2315"
-	@echo "                         Použitie: make release-ci | make release-ci-datetime"
-	@echo "  (CI) vyžaduje: .github/workflows/release.yml"
-	@echo "  APP_VERSION v pätičke sa nastaví v CI z tagu: $${GITHUB_REF_NAME}"
-	@echo "===== 🏷️ Release (lokálne tagy) ====="
-	@echo "  release            - vytvorí annotated tag $(VERSION) a pushne ho (spustí CI Release)"
-	@echo "  release-auto       - automatický tag vYYYYMMDD-HHMMSSZ a pushne ho"
-	@echo "  release-commit     - commit -> push vetvy -> tag -> push tag"
-	@echo "  tag                - len vytvorí lokálny tag (bez pushu)"
-	@echo "  push-tag           - pushne zadaný tag na origin"
-	@echo "===== 🔍 Link Checker ====="
-	@echo "  check-links            - DRY-RUN kontrola odkazov v docs/"
-	@echo "  check-links-hard       - Striktná kontrola: spustí build"
-	@echo "  check-links-fast       - Striktná kontrola s vypnutou minifikáciou"
-	@echo "  check-links-full       - Full kontrola (docs + config + témy)"
-	@echo "  fix-links              - Oprava …/index -> …/"
-	@echo "===== 🌿 Worktree Deploy ====="
-	@echo "  init-worktree          - Alias na check-worktree (založí/opraví worktree)"
-	@echo "  check-worktree         - Overí/Vytvorí worktree (self-healing)"
-	@echo "  copy-build             - Rsync build/ -> $(PAGES_DIR)/  (chráni .git)"
-	@echo "  commit-deploy          - Commit & push z worktree"
-	@echo "  remove-worktree        - Odpojí worktree (NEmaž .git ručne!)"
-	@echo "  worktree-status        - Debug: git status + zoznam worktrees"
-	@echo "  push-main              - Bezpečný push mainu (zastaví ak máš zmeny)"
-	@echo "  deploy                 - check-worktree + build + copy-build + commit-deploy"
-	@echo "  full-deploy            - check-worktree + push-main + build + copy + commit"
-	@echo "===== 🧩 KNIFE Generátor ====="
-	@echo "  dev-gen                - knifes-gen + dev (vygeneruje MD a spustí lokálny dev)"
-	@echo "  build-gen              - knifes-gen + build (vygeneruje MD a spraví prod build)"
-	@echo "  knifes-gen             - Generuje/aktualizuje MD zo CSV (prehľady + chýbajúce Kxxx skeletony)"
-	@echo "  knife-new              - id=K062 title=\"...\" – rýchlo založí skeleton novej KNIFE"
-	@echo "  gen-dry                - „suchý“ plán generovania (nič nezapisuje)"
-	@echo "  dry-verify             - skrátená validácia cez generátor (bez zásahu)"
-	@echo "  knife-finish           - Uzavri KNIFE: FM podsúborov -> backfill -> canonical fix -> verify -> gen"
-	@echo "  knife-finish-dry       - DRY-RUN plán uzavretia KNIFE (nič nezapisuje)"
-	@echo "===== ✅ Verifications & Backfill ====="
-	@echo "  knife-guid-backfill    - Doplní chýbajúce 'guid' a 'dao' do KNIFE MD (len tam, kde chýbajú)"
-	@echo "  knife-meta-backfill    - Z CSV doplní 'created'; ak chýba 'modified', nastaví ho na 'created'; voliteľne doplní category/type/priority"
-	@echo "  knife-verify           - Kombinovaný check: CSV/docs + lint frontmatteru (povinné polia)"
-	@echo "  knife-verify-csv-docs  - CSV/docs konzistencia (duplicitné ID, prázdne názvy, kolízie slugov, chýbajúce súbory)"
-	@echo "  knife-verify-frontmatter - Lint povinných polí (guid, dao, id, title, created, modified)"
-	@echo "  knife-audit-frontmatter - Audit existujúcich KNIFE index.md (guid/dao/dates/slug/locale)"
-	@echo "===== 📝 Frontmatter Tools ====="
-	@echo "  fm-fix                 - Prepíše frontmatter v docs/ tak, že 'slug' bude zakomentovaný (# slug: \"...\")"
-	@echo "  fm-fix-dry             - Náhľad (DRY-RUN) zmien frontmatteru pre celý docs/ (vytlačí unified diff)"
-	@echo "  fm-fix-file            - Prepíše frontmatter iba jedného súboru; použitie: make fm-fix-file file=PATH"
-	@echo "  fm-fix-file-dry        - DRY-RUN pre jeden súbor; použitie: make fm-fix-file-dry file=PATH"
-	@echo "  fm-set-slug-file       - Aktívny slug pre jediný súbor; použitie: make fm-set-slug-file file=PATH slug=/cesta/bez-locale"
-	@echo "  knife-fm-add-missing   - Pridá default frontmatter do MD bez FM (idempotentne)"
-	@echo "  knife-fm-add-missing-dry- DRY-RUN: ukáže, ktoré súbory by dostali frontmatter"
+# KNIFE / FM / 7Ds skripty
+SCRIPTS_DIR            := core/scripts/tools
+FM_TOOL                := core/scripts/tools/fix_frontmatter.py
+FM_LINT                := core/scripts/tools/frontmatter_lint.py
 
-help-auth:
-	@echo "===== 🔐 Autentikácia pre Worktree deploy ====="
-	@echo "HTTPS (odporúčané na macOS):"
-	@echo "  git remote -v   # má byť https://"
-	@echo "  git config --global credential.helper osxkeychain"
-	@echo "  pri prvom 'git push' zadaj PAT -> uloží sa do Keychain"
-	@echo "SSH (alternatíva):"
-	@echo "  ssh-keygen -t ed25519 -C 'tvoj@email'"
-	@echo "  eval \"$$(/usr/bin/ssh-agent -s)\" && ssh-add $$HOME/.ssh/id_ed25519"
-	@echo "  nahraj verejný kľúč do GitHub (Settings -> SSH and GPG keys)"
-	@echo "  git remote set-url origin git@github.com:ORG/REPO.git"
-	@echo "  test: ssh -T git@github.com"
+SEVENDS_ROOT            = content/docs/$(LOCALE)/7Ds
+SEVENDS_FM_CORE         := core/templates/system/FM-Core.md
+SEVENDS_SCRIPT_CLONE    := core/scripts/tools/7ds_clone_from_template.py
+SEVENDS_SCRIPT_FM_APPLY := core/scripts/tools/fm_apply_from_core_7ds.py
+INSTANCE ?=
 
-help-actions:
-	@echo "===== ⚙️ CI/CD (Cesta 2 – GitHub Actions → Pages) ====="
-	@echo "1) Pridaj .github/workflows/deploy.yml (oficiálny Docusaurus workflow)."
-	@echo "2) Settings -> Pages -> Build and deployment = GitHub Actions."
-	@echo "3) V docusaurus.config nastav správny baseUrl (napr. '/knifes_overview/')."
-	@echo "4) Po push do main sa build nasadí automaticky."
+# KNIFES – CSV config
+CONFIG_JSON   := config/knifes_config.json
+CSV_DEFAULT   := $(shell node -p "try{require('./$(CONFIG_JSON)').csv||''}catch(e){''}")
+ifeq ($(strip $(CSV_DEFAULT)),)
+CSV_DEFAULT   := config/data/KNIFES-OVERVIEW-INPUTs.csv
+endif
+CSV_OVERVIEW ?= $(CSV_DEFAULT)
+LOCALE       ?= sk
 
-# -------------------------
-# 🚀 Docusaurus Commands
-# -------------------------
+KNIFES_DIR   ?= content/docs/$(LOCALE)/knifes
 
-install:
-	$(NPM) install
+# SDLC / Q12 scaffold dirs
+SDLC_DIR ?= content/docs/$(LOCALE)/sdlc
+Q12_DIR  ?= content/docs/$(LOCALE)/q12
+STHDF_DIR ?= content/docs/$(LOCALE)/sthdf
 
-dev:
-	BUILD_DATE="September 2025" NODE_OPTIONS=--max-old-space-size=16384 $(NPM) start
+# Ako sa má generator správať, keď cieľový súbor/priečinok už existuje.
+# Povolené hodnoty (mapujú sa na --exists v new_item_instance.py):
+#  - skip   ... (default) nič neprepíše, existujúce súbory ponechá
+#  - error  ... skončí chybou, ak niečo existuje
+#  - replace... prepíše/generuje nanovo podľa templatu
+#  - merge  ... rezervované do budúcna, teraz = skip
+EXISTS ?= skip
 
-clean:
-	$(NPM) run clear || true
-	rm -rf $(BUILD_DIR) .docusaurus
+# ─────────────────────────────────────────────────────────
+# HELP (autogenerovaný z „##“ popisov)
+# ─────────────────────────────────────────────────────────
+.PHONY: help
+help: ## Zobrazí prehľad príkazov podľa sekcií + príklady
+	@printf "\n\033[1mKNIFE Makefile – Help (so sekciami)\033[0m\n"
+	@printf "Built at: %s\n\n" "$(BUILD_DATE)"
 
-build: clean
-	BUILD_DATE="$(BUILD_DATE)" NODE_OPTIONS=--max-old-space-size=16384 $(NPM) run build -- $(BUILD_EXTRA)
+	@printf "\033[1;90m🧩 CORE / BUILD / SERVE\033[0m\n"
+	@printf " \033[1m%-28s\033[0m | \033[1m%s\033[0m\n" "Target" "Description"
+	@printf "%-28s-+-%s\n" "----------------------------" "----------------------------------------------"
+	@awk 'BEGIN{FS=":.*## "};/^(SY00-clean-pubdocs|SY01-sync-content|SY02-sync-assets|dev|build|build-fast|build-clean|serve):.*## /{printf " \033[36m%-28s\033[0m | %s\n",$$1,$$2}' $(MAKEFILE_LIST)
+	@printf "\n"
 
-build-fast:
+	@printf "\033[1;90m📦 INSTANCE SCOPE\033[0m\n"
+	@echo " LOCALE   = $(LOCALE)"
+	@echo " INSTANCE = $(INSTANCE)"
+	@bash -c 'ROOT_BASE="content/docs/$(LOCALE)/7Ds"; if [ -n "$(INSTANCE)" ]; then ROOT_PATH="content/docs/$(LOCALE)/$(INSTANCE)"; else ROOT_PATH="$$ROOT_BASE"; fi; echo " TARGET ROOT → $$ROOT_PATH"'
+	@printf " Pattern: make D12-7ds-apply INSTANCE=sthdf_2025 LOCALE=sk\n"
+	@printf " \033[36m%-28s\033[0m | %s\n" "new-item-instance" "Vytvorí novú inštanciu frameworku (TYPE, NAME, TITLE)"
+	@printf " \033[36m%-28s\033[0m | %s\n" "S21-sdlc-new" "SDLC inštancia (SDLC_NAME, SDLC_TITLE, LOCALE)"
+	@printf " \033[36m%-28s\033[0m | %s\n" "Q21-q12-new"  "Q12 inštancia (Q12_NAME, Q12_TITLE, LOCALE)"
+	@printf " \033[36m%-28s\033[0m | %s\n" "S31-sthdf-new" "STHDF inštancia (STHDF_NAME, STHDF_TITLE, LOCALE)"
+	@printf "\n"
+
+	@printf "\033[1;33m🚀 DEPLOY / WORKTREE\033[0m\n"
+	@printf " \033[1m%-28s\033[0m | \033[1m%s\033[0m\n" "Target" "Description"
+	@printf "%-28s-+-%s\n" "----------------------------" "----------------------------------------------"
+	@awk 'BEGIN{FS=":.*## "};/^(deploy):.*## /{printf " \033[1m%-28s\033[0m | %s\n",$$1,$$2}' $(MAKEFILE_LIST)
+	@printf "\n"
+
+	@printf "\033[1;35m🏷  RELEASE / TAGS\033[0m\n"
+	@printf " \033[1m%-28s\033[0m | \033[1m%s\033[0m\n" "Target" "Description"
+	@printf "%-28s-+-%s\n" "----------------------------" "----------------------------------------------"
+	@awk 'BEGIN{FS=":.*## "};/^(release-[a-zA-Z0-9-]+):.*## /{printf " \033[1m%-28s\033[0m | %s\n",$$1,$$2}' $(MAKEFILE_LIST)
+	@printf "\n"
+
+	@printf "\033[1;32m🧾 FRONT MATTER (FM)\033[0m\n"
+	@printf " \033[1m%-28s\033[0m | \033[1m%s\033[0m\n" "Target" "Description"
+	@printf "%-28s-+-%s\n" "----------------------------" "----------------------------------------------"
+	@awk 'BEGIN{FS=":.*## "};/^(FM[0-9]+-[a-zA-Z0-9-]+):.*## /{printf " \033[1m%-28s\033[0m | %s\n",$$1,$$2}' $(MAKEFILE_LIST)
+	@printf "\n"
+
+	@printf "\033[1;90m📚 KNIFE TOOLS\033[0m\n"
+	@printf " \033[1m%-28s\033[0m | \033[1m%s\033[0m\n" "Target" "Description"
+	@printf "%-28s-+-%s\n" "----------------------------" "----------------------------------------------"
+	@awk 'BEGIN{FS=":.*## "};/^(knifes[-a-z]+):.*## /{printf " \033[1m%-28s\033[0m | %s\n",$$1,$$2}' $(MAKEFILE_LIST)
+	@printf "\n"
+
+	@printf "\033[1;90m🌱 7Ds TOOLS\033[0m\n"
+	@printf " \033[1m%-28s\033[0m | \033[1m%s\033[0m\n" "Target" "Description"
+	@printf "%-28s-+-%s\n" "----------------------------" "----------------------------------------------"
+	@awk 'BEGIN{FS=":.*## "};/^(D[0-9]+-[a-zA-Z0-9-]+|FM7[0-9]+-[a-zA-Z0-9-]+):.*## /{printf " \033[1m%-28s\033[0m | %s\n",$$1,$$2}' $(MAKEFILE_LIST)
+	@printf "\n"
+
+	@printf " \033[1;90m 📐 SDLC (Solution Develepment Life Cycle)\033[0m\n"
+	@printf " \033[1m%-28s\033[0m | \033[1m%s\033[0m\n" "Target" "Description"
+	@printf "%-28s-+-%s\n" "----------------------------" "----------------------------------------------"
+	@awk 'BEGIN{FS=":.*## "};/^(S11-sdlc-dry|S12-sdlc-apply|S21-sdlc-new):.*## /{printf " \033[1m%-28s\033[0m | %s\n",$$1,$$2}' $(MAKEFILE_LIST)
+	@printf "\n"
+
+	@printf "\033[1;90m🎓 STHDF (class instance)\033[0m\n"
+	@printf " \033[1m%-28s\033[0m | \033[1m%s\033[0m\n" "Target" "Description"
+	@printf "%-28s-+-%s\n" "----------------------------" "----------------------------------------------"
+	@awk 'BEGIN{FS=":.*## "};/^(S31-sthdf-new):.*## /{printf " \033[1m%-28s\033[0m | %s\n",$$1,$$2}' $(MAKEFILE_LIST)
+	@printf "\n"
+
+	@printf "\033[1;90m🔢 Q12 (Twelve Quadrants)\033[0m\n"
+	@printf " \033[1m%-28s\033[0m | \033[1m%s\033[0m\n" "Target" "Description"
+	@printf "%-28s-+-%s\n" "----------------------------" "----------------------------------------------"
+	@awk 'BEGIN{FS=":.*## "};/^(Q[0-9]+-[a-zA-Z0-9-]+):.*## /{printf " \033[1m%-28s\033[0m | %s\n",$$1,$$2}' $(MAKEFILE_LIST)
+	@printf "\n"
+
+	@printf "\033[1;90m📜 THESIS (placeholders)\033[0m\n"
+	@printf " \033[1m%-28s\033[0m | \033[1m%s\033[0m\n" "Target" "Description"
+	@printf "%-28s-+-%s\n" "----------------------------" "----------------------------------------------"
+	@awk 'BEGIN{FS=":.*## "};/^(T[0-9]+-[a-zA-Z0-9-]+):.*## /{printf " \033[36m%-28s\033[0m | %s\n",$$1,$$2}' $(MAKEFILE_LIST)
+	@printf "\n"
+
+	@printf "\033[1;37m🩺 DIAGNOSTIKA / UTIL\033[0m\n"
+	@printf " \033[1m%-28s\033[0m | \033[1m%s\033[0m\n" "Target" "Description"
+	@printf "%-28s-+-%s\n" "----------------------------" "----------------------------------------------"
+	@awk 'BEGIN{FS=":.*## "};/^(doctor|print-[a-z]+|print-locale|mode|validate-instance|help|help\+):.*## /{printf " \033[1m%-28s\033[0m | %s\n",$$1,$$2}' $(MAKEFILE_LIST)
+	@printf "\n"
+
+	@printf "\033[1m📘 Examples\033[0m\n"
+	@$(MAKE) --no-print-directory help-examples
+
+# ─────────────────────────────────────────────────────────
+# CORE: SYNC / DEV / BUILD / SERVE
+# ─────────────────────────────────────────────────────────
+.PHONY: SY00-clean-pubdocs SY01-sync-content SY02-sync-assets dev build build-fast build-clean serve
+
+SY00-clean-pubdocs: ## Hard clean: vyprázdni publishing/docusaurus/docs (ponechá priečinok)
+	@mkdir -p "$(PUB_DOCS_DIR)"
+	@echo "🧹 Hard clean: $(PUB_DOCS_DIR)/*"
+	@rm -rf "$(PUB_DOCS_DIR)"/* 2>/dev/null || true
+build-clean: ## Hard clean + sync + production build (istý reset publish/docs)
+	$(MAKE) SY00-clean-pubdocs
+	$(MAKE) build
+SY01-sync-content: ## Sync SSOT content → publishing/docusaurus/docs (hard, delete)
+	@if [ ! -d "$(CONTENT_DOCS_DIR)" ]; then echo "❌ Missing $(CONTENT_DOCS_DIR)"; exit 1; fi
+	@$(MAKE) --no-print-directory knifes-overview
+	@mkdir -p "$(PUB_DOCS_DIR)"
+	rsync -av --delete --checksum \
+	  --exclude 'assets/' \
+	  "$(CONTENT_DOCS_DIR)/" "$(PUB_DOCS_DIR)/"
+	@echo "✅ Synced: $(CONTENT_DOCS_DIR) → $(PUB_DOCS_DIR)"
+
+SY02-sync-assets: ## Sync assets (HTML5, obrázky…) → publishing/docusaurus/static/assets
+	@if [ ! -d "$(CONTENT_ASSETS_DIR)" ]; then \
+	  echo "ℹ️  Skipping assets sync: $(CONTENT_ASSETS_DIR) neexistuje"; exit 0; fi
+	@mkdir -p "$(PUB_STATIC_DIR)/assets"
+	rsync -av --delete --checksum "$(CONTENT_ASSETS_DIR)/" "$(PUB_STATIC_DIR)/assets/"
+	@echo "✅ Synced assets: $(CONTENT_ASSETS_DIR) → $(PUB_STATIC_DIR)/assets"
+
+dev: ## Spustí lokálny dev server Docusaurusu
+	cd "$(PUB_DOCUS_DIR)" && \
+	SITE_URL="$${SITE_URL:-http://localhost:3000}" \
+	BASE_URL="$${BASE_URL:-/}" \
+	BUILD_DATE="$(BUILD_DATE)" \
+	RELEASE_TAG="$(RELEASE_TAG)" \
+	COMMIT_SHA="$(COMMIT_SHA)" \
+	GITHUB_REPO_URL="$(GITHUB_REPO_URL)" \
+	NODE_OPTIONS=--max-old-space-size=16384 \
+	$(NPM) start -- $(BUILD_LOCALE_OPT)
+
+build: ## Production build (MINIFY=1|0, DS_LOCALE=sk|en, SYNC_CONTENT=1|0)
+	@if [ "$(SYNC_CONTENT)" != "0" ]; then \
+	  $(MAKE) --no-print-directory SY01-sync-content; \
+	  $(MAKE) --no-print-directory SY02-sync-assets; \
+	else \
+	  echo "ℹ️  SYNC_CONTENT=0 → skipping overview generation + rsync (CLI-like build)."; \
+	fi
+	cd "$(PUB_DOCUS_DIR)" && BUILD_DATE="$(BUILD_DATE)" RELEASE_TAG="$(RELEASE_TAG)" COMMIT_SHA="$(COMMIT_SHA)" GITHUB_REPO_URL="$(GITHUB_REPO_URL)" SITE_URL="$${SITE_URL:-$(DEFAULT_SITE_URL)}" BASE_URL="$${BASE_URL:-$(DEFAULT_BASE_URL)}" NODE_OPTIONS=--max-old-space-size=16384 $(NPM) run build -- $(BUILD_EXTRA) $(BUILD_LOCALE_OPT)
+
+build-fast: ## Build bez minifikácie (rýchly test)
 	$(MAKE) build MINIFY=0
 
-ci-build:
-	$(MAKE) build MINIFY=0
+.PHONY: build-core
+build-core: ## Build bez syncu obsahu (nerobí rsync ani regeneráciu overview)
+	cd "$(PUB_DOCUS_DIR)" && BUILD_DATE="$(BUILD_DATE)" RELEASE_TAG="$(RELEASE_TAG)" COMMIT_SHA="$(COMMIT_SHA)" GITHUB_REPO_URL="$(GITHUB_REPO_URL)" SITE_URL="$${SITE_URL:-$(DEFAULT_SITE_URL)}" BASE_URL="$${BASE_URL:-$(DEFAULT_BASE_URL)}" NODE_OPTIONS=--max-old-space-size=16384 $(NPM) run build -- $(BUILD_EXTRA) $(BUILD_LOCALE_OPT)
 
-serve:
-	$(NPM) run serve
+serve: ## Naservíruje statický build lokálne
+	cd "$(PUB_DOCUS_DIR)" && BUILD_DATE="$(BUILD_DATE)" RELEASE_TAG="$(RELEASE_TAG)" COMMIT_SHA="$(COMMIT_SHA)" GITHUB_REPO_URL="$(GITHUB_REPO_URL)" SITE_URL="$${SITE_URL:-$(DEFAULT_SITE_URL)}" BASE_URL="$${BASE_URL:-$(DEFAULT_BASE_URL)}" $(NPM) run serve
 
-upgrade-docusaurus: ## Upgrade Docusaurus packages to latest version
-	npm i @docusaurus/core@latest \
-	      @docusaurus/plugin-google-gtag@latest \
-	      @docusaurus/preset-classic@latest \
-	      @docusaurus/module-type-aliases@latest \
-	      @docusaurus/plugin-client-redirects@latest \
-	      @docusaurus/tsconfig@latest \
-	      @docusaurus/types@latest
 
-# -------------------------
-# 🔍 Link Checker
-# -------------------------
-check-links:
-	@echo ">>> DRY-RUN: hľadám odkazy s '/index' a chýbajúce lokálne súbory"
-	@grep -RInE '\]\(((\.\./|\./)+)[^)#]+/index(\.md)?\)' $(DOCS_DIR) --include "*.md" --include "*.mdx" || echo "  ✓ nič nenašiel"
-	@echo
-	@grep -Roh '\]\(([^)]+)\)' $(DOCS_DIR) --include "*.md" --include "*.mdx" \
-	| sed 's/.*](\(.*\))/\1/' \
-	| grep -vE '^(http|https|#|mailto:)' \
-	| sort -u \
-	| while read -r link; do \
-		path="$(DOCS_DIR)/$${link#./}"; \
-		if [[ ! -e "$$path" && ! -e "$${path%/}/index.md" ]]; then \
-			echo "  ✗ $$link"; \
-		fi; \
-	done || true
-	@echo "DRY-RUN done."
+# ─────────────────────────────────────────────────────────
+# WORKTREE DEPLOY (Cesta 1) – bezpečné, stručné
+# ─────────────────────────────────────────────────────────
+.PHONY: W10-check-worktree W20-copy-build W30-commit-deploy W50-full-deploy W60-worktree-status deploy
 
-check-links-hard:
-	@echo ">>> STRICT: validujem odkazy…"
-	$(NPM) run build -- $(BUILD_EXTRA) || { echo "❌ Build failed"; exit 1; }
-
-check-links-fast:
-	@echo ">>> STRICT (no-minify): validujem odkazy…"
-	$(MAKE) check-links-hard MINIFY=0
-
-check-links-full:
-	@echo ">>> FULL CHECK: kontrolujem odkazy v docs + configu + témach"
-	@$(MAKE) check-links
-	@grep -RIn "to: '/docs" docusaurus.config.ts || true
-	@node scripts/check_config_paths.js || true
-
-fix-links:
-	@echo ">>> Opravujem odkazy …/index -> …/"
-	@$(FIND_MD) -print0 | xargs -0 $(SED_INPLACE) \
-	  -e 's#\]\(\.\.\/index\)#](../)#g' \
-	  -e 's#\]\(\.\.\/\.\.\/index\)#](./)#g'
-
-# -------------------------
-# 🌿 Worktree Deploy – Self-healing + ochrany
-# -------------------------
-
-# Alias (nech help sedí)
-init-worktree: check-worktree
-
-## check-worktree: overí alebo vytvorí worktree pre $(DEPLOY_BRANCH); opraví ak je rozbitá
-check-worktree:
-	@if [ -d "$(WORKTREE_DIR)" ]; then \
-	  if git -C "$(WORKTREE_DIR)" rev-parse --is-inside-work-tree >/dev/null 2>&1; then \
-	    echo "✅ Worktree OK: $(WORKTREE_DIR) → $(DEPLOY_BRANCH)"; \
-	  else \
-	    echo "⚠️  $(WORKTREE_DIR) existuje, ale nevyzerá ako git worktree. Resetujem…"; \
-	    rm -rf "$(WORKTREE_DIR)"; \
-	    git worktree prune; \
-	    git branch -D $(DEPLOY_BRANCH) 2>/dev/null || true; \
-	  fi; \
+.PHONY: W05-clean-worktree
+W05-clean-worktree: ## Vyčistí worktree (zachová .git), vhodné pred rsync
+	@if ! git -C "$(WORKTREE_DIR)" rev-parse --is-inside-work-tree >/dev/null 2>&1; then \
+	  echo "❌ Worktree neexistuje. Spusť najprv W10-check-worktree"; exit 1; fi
+	@echo "🧹 Čistím worktree: $(WORKTREE_DIR)"
+	@git -C "$(WORKTREE_DIR)" clean -fdx
+W10-check-worktree: ## Vytvorí/overí worktree ../gh-pages-docusaurus → /docs
+	@if [ -d "$(WORKTREE_DIR)" ] && ! git -C "$(WORKTREE_DIR)" rev-parse --is-inside-work-tree >/dev/null 2>&1; then \
+	  echo "⚠️  $(WORKTREE_DIR) existuje, ale nie je git worktree – čistím…"; rm -rf "$(WORKTREE_DIR)"; git worktree prune; \
 	fi; \
 	if ! git worktree list | grep -q "$(WORKTREE_DIR)"; then \
-	  echo "ℹ️  Worktree pre $(DEPLOY_BRANCH) neexistuje. Vytváram…"; \
+	  echo "ℹ️  Zakladám worktree pre $(DEPLOY_BRANCH)…"; \
 	  git fetch origin || true; \
 	  if git ls-remote --exit-code --heads origin $(DEPLOY_BRANCH) >/dev/null 2>&1; then \
 	    git worktree add -B $(DEPLOY_BRANCH) "$(WORKTREE_DIR)" origin/$(DEPLOY_BRANCH); \
 	  else \
-	    echo "ℹ️  Vetva $(DEPLOY_BRANCH) na remote neexistuje, zakladám lokálne…"; \
-	    git branch -f $(DEPLOY_BRANCH) 2>/dev/null || true; \
-	    git worktree add "$(WORKTREE_DIR)" $(DEPLOY_BRANCH); \
+	    git worktree add "$(WORKTREE_DIR)" -B $(DEPLOY_BRANCH); \
 	    cd "$(WORKTREE_DIR)" && git commit --allow-empty -m "init $(DEPLOY_BRANCH)" && git push -u origin $(DEPLOY_BRANCH); \
 	  fi; \
-	fi
+	fi; \
+	echo "✅ Worktree OK: $(WORKTREE_DIR) → $(DEPLOY_BRANCH)"
 
-# Bezpečné kopírovanie buildu – vždy do /docs a len ak je to naozaj git repo
-copy-build:
-	@if ! git -C "$(WORKTREE_DIR)" rev-parse --is-inside-work-tree >/dev/null 2>&1; then \
-	  echo "❌ $(WORKTREE_DIR) nie je git worktree. Spusť: make check-worktree"; \
-	  exit 1; \
-	fi
-	mkdir -p "$(PAGES_DIR)"
-	rsync -av --delete \
-	  --filter='P .git' \
-	  --filter='P .gitignore' \
-	  "$(BUILD_DIR)/" "$(PAGES_DIR)/"
+W20-copy-build: ## Rsync build/ → worktree /docs (bezpečné, chráni .git)
+	@if ! git -C "$(WORKTREE_DIR)" rev-parse --is-inside-work-tree >/dev/null 2>&1; then echo "❌ Spusť najprv W10-check-worktree"; exit 1; fi
+	@if [ -z "$(PUB_BUILD_DIR)" ] || [ ! -d "$(PUB_BUILD_DIR)" ]; then echo "❌ Najprv make build (chýba $(PUB_BUILD_DIR))"; exit 1; fi
+	@mkdir -p "$(PAGES_DIR)"
+	@echo "🔁 rsync: '$(PUB_BUILD_DIR)/' → '$(PAGES_DIR)/'"
+	rsync -av --delete --filter='P .git' --filter='P .gitignore' "$(PUB_BUILD_DIR)/" "$(PAGES_DIR)/"
 
-commit-deploy:
-	@if ! git -C "$(WORKTREE_DIR)" rev-parse --is-inside-work-tree >/dev/null 2>&1; then \
-	  echo "❌ $(WORKTREE_DIR) nie je git worktree. Spusť: make check-worktree"; \
-	  exit 1; \
-	fi
-	cd $(WORKTREE_DIR) && git add -A
-	cd $(WORKTREE_DIR) && git commit -m "Deploy $$(
-	  date -u +'%Y-%m-%d %H:%M:%S UTC'
-	)" || echo "⚠️ Žiadne zmeny na commit."
-	cd $(WORKTREE_DIR) && git push origin $(DEPLOY_BRANCH)
+W30-commit-deploy: ## Commit & push worktree (deploy)
+	@if ! git -C "$(WORKTREE_DIR)" rev-parse --is-inside-work-tree >/dev/null 2>&1; then echo "❌ Worktree nie je pripravený"; exit 1; fi
+	cd "$(WORKTREE_DIR)" && git add -A
+	cd "$(WORKTREE_DIR)" && ts=$$(date -u +'%Y-%m-%d %H:%M:%S UTC'); git commit -m "Deploy $$ts" || echo "ℹ️  Žiadne zmeny"
+	# Bezpečné riešenie non-fast-forward: najprv rebase proti originu, potom push
+	cd "$(WORKTREE_DIR)" && git fetch origin $(DEPLOY_BRANCH)
+	cd "$(WORKTREE_DIR)" && git pull --rebase --autostash origin $(DEPLOY_BRANCH) || true
+	cd "$(WORKTREE_DIR)" && git push origin $(DEPLOY_BRANCH)
+	@echo "✅ Deploy pushnutý → $(DEPLOY_BRANCH)"
 
-# Rýchly lokálny deploy
-deploy: check-worktree build copy-build commit-deploy
+deploy: ## Full deploy na vlastnú doménu (SITE_URL=https://knifes.systemthinking.sk BASE_URL=/, no-minify)
+	$(MAKE) W10-check-worktree
+	$(MAKE) W05-clean-worktree
+	SITE_URL=https://knifes.systemthinking.sk BASE_URL=/ $(MAKE) build MINIFY=0
+	$(MAKE) W20-copy-build
+	$(MAKE) W30-commit-deploy
+	@echo "🎉 Full deploy hotový (domain, no-minify)."
 
-# Plný scenár: kontrola worktree + push main + build + deploy
-full-deploy: check-worktree push-main build copy-build commit-deploy
-	@echo "🎉 Full deploy úspešný → $(DEPLOY_BRANCH)"
+W50-full-deploy: ## Plný scenár: push main + build + stage + commit
+	@if [ -n "$$(git status --porcelain)" ]; then echo "❌ Máš necommitnuté zmeny na main!"; exit 1; fi
+	git push origin main
+	$(MAKE) W40-deploy
 
-remove-worktree:
-	# Bezpečné odpojenie cez git (NEmaž .git ručne!)
-	git worktree remove "$(WORKTREE_DIR)" 2>/dev/null || true
-	git worktree prune || true
-
-worktree-status:
+W60-worktree-status: ## Status worktree (debug)
 	@git worktree list
 	@echo "----"
 	@git -C "$(WORKTREE_DIR)" status -sb || true
 
-## push-main: Bezpečný push mainu
-push-main:
-	@if [ -n "$$(git status --porcelain)" ]; then \
-		echo "❌ Máš necommitnuté zmeny na main! Najprv commitni/stashni."; \
+# ─────────────────────────────────────────────────────────
+# RELEASE / TAGS – GitHub CLI
+# ─────────────────────────────────────────────────────────
+.PHONY: release-gh
+
+release-gh: ## Vytvorí GitHub release pre TAG (TAG=v0.4.0, RELEASE_TITLE='...', RELEASE_NOTES_FILE=ReleaseNote.md)
+	@if ! command -v gh >/dev/null 2>&1; then \
+	  echo "❌ GitHub CLI 'gh' nie je nainštalovaný. Pozri https://cli.github.com/"; \
+	  exit 1; \
+	fi
+	@if [ -z "$(TAG)" ]; then \
+	  echo "❌ Musíš zadať TAG, napr.:"; \
+	  echo "   make release-gh TAG=v0.4.0 RELEASE_TITLE='KNIFE Overview v0.4.0'"; \
+	  exit 1; \
+	fi
+	@if ! git rev-parse "$(TAG)" >/dev/null 2>&1; then \
+	  echo "❌ TAG '$(TAG)' neexistuje v tomto repozitári. Najprv ho vytvor/pushni."; \
+	  exit 1; \
+	fi
+	@TITLE="$(RELEASE_TITLE)"; \
+	if [ -z "$$TITLE" ]; then \
+	  TITLE="$(TAG)"; \
+	fi; \
+	if [ ! -f "$(RELEASE_NOTES_FILE)" ]; then \
+	  echo "ℹ️ Súbor '$(RELEASE_NOTES_FILE)' neexistuje – použijem --generate-notes."; \
+	  gh release create "$(TAG)" \
+	    --title "$$TITLE" \
+	    --verify-tag \
+	    --generate-notes; \
+	else \
+	  echo "📄 Používam release poznámky z '$(RELEASE_NOTES_FILE)'"; \
+	  gh release create "$(TAG)" \
+	    --title "$$TITLE" \
+	    --verify-tag \
+	    --notes-file "$(RELEASE_NOTES_FILE)"; \
+	fi
+
+# ─────────────────────────────────────────────────────────
+# FRONT MATTER – audit / lint / fix
+# ─────────────────────────────────────────────────────────
+.PHONY: FM10-audit FM11-lint FM20-fix-dry FM20-fix-apply
+FM10-audit: ## Audit Front Matter (read-only) – root=content/docs (OPTS=--root dir)
+	@python3 $(FM_TOOL) --root "$(CONTENT_DOCS_DIR)" --dry-run $(OPTS) || true
+
+FM11-lint: ## Lint Front Matter (read-only) – root=content/docs
+	@python3 $(FM_LINT) --root "$(CONTENT_DOCS_DIR)" || true
+
+FM20-fix-dry: ## DRY: normalizácia Front Matter (no writes)
+	@python3 $(FM_TOOL) --root "$(CONTENT_DOCS_DIR)" --dry-run $(OPTS)
+
+FM20-fix-apply: ## APPLY: normalizácia Front Matter (writes)
+	@python3 $(FM_TOOL) --root "$(CONTENT_DOCS_DIR)" --apply $(OPTS)
+
+# ─────────────────────────────────────────────────────────
+# UNIVERSAL FRAMEWORK INSTANCE – new_item_instance.py
+# ─────────────────────────────────────────────────────────
+.PHONY: new-item-instance
+new-item-instance: ## Vytvorí novú inštanciu frameworku (TYPE, NAME, TITLE)
+	@if [ -z "$(TYPE)" ] || [ -z "$(NAME)" ] || [ -z "$(TITLE)" ]; then \
+		echo "❌ Usage: make new-item-instance TYPE=sdlc NAME=integration TITLE='Integration Project'"; \
 		exit 1; \
 	fi
-	git push origin main
-	@echo "✅ main pushnutý."
+	@python3 core/scripts/tools/new_item_instance.py \
+		--type "$(TYPE)" \
+		--name "$(NAME)" \
+		--title "$(TITLE)" \
+		--output "content/docs/$(LOCALE)" \
+		--exists "$(EXISTS)"
+	@echo "✅ Instance created: $(TYPE)_$(NAME)"
 
-# -------------------------
-# 🧪 Sandbox Commands
-# -------------------------
-sandbox-from-main:
-	@if [ -z "$$name" ]; then echo "Použi: make sandbox-from-main name=<branch>"; exit 1; fi
-	git checkout -b $$name main
+# ─────────────────────────────────────────────────────────
+# 7Ds – scaffold + FM-Core merge
+# ─────────────────────────────────────────────────────────
+.PHONY: D10-7ds-print-root D11-7ds-dry D12-7ds-apply FM71-7ds-dry-from-core FM70-7ds-apply-from-core
 
-sandbox-from-worktree:
-	@if [ -z "$$name" ] || [ -z "$$base" ]; then echo "Použi: make sandbox-from-worktree name=<branch> base=<branch>"; exit 1; fi
-	git checkout -b $$name $$base
+D10-7ds-print-root: ## Debug: vypíše cieľový root pre 7Ds (berie ohľad na INSTANCE a LOCALE)
+	@ROOT_BASE="content/docs/$(LOCALE)/7Ds"; \
+	if [ -n "$(INSTANCE)" ]; then ROOT_PATH="content/docs/$(LOCALE)/$(INSTANCE)"; else ROOT_PATH="$$ROOT_BASE"; fi; \
+	echo "[LOCALE]      = $(LOCALE)"; \
+	echo "[INSTANCE]    = $(INSTANCE)"; \
+	echo "[TARGET ROOT] = $$ROOT_PATH"
 
-# -------------------------
-# 📦 Stash Commands
-# -------------------------
-stash-save:
-	@if [ -z "$$m" ]; then echo "Použi: make stash-save m='správa'"; exit 1; fi
-	git stash push -m "$$m"
+D11-7ds-dry: ## DRY: Scaffold 7Ds z templatu (iba plán; bez zápisu FM)
+	@ROOT_BASE="content/docs/$(LOCALE)/7Ds"; \
+	if [ -n "$(INSTANCE)" ]; then ROOT_PATH="content/docs/$(LOCALE)/$(INSTANCE)"; else ROOT_PATH="$$ROOT_BASE"; fi; \
+	echo "🧪 7Ds DRY scaffold → $$ROOT_PATH"; \
+	python3 "$(SEVENDS_SCRIPT_CLONE)" \
+	  --instance "$${ROOT_PATH##*/}" \
+	  --template-root core/templates/content/7ds \
+	  --header-template core/templates/7ds/header/7ds_user_header.md \
+	  --fm-core "$(SEVENDS_FM_CORE)" \
+	  --dry
 
-stash-list:
-	git stash list
+D12-7ds-apply: ## APPLY: Scaffold 7Ds + apply FM-Core (idempotentné)
+	@set -e; \
+	ROOT_BASE="content/docs/$(LOCALE)/7Ds"; \
+	if [ -n "$(INSTANCE)" ]; then ROOT_PATH="content/docs/$(LOCALE)/$(INSTANCE)"; else ROOT_PATH="$$ROOT_BASE"; fi; \
+	echo "⚙️  7Ds APPLY scaffold → $$ROOT_PATH"; \
+	python3 "$(SEVENDS_SCRIPT_CLONE)" \
+	  --instance "$${ROOT_PATH##*/}" \
+	  --template-root core/templates/content/7ds \
+	  --header-template core/templates/7ds/header/7ds_user_header.md \
+	  --fm-core "$(SEVENDS_FM_CORE)" \
+	  --apply; \
+	echo "🛠  Merge FM-Core → $$ROOT_PATH"; \
+	python3 "$(SEVENDS_SCRIPT_FM_APPLY)" \
+	  --root  "$$ROOT_PATH" \
+	  --fm-core "$(SEVENDS_FM_CORE)" \
+	  --apply \
+	  --instance-tag "$${ROOT_PATH##*/}"; \
+	echo "✅ DONE: $$ROOT_PATH"
 
-stash-apply:
-	@if [ -z "$$id" ]; then echo "Použi: make stash-apply id=<n>"; exit 1; fi
-	git stash apply stash@{$$id}
+FM71-7ds-dry-from-core: ## DRY: Merge FM-Core → 7Ds (berie ohľad na INSTANCE)
+	@ROOT_BASE="content/docs/$(LOCALE)/7Ds"; \
+	if [ -n "$(INSTANCE)" ]; then ROOT_PATH="content/docs/$(LOCALE)/$(INSTANCE)"; else ROOT_PATH="$$ROOT_BASE"; fi; \
+	echo "🧪 DRY merge FM-Core → $$ROOT_PATH"; \
+	python3 "$(SEVENDS_SCRIPT_FM_APPLY)" \
+	  --root  "$$ROOT_PATH" \
+	  --fm-core "$(SEVENDS_FM_CORE)" \
+	  --dry-run \
+	  --instance-tag "$${ROOT_PATH##*/}"
 
-stash-drop:
-	@if [ -z "$$id" ]; then echo "Použi: make stash-drop id=<n>"; exit 1; fi
-	git stash drop stash@{$$id}
+FM70-7ds-apply-from-core: ## APPLY: Merge FM-Core → 7Ds (berie ohľad na INSTANCE)
+	@set -e; \
+	ROOT_BASE="content/docs/$(LOCALE)/7Ds"; \
+	if [ -n "$(INSTANCE)" ]; then ROOT_PATH="content/docs/$(LOCALE)/$(INSTANCE)"; else ROOT_PATH="$$ROOT_BASE"; fi; \
+	echo "🛠 APPLY merge FM-Core → $$ROOT_PATH"; \
+	python3 "$(SEVENDS_SCRIPT_FM_APPLY)" \
+	  --root  "$$ROOT_PATH" \
+	  --fm-core "$(SEVENDS_FM_CORE)" \
+	  --apply \
+	  --instance-tag "$${ROOT_PATH##*/}"; \
+	echo "✅ FM-Core applied to $$ROOT_PATH"
 
-# -------------------------
-# 🎯 Restore from History
-# -------------------------
-# ⚠️ Každý riadok pod targetom MUSÍ začínať TABom (nie medzerami)!
-restore-folder:
-	@if [ -z "$$commit" ] || [ -z "$$path" ]; then \
-		echo "❌ Použi: make restore-folder commit=<hash> path=<folder>"; \
-		exit 1; \
-	fi
-	@git checkout $$commit -- $$path
-	@echo "✅ Obnovené: $(path) z commitu $(commit)"
-	@git status --short
-	@echo "--- Zmenené súbory ---"
-	@git diff --stat
-
-restore-file:
-	@if [ -z "$$commit" ] || [ -z "$$path" ]; then echo "Použi: make restore-file commit=<hash> path=<file>"; exit 1; fi
-	git checkout $$commit -- $$path
-	@echo "✅ Obnovené: $(path) z commitu $(commit)"
-	@git status --short
-
-restore-path:
-	@echo "⚠️  Pozor: recepty v Makefile MÚSIA začínať TABom!"
-	@if [ -z "$$commit" ] || [ -z "$$path" ]; then \
-		echo "Použi: make restore-path commit=<hash> path=<file-or-dir>"; exit 1; \
-	fi
-	@echo "🔎 Pred zmenou (diff vs HEAD) pre '$$path':"
-	@git diff --name-status -- $$path || true
-	@echo "↩️  Obnovujem '$$path' z commitu $$commit…"
-	@git checkout $$commit -- $$path
-	@echo "✅ Hotovo. Zmenené súbory:"
-	@git status --short -- $$path
-	@echo "🔎 Po obnove (diff vs HEAD) pre '$$path':"
-	@git diff --name-status -- $$path || true
-	@echo "💡 Ak je to ono: git add $$path && git commit -m \"restore: $$path from $$commit\""
-	@echo "✅ Obnovené: $(path) z commitu $(commit)"
-
-restore-from-stash-file:
-	@if [ -z "$(stash)" ] || [ -z "$(file)" ]; then \
-		echo "Použi: make restore-from-stash-file stash=stash@{N} file=<path>"; \
-		exit 1; \
-	fi
-	@git restore --source=$(stash) -- $(file)
-	@echo "✅ Súbor '$(file)' obnovený zo stasha '$(stash)'"
-	@git status --short
-
-# -------------------------
-# 🧹 Delete legacy MkDocs .pages
-# -------------------------
-delete-dotpages:
-	@echo ">>> Odstraňujem všetky '.pages' súbory..."
-	@find . -type f -name ".pages" -exec rm -f {} +
-	@echo "✅ Hotovo. Súbory '.pages' boli zmazané."
-	@echo "💡 Commitni: git add -A && git commit -m 'Remove .pages files'"
-
-# -------------------------
-# ⚙️ GitHub Actions – enable/disable by renaming workflow file
-# -------------------------
-WF_DIR := .github/workflows
-WF_FILE := $(WF_DIR)/deploy.yml
-WF_DISABLED := $(WF_FILE).disabled
-
-actions-status:
-	@if [ -f "$(WF_FILE)" ]; then \
-	  echo "Actions workflow: ENABLED ($(WF_FILE))"; \
-	elif [ -f "$(WF_DISABLED)" ]; then \
-	  echo "Actions workflow: DISABLED ($(WF_DISABLED))"; \
-	else \
-	  echo "Actions workflow: NOT FOUND"; \
-	fi
-
-actions-disable:
-	@mkdir -p $(WF_DIR)
-	@if [ -f "$(WF_FILE)" ]; then \
-	  mv "$(WF_FILE)" "$(WF_DISABLED)"; \
-	  git add -A && git commit -m "ci: disable Actions deploy [noactions]" || true; \
-	  echo "✅ Actions deaktivované (workflow súbor premenovaný)."; \
-	else \
-	  echo "ℹ️ Actions už vyzerá byť vypnuté (nenašiel som $(WF_FILE))."; \
-	fi
-
-actions-enable:
-	@if [ -f "$(WF_DISABLED)" ]; then \
-	  mv "$(WF_DISABLED)" "$(WF_FILE)"; \
-	  git add -A && git commit -m "ci: enable Actions deploy"; \
-	  echo "✅ Actions aktivované (workflow súbor obnovený)."; \
-	else \
-	  echo "ℹ️ Actions už vyzerá byť zapnuté (nenašiel som $(WF_DISABLED))."; \
-	fi
-
-# -------------------------
-# 🧭 UX helpers
-# -------------------------
-
-quickstart:
-	@echo "👋 Ahoj! Najčastejší denný flow:"
-	@echo "  1) Uprav docs:          (napr. docs/sk/...)"
-	@echo "  2) Lokálny test:        make dev   # alebo: make build && make serve"
-	@echo "  3) Deployment:"
-	@echo "     - Worktree:          make full-deploy"
-	@echo "     - Actions (CI/CD):   git add -A && git commit -m 'msg' && git push"
-	@echo ""
-	@echo "ℹ️  Tipy:"
-	@echo "  • PUSH bez CI:          commit msg obsahuje [noactions]"
-	@echo "  • Prepínať Actions:     make actions-enable | make actions-disable"
-	@echo "  • Zisti režim:          make mode"
-
-mode:
-	@echo "🔎 Režim nasadenia:"
-	@if [ -d "$(WORKTREE_DIR)/.git" ]; then \
-	  echo "  • Worktree:   ENABLED  → $(WORKTREE_DIR)"; \
-	else \
-	  echo "  • Worktree:   disabled (spusť: make check-worktree)"; \
-	fi
-	@if [ -f ".github/workflows/deploy.yml" ]; then \
-	  echo "  • Actions:    ENABLED  (CI/CD beží na push)"; \
-	elif [ -f ".github/workflows/deploy.yml.disabled" ]; then \
-	  echo "  • Actions:    disabled (zapni: make actions-enable)"; \
-	else \
-	  echo "  • Actions:    nenašiel som workflow súbor (.github/workflows/deploy.yml)"; \
-	fi
-	@echo ""
-	@echo "🧠 Odporúčanie:"
-	@if [ -d "$(WORKTREE_DIR)/.git" ]; then \
-	  echo "  • Pre okamžitý manual deploy použi: make full-deploy"; \
-	else \
-	  echo "  • Najprv vytvor worktree: make check-worktree (ak chceš Cestu 1)"; \
-	fi
-	@echo "  • Alebo použi CI/CD: commit + push (Cesta 2)."
-
-doctor:
-	@echo "🩺 Diagnostika…"
-	@echo "  • Node: $$(node -v 2>/dev/null || echo 'n/a')"
-	@echo "  • NPM:  $$(npm -v 2>/dev/null || echo 'n/a')"
-	@echo "  • Git:  $$(git --version 2>/dev/null || echo 'n/a')"
-	@echo "  • Remote origin: $$(git remote -v | awk 'NR==1{print $$2}')"
-	@echo "  • Aktuálna vetva: $$(git rev-parse --abbrev-ref HEAD)"
-	@if [ -d "$(WORKTREE_DIR)/.git" ]; then \
-	  echo "  • Worktree: OK  ($(WORKTREE_DIR))"; \
-	else \
-	  echo "  • Worktree: MISSING (spusť: make check-worktree)"; \
-	fi
-	@if [ -f ".github/workflows/deploy.yml" ]; then \
-	  echo "  • Actions:  ENABLED"; \
-	elif [ -f ".github/workflows/deploy.yml.disabled" ]; then \
-	  echo "  • Actions:  disabled (make actions-enable)"; \
-	else \
-	  echo "  • Actions:  workflow chýba (.github/workflows/deploy.yml)"; \
-	fi
-	@echo "✅ Done."
-
-next-steps:
-	@echo "🤖 Navrhovaný ďalší krok:"
-	@if [ -d "$(WORKTREE_DIR)/.git" ]; then \
-	  echo "  → make full-deploy   # skompiluje + skopíruje do worktree + pushne"; \
-	else \
-	  if [ -f ".github/workflows/deploy.yml" ]; then \
-	    echo "  → git add -A && git commit -m 'update' && git push   # spustí CI/CD"; \
-	  else \
-	    echo "  → Spusti najprv: make check-worktree  (alebo zapni Actions)"; \
-	  fi; \
-	fi
-	@echo "💡 Debug: make mode | make doctor"
-
-# -------------------------
-# 🧩 KNIFES generator (CSV → MD)
-# -------------------------
-
-## knifes-gen: CSV -> MD (prehľady + chýbajúce Kxxx súbory)
-knifes-gen:
-	@if [ ! -f "$(SCRIPTS_DIR)/build_knifes.mjs" ]; then \
-		echo "❌ Chýba $(SCRIPTS_DIR)/build_knifes.mjs – skopíruj scripts/ do koreňa repozitára."; exit 1; \
-	fi
-	@if [ ! -f "$(strip $(CSV_OVERVIEW))" ]; then \
-		echo "❌ Chýba CSV '$(strip $(CSV_OVERVIEW))'. Ulož export z Calc/Excel alebo použi: make knifes-gen csv=<path>"; \
-		echo "   Príklad: make knifes-gen csv=data/KNIFE-OVERVIEW-ONLY.csv"; exit 1; \
-	fi
+# ─────────────────────────────────────────────────────────
+# KNIFES – validate / generate / verify
+# ─────────────────────────────────────────────────────────
+.PHONY: knifes-build-dry knifes-build-apply knifes-verify knifes-new knifes-overview
+knifes-build-dry: ## DRY: CSV→MD build podľa configu (nič nezapisuje)
 	@CSV="$(csv)"; if [ -z "$$CSV" ]; then CSV="$(strip $(CSV_OVERVIEW))"; fi; \
-	node "$(SCRIPTS_DIR)/build_knifes.mjs" --csv "$$CSV" --root .
+	echo "🧪 DRY: KNIFES build CSV='$$CSV' locale=$(LOCALE)"; \
+	node "$(SCRIPTS_DIR)/knifes-build.mjs" --csv "$$CSV" --root . --locale $(LOCALE) --dry-run
 
-## knife-new: založí skeleton KNIFE
-## Použitie: make knife-new id=K062 title="My Topic"
-knife-new:
-	@if [ -z "$(id)" ]; then echo "Použi: make knife-new id=K062 title='Názov'"; exit 1; fi
-	@if [ ! -f "$(SCRIPTS_DIR)/new_knife.mjs" ]; then \
-		echo "❌ Chýba $(SCRIPTS_DIR)/new_knife.mjs – skopíruj scripts/ do koreňa repozitára."; exit 1; \
-	fi
-	@FOLDER="docs/sk/knifes/$$(echo $(id) | tr 'A-Z' 'a-z')-*"; \
-	if compgen -G "$$FOLDER" > /dev/null; then \
-		echo "❌ KNIFE priečinok pre $(id) už existuje ($$FOLDER). Ukončujem."; exit 1; \
-	fi
-	@TITLE="$(title)"; if [ -z "$$TITLE" ]; then TITLE="New Topic"; fi; \
-	node "$(SCRIPTS_DIR)/new_knife.mjs" "$(id)" "$$TITLE"
-
-## Kombinované príkazy
-dev-gen:
-	node scripts/build_knifes.mjs --csv data/KNIFE-OVERVIEW-ONLY.csv --root . --locale sk
-
-build-gen: knifes-gen build
-
-## Len suchý plán generovania (nič sa nezapisuje)
-gen-dry:
+knifes-build-apply: ## APPLY: CSV→MD build podľa configu (zapíše)
 	@CSV="$(csv)"; if [ -z "$$CSV" ]; then CSV="$(strip $(CSV_OVERVIEW))"; fi; \
-	node "$(SCRIPTS_DIR)/build_knifes.mjs" --csv "$$CSV" --root . --dry-run
+	echo "🛠 APPLY: KNIFES build CSV='$$CSV' locale=$(LOCALE)"; \
+	node "$(SCRIPTS_DIR)/knifes-build.mjs" --csv "$$CSV" --root . --locale $(LOCALE)
 
+knifes-verify: ## Verify: CSV/docs + FM (smart)
+	@CSV_ARG="$(strip $(CSV_OVERVIEW))"; \
+	LOCALE_ARG="$(LOCALE)"; \
+	DOCS_DIR_ARG="$(CONTENT_DOCS_DIR)"; \
+	if [ -f "$(CONFIG_JSON)" ]; then \
+	  CSV_FROM_CFG=$$(node -p "try{require('./$(CONFIG_JSON)').csv||''}catch(e){''}"); \
+	  if [ -n "$$CSV_FROM_CFG" ]; then CSV_ARG="$$CSV_FROM_CFG"; fi; \
+	fi; \
+	node scripts/knifes-verify.mjs --csv "$$CSV_ARG" --root . --locale "$$LOCALE_ARG" --section "knifes" --docs-dir "$$DOCS_DIR_ARG"
 
-## Dry-verify priamo cez generátor
-dry-verify:
-	@CSV="$(csv)"; if [ -z "$$CSV" ]; then CSV="$(strip $(CSV_OVERVIEW))"; fi; \
-	node "$(SCRIPTS_DIR)/build_knifes.mjs" --csv "$$CSV" --root . --dry-verify
+# „new“ + „overview“ volajú tvoje existujúce Python skripty
+ID ?=
+id ?= $(ID)
+name ?=
+title ?=
+KNIFE_DRY   ?=
+KNIFE_FORCE ?=
+CONFIG_GLOBAL     ?= config/global.yml
+CONFIG_KNIFE      ?= config/knifes/knife_config.yml
+KNIFE_OVERVIEW_SCRIPT ?= core/scripts/tools/knife_overview_generate.py
+KNIFE_OVERVIEW_ROOT   ?= content/docs
+KNIFE_OVERVIEW_OUT    ?= content/docs/$(LOCALE)/knifes/knifes_overview
+KNIFE_OVERVIEW_FM     ?= core/templates/system/FM-Core.md
+KNIFE_OVERVIEW_LOCALE ?= $(LOCALE)
 
-# -------------------------
-# 🧵 KNIFE Finish (one-button flow)
-# -------------------------
-.PHONY: knife-finish knife-finish-dry
-
-## knife-finish-dry: suchý náhľad krokov (bez zápisu)
-knife-finish-dry:
-	@echo "① FM podsúbory – DRY"
-	@$(MAKE) knife-fm-add-missing-dry
-	@echo "② Verify (CSV/docs + FM)"
-	@$(MAKE) knife-verify
-	@echo "③ Gen-dry (CSV → plán)"
-	@$(MAKE) gen-dry
-
-## knife-finish: FM podsúbory -> backfill -> canonical fix -> verify -> gen
-knife-finish:
-	@echo "① FM podsúbory – dopĺňam…"
-	@$(MAKE) knife-fm-add-missing
-	@echo "② Backfill GUID/DAO…"
-	@$(MAKE) knife-guid-backfill
-	@echo "③ Backfill meta (created/modified/category/type/priority)…"
-	@$(MAKE) knife-meta-backfill
-	@echo "④ Canonical frontmatter (fm-fix)…"
-	@$(MAKE) fm-fix
-	@echo "⑤ Verify (CSV/docs + FM)…"
-	@$(MAKE) knife-verify
-	@echo "⑥ Generate overviews (CSV → MD)…"
-	@$(MAKE) knifes-gen
-	@echo "✅ KNIFE finish hotový. Pokračuj: 'make dev' alebo 'make build'"
-
-# -------------------------
-# ✅ Backfill & Verify
-# -------------------------
-
-# 1) Doplní guid + dao, nechýbajúce iba
-knife-guid-backfill:
-	python3 tools/guid_backfill.py docs
-
-# 2) Backfill z CSV (created, category, type, priority, atď.)
-#    - nastaví modified==created, ak modified chýba
-knife-meta-backfill:
-	@echo "ℹ️  Používam CSV: $(strip $(CSV_BACKFILL))"
-	@test -f "$(strip $(CSV_BACKFILL))" || (echo "❌ Chýba CSV '$(strip $(CSV_BACKFILL))'. Zadaj: make knife-meta-backfill CSV_BACKFILL=path/to.csv"; exit 1)
-	@python3 tools/knife_backfill_from_csv.py "$(strip $(CSV_BACKFILL))" docs
-
-# 3a) CSV/docs konzistencia (duplicitné ID, prázdne názvy, kolízie slugov)
-## knife-verify-csv-docs: skontroluje CSV + docs (duplicitné ID, prázdne Short Title, kolízie slugov)
-knife-verify-csv-docs:
-	@echo "🔎 Kontrolujem KNIFES CSV a docs..."
-	@if [ ! -f "$(strip $(CSV_OVERVIEW))" ] && [ -z "$(strip $(CSV_BACKFILL))" ]; then \
-		echo "❌ Chýba CSV '$(strip $(CSV_OVERVIEW))' (alebo zadaj CSV_BACKFILL=...)"; exit 1; \
+knifes-new: ## Vytvorí novú KNIFE (ID=K000123 name="..." title="...")
+	@echo "🚀 Generujem KNIFE…"
+	@if [ -z "$(name)" ] || [ -z "$(title)" ]; then \
+	  echo "❌ Usage: make knifes-new ID=K000123 name='...' title='...'"; \
+	  exit 1; \
 	fi
-	@CSV="$(strip $(CSV_BACKFILL))"; if [ -z "$$CSV" ]; then CSV="$(strip $(CSV_OVERVIEW))"; fi; \
-	echo "→ Duplicitné ID v CSV:"; \
-	cut -d',' -f1 "$$CSV" | grep -E '^K[0-9]{3}' | sort | uniq -d || echo "  ✓ nič nenašiel"; \
-	echo "→ Prázdne názvy v CSV:"; \
-	awk -F',' 'NR>1 && $$3=="" {print $$1}' "$$CSV" || echo "  ✓ nič nenašiel"; \
-	echo "→ Kolízie slugov v docs/sk/knifes:"; \
-	find docs/sk/knifes -type f -name "*.md" -exec grep -H "^slug:" {} \; | cut -d':' -f2- | sort | uniq -d || echo "  ✓ nič nenašiel"; \
-	echo "✅ knife-verify-csv-docs hotovo."
+	@mkdir -p "content/docs/$(LOCALE)/knifes"
+	python3 core/scripts/tools/new_item_instance.py \
+	  --type knifes \
+	  --name "$(name)" \
+	  --title "$(title)" \
+	  $(if $(id),--id "$(id)",) \
+	  --output "content/docs/$(LOCALE)/knifes" \
+	  --exists "$(EXISTS)"
+	@echo "✅ Hotovo: content/docs/$(LOCALE)/knifes/$(if $(id),$(id)-,knife_)$(name)/index.md"
 
-# 3b) Lint povinných polí vo frontmatteri
+knifes-overview: ## Zregeneruje KNIFE prehľady (Blog/List/Details)
+	@mkdir -p "$(KNIFE_OVERVIEW_OUT)"
+	python3 "$(KNIFE_OVERVIEW_SCRIPT)" \
+	  --root "$(KNIFE_OVERVIEW_ROOT)" \
+	  --fm-core "$(KNIFE_OVERVIEW_FM)" \
+	  --out-dir "$(KNIFE_OVERVIEW_OUT)" \
+	  --locale "$(KNIFE_OVERVIEW_LOCALE)" \
+	  $(if $(filter 1,$(KNIFE_DEBUG)),--debug,)
 
-## knife-verify-frontmatter: lint povinných polí len pre KNIFE index.md (podľa folderov)
-knife-verify-frontmatter:
-	@echo "🔎 Kontrolujem KNIFE frontmatter (iba index.md)…"
-	@find docs/sk/knifes -name index.md -print0 \
-	| xargs -0 -n1 -I {} python3 tools/frontmatter_lint.py --file "{}" \
-	  --required guid dao id title created modified
-	@if [ -d "docs/en/knifes" ]; then \
-	  find docs/en/knifes -name index.md -print0 \
-	  | xargs -0 -n1 -I {} python3 tools/frontmatter_lint.py --file "{}" \
-	    --required guid dao id title created modified; \
-	fi
-# 3) Kombinovaný alias
-## knife-verify: spustí oba checky (CSV/docs + frontmatter)
-knife-verify: knife-verify-csv-docs knife-verify-frontmatter
-	@echo "✅ All KNIFE verifications passed."
+.PHONY: knifes-overview-commit
+knifes-overview-commit: ## Commitne zmeny v KNIFE overview (ak existujú)
+	@git add "content/docs/*/knifes/knifes_overview/KNIFE_Overview_"*.md 2>/dev/null || true
+	@ts=$$(date -u +'%Y-%m-%d %H:%M:%S UTC'); git commit -m "chore(overview): regenerate KNIFE overview ($$ts)" || echo "ℹ️  Žiadne zmeny na commit"
 
-# Debug: vypíš kľúčové premenné (na odhalenie whitespace/chybných ciest)
+# ─────────────────────────────────────────────────────────
+# UTIL: diagnostika
+# ─────────────────────────────────────────────────────────
+.PHONY: mode doctor print-vars
+mode: ## Zobrazí deploy režim (worktree dostupnosť)
+	@echo "🔎 Deploy mode:"
+	@if [ -d "$(WORKTREE_DIR)/.git" ]; then echo " • Worktree: ENABLED ($(WORKTREE_DIR))"; else echo " • Worktree: disabled"; fi
+
+doctor: ## Rýchla diagnostika prostredia
+	@echo "🩺 Node:  $$(node -v 2>/dev/null || echo n/a)"
+	@echo "🩺 NPM:   $$(npm -v 2>/dev/null || echo n/a)"
+	@echo "🩺 Git:   $$(git --version 2>/dev/null || echo n/a)"
+	@echo "🩺 Origin: $$(git remote -v | awk 'NR==1{print $$2}')"
+	@echo "🩺 Branch: $$(git rev-parse --abbrev-ref HEAD 2>/dev/null || echo n/a)"
+
 .PHONY: print-vars
-print-vars:
-	@echo "[CSV_DEFAULT]  = '$(strip $(CSV_DEFAULT))'"
-	@echo "[CSV_OVERVIEW] = '$(strip $(CSV_OVERVIEW))'"
-	@echo "[CSV_BACKFILL] = '$(strip $(CSV_BACKFILL))'"
-	@echo "[DOCS_DIR]     = '$(strip $(DOCS_DIR))'"
-	@echo "[SCRIPTS_DIR]  = '$(strip $(SCRIPTS_DIR))'"
+print-vars: ## Vypíše kľúčové premenné
+	@echo "[CONTENT_DOCS_DIR] = $(CONTENT_DOCS_DIR)"
+	@echo "[PUB_DOCUS_DIR]    = $(PUB_DOCUS_DIR)"
+	@echo "[PUB_DOCS_DIR]     = $(PUB_DOCS_DIR)"
+	@echo "[PUB_BUILD_DIR]    = $(PUB_BUILD_DIR)"
+	@echo "[WORKTREE_DIR]     = $(WORKTREE_DIR)"
+	@echo "[PAGES_DIR]        = $(PAGES_DIR)"
+	@echo "[DS_LOCALE]        = $(DS_LOCALE)"
+	@echo "[BUILD_EXTRA]      = $(BUILD_EXTRA)"
+	@echo "[RELEASE_TAG]     = $(RELEASE_TAG)"
+	@echo "[COMMIT_SHA]      = $(COMMIT_SHA)"
+	@echo "[GITHUB_REPO_URL] = $(GITHUB_REPO_URL)"
+	@echo "[TAG_INCLUDE_DIRTY] = $(TAG_INCLUDE_DIRTY)"
+	@echo "[BUILD_DATE]       = $(BUILD_DATE)"
+	@echo "[REPO_NAME]       = $(REPO_NAME)"
+	@echo "[DEFAULT_BASE_URL]= $(DEFAULT_BASE_URL)"
 
-knife-validate-csv:
-	node dev/csv/knife-csv-verify.mjs data/KNIFE-OVERVIEW-ONLY.csv --schema dev/csv/schema/header.aliases.json || \
-	( echo "❌ CSV validation failed – fix ODS or update dev/csv/schema/header.aliases.json"; exit 1 )
+# Helper: Print current LOCALE and DS_LOCALE
+.PHONY: print-locale
+print-locale: ## Vypíše aktuálne LOCALE a DS_LOCALE
+	@echo "[LOCALE]    = $(LOCALE)"
+	@echo "[DS_LOCALE] = $(DS_LOCALE)"
 
-knifes-build-safe:
-	@$(MAKE) knife-validate-csv
-	node scripts/build_knifes.mjs --csv data/KNIFE-OVERVIEW-ONLY.csv --root . --locale sk
+# Validate INSTANCE variable format
+.PHONY: validate-instance
+validate-instance: ## Overí konvenciu INSTANCE (<typ>_<meno>)
+	@if [ -z "$(INSTANCE)" ]; then \
+	  echo "❌ INSTANCE nie je nastavené. Použi napr. INSTANCE=7ds_sthdf_2025"; \
+	  exit 1; \
+	fi; \
+	BASE="$${INSTANCE%%_*}"; \
+	NAME="$${INSTANCE#*_}"; \
+	if [ -z "$$BASE" ] || [ "$$BASE" = "$$NAME" ] || [ -z "$$NAME" ]; then \
+	  echo "❌ INSTANCE musí byť vo formáte <typ>_<meno>, napr. 7ds_sthdf_2025"; \
+	  exit 1; \
+	fi; \
+	echo "✅ INSTANCE OK"; \
+	echo " • TYPE = $$BASE"; \
+	echo " • NAME = $$NAME";
+# ─────────────────────────────────────────────────────────
+# HELP+: praktické príklady (copy‑paste)
+# ─────────────────────────────────────────────────────────
+.PHONY: help-examples help+
+help-examples:
+	@printf " \033[1m%-40s\033[0m | \033[1m%s\033[0m\n" "Command" "What it does"
+	@printf "%-40s-+-%s\n" "----------------------------------------" "----------------------------------------------"
+	@printf " %-40s | %s\n" "make dev" "Spustí Docusaurus dev server"
+	@printf " %-40s | %s\n" "SITE_URL=http://localhost:3000 BASE_URL=/ make dev" "Spustí dev s lokálnym URL a \"/\" baseUrl (funguje aj na GH po zmene BASE_URL)"
+	@printf " %-40s | %s\n" "make build" "Production build (minify by default)"
+	@printf " %-40s | %s\n" "make build SYNC_CONTENT=0" "Build bez overview/rsync (rovnaké správanie ako ručný CLI build)"
+	@printf " %-40s | %s\n" "make build DS_LOCALE=sk" "Build len pre SK lokalizáciu"
+	@printf " %-40s | %s\n" "make build-fast" "Rýchly build bez minifikácie"
+	@printf " %-40s | %s\n" "make build-core" "Build bez rsync/sync (len Docusaurus)"
+	@printf " %-40s | %s\n" "make SY00-clean-pubdocs" "Vyprázdni publishing/docusaurus/docs (hard clean)"
+	@printf " %-40s | %s\n" "make build-clean" "Hard clean + sync + production build"
+	@printf " %-40s | %s\n" "make W05-clean-worktree" "Vyčistí worktree pred rsyncom"
+	@printf " %-40s | %s\n" "make knifes-overview-commit" "Commitne zmeny overview → odstráni '-dirty'"
+	@printf " %-40s | %s\n" "make serve" "Naservíruje lokálne už vybuildované stránky"
+	@printf "\n"
+	@printf " %-40s | %s\n" "make deploy" "Full deploy na vlastnú doménu (no-minify)"
+	@printf "\n"
+	@printf " %-40s | %s\n" "make FM10-audit" "Audit Front Matter (read-only)"
+	@printf " %-40s | %s\n" "make FM11-lint" "Lint FM (read-only)"
+	@printf " %-40s | %s\n" "make FM20-fix-dry" "DRY run normalizácie FM (bez zápisu)"
+	@printf " %-40s | %s\n" "make FM20-fix-apply" "APPLY normalizácie FM (zapisuje)"
+	@printf "\n"
+	@printf " %-40s | %s\n" "make D11-7ds-dry INSTANCE=7ds_sthdf_2025 LOCALE=sk" "Scaffold 7Ds (DRY) do /sk/7ds_sthdf_2025"
+	@printf " %-40s | %s\n" "make S31-sthdf-new STHDF_NAME=sthdf_2025 STHDF_TITLE='STHDF 2025/2026' LOCALE=sk [EXISTS=skip|replace|error]" "Vytvorí alebo re‑vygeneruje STHDF inštanciu cez generátor"
+	@printf " %-40s | %s\n" "make D12-7ds-apply INSTANCE=7ds_sthdf_2025 LOCALE=sk" "Scaffold 7Ds (APPLY) do /sk/7ds_sthdf_2025"
+	@printf " %-40s | %s\n" "make validate-instance INSTANCE=7ds_sthdf_2025" "Overí konvenciu INSTANCE (<typ>_<meno>)"
+	@printf " %-40s | %s\n" "make knifes-new ID=K000123 name=... title=... [EXISTS=skip|replace|error]" "Vytvorí kostru nového KNIFE (index.md + FM)"
+	@printf " %-40s | %s\n" "make knifes-new ID=K000123 name=... title=... EXISTS=replace" "Znovu vygeneruje KNIFE aj keď priečinok už existuje"
+	@printf " %-40s | %s\n" "make knifes-overview" "Zregeneruje prehľady (Blog/List/Details)"
+	@printf " %-40s | %s\n" "make knifes-overview KNIFE_DEBUG=1" "Spustí prehľady s --debug (diagnostika zberu položiek)"
+	@printf " %-40s | %s\n" "make knifes-build-dry" "CSV → MD build (DRY) podľa configu"
+	@printf " %-40s | %s\n" "make knifes-build-apply" "CSV → MD build (APPLY) podľa configu"
+	@printf " %-40s | %s\n" "make S21-sdlc-new SDLC_NAME=integration SDLC_TITLE='Integration Project' LOCALE=sk" "Vytvorí novú SDLC inštanciu cez generátor"
+	@printf " %-40s | %s\n" "make Q21-q12-new Q12_NAME=mgmt Q12_TITLE='Q12 Management Layer' LOCALE=sk" "Vytvorí novú Q12 inštanciu cez generátor"
+	@printf "\n"
+	@printf " %-40s | %s\n" "make doctor" "Rýchla diagnostika prostredia"
+	@printf " %-40s | %s\n" "make print-vars" "Vypíše dôležité premenné"
+	@printf " %-40s | %s\n" "make print-locale" "Zobrazí LOCALE a DS_LOCALE"
+	@printf " %-40s | %s\n" "make mode" "Zobrazí zvolený deploy režim"
 
-knife-audit-frontmatter:
-	node scripts/knife-frontmatter-audit.mjs docs/sk/knifes	
-
-# -------------------------
-# 📝 Frontmatter Tools
-# -------------------------
-
-## fm-fix: Prejde celý docs/ a zakomentuje 'slug' (bez zápisu konkrétnej hodnoty)
-fm-fix:
-	@python3 tools/fix_frontmatter.py --root $(DOCS_DIR)
-
-## fm-fix-dry: DRY-RUN náhľad zmien (vypíše unified diff), nič nezapisuje
-fm-fix-dry:
-	@python3 tools/fix_frontmatter.py --root $(DOCS_DIR) --dry-run
-
-## fm-fix-file: Prepíše frontmatter iba jedného súboru (vyžaduje file=PATH)
-fm-fix-file:
-	@if [ -z "$$file" ]; then echo "Použi: make fm-fix-file file=PATH"; exit 1; fi
-	@python3 tools/fix_frontmatter.py --file "$$file"
-
-## fm-fix-file-dry: DRY-RUN iba pre jeden súbor (vyžaduje file=PATH)
-fm-fix-file-dry:
-	@if [ -z "$$file" ]; then echo "Použi: make fm-fix-file-dry file=PATH"; exit 1; fi
-	@python3 tools/fix_frontmatter.py --file "$$file" --dry-run
+help+: help-examples
 
 
-## fm-set-slug-file: Zapíše aktívny slug pre jediný súbor (vyžaduje file=PATH a slug=/cesta)
-fm-set-slug-file:
-	@if [ -z "$$file" ] || [ -z "$$slug" ]; then echo "Použi: make fm-set-slug-file file=PATH slug=/cesta/bez-locale"; exit 1; fi
-	@python3 tools/fix_frontmatter.py --file "$$file" --set-slug --slug-val "$$slug"
+# ─────────────────────────────────────────────────────────
+# SDLC / Q12 – scaffold cez univerzálny generátor
+# ─────────────────────────────────────────────────────────
+.PHONY: S21-sdlc-new S31-sthdf-new Q21-q12-new
 
-# ## knife-fm-add-missing: doplní YAML frontmatter do .md súborov bez FM (idempotentné)
-.PHONY: knife-fm-add-missing knife-fm-add-missing-dry
+# SDLC / Q12 / STHDF – scaffold cez univerzálny generátor
+S21-sdlc-new: ## SDLC: vytvor novú SDLC inštanciu (SDLC_NAME=..., SDLC_TITLE=...)
+	@if [ -z "$(SDLC_NAME)" ] || [ -z "$(SDLC_TITLE)" ]; then \
+		echo "❌ Usage: make S21-sdlc-new SDLC_NAME=integration SDLC_TITLE='Integration Project' LOCALE=sk"; \
+		exit 1; \
+	fi
+	@mkdir -p "$(SDLC_DIR)"
+	@python3 core/scripts/tools/new_item_instance.py \
+		--type sdlc \
+		--name "$(SDLC_NAME)" \
+		--title "$(SDLC_TITLE)" \
+		--output "$(SDLC_DIR)" \
+		--exists "$(EXISTS)"
+	@echo "✅ SDLC created: $(SDLC_DIR)/sdlc_$(SDLC_NAME)"
 
-knife-fm-add-missing:
-	@python3 tools/knife_frontmatter_add_missing.py
-	@echo "→ Next: make knife-guid-backfill knife-meta-backfill fm-fix knife-verify"
+Q21-q12-new: ## Q12: vytvor novú Q12 inštanciu (Q12_NAME=..., Q12_TITLE=...)
+	@if [ -z "$(Q12_NAME)" ] || [ -z "$(Q12_TITLE)" ]; then \
+		echo "❌ Usage: make Q21-q12-new Q12_NAME=mgmt Q12_TITLE='Q12 Management Layer' LOCALE=sk"; \
+		exit 1; \
+	fi
+	@mkdir -p "$(Q12_DIR)"
+	@python3 core/scripts/tools/new_item_instance.py \
+		--type q12 \
+		--name "$(Q12_NAME)" \
+		--title "$(Q12_TITLE)" \
+		--output "$(Q12_DIR)" \
+		--exists "$(EXISTS)"
+	@echo "✅ Q12 created under: $(Q12_DIR)"
+# ─────────────────────────────────────────────────────────
+# ROADMAP / sthdf
+# ─────────────────────────────────────────────────────────
+S31-sthdf-new: ## STHDF: vytvor novú STHDF inštanciu (STHDF_NAME=..., STHDF_TITLE=...)
+	@if [ -z "$(STHDF_NAME)" ] || [ -z "$(STHDF_TITLE)" ]; then \
+		echo "❌ Usage: make S31-sthdf-new STHDF_NAME=sthdf_2025 STHDF_TITLE='STHDF 2025/2026' LOCALE=sk"; \
+		exit 1; \
+	fi
+	@mkdir -p "$(STHDF_DIR)"
+	@python3 core/scripts/tools/new_item_instance.py \
+		--type sthdf \
+		--name "$(STHDF_NAME)" \
+		--title "$(STHDF_TITLE)" \
+		--output "$(STHDF_DIR)" \
+		--exists "$(EXISTS)"
+	@echo "✅ STHDF created: $(STHDF_DIR)/sthdf_$(STHDF_NAME)"
+# ─────────────────────────────────────────────────────────
+# ROADMAP / TODO – placeholdery (neblokujú CI)
+# ─────────────────────────────────────────────────────────
+.PHONY: S11-sdlc-dry S12-sdlc-apply T11-thesis-dry T12-thesis-apply Q11-q12-dry Q12-q12-apply \
+        I10-i18n-extract I20-i18n-merge \
+        NAV10-rebuild-sidebars NAV20-rewrite-links \
+        ADMIN-ui
 
-knife-fm-add-missing-dry:
-	@python3 tools/knife_frontmatter_add_missing.py --dry
-#
-# -------------------------
-# 🚀 Release – CI-based (GitHub Actions)
-# -------------------------
-.PHONY: release-ci
-release-ci:
-	@echo "🔖 Pripravujem CI release (patch bump + push tag)…"
-	@current=$$(node -p "require('./package.json').version"); \
-	echo "   Aktuálna verzia: $$current"; \
-	npm version patch -m "chore(release): %s"; \
-	git push && git push --tags; \
-	newv=$$(node -p "require('./package.json').version"); \
-	echo "✅ Pushnutý tag v$$newv – CI workflow sa spustí na serveri";
+S11-sdlc-dry: ## 🚧 SDLC scaffold (DRY) – zatiaľ neimplementované
+	@echo "🚧 SDLC scaffold (DRY) – zatiaľ neimplementované"
 
-# Alternatíva: dátumový tag (bez zásahu do package.json)
-.PHONY: release-ci-datetime
-release-ci-datetime:
-	@echo "🔖 Pripravujem CI release (datetime tag)…"
-	@ts=$$(date -u '+%Y%m%d-%H%M'); \
-	TAG="v$$ts"; \
-	echo "   Tag: $$TAG (UTC)"; \
-	git tag -a "$$TAG" -m "release $$ts"; \
-	git push origin "$$TAG"; \
-#	echo "✅ Pushnutý tag $$TAG – CI workflow sa spustí na serveri";
+S12-sdlc-apply: ## 🚧 SDLC scaffold (APPLY) – zatiaľ neimplementované
+	@echo "🚧 SDLC scaffold (APPLY) – zatiaľ neimplementované"
 
-# -------------------------
-# 🏷️ Release helpers – local tag & push
-# -------------------------
+T11-thesis-dry: ## 🚧 Thesis scaffold (DRY) – zatiaľ neimplementované
+	@echo "🚧 Thesis scaffold (DRY) – zatiaľ neimplementované"
 
-.PHONY: check-version commit push tag push-tag release release-auto release-commit
+T12-thesis-apply: ## 🚧 Thesis scaffold (APPLY) – zatiaľ neimplementované
+	@echo "🚧 Thesis scaffold (APPLY) – zatiaľ neimplementované"
 
-check-version: ## Overí formát verzie (musí začínať na 'v')
-	@printf '%s' "$(VERSION)" | grep -Eq '^v[0-9A-Za-z._-]+$$' \
-	|| (echo "❌ VERSION musí začínať na 'v' (napr. v1.0.0 alebo v20250926-0745)" && exit 1)
+I10-i18n-extract: ## 🚧 i18n extract – zatiaľ neimplementované
+	@echo "🚧 i18n extract – zatiaľ neimplementované"
 
-commit: ## Commit všetkých zmien s COMMIT_MSG
-	@test -n "$(COMMIT_MSG)" || (echo "Použi: make commit COMMIT_MSG='Popis'" && exit 1)
-	git add -A
-	git commit -m "$(COMMIT_MSG)"
+I20-i18n-merge: ## 🚧 i18n merge – zatiaľ neimplementované
+	@echo "🚧 i18n merge – zatiaľ neimplementované"
 
-push: ## Push aktuálnej vetvy
-	git push origin $(BRANCH)
+NAV10-rebuild-sidebars: ## 🚧 Rebuild sidebars – zatiaľ neimplementované
+	@echo "🚧 Rebuild sidebars – zatiaľ neimplementované"
 
-tag: check-version ## Vytvorí annotated tag lokálne
-	git tag -a $(VERSION) -m "$(MSG)"
+NAV20-rewrite-links: ## 🚧 Rewrite internal links – zatiaľ neimplementované
+	@echo "🚧 Rewrite internal links – zatiaľ neimplementované"
 
-push-tag: check-version ## Pushne tag na origin
-	git push origin $(VERSION)
+ADMIN-ui: ## 🚧 Webová admin konzola – zatiaľ neimplementované
+	@echo "🚧 Webová admin konzola – zatiaľ neimplementované"
+Q11-q12-dry: ## 🚧 Q12 scaffold (DRY) – zatiaľ neimplementované
+	@echo "🚧 Q12 scaffold (DRY) – zatiaľ neimplementované"
 
-release: check-version ## Tag -> push tag (spustí GH Action Release)
-	@echo "🏷️  Tagging $(VERSION) ..."
-	$(MAKE) tag VERSION=$(VERSION) MSG="$(MSG)"
-	@echo "🚀 Pushing tag $(VERSION) ..."
-	$(MAKE) push-tag VERSION=$(VERSION)
-	@echo "✅ 🚀 Release $(VERSION) hotový."
+Q12-q12-apply: ## 🚧 Q12 scaffold (APPLY) – zatiaľ neimplementované
+	@echo "🚧 Q12 scaffold (APPLY) – zatiaľ neimplementované"
 
-release-auto: ## Auto verzia vYYYYMMDD-HHMMSSZ
-	$(MAKE) release VERSION=$(VERSION) MSG="$(MSG)"
 
-release-commit: check-version ## Commit -> push -> tag -> push tag
-	@test -n "$(MSG)" || (echo "MSG je prázdny. Pridaj MSG='...'" && exit 1)
-	@echo "📝 Commit & push na $(BRANCH) ..."
-	$(MAKE) commit COMMIT_MSG="$(MSG)" || true
-	$(MAKE) push
-	@echo "🏷️  Tagging & push tag ..."
-	$(MAKE) tag VERSION=$(VERSION) MSG="$(MSG)"
-	$(MAKE) push-tag VERSION=$(VERSION)
-	@echo "✅ 🚀 Release $(VERSION) hotový."
-	
+ 

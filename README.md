@@ -1,17 +1,17 @@
 # Repository Title
 
 > Tento repozitár je súčasťou KNIFE/CAS ekosystému.
-- 20250902
-   
+
+
 #Rýchla navigácia
 
 
 
-[01-Zoznam hrubý ](/docs/sk/knifes/KNIFEsOverview.md)
+[01-Zoznam hrubý ](/docs/sk/knifes/overview.md)
 
-[02-Zoznam s detailami- tabuľka ](/docs/sk/knifes/KNIFE_Overview_List.md)
+[02-Zoznam s detailami- tabuľka ](/docs/sk/knifes/knife_overview/KNIFE_Overview_List.md)
 
-[03-Zoznam s detailami -blog](/docs/sk/knifes/KNIFE_Overview_Details.md)
+[03-Zoznam s detailami -blog](/docs/sk/knifes/knife_overview/KNIFE_Overview_Details.md)
 
 
 ## 🧾 Popis

@@ -1,0 +1,27 @@
+<mxfile host="app.diagrams.net">
+  <diagram name="AP Workflow">
+    <mxGraphModel><root>
+      <mxCell id="0"/><mxCell id="1" parent="0"/>
+      <mxCell id="in" value="Input: OBS MP4" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc" vertex="1" parent="1">
+        <mxGeometry x="60" y="40" width="160" height="50" as="geometry"/>
+      </mxCell>
+      <mxCell id="tl" value="Timeline: Split by Beep markers" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc" vertex="1" parent="1">
+        <mxGeometry x="260" y="40" width="220" height="50" as="geometry"/>
+      </mxCell>
+      <mxCell id="cap" value="Captions / Subtitles (SK)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc" vertex="1" parent="1">
+        <mxGeometry x="60" y="120" width="200" height="50" as="geometry"/>
+      </mxCell>
+      <mxCell id="quiz" value="Quiz Slides (Takeaways)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4" vertex="1" parent="1">
+        <mxGeometry x="300" y="120" width="200" height="50" as="geometry"/>
+      </mxCell>
+      <mxCell id="out" value="Export: MP4 / HTML5" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc" vertex="1" parent="1">
+        <mxGeometry x="200" y="200" width="180" height="50" as="geometry"/>
+      </mxCell>
+      <mxCell id="e1" edge="1" parent="1" source="in" target="tl"><mxGeometry relative="1" as="geometry"/></mxCell>
+      <mxCell id="e2" edge="1" parent="1" source="tl" target="cap"><mxGeometry relative="1" as="geometry"/></mxCell>
+      <mxCell id="e3" edge="1" parent="1" source="tl" target="quiz"><mxGeometry relative="1" as="geometry"/></mxCell>
+      <mxCell id="e4" edge="1" parent="1" source="cap" target="out"><mxGeometry relative="1" as="geometry"/></mxCell>
+      <mxCell id="e5" edge="1" parent="1" source="quiz" target="out"><mxGeometry relative="1" as="geometry"/></mxCell>
+    </root></mxGraphModel>
+  </diagram>
+</mxfile>

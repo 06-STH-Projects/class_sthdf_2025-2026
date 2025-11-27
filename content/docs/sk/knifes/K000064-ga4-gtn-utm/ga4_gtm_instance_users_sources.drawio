@@ -1,0 +1,130 @@
+<mxfile host="Electron" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/28.0.6 Chrome/138.0.7204.100 Electron/37.2.3 Safari/537.36" version="28.0.6">
+  <diagram id="page1" name="GA4+GTM – Instance (with Users &amp; Sources)">
+    <mxGraphModel dx="1220" dy="1911" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1920" pageHeight="1080" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="users" value="Users" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#4a5568;" parent="1" vertex="1">
+          <mxGeometry x="460" y="150" width="160" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="devices" value="Devices&#xa;(mobile/desktop/tablet)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#4a5568;" parent="1" vertex="1">
+          <mxGeometry x="390" y="80" width="160" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="location" value="Location" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#4a5568;" parent="1" vertex="1">
+          <mxGeometry x="570" y="80" width="160" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="sources" value="Traffic Sources" style="swimlane;fontStyle=1;startSize=26;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#4a5568;" parent="1" vertex="1">
+          <mxGeometry x="166" y="375" width="320" height="220" as="geometry" />
+        </mxCell>
+        <mxCell id="src_org" value="Organic Search" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#4a5568;" parent="sources" vertex="1">
+          <mxGeometry x="20" y="40" width="280" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="src_paid" value="Paid Ads" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#4a5568;" parent="sources" vertex="1">
+          <mxGeometry x="20" y="90" width="280" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="src_ref" value="Referral / Social" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#4a5568;" parent="sources" vertex="1">
+          <mxGeometry x="20" y="140" width="280" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="webapp" value="Website / App" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#4a5568;" parent="1" vertex="1">
+          <mxGeometry x="410" y="250" width="260" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="gtm" value="Google Tag Manager" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#4a5568;" parent="1" vertex="1">
+          <mxGeometry x="790" y="670" width="400" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="triggers" value="Triggers" style="shape=hexagon;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#4a5568;" parent="1" vertex="1">
+          <mxGeometry x="830" y="790" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="variables" value="Variables" style="shape=hexagon;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#4a5568;" parent="1" vertex="1">
+          <mxGeometry x="970" y="790" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="tags" value="Tags&#xa;(GA4 Config, GA4 Event, Ads, Custom)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#4a5568;" parent="1" vertex="1">
+          <mxGeometry x="850" y="870" width="220" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="ga4" value="Google Analytics 4" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#4a5568;" parent="1" vertex="1">
+          <mxGeometry x="810" y="290" width="420" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="events" value="Events" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#4a5568;" parent="1" vertex="1">
+          <mxGeometry x="810" y="395" width="120" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="params" value="Parameters" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#4a5568;" parent="1" vertex="1">
+          <mxGeometry x="1110" y="395" width="120" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="conversions" value="Conversions" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#4a5568;" parent="1" vertex="1">
+          <mxGeometry x="960" y="450" width="120" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="db" value="Export / DB (BigQuery)" style="shape=cylinder;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#4a5568;" parent="1" vertex="1">
+          <mxGeometry x="910" y="520" width="160" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="reports" value="Reports / Explorations / Looker Studio" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#4a5568;" parent="1" vertex="1">
+          <mxGeometry x="510" y="520" width="300" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="legend" value="Legend" style="swimlane;fontStyle=1;startSize=26;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#4a5568;" parent="1" vertex="1">
+          <mxGeometry x="30" y="730" width="640" height="200" as="geometry" />
+        </mxCell>
+        <mxCell id="leg_web" value="Web/App (Source)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#4a5568;" parent="legend" vertex="1">
+          <mxGeometry x="20" y="40" width="160" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="leg_gtm" value="GTM (Processing)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#4a5568;" parent="legend" vertex="1">
+          <mxGeometry x="200" y="40" width="160" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="leg_ga4" value="GA4 (Analytics)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#4a5568;" parent="legend" vertex="1">
+          <mxGeometry x="380" y="40" width="160" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="leg_db" value="DB/Export" style="shape=cylinder;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#4a5568;" parent="legend" vertex="1">
+          <mxGeometry x="20" y="100" width="160" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="leg_out" value="Reports" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#4a5568;" parent="legend" vertex="1">
+          <mxGeometry x="200" y="100" width="160" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="leg_user" value="Users/Devices/Location" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#4a5568;" parent="legend" vertex="1">
+          <mxGeometry x="380" y="100" width="220" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="e_users_web" style="endArrow=block;rounded=1;strokeColor=#805ad5;" parent="1" source="users" target="webapp" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_src_org_web" style="endArrow=block;rounded=1;strokeColor=#b7791f;" parent="1" source="src_org" target="webapp" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_src_paid_web" style="endArrow=block;rounded=1;strokeColor=#b7791f;" parent="1" source="src_paid" target="webapp" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_src_ref_web" style="endArrow=block;rounded=1;strokeColor=#b7791f;" parent="1" source="src_ref" target="webapp" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_web_gtm" style="endArrow=block;rounded=1;strokeColor=#dd6b20;" parent="1" source="webapp" target="gtm" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_trig_tags" style="endArrow=block;rounded=1;strokeColor=#dd6b20;" parent="1" source="triggers" target="tags" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_vars_tags" style="endArrow=block;rounded=1;strokeColor=#dd6b20;" parent="1" source="variables" target="tags" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_gtm_events" style="endArrow=block;rounded=1;strokeColor=#3182ce;" parent="1" source="tags" target="events" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_gtm_params" style="endArrow=block;rounded=1;strokeColor=#3182ce;" parent="1" source="variables" target="params" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_events_conv" style="endArrow=block;rounded=1;strokeColor=#3182ce;" parent="1" source="events" target="conversions" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_ga4_db" style="endArrow=block;rounded=1;strokeColor=#2d3748;" parent="1" source="events" target="db" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_ga4_reports" style="endArrow=block;rounded=1;strokeColor=#6b46c1;" parent="1" source="events" target="reports" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="USjyQrm6zqU7AhQClO3b-1" value="K000044-Backup OneDrive to External USB disk" style="html=1;whiteSpace=wrap;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry x="261" y="-60" width="398" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="USjyQrm6zqU7AhQClO3b-2" value="&lt;b&gt;Author: &lt;/b&gt;Roman Kazička&lt;div&gt;&lt;b&gt;Created:&lt;/b&gt; 12.08.2025, 20:00&lt;/div&gt;&lt;div&gt;&lt;b&gt;Modified:&lt;/b&gt;&lt;/div&gt;" style="html=1;whiteSpace=wrap;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=9;align=left;verticalAlign=top;" vertex="1" parent="1">
+          <mxGeometry x="80" y="-60" width="150" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="USjyQrm6zqU7AhQClO3b-3" value="&lt;b&gt;Purpose:&lt;/b&gt;&lt;br&gt;Backup data from OneDrive to Local disk seemed to me as easy task. Not at all. Several hours investigation. Finaly helped QNAP HBS2 dedicated application." style="html=1;whiteSpace=wrap;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=9;align=left;verticalAlign=top;" vertex="1" parent="1">
+          <mxGeometry x="80" width="492" height="50" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

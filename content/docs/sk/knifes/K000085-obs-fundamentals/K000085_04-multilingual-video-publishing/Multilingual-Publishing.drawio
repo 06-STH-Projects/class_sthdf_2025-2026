@@ -1,0 +1,26 @@
+<mxfile host="app.diagrams.net">
+  <diagram name="Multilingual Publishing">
+    <mxGraphModel><root>
+      <mxCell id="0"/><mxCell id="1" parent="0"/>
+      <mxCell id="sk" value="SK Video (OBS/AP)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc" vertex="1" parent="1">
+        <mxGeometry x="60" y="40" width="180" height="50" as="geometry"/>
+      </mxCell>
+      <mxCell id="srtSK" value="Subtitles SK (.srt)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc" vertex="1" parent="1">
+        <mxGeometry x="280" y="40" width="160" height="50" as="geometry"/>
+      </mxCell>
+      <mxCell id="srtEN" value="Translate to EN (.srt)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc" vertex="1" parent="1">
+        <mxGeometry x="480" y="40" width="180" height="50" as="geometry"/>
+      </mxCell>
+      <mxCell id="voice" value="EN Voiceover (TTS)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4" vertex="1" parent="1">
+        <mxGeometry x="280" y="120" width="180" height="50" as="geometry"/>
+      </mxCell>
+      <mxCell id="out" value="Publish: YouTube + GitHub" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc" vertex="1" parent="1">
+        <mxGeometry x="320" y="200" width="200" height="50" as="geometry"/>
+      </mxCell>
+      <mxCell id="e1" edge="1" parent="1" source="sk" target="srtSK"><mxGeometry relative="1" as="geometry"/></mxCell>
+      <mxCell id="e2" edge="1" parent="1" source="srtSK" target="srtEN"><mxGeometry relative="1" as="geometry"/></mxCell>
+      <mxCell id="e3" edge="1" parent="1" source="srtEN" target="out"><mxGeometry relative="1" as="geometry"/></mxCell>
+      <mxCell id="e4" edge="1" parent="1" source="voice" target="out"><mxGeometry relative="1" as="geometry"/></mxCell>
+    </root></mxGraphModel>
+  </diagram>
+</mxfile>

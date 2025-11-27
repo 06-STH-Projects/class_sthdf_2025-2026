@@ -1,3 +1,0 @@
-# GA4 Account Setup Checklist
-
-...

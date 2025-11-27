@@ -1,2 +1,0 @@
-[🏠 Home](../../../index.md) · [⬅️ Up](../)
-# ST020 — project-summary

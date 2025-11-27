@@ -1,0 +1,15 @@
+# 🎓 STHDF-SPECIFIC CONFIG
+dao: "class_sthdf_dashboard"
+content_dir: "content/docs/sk/class_sthdf_dashboard"
+template_fm: "core/templates/system/FM-Core.md"
+
+template_header: "core/templates/content/class_sthdf_dashboard/header/class_sthdf_dashboard_user_header.md"
+template_root: "core/templates/content/class_sthdf_dashboard/body"
+
+id_prefix: "class_sthdf_dashboard"
+locale: "sk"
+
+defaults:
+  author: "Roman Kazicka"
+  status: "backlog"
+  privacy: "public"
