@@ -2,17 +2,8 @@
 id: conditions
 title: 🧭 Assignments & Milestones
 description: Rules, grading, deadlines, and submission flow for STHDF 2025–2026.
-sidebar_label: Assignments & Milestones
-sidebar_position: 2
 keywords: [assignments, milestones, grading]
 tags: [rules, assignments]
-knife:
-  type: policy
-  owner_alias: TEACHING_TEAM
-  version: 0.1
-  status: draft
-  related_prj: []
-  kc_refs: []
 ---
 
 [🏠 Domov](../../index.md) · [⬅️ Nahor](../index.md)

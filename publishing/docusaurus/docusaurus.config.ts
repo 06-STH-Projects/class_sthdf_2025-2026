@@ -7,7 +7,7 @@ const {
   BUILD_DATE = '',
   GITHUB_REPO_URL = '',
   SITE_URL = 'https://knife-framework.github.io',
-  BASE_URL = '/knifes_overview/',
+  BASE_URL = '/class_sthdf_2025-2026/',
 } = process.env;
 
 const commitLink =
@@ -37,10 +37,9 @@ const config: Config = {
           editCurrentVersion: false,
           // zobrazíme konkrétny dokument ako homepage, aby sa hneď ukázal sidebar
           //homePageId: 'sk/index',
-          // aktivujeme tag stránky pre dokumentáciu a presunieme ich z default /tags na /doc-tags,
-          // aby nebol konflikt s blogom (ak by sa neskôr zapol)
-          // Aktivujeme tag stránky pre dokumentáciu (presunuté z default /tags na /doc-tags, aby nebol konflikt s blogom)
-          tagsBasePath: 'doc-tags',
+          // Aktivujeme tag stránky pre dokumentáciu a zároveň im dáme jasný prefix,
+          // aby sme predišli kolíziám (duplicitným /doc-tags počas buildu)
+          tagsBasePath: 'docs/tags',
         },
         // Blog nepoužívame – vypneme, aby nevznikal duplicitný /tags
         blog: false,
@@ -86,7 +85,7 @@ const config: Config = {
         { type: 'localeDropdown', position: 'left' },
         { to: '/sk/about', label: 'About', position: 'right' },
         { to: '/sk/help',  label: 'Help',  position: 'right' },
-        { to: '/doc-tags', label: 'Tags', position: 'right' },
+        { to: '/docs/tags', label: 'Tags', position: 'right' },
         {
           href: commitLink || '#',
           label: `Release ${RELEASE_TAG} • ${COMMIT_SHA}`,

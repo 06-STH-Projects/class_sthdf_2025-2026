@@ -2,17 +2,8 @@
 id: showcase
 title: ✨ Showcase — Best of 2025
 description: Curated highlights from student work and projects.
-sidebar_label: Showcase
-sidebar_position: 3
 keywords: [showcase, highlights]
 tags: [showcase]
-knife:
-  type: showcase
-  owner_alias: TEACHING_TEAM
-  version: 0.1
-  status: draft
-  related_prj: []
-  kc_refs: []
 ---
 
 [🏠 Domov](../../index.md) · [⬅️ Nahor](../index.md)

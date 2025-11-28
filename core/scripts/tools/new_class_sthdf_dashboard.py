@@ -34,6 +34,78 @@ from base_fm import (
 )
 
 
+HTML_ONLY_KEYS = {"sidebar_label", "sidebar_position", "slug", "id"}
+
+
+def _split_template_frontmatter(raw_text: str) -> (List[str], str):
+    """
+    Rozdelí text šablóny na (frontmatter_lines, body_text).
+    Ak frontmatter nie je prítomný, vráti ([], raw_text).
+    """
+    lines = raw_text.splitlines()
+    if len(lines) < 3 or lines[0].strip() != "---":
+        return [], raw_text
+
+    end_idx = None
+    for i in range(1, len(lines)):
+        if lines[i].strip() == "---":
+            end_idx = i
+            break
+
+    if end_idx is None:
+        return [], raw_text
+
+    fm_lines = lines[1:end_idx]
+    body_lines = lines[end_idx + 1 :]
+    return fm_lines, "\n".join(body_lines)
+
+
+def _merge_template_fm_into_core(core_fm: List[str], template_fm: List[str]) -> List[str]:
+    """
+    Zoberie FM-Core (core_fm) a doplní/ prepíše kľúče z template_fm.
+    - ignoruje HTML-only kľúče (sidebar_*, slug, id)
+    - ignoruje bloky/klúče "knife"
+    """
+    merged = list(core_fm)
+    skip_block = False
+
+    for line in template_fm:
+        raw = line.rstrip("\n")
+
+        # ukončenie preskakovania knife bloku
+        if skip_block and (not raw.startswith(" ") and not raw.startswith("\t")):
+            skip_block = False
+
+        if skip_block:
+            continue
+
+        if not raw or raw.strip().startswith("#"):
+            continue
+
+        if raw.startswith("knife:"):
+            skip_block = True
+            continue
+
+        # top-level key:value
+        if ":" not in raw:
+            continue
+
+        key, val = raw.split(":", 1)
+        key = key.strip()
+        val = val.strip()
+
+        if key in HTML_ONLY_KEYS:
+            continue
+
+        if val == "" and not raw.startswith(" "):
+            # pravdepodobne začiatok bloku – preskoč (napr. knife:)
+            continue
+
+        _set_or_replace_fm_key(merged, key, val)
+
+    return merged
+
+
 def _safe_name(raw_name: str, fallback: str = "class_sthdf_dashboard_instance") -> str:
     """
     Vytvorí bezpečný názov priečinka zo zadaného mena.
@@ -94,7 +166,10 @@ def _process_markdown_file(
       - podľa potreby vloží header template
       - výsledok uloží do dest_path
     """
-    body = load_text(src_path)
+    raw_text = load_text(src_path)
+
+    # Ak má šablóna vlastný FM, rozdelíme ho a zmergujeme do FM-Core
+    template_fm_lines, body = _split_template_frontmatter(raw_text)
 
     is_root = (rel_path == Path("index.md"))
     effective_explicit_id = explicit_id if is_root else None
@@ -106,6 +181,9 @@ def _process_markdown_file(
         explicit_id=effective_explicit_id,
         cli_title=cli_title,
     )
+
+    if template_fm_lines:
+        fm_lines = _merge_template_fm_into_core(fm_lines, template_fm_lines)
 
     # Upravíme title tak, aby obsahoval ID + title (rovnako ako pri KNIFE)
     # 👉 Platí iba pre root `index.md`. Podstránky si nechávajú vlastný title

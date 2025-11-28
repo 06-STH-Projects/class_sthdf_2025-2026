@@ -1,7 +1,6 @@
 ---
 id: class-sthdf
 title: 🧭 Class STHDF – Overview
-sidebar_position: 0
 ---
 
 [🏠 Domov](../index.md)

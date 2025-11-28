@@ -2,7 +2,6 @@
 id: home-sk
 title: 🏠 Domov (SK)
 description: Vstupná stránka pre slovenskú verziu kurzu STHDF 2025–2026
-sidebar_position: 0
 ---
 
 # Vitaj v STHDF 2025–2026 🎓
