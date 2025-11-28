@@ -12,11 +12,11 @@ Toto je hlavná stránka pre slovenskú časť kurzu **Systémové myslenie v IT
 ---
 
 ## 🔗 Rýchla navigácia
-- 📘 [O predmete](class-sthdf/about/index.md)
-- 🧭 [Zadania & Míľniky](class-sthdf/conditions/index.md)
-- 👩‍🎓 [Študenti](../students/README.md)
-- 🛠️ [Projekty](../projects/README.md)
-- ✨ [Showcase](class-sthdf/showcase/index.md)
+- 📘 [O predmete](./class-sthdf/about/index.md)
+- 🧭 [Zadania & Míľniky](./conditions/index.md)
+- 👩‍🎓 [Študenti](./students/ST_INDEX.md)
+- 🛠️ [Projekty](./projects/PRJ_INDEX.md)
+- ✨ [Showcase](./class-sthdf/showcase/index.md)
 
 ---
 

@@ -6,7 +6,7 @@ const {
   COMMIT_SHA = 'local',
   BUILD_DATE = '',
   GITHUB_REPO_URL = '',
-  SITE_URL = 'https://knife-framework.github.io',
+  SITE_URL = 'https://sthdf-2025.systemthinking.sk',
   BASE_URL = '/class_sthdf_2025-2026/',
 } = process.env;
 
@@ -14,7 +14,7 @@ const commitLink =
   GITHUB_REPO_URL && COMMIT_SHA ? `${GITHUB_REPO_URL}/commit/${COMMIT_SHA}` : '';
 
 const config: Config = {
-  title: 'KNIFE Overview',
+  title: 'KNIFE - Class STHDF 2025-2026- Dashboard',
   url: SITE_URL,
   baseUrl: BASE_URL,
   deploymentBranch: 'gh-pages',
@@ -73,7 +73,7 @@ const config: Config = {
       },
     },
     navbar: {
-      title: 'KNIFE Overview',
+      title: 'KNIFE - Class STHDF 2025-2026- Dashboard',
       logo: {
         alt: 'KNIFE',
         src: 'img/logo.png',

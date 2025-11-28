@@ -1,4 +1,4 @@
-[🏠 Domov](../../index.md) · [⬅️ Nahor](../)
+[🏠 Domov](../../index.md) · [⬅️ Nahor](../ST_INDEX.md)
 # ST037
 - [About Me](./about-me/index.md)
 - [Knowledge Contribution](./knowledge-contribution/index.md)

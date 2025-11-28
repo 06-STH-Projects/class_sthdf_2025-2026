@@ -1,2 +1,2 @@
-[🏠 Domov](../../index.md) · [⬅️ Nahor](../)
+[🏠 Domov](../../index.md) · [⬅️ Nahor](../PRJ_INDEX.md)
 # PRJ002 — Overview
