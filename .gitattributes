@@ -40,7 +40,7 @@ sidebars.*          text eol=lf
 tsconfig.*          text eol=lf
 
 # —— Špeciálne
-*.svg       text eol=lf    
+*.svg       -text
 *.htaccess  text eol=lf
 # Ak potrebuješ Windows .bat skripty, nechaj CRLF:
 *.bat       text eol=crlf

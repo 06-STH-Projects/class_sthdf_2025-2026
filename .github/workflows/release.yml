@@ -19,6 +19,12 @@ jobs:
         with:
           fetch-depth: 0
 
+      - name: Sync docs content
+        run: |
+          rm -rf publishing/docusaurus/docs
+          mkdir -p publishing/docusaurus/docs
+          rsync -a content/docs/ publishing/docusaurus/docs/
+
       - name: Ensure CNAME in static
         run: |
           mkdir -p publishing/docusaurus/static

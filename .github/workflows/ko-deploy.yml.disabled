@@ -1,0 +1,18 @@
+# Workflow disabled: deployment prebieha cez make (worktree gh-pages-docusaurus)
+# Pôvodný obsah ponechaný pre referenciu, GitHub Actions ho nespustí.
+
+name: Deploy Docusaurus to GitHub Pages (DISABLED)
+
+on:
+  workflow_dispatch:
+    inputs:
+      info:
+        description: "Tento workflow je vypnutý; nasadzujte cez make deploy / worktree."
+        required: false
+        default: ""
+
+jobs:
+  noop:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "Workflow disabled; use make deploy (worktree gh-pages-docusaurus/docs)."
