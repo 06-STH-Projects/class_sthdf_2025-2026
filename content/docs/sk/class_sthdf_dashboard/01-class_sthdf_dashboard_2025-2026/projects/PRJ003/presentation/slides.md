@@ -135,3 +135,42 @@ fm_reserved2: ""
 
 [🏠 Domov](../../../index.md) · [⬅️ Nahor](../)
 # PRJ003 — Presentation
+
+--- Headline ---
+## Headline
+**2025-PRJ-003-ST_003-ST_003-Nazov projektu**
+
+> Uvodny obrazok: TODO (dopln odkaz alebo subor).
+
+Strucny text o projekte (1-3 vety, doplni tim).
+--- Headline ---
+
+--- introduction ---
+## Introduction
+**2025-PRJ-003-ST_003-ST_003-Nazov projektu**
+
+Strucny text o projekte (zhrnutie zadania + prinos).
+--- introduction ---
+
+--- obsah ---
+## Obsah
+- [01-Business](../sdlc/01-business/index.md)
+- [02-Top Level Architecture](../sdlc/02-top-level-architecture/index.md)
+- [03-Solution Architecture](../sdlc/03-solution-architecture/index.md)
+- [04-Analysis](../sdlc/04-analysis/index.md)
+- [05-Design](../sdlc/05-design/index.md)
+- [06-Implementation](../sdlc/06-implementation/index.md)
+- [07-Testing & Verification](../sdlc/07-testing-verification/index.md)
+- [08-Operation](../sdlc/08-operation/index.md)
+- [09-Change Management](../sdlc/09-Change-Management/index.md)
+--- obsah ---
+
+## 01-Business
+## 02-Top Level Architecture
+## 03-Solution Architecture
+## 04-Analysis
+## 05-Design
+## 06-Implementation
+## 07-Testing & Verification
+## 08-Operation
+## 09-Change Management

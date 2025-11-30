@@ -35,8 +35,6 @@ const config: Config = {
           sidebarPath: require.resolve('./sidebars.ts'),
           includeCurrentVersion: true,
           editCurrentVersion: false,
-          // zobrazíme konkrétny dokument ako homepage, aby sa hneď ukázal sidebar
-          //homePageId: 'sk/index',
           // Aktivujeme tag stránky pre dokumentáciu a zároveň im dáme jasný prefix,
           // aby sme predišli kolíziám (duplicitným /doc-tags počas buildu)
           tagsBasePath: 'docs/tags',

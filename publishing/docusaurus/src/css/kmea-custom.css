@@ -17,13 +17,6 @@
   --docusaurus-highlighted-code-line-bg: rgba(92, 64, 51, 0.1);
   --link-underline-offset: 2px;
   --link-underline-thickness: 2px;
-  /* Širší obsah (centrálna kolóna) */
-  --ifm-container-width: 1600px;
-  --ifm-container-width-xl: 1800px;
-  /* Sidebar šírka (desktop + mobile) */
-  --doc-sidebar-width: 540px !important;
-  --doc-sidebar-width-mobile: 280px;
-  --doc-toc-width: 200px;
 }
 
 /* For readability concerns, you should choose a lighter palette in dark mode. */
@@ -131,83 +124,53 @@
 html[data-theme='dark'] {
   --ifm-background-color: #ffa20044 !important;
 }
+/* Širší sidebar len pre desktop (šírka okna ≥ 997px) */
+@media (min-width: 997px) {
+  :root {
+    /* Default sidebar šírka je cca 300px; tu ju zväčšíme na 320px–420px podľa potreby */
+    --doc-sidebar-width: 360px;
+  }
 
-/* Wider docs layout: sidebar + content */
-.theme-doc-sidebar-container {
-  width: var(--doc-sidebar-width);
-  min-width: var(--doc-sidebar-width);
+  /* Voliteľné: maximálna šírka hlavného obsahu, aby to nebolo „od kraja po kraj“ */
+  .docMainContainer {
+    max-width: 1000px;
+    margin: 0 auto;
+  }
 }
 
-.theme-doc-sidebar-menu {
+/* Responsive embeds for KNIFE iframes */
+.knife-embed {
+  position: relative;
   width: 100%;
+  max-width: 1280px;
+  margin: 0 auto 2rem;
+  aspect-ratio: 16 / 9;
 }
-
-.docMainContainer {
-  column-gap: 24px;
-}
-
-.docMainContainer .docItemCol {
-  max-width: none;
-  flex: 1 1 auto;
-}
-
-.theme-doc-main {
-  max-width: none;
-}
-
-.theme-doc-toc-desktop {
-  width: var(--doc-toc-width);
-  min-width: var(--doc-toc-width);
-  flex: 0 0 var(--doc-toc-width);
-  display: block !important;
-  margin-left: 24px;
+.knife-embed iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
 }
 
 @media (max-width: 996px) {
-  .theme-doc-sidebar-container {
-    width: var(--doc-sidebar-width-mobile);
-    min-width: var(--doc-sidebar-width-mobile);
-  }
-  .theme-doc-toc-desktop {
-    display: none;
+  .knife-embed {
+    max-width: 100%;
+    margin: 0 auto 1.5rem;
   }
 }
 
-/* Explicit desktop override to prebit built-in module widths */
+/* Explicitne nastav šírku sidebaru pre desktop na theme-doc-sidebar-container */
 @media (min-width: 997px) {
   .theme-doc-sidebar-container {
+    /* použijeme rovnakú šírku ako v premennej, ale natvrdo a s !important,
+       aby sme prebijali modulové štýly témy */
     --doc-sidebar-width: 520px;
+
     width: var(--doc-sidebar-width) !important;
     min-width: var(--doc-sidebar-width) !important;
     max-width: var(--doc-sidebar-width) !important;
     flex: 0 0 var(--doc-sidebar-width) !important;
   }
-
-  /* Nechaj obsah využiť dostupnú šírku */
-  .docMainContainer {
-    max-width: 100%;
-  }
-}
-
-/* Debug vizualizácia hierarchie (sidebar / obsah / TOC).
-   Ak prekáža, zmaž alebo zakomentuj túto sekciu. */
-.theme-doc-main {
-  outline: 2px dashed #9b59b6;
-  outline-offset: 4px;
-}
-.theme-doc-sidebar-container {
-  outline: 2px dashed #3498db;
-  outline-offset: 4px;
-}
-.docMainContainer {
-  outline: 2px dashed #2ecc71;
-  outline-offset: 4px;
-}
-.docItemCol {
-  outline: 2px dashed #e67e22;
-  outline-offset: 4px;
-}
-.theme-doc-toc-desktop {
-  outline: 2px dashed #e74c3c;
-  outline-offset: 4px;
 }

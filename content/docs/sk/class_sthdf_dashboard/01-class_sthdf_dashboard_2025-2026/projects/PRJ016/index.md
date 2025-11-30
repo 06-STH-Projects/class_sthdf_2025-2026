@@ -135,3 +135,7 @@ fm_reserved2: ""
 
 [🏠 Domov](../../index.md) · [⬅️ Nahor](../PRJ_INDEX.md)
 # PRJ016 — Overview
+
+## Navigácia
+- [Presentation / Slides](./presentation/slides.md) — záverečný dokument pre rýchlu prezentáciu.
+- [SDLC](./sdlc/index.md) — podklady a detailný obsah.

@@ -133,6 +133,8 @@ fm_reserved2: ""
 
 <!-- class_sthdf_dashboard_INSTANCE_ID: 01-class_sthdf_dashboard_2025-2026 -->
 
+# Prehľad semestrálnych projektov s školsom roku 2025-2026
+
 - [PRJ001](./PRJ001/index.md)
 - [PRJ002](./PRJ002/index.md)
 - [PRJ003](./PRJ003/index.md)
@@ -163,3 +165,273 @@ fm_reserved2: ""
 - [PRJ028](./PRJ028/index.md)
 - [PRJ029](./PRJ029/index.md)
 - [PRJ030](./PRJ030/index.md)
+
+--- introduction ---
+## PRJ001 — Introduction
+**2025-PRJ-001-ST_001-ST_001-Nazov projektu**
+
+Strucny text o projekte (zhrnutie zadania + prinos).
+
+[Prezentacia](./PRJ001/presentation/slides.md)
+--- introduction ---
+
+--- introduction ---
+## PRJ002 — Introduction
+**2025-PRJ-002-ST_002-ST_002-Nazov projektu**
+
+Strucny text o projekte (zhrnutie zadania + prinos).
+
+[Prezentacia](./PRJ002/presentation/slides.md)
+--- introduction ---
+
+--- introduction ---
+## PRJ003 — Introduction
+**2025-PRJ-003-ST_003-ST_003-Nazov projektu**
+
+Strucny text o projekte (zhrnutie zadania + prinos).
+
+[Prezentacia](./PRJ003/presentation/slides.md)
+--- introduction ---
+
+--- introduction ---
+## PRJ004 — Introduction
+**2025-PRJ-004-ST_004-ST_004-Nazov projektu**
+
+Strucny text o projekte (zhrnutie zadania + prinos).
+
+[Prezentacia](./PRJ004/presentation/slides.md)
+--- introduction ---
+
+--- introduction ---
+## PRJ005 — Introduction
+**2025-PRJ-005-ST_005-ST_005-Nazov projektu**
+
+Strucny text o projekte (zhrnutie zadania + prinos).
+
+[Prezentacia](./PRJ005/presentation/slides.md)
+--- introduction ---
+
+--- introduction ---
+## PRJ006 — Introduction
+**2025-PRJ-006-ST_006-ST_006-Nazov projektu**
+
+Strucny text o projekte (zhrnutie zadania + prinos).
+
+[Prezentacia](./PRJ006/presentation/slides.md)
+--- introduction ---
+
+--- introduction ---
+## PRJ007 — Introduction
+**2025-PRJ-007-ST_007-ST_007-Nazov projektu**
+
+Strucny text o projekte (zhrnutie zadania + prinos).
+
+[Prezentacia](./PRJ007/presentation/slides.md)
+--- introduction ---
+
+--- introduction ---
+## PRJ008 — Introduction
+**2025-PRJ-008-ST_008-ST_008-Nazov projektu**
+
+Strucny text o projekte (zhrnutie zadania + prinos).
+
+[Prezentacia](./PRJ008/presentation/slides.md)
+--- introduction ---
+
+--- introduction ---
+## PRJ009 — Introduction
+**2025-PRJ-009-ST_009-ST_009-Nazov projektu**
+
+Strucny text o projekte (zhrnutie zadania + prinos).
+
+[Prezentacia](./PRJ009/presentation/slides.md)
+--- introduction ---
+
+--- introduction ---
+## PRJ010 — Introduction
+**2025-PRJ-010-ST_010-ST_010-Nazov projektu**
+
+Strucny text o projekte (zhrnutie zadania + prinos).
+
+[Prezentacia](./PRJ010/presentation/slides.md)
+--- introduction ---
+
+--- introduction ---
+## PRJ011 — Introduction
+**2025-PRJ-011-ST_011-ST_011-Nazov projektu**
+
+Strucny text o projekte (zhrnutie zadania + prinos).
+
+[Prezentacia](./PRJ011/presentation/slides.md)
+--- introduction ---
+
+--- introduction ---
+## PRJ012 — Introduction
+**2025-PRJ-012-ST_012-ST_012-Nazov projektu**
+
+Strucny text o projekte (zhrnutie zadania + prinos).
+
+[Prezentacia](./PRJ012/presentation/slides.md)
+--- introduction ---
+
+--- introduction ---
+## PRJ013 — Introduction
+**2025-PRJ-013-ST_013-ST_013-Nazov projektu**
+
+Strucny text o projekte (zhrnutie zadania + prinos).
+
+[Prezentacia](./PRJ013/presentation/slides.md)
+--- introduction ---
+
+--- introduction ---
+## PRJ014 — Introduction
+**2025-PRJ-014-ST_014-ST_014-Nazov projektu**
+
+Strucny text o projekte (zhrnutie zadania + prinos).
+
+[Prezentacia](./PRJ014/presentation/slides.md)
+--- introduction ---
+
+--- introduction ---
+## PRJ015 — Introduction
+**2025-PRJ-015-ST_015-ST_015-Nazov projektu**
+
+Strucny text o projekte (zhrnutie zadania + prinos).
+
+[Prezentacia](./PRJ015/presentation/slides.md)
+--- introduction ---
+
+--- introduction ---
+## PRJ016 — Introduction
+**2025-PRJ-016-ST_016-ST_016-Nazov projektu**
+
+Strucny text o projekte (zhrnutie zadania + prinos).
+
+[Prezentacia](./PRJ016/presentation/slides.md)
+--- introduction ---
+
+--- introduction ---
+## PRJ017 — Introduction
+**2025-PRJ-017-ST_017-ST_017-Nazov projektu**
+
+Strucny text o projekte (zhrnutie zadania + prinos).
+
+[Prezentacia](./PRJ017/presentation/slides.md)
+--- introduction ---
+
+--- introduction ---
+## PRJ018 — Introduction
+**2025-PRJ-018-ST_018-ST_018-Nazov projektu**
+
+Strucny text o projekte (zhrnutie zadania + prinos).
+
+[Prezentacia](./PRJ018/presentation/slides.md)
+--- introduction ---
+
+--- introduction ---
+## PRJ019 — Introduction
+**2025-PRJ-019-ST_019-ST_019-Nazov projektu**
+
+Strucny text o projekte (zhrnutie zadania + prinos).
+
+[Prezentacia](./PRJ019/presentation/slides.md)
+--- introduction ---
+
+--- introduction ---
+## PRJ020 — Introduction
+**2025-PRJ-020-ST_020-ST_020-Nazov projektu**
+
+Strucny text o projekte (zhrnutie zadania + prinos).
+
+[Prezentacia](./PRJ020/presentation/slides.md)
+--- introduction ---
+
+--- introduction ---
+## PRJ021 — Introduction
+**2025-PRJ-021-ST_021-ST_021-Nazov projektu**
+
+Strucny text o projekte (zhrnutie zadania + prinos).
+
+[Prezentacia](./PRJ021/presentation/slides.md)
+--- introduction ---
+
+--- introduction ---
+## PRJ022 — Introduction
+**2025-PRJ-022-ST_022-ST_022-Nazov projektu**
+
+Strucny text o projekte (zhrnutie zadania + prinos).
+
+[Prezentacia](./PRJ022/presentation/slides.md)
+--- introduction ---
+
+--- introduction ---
+## PRJ023 — Introduction
+**2025-PRJ-023-ST_023-ST_023-Nazov projektu**
+
+Strucny text o projekte (zhrnutie zadania + prinos).
+
+[Prezentacia](./PRJ023/presentation/slides.md)
+--- introduction ---
+
+--- introduction ---
+## PRJ024 — Introduction
+**2025-PRJ-024-ST_024-ST_024-Nazov projektu**
+
+Strucny text o projekte (zhrnutie zadania + prinos).
+
+[Prezentacia](./PRJ024/presentation/slides.md)
+--- introduction ---
+
+--- introduction ---
+## PRJ025 — Introduction
+**2025-PRJ-025-ST_025-ST_025-Nazov projektu**
+
+Strucny text o projekte (zhrnutie zadania + prinos).
+
+[Prezentacia](./PRJ025/presentation/slides.md)
+--- introduction ---
+
+--- introduction ---
+## PRJ026 — Introduction
+**2025-PRJ-026-ST_026-ST_026-Nazov projektu**
+
+Strucny text o projekte (zhrnutie zadania + prinos).
+
+[Prezentacia](./PRJ026/presentation/slides.md)
+--- introduction ---
+
+--- introduction ---
+## PRJ027 — Introduction
+**2025-PRJ-027-ST_027-ST_027-Nazov projektu**
+
+Strucny text o projekte (zhrnutie zadania + prinos).
+
+[Prezentacia](./PRJ027/presentation/slides.md)
+--- introduction ---
+
+--- introduction ---
+## PRJ028 — Introduction
+**2025-PRJ-028-ST_028-ST_028-Nazov projektu**
+
+Strucny text o projekte (zhrnutie zadania + prinos).
+
+[Prezentacia](./PRJ028/presentation/slides.md)
+--- introduction ---
+
+--- introduction ---
+## PRJ029 — Introduction
+**2025-PRJ-029-ST_029-ST_029-Nazov projektu**
+
+Strucny text o projekte (zhrnutie zadania + prinos).
+
+[Prezentacia](./PRJ029/presentation/slides.md)
+--- introduction ---
+
+--- introduction ---
+## PRJ030 — Introduction
+**2025-PRJ-030-ST_030-ST_030-Nazov projektu**
+
+Strucny text o projekte (zhrnutie zadania + prinos).
+
+[Prezentacia](./PRJ030/presentation/slides.md)
+--- introduction ---
