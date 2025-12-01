@@ -1,7 +1,7 @@
 "use strict";
-(globalThis["webpackChunkknife_preview"] = globalThis["webpackChunkknife_preview"] || []).push([[45742],{
+(globalThis["webpackChunkknife_preview"] = globalThis["webpackChunkknife_preview"] || []).push([[41084],{
 
-/***/ 12939:
+/***/ 13553:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 // ESM COMPAT FLAG
@@ -13,58 +13,57 @@ __webpack_require__.d(__webpack_exports__, {
   contentTitle: () => (/* binding */ contentTitle),
   "default": () => (/* binding */ MDXContent),
   frontMatter: () => (/* binding */ frontMatter),
-  metadata: () => (/* reexport */ site_docs_index_md_c37_namespaceObject),
+  metadata: () => (/* reexport */ site_docs_sk_class_sthdf_dashboard_01_class_sthdf_dashboard_2025_2026_class_sthdf_index_md_baf_namespaceObject),
   toc: () => (/* binding */ toc)
 });
 
-;// ./.docusaurus/docusaurus-plugin-content-docs/default/site-docs-index-md-c37.json
-const site_docs_index_md_c37_namespaceObject = /*#__PURE__*/JSON.parse('{"id":"KNIFE_HOME","title":"KNIFE – Hub","description":"Vstupná stránka: preklik na SK a EN dokumentáciu.","source":"@site/docs/index.md","sourceDirName":".","slug":"/","permalink":"/","draft":false,"unlisted":false,"tags":[],"version":"current","sidebarPosition":1,"frontMatter":{"fm_version":"1.0.1","fm_build":"2025-10-28T00:00:00Z","fm_version_comment":"Stabilné ID/slug pre navigáciu (hub + SK + EN)","id":"KNIFE_HOME","guid":"4e609387-282e-5744-97f0-e5bb625100ad","dao":"knife","title":"KNIFE – Hub","description":"Vstupná stránka: preklik na SK a EN dokumentáciu.","author":"Roman Kazička","authors":["Roman Kazička"],"category":"","type":"","priority":"no","tags":[],"locale":"sk","created":"2025-10-28","modified":"YYYY-MM-DDTHH:MM:SSZ","status":"draft","privacy":"public","rights_holder_content":"Roman Kazička","rights_holder_system":"Roman Kazička (CAA/KNIFE/LetItGrow)","license":"CC-BY-NC-SA-4.0","disclaimer":"Use at your own risk. Methods provided as-is; participation is voluntary and context-aware.","copyright":"© 2025 Roman Kazička / SystemThinking","origin_repo":"","origin_repo_url":"","origin_commit":"","origin_system":"","author_id":"","author_did":"","fm_reserved1":"","fm_reserved2":"","slug":"/","sidebar_position":1}}');
+;// ./.docusaurus/docusaurus-plugin-content-docs/default/site-docs-sk-class-sthdf-dashboard-01-class-sthdf-dashboard-2025-2026-class-sthdf-index-md-baf.json
+const site_docs_sk_class_sthdf_dashboard_01_class_sthdf_dashboard_2025_2026_class_sthdf_index_md_baf_namespaceObject = /*#__PURE__*/JSON.parse('{"id":"sk/class_sthdf_dashboard/class_sthdf_dashboard_2025-2026/class-sthdf/index","title":"🧭 Class STHDF – Overview","description":"{{DESCRIPTION}}","source":"@site/docs/sk/class_sthdf_dashboard/01-class_sthdf_dashboard_2025-2026/class-sthdf/index.md","sourceDirName":"sk/class_sthdf_dashboard/01-class_sthdf_dashboard_2025-2026/class-sthdf","slug":"/sk/class_sthdf_dashboard/class_sthdf_dashboard_2025-2026/class-sthdf/","permalink":"/sk/class_sthdf_dashboard/class_sthdf_dashboard_2025-2026/class-sthdf/","draft":false,"unlisted":false,"tags":[],"version":"current","frontMatter":{"fm_version":"1.0.1","fm_build":"2025-11-28T15:54:47.766152+00:00","fm_version_comment":"","guid":"6abf9b8d-7489-4f3b-a2ba-5a1665b67957","dao":"class_sthdf_dashboard","title":"🧭 Class STHDF – Overview","description":"{{DESCRIPTION}}","author":"Roman Kazicka","authors":["Roman Kazicka"],"category":"","type":"","priority":"","tags":[],"locale":"sk","created":"2025-11-28 16:54","modified":"2025-11-28 16:54","status":"backlog","privacy":"public","rights_holder_content":"Roman Kazicka","rights_holder_system":"CAA / KNIFE / LetItGrow","license":"CC-BY-NC-SA-4.0","disclaimer":"Use at your own risk. Methods provided as-is; participation is voluntary and context-aware.","copyright":"© 2025 Roman Kazicka","origin_repo":"","origin_repo_url":"","origin_commit":"","origin_branch":"","origin_system":"CAA","origin_author":"Roman Kazicka","origin_imported_from":"","origin_import_date":"","fm_reserved1":"","fm_reserved2":""},"sidebar":"tutorialSidebar","previous":{"title":"01-class_sthdf_dashboard_2025-2026 – 01-class_sthdf_dashboard – rok 2025-2026","permalink":"/sk/class_sthdf_dashboard/class_sthdf_dashboard_2025-2026/"},"next":{"title":"📘 About the Course","permalink":"/"}}');
 // EXTERNAL MODULE: ./node_modules/react/jsx-runtime.js
 var jsx_runtime = __webpack_require__(74848);
 // EXTERNAL MODULE: ./node_modules/@mdx-js/react/lib/index.js
 var lib = __webpack_require__(28453);
-;// ./docs/index.md
+;// ./docs/sk/class_sthdf_dashboard/01-class_sthdf_dashboard_2025-2026/class-sthdf/index.md
 
 
 const frontMatter = {
 	fm_version: '1.0.1',
-	fm_build: '2025-10-28T00:00:00Z',
-	fm_version_comment: 'Stabilné ID/slug pre navigáciu (hub + SK + EN)',
-	id: 'KNIFE_HOME',
-	guid: '4e609387-282e-5744-97f0-e5bb625100ad',
-	dao: 'knife',
-	title: 'KNIFE – Hub',
-	description: 'Vstupná stránka: preklik na SK a EN dokumentáciu.',
-	author: 'Roman Kazička',
+	fm_build: '2025-11-28T15:54:47.766152+00:00',
+	fm_version_comment: '',
+	guid: '6abf9b8d-7489-4f3b-a2ba-5a1665b67957',
+	dao: 'class_sthdf_dashboard',
+	title: '🧭 Class STHDF – Overview',
+	description: '{{DESCRIPTION}}',
+	author: 'Roman Kazicka',
 	authors: [
-		'Roman Kazička'
+		'Roman Kazicka'
 	],
 	category: '',
 	type: '',
-	priority: 'no',
+	priority: '',
 	tags: [],
 	locale: 'sk',
-	created: '2025-10-28',
-	modified: 'YYYY-MM-DDTHH:MM:SSZ',
-	status: 'draft',
+	created: '2025-11-28 16:54',
+	modified: '2025-11-28 16:54',
+	status: 'backlog',
 	privacy: 'public',
-	rights_holder_content: 'Roman Kazička',
-	rights_holder_system: 'Roman Kazička (CAA/KNIFE/LetItGrow)',
+	rights_holder_content: 'Roman Kazicka',
+	rights_holder_system: 'CAA / KNIFE / LetItGrow',
 	license: 'CC-BY-NC-SA-4.0',
 	disclaimer: 'Use at your own risk. Methods provided as-is; participation is voluntary and context-aware.',
-	copyright: '© 2025 Roman Kazička / SystemThinking',
+	copyright: '© 2025 Roman Kazicka',
 	origin_repo: '',
 	origin_repo_url: '',
 	origin_commit: '',
-	origin_system: '',
-	author_id: '',
-	author_did: '',
+	origin_branch: '',
+	origin_system: 'CAA',
+	origin_author: 'Roman Kazicka',
+	origin_imported_from: '',
+	origin_import_date: '',
 	fm_reserved1: '',
-	fm_reserved2: '',
-	slug: '/',
-	sidebar_position: '1'
+	fm_reserved2: ''
 };
-const contentTitle = 'KNIFE – Hub';
+const contentTitle = 'Class STHDF — Overview';
 
 const assets = {
 
@@ -80,34 +79,39 @@ function _createMdxContent(props) {
     header: "header",
     li: "li",
     p: "p",
-    strong: "strong",
     ul: "ul",
     ...(0,lib/* useMDXComponents */.R)(),
     ...props.components
   };
   return (0,jsx_runtime.jsxs)(jsx_runtime.Fragment, {
-    children: [(0,jsx_runtime.jsx)(_components.header, {
+    children: [(0,jsx_runtime.jsx)(_components.p, {
+      children: (0,jsx_runtime.jsx)(_components.a, {
+        href: "/sk/class_sthdf_dashboard/class_sthdf_dashboard_2025-2026/",
+        children: "🏠 Domov"
+      })
+    }), "\n", (0,jsx_runtime.jsx)(_components.header, {
       children: (0,jsx_runtime.jsx)(_components.h1, {
-        id: "knife--hub",
-        children: "KNIFE – Hub"
+        id: "class-sthdf--overview",
+        children: "Class STHDF — Overview"
       })
     }), "\n", (0,jsx_runtime.jsx)(_components.p, {
-      children: "Vitaj v KNIFE dokumentácii. Vyber si jazyk:"
+      children: "Rýchly rozcestník pre interné stránky kurzu."
     }), "\n", (0,jsx_runtime.jsxs)(_components.ul, {
-      children: ["\n", (0,jsx_runtime.jsxs)(_components.li, {
-        children: ["🇸🇰 ", (0,jsx_runtime.jsx)(_components.strong, {
-          children: "Slovensky"
-        }), " → ", (0,jsx_runtime.jsx)(_components.a, {
-          href: "/sk/",
-          children: "/sk/"
-        })]
-      }), "\n", (0,jsx_runtime.jsxs)(_components.li, {
-        children: ["🇬🇧 ", (0,jsx_runtime.jsx)(_components.strong, {
-          children: "English"
-        }), " → ", (0,jsx_runtime.jsx)(_components.a, {
-          href: "/en/",
-          children: "/en/"
-        })]
+      children: ["\n", (0,jsx_runtime.jsx)(_components.li, {
+        children: (0,jsx_runtime.jsx)(_components.a, {
+          href: "/",
+          children: "About the Course"
+        })
+      }), "\n", (0,jsx_runtime.jsx)(_components.li, {
+        children: (0,jsx_runtime.jsx)(_components.a, {
+          href: "/sk/class_sthdf_dashboard/class_sthdf_dashboard_2025-2026/conditions/",
+          children: "Assignments & Milestones"
+        })
+      }), "\n", (0,jsx_runtime.jsx)(_components.li, {
+        children: (0,jsx_runtime.jsx)(_components.a, {
+          href: "/sk/class_sthdf_dashboard/class_sthdf_dashboard_2025-2026/class-sthdf/showcase/",
+          children: "Showcase"
+        })
       }), "\n"]
     })]
   });

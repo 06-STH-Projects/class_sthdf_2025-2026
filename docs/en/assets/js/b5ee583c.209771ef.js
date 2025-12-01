@@ -113,7 +113,7 @@ __webpack_require__.d(__webpack_exports__, {
 });
 
 ;// ./.docusaurus/docusaurus-plugin-content-docs/default/site-docs-sk-class-sthdf-dashboard-01-class-sthdf-dashboard-2025-2026-index-md-b5e.json
-const site_docs_sk_class_sthdf_dashboard_01_class_sthdf_dashboard_2025_2026_index_md_b5e_namespaceObject = /*#__PURE__*/JSON.parse('{"id":"sk/class_sthdf_dashboard/class_sthdf_dashboard_2025-2026/01-class_sthdf_dashboard_2025-2026","title":"01-class_sthdf_dashboard_2025-2026 – 01-class_sthdf_dashboard – rok 2025-2026","description":"Vstupná stránka pre slovenskú verziu kurzu STHDF 2025–2026","source":"@site/docs/sk/class_sthdf_dashboard/01-class_sthdf_dashboard_2025-2026/index.md","sourceDirName":"sk/class_sthdf_dashboard/01-class_sthdf_dashboard_2025-2026","slug":"/sk/class_sthdf_dashboard/class_sthdf_dashboard_2025-2026/","permalink":"/sk/class_sthdf_dashboard/class_sthdf_dashboard_2025-2026/","draft":false,"unlisted":false,"tags":[],"version":"current","frontMatter":{"fm_version":"1.0.1","fm_build":"2025-11-28T15:54:47.759439+00:00","fm_version_comment":"","id":"01-class_sthdf_dashboard_2025-2026","guid":"4c6529b7-20f6-4b8f-a971-f7eef1ce030c","dao":"class_sthdf_dashboard","title":"01-class_sthdf_dashboard_2025-2026 – 01-class_sthdf_dashboard – rok 2025-2026","description":"Vstupná stránka pre slovenskú verziu kurzu STHDF 2025–2026","author":"Roman Kazicka","authors":["Roman Kazicka"],"category":"","type":"","priority":"","tags":[],"locale":"sk","created":"2025-11-28 16:54","modified":"2025-11-28 16:54","status":"backlog","privacy":"public","rights_holder_content":"Roman Kazicka","rights_holder_system":"CAA / KNIFE / LetItGrow","license":"CC-BY-NC-SA-4.0","disclaimer":"Use at your own risk. Methods provided as-is; participation is voluntary and context-aware.","copyright":"© 2025 Roman Kazicka","origin_repo":"","origin_repo_url":"","origin_commit":"","origin_branch":"","origin_system":"CAA","origin_author":"Roman Kazicka","origin_imported_from":"","origin_import_date":"","fm_reserved1":"","fm_reserved2":""},"sidebar":"tutorialSidebar","previous":{"title":"Q12 (SK)","permalink":"/sk/q12/"},"next":{"title":"🧭 Class STHDF – Overview","permalink":"/sk/class_sthdf_dashboard/class_sthdf_dashboard_2025-2026/class-sthdf/"}}');
+const site_docs_sk_class_sthdf_dashboard_01_class_sthdf_dashboard_2025_2026_index_md_b5e_namespaceObject = /*#__PURE__*/JSON.parse('{"id":"sk/class_sthdf_dashboard/class_sthdf_dashboard_2025-2026/01-class_sthdf_dashboard_2025-2026","title":"01-class_sthdf_dashboard_2025-2026 – 01-class_sthdf_dashboard – rok 2025-2026","description":"Vstupná stránka pre slovenskú verziu kurzu STHDF 2025–2026","source":"@site/docs/sk/class_sthdf_dashboard/01-class_sthdf_dashboard_2025-2026/index.md","sourceDirName":"sk/class_sthdf_dashboard/01-class_sthdf_dashboard_2025-2026","slug":"/sk/class_sthdf_dashboard/class_sthdf_dashboard_2025-2026/","permalink":"/en/sk/class_sthdf_dashboard/class_sthdf_dashboard_2025-2026/","draft":false,"unlisted":false,"tags":[],"version":"current","frontMatter":{"fm_version":"1.0.1","fm_build":"2025-11-28T15:54:47.759439+00:00","fm_version_comment":"","id":"01-class_sthdf_dashboard_2025-2026","guid":"4c6529b7-20f6-4b8f-a971-f7eef1ce030c","dao":"class_sthdf_dashboard","title":"01-class_sthdf_dashboard_2025-2026 – 01-class_sthdf_dashboard – rok 2025-2026","description":"Vstupná stránka pre slovenskú verziu kurzu STHDF 2025–2026","author":"Roman Kazicka","authors":["Roman Kazicka"],"category":"","type":"","priority":"","tags":[],"locale":"sk","created":"2025-11-28 16:54","modified":"2025-11-28 16:54","status":"backlog","privacy":"public","rights_holder_content":"Roman Kazicka","rights_holder_system":"CAA / KNIFE / LetItGrow","license":"CC-BY-NC-SA-4.0","disclaimer":"Use at your own risk. Methods provided as-is; participation is voluntary and context-aware.","copyright":"© 2025 Roman Kazicka","origin_repo":"","origin_repo_url":"","origin_commit":"","origin_branch":"","origin_system":"CAA","origin_author":"Roman Kazicka","origin_imported_from":"","origin_import_date":"","fm_reserved1":"","fm_reserved2":""},"sidebar":"tutorialSidebar","previous":{"title":"Q12 (SK)","permalink":"/en/sk/q12/"},"next":{"title":"🧭 Class STHDF – Overview","permalink":"/en/sk/class_sthdf_dashboard/class_sthdf_dashboard_2025-2026/class-sthdf/"}}');
 // EXTERNAL MODULE: ./node_modules/react/jsx-runtime.js
 var jsx_runtime = __webpack_require__(74848);
 // EXTERNAL MODULE: ./node_modules/@mdx-js/react/lib/index.js
@@ -211,27 +211,27 @@ function _createMdxContent(props) {
     }), "\n", (0,jsx_runtime.jsxs)(_components.ul, {
       children: ["\n", (0,jsx_runtime.jsxs)(_components.li, {
         children: ["📘 ", (0,jsx_runtime.jsx)(_components.a, {
-          href: "/sk/class_sthdf_dashboard/class_sthdf_dashboard_2025-2026/class-sthdf/about/",
+          href: "/",
           children: "O predmete"
         })]
       }), "\n", (0,jsx_runtime.jsxs)(_components.li, {
         children: ["🧭 ", (0,jsx_runtime.jsx)(_components.a, {
-          href: "/sk/class_sthdf_dashboard/class_sthdf_dashboard_2025-2026/conditions/",
+          href: "/en/sk/class_sthdf_dashboard/class_sthdf_dashboard_2025-2026/conditions/",
           children: "Zadania & Míľniky"
         })]
       }), "\n", (0,jsx_runtime.jsxs)(_components.li, {
         children: ["👩‍🎓 ", (0,jsx_runtime.jsx)(_components.a, {
-          href: "/sk/class_sthdf_dashboard/class_sthdf_dashboard_2025-2026/students/ST_INDEX",
+          href: "/en/sk/class_sthdf_dashboard/class_sthdf_dashboard_2025-2026/students/ST_INDEX",
           children: "Študenti"
         })]
       }), "\n", (0,jsx_runtime.jsxs)(_components.li, {
         children: ["🛠️ ", (0,jsx_runtime.jsx)(_components.a, {
-          href: "/sk/class_sthdf_dashboard/class_sthdf_dashboard_2025-2026/projects/PRJ_INDEX",
+          href: "/en/sk/class_sthdf_dashboard/class_sthdf_dashboard_2025-2026/projects/PRJ_INDEX",
           children: "Projekty"
         })]
       }), "\n", (0,jsx_runtime.jsxs)(_components.li, {
         children: ["✨ ", (0,jsx_runtime.jsx)(_components.a, {
-          href: "/sk/class_sthdf_dashboard/class_sthdf_dashboard_2025-2026/class-sthdf/showcase/",
+          href: "/en/sk/class_sthdf_dashboard/class_sthdf_dashboard_2025-2026/class-sthdf/showcase/",
           children: "Showcase"
         })]
       }), "\n"]
