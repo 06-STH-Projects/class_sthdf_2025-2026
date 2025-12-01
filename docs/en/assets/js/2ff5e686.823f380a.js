@@ -688,7 +688,10 @@ function _createMdxContent(props) {
               src: "./img/Detail-05.png",
               alt: "kazicka",
               width: "180"
-            }), (0,jsx_runtime.jsx)("br", {}), " roman.kazicka@systemthinking."]
+            }), (0,jsx_runtime.jsx)("br", {}), " ", (0,jsx_runtime.jsx)(_components.a, {
+              href: "mailto:roman.kazicka@systemthinking.sk",
+              children: "roman.kazicka@systemthinking.sk"
+            }), ">"]
           })]
         })]
       })]

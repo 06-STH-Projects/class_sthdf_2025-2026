@@ -1,7 +1,102 @@
 "use strict";
-(globalThis["webpackChunkknife_preview"] = globalThis["webpackChunkknife_preview"] || []).push([[45742],{
+(globalThis["webpackChunkknife_preview"] = globalThis["webpackChunkknife_preview"] || []).push([[53759],{
 
-/***/ 12939:
+/***/ 28453:
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   R: () => (/* binding */ useMDXComponents),
+/* harmony export */   x: () => (/* binding */ MDXProvider)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(96540);
+/**
+ * @import {MDXComponents} from 'mdx/types.js'
+ * @import {Component, ReactElement, ReactNode} from 'react'
+ */
+
+/**
+ * @callback MergeComponents
+ *   Custom merge function.
+ * @param {Readonly<MDXComponents>} currentComponents
+ *   Current components from the context.
+ * @returns {MDXComponents}
+ *   Additional components.
+ *
+ * @typedef Props
+ *   Configuration for `MDXProvider`.
+ * @property {ReactNode | null | undefined} [children]
+ *   Children (optional).
+ * @property {Readonly<MDXComponents> | MergeComponents | null | undefined} [components]
+ *   Additional components to use or a function that creates them (optional).
+ * @property {boolean | null | undefined} [disableParentContext=false]
+ *   Turn off outer component context (default: `false`).
+ */
+
+
+
+/** @type {Readonly<MDXComponents>} */
+const emptyComponents = {}
+
+const MDXContext = react__WEBPACK_IMPORTED_MODULE_0__.createContext(emptyComponents)
+
+/**
+ * Get current components from the MDX Context.
+ *
+ * @param {Readonly<MDXComponents> | MergeComponents | null | undefined} [components]
+ *   Additional components to use or a function that creates them (optional).
+ * @returns {MDXComponents}
+ *   Current components.
+ */
+function useMDXComponents(components) {
+  const contextComponents = react__WEBPACK_IMPORTED_MODULE_0__.useContext(MDXContext)
+
+  // Memoize to avoid unnecessary top-level context changes
+  return react__WEBPACK_IMPORTED_MODULE_0__.useMemo(
+    function () {
+      // Custom merge via a function prop
+      if (typeof components === 'function') {
+        return components(contextComponents)
+      }
+
+      return {...contextComponents, ...components}
+    },
+    [contextComponents, components]
+  )
+}
+
+/**
+ * Provider for MDX context.
+ *
+ * @param {Readonly<Props>} properties
+ *   Properties.
+ * @returns {ReactElement}
+ *   Element.
+ * @satisfies {Component}
+ */
+function MDXProvider(properties) {
+  /** @type {Readonly<MDXComponents>} */
+  let allComponents
+
+  if (properties.disableParentContext) {
+    allComponents =
+      typeof properties.components === 'function'
+        ? properties.components(emptyComponents)
+        : properties.components || emptyComponents
+  } else {
+    allComponents = useMDXComponents(properties.components)
+  }
+
+  return react__WEBPACK_IMPORTED_MODULE_0__.createElement(
+    MDXContext.Provider,
+    {value: allComponents},
+    properties.children
+  )
+}
+
+
+/***/ }),
+
+/***/ 32636:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 // ESM COMPAT FLAG
@@ -13,56 +108,60 @@ __webpack_require__.d(__webpack_exports__, {
   contentTitle: () => (/* binding */ contentTitle),
   "default": () => (/* binding */ MDXContent),
   frontMatter: () => (/* binding */ frontMatter),
-  metadata: () => (/* reexport */ site_docs_index_md_c37_namespaceObject),
+  metadata: () => (/* reexport */ site_docs_sk_class_sthdf_dashboard_01_class_sthdf_dashboard_2025_2026_class_sthdf_about_index_md_2ff_namespaceObject),
   toc: () => (/* binding */ toc)
 });
 
-;// ./.docusaurus/docusaurus-plugin-content-docs/default/site-docs-index-md-c37.json
-const site_docs_index_md_c37_namespaceObject = /*#__PURE__*/JSON.parse('{"id":"KNIFE_HOME","title":"KNIFE – Hub","description":"Vstupná stránka: preklik na SK a EN dokumentáciu.","source":"@site/docs/index.md","sourceDirName":".","slug":"/","permalink":"/","draft":false,"unlisted":false,"tags":[],"version":"current","sidebarPosition":1,"frontMatter":{"fm_version":"1.0.1","fm_build":"2025-10-28T00:00:00Z","fm_version_comment":"Stabilné ID/slug pre navigáciu (hub + SK + EN)","id":"KNIFE_HOME","guid":"4e609387-282e-5744-97f0-e5bb625100ad","dao":"knife","title":"KNIFE – Hub","description":"Vstupná stránka: preklik na SK a EN dokumentáciu.","author":"Roman Kazička","authors":["Roman Kazička"],"category":"","type":"","priority":"no","tags":[],"locale":"sk","created":"2025-10-28","modified":"YYYY-MM-DDTHH:MM:SSZ","status":"draft","privacy":"public","rights_holder_content":"Roman Kazička","rights_holder_system":"Roman Kazička (CAA/KNIFE/LetItGrow)","license":"CC-BY-NC-SA-4.0","disclaimer":"Use at your own risk. Methods provided as-is; participation is voluntary and context-aware.","copyright":"© 2025 Roman Kazička / SystemThinking","origin_repo":"","origin_repo_url":"","origin_commit":"","origin_system":"","author_id":"","author_did":"","fm_reserved1":"","fm_reserved2":"","slug":"/","sidebar_position":1}}');
+;// ./.docusaurus/docusaurus-plugin-content-docs/default/site-docs-sk-class-sthdf-dashboard-01-class-sthdf-dashboard-2025-2026-class-sthdf-about-index-md-2ff.json
+const site_docs_sk_class_sthdf_dashboard_01_class_sthdf_dashboard_2025_2026_class_sthdf_about_index_md_2ff_namespaceObject = /*#__PURE__*/JSON.parse('{"id":"sk/class_sthdf_dashboard/class_sthdf_dashboard_2025-2026/class-sthdf/about/Home","title":"📘 About the Course","description":"Overview of the STHDF 2025–2026 course – goals, format, tooling, and outcomes.","source":"@site/docs/sk/class_sthdf_dashboard/01-class_sthdf_dashboard_2025-2026/class-sthdf/about/index.md","sourceDirName":"sk/class_sthdf_dashboard/01-class_sthdf_dashboard_2025-2026/class-sthdf/about","slug":"/","permalink":"/","draft":false,"unlisted":false,"tags":[{"inline":true,"label":"course","permalink":"/docs/tags/course"},{"inline":true,"label":"overview","permalink":"/docs/tags/overview"}],"version":"current","frontMatter":{"fm_version":"1.0.1","fm_build":"2025-11-28T15:54:47.767015+00:00","fm_version_comment":"","id":"Home","guid":"dc14de04-7845-4c96-9117-aedb7d0474e7","dao":"class_sthdf_dashboard","title":"📘 About the Course","description":"Overview of the STHDF 2025–2026 course – goals, format, tooling, and outcomes.","author":"Roman Kazicka","authors":["Roman Kazicka"],"category":"","type":"","priority":"","tags":["course","overview"],"locale":"sk","created":"2025-11-28 16:54","modified":"2025-11-28 16:54","status":"backlog","privacy":"public","rights_holder_content":"Roman Kazicka","rights_holder_system":"CAA / KNIFE / LetItGrow","license":"CC-BY-NC-SA-4.0","disclaimer":"Use at your own risk. Methods provided as-is; participation is voluntary and context-aware.","copyright":"© 2025 Roman Kazicka","origin_repo":"","origin_repo_url":"","origin_commit":"","origin_branch":"","origin_system":"CAA","origin_author":"Roman Kazicka","origin_imported_from":"","origin_import_date":"","slug":"/","fm_reserved1":"","fm_reserved2":""},"sidebar":"tutorialSidebar","previous":{"title":"🧭 Class STHDF – Overview","permalink":"/sk/class_sthdf_dashboard/class_sthdf_dashboard_2025-2026/class-sthdf/"},"next":{"title":"✨ Showcase — Best of 2025","permalink":"/sk/class_sthdf_dashboard/class_sthdf_dashboard_2025-2026/class-sthdf/showcase/"}}');
 // EXTERNAL MODULE: ./node_modules/react/jsx-runtime.js
 var jsx_runtime = __webpack_require__(74848);
 // EXTERNAL MODULE: ./node_modules/@mdx-js/react/lib/index.js
 var lib = __webpack_require__(28453);
-;// ./docs/index.md
+;// ./docs/sk/class_sthdf_dashboard/01-class_sthdf_dashboard_2025-2026/class-sthdf/about/index.md
 
 
 const frontMatter = {
 	fm_version: '1.0.1',
-	fm_build: '2025-10-28T00:00:00Z',
-	fm_version_comment: 'Stabilné ID/slug pre navigáciu (hub + SK + EN)',
-	id: 'KNIFE_HOME',
-	guid: '4e609387-282e-5744-97f0-e5bb625100ad',
-	dao: 'knife',
-	title: 'KNIFE – Hub',
-	description: 'Vstupná stránka: preklik na SK a EN dokumentáciu.',
-	author: 'Roman Kazička',
+	fm_build: '2025-11-28T15:54:47.767015+00:00',
+	fm_version_comment: '',
+	id: 'Home',
+	guid: 'dc14de04-7845-4c96-9117-aedb7d0474e7',
+	dao: 'class_sthdf_dashboard',
+	title: '📘 About the Course',
+	description: 'Overview of the STHDF 2025–2026 course – goals, format, tooling, and outcomes.',
+	author: 'Roman Kazicka',
 	authors: [
-		'Roman Kazička'
+		'Roman Kazicka'
 	],
 	category: '',
 	type: '',
-	priority: 'no',
-	tags: [],
+	priority: '',
+	tags: [
+		'course',
+		'overview'
+	],
 	locale: 'sk',
-	created: '2025-10-28',
-	modified: 'YYYY-MM-DDTHH:MM:SSZ',
-	status: 'draft',
+	created: '2025-11-28 16:54',
+	modified: '2025-11-28 16:54',
+	status: 'backlog',
 	privacy: 'public',
-	rights_holder_content: 'Roman Kazička',
-	rights_holder_system: 'Roman Kazička (CAA/KNIFE/LetItGrow)',
+	rights_holder_content: 'Roman Kazicka',
+	rights_holder_system: 'CAA / KNIFE / LetItGrow',
 	license: 'CC-BY-NC-SA-4.0',
 	disclaimer: 'Use at your own risk. Methods provided as-is; participation is voluntary and context-aware.',
-	copyright: '© 2025 Roman Kazička / SystemThinking',
+	copyright: '© 2025 Roman Kazicka',
 	origin_repo: '',
 	origin_repo_url: '',
 	origin_commit: '',
-	origin_system: '',
-	author_id: '',
-	author_did: '',
-	fm_reserved1: '',
-	fm_reserved2: '',
+	origin_branch: '',
+	origin_system: 'CAA',
+	origin_author: 'Roman Kazicka',
+	origin_imported_from: '',
+	origin_import_date: '',
 	slug: '/',
-	sidebar_position: '1'
+	fm_reserved1: '',
+	fm_reserved2: ''
 };
 const contentTitle = 'System thinking in IT and Digital Fabrication';
 
@@ -129,7 +228,17 @@ function _createMdxContent(props) {
     ...props.components
   };
   return (0,jsx_runtime.jsxs)(jsx_runtime.Fragment, {
-    children: [(0,jsx_runtime.jsx)(_components.header, {
+    children: [(0,jsx_runtime.jsx)(_components.p, {
+      children: "keywords: [STHDF, course, overview]"
+    }), "\n", (0,jsx_runtime.jsxs)(_components.p, {
+      children: [(0,jsx_runtime.jsx)(_components.a, {
+        href: "/sk/class_sthdf_dashboard/class_sthdf_dashboard_2025-2026/",
+        children: "🏠 Domov"
+      }), " · ", (0,jsx_runtime.jsx)(_components.a, {
+        href: "/sk/class_sthdf_dashboard/class_sthdf_dashboard_2025-2026/class-sthdf/",
+        children: "⬅️ Nahor"
+      })]
+    }), "\n", (0,jsx_runtime.jsx)(_components.header, {
       children: (0,jsx_runtime.jsx)(_components.h1, {
         id: "system-thinking-in-it-and-digital-fabrication",
         children: "System thinking in IT and Digital Fabrication"
@@ -576,16 +685,19 @@ function _createMdxContent(props) {
               textAlign: "left"
             },
             children: [(0,jsx_runtime.jsx)("img", {
-              src: "./assets/img/rka-portret.png",
+              src: "./img/Detail-05.png",
               alt: "kazicka",
               width: "180"
-            }), (0,jsx_runtime.jsx)("br", {}), " roman.kazicka@systemthinking."]
+            }), (0,jsx_runtime.jsx)("br", {}), " ", (0,jsx_runtime.jsx)(_components.a, {
+              href: "mailto:roman.kazicka@systemthinking.sk",
+              children: "roman.kazicka@systemthinking.sk"
+            }), ">"]
           })]
         })]
       })]
     }), "\n", (0,jsx_runtime.jsx)(_components.p, {
       children: (0,jsx_runtime.jsx)(_components.a, {
-        href: "/sk/",
+        href: "/sk/class_sthdf_dashboard/class_sthdf_dashboard_2025-2026/class-sthdf/",
         children: "Back to Home"
       })
     })]
@@ -604,101 +716,6 @@ function MDXContent(props = {}) {
   }) : _createMdxContent(props);
 }
 
-
-
-/***/ }),
-
-/***/ 28453:
-/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
-
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   R: () => (/* binding */ useMDXComponents),
-/* harmony export */   x: () => (/* binding */ MDXProvider)
-/* harmony export */ });
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(96540);
-/**
- * @import {MDXComponents} from 'mdx/types.js'
- * @import {Component, ReactElement, ReactNode} from 'react'
- */
-
-/**
- * @callback MergeComponents
- *   Custom merge function.
- * @param {Readonly<MDXComponents>} currentComponents
- *   Current components from the context.
- * @returns {MDXComponents}
- *   Additional components.
- *
- * @typedef Props
- *   Configuration for `MDXProvider`.
- * @property {ReactNode | null | undefined} [children]
- *   Children (optional).
- * @property {Readonly<MDXComponents> | MergeComponents | null | undefined} [components]
- *   Additional components to use or a function that creates them (optional).
- * @property {boolean | null | undefined} [disableParentContext=false]
- *   Turn off outer component context (default: `false`).
- */
-
-
-
-/** @type {Readonly<MDXComponents>} */
-const emptyComponents = {}
-
-const MDXContext = react__WEBPACK_IMPORTED_MODULE_0__.createContext(emptyComponents)
-
-/**
- * Get current components from the MDX Context.
- *
- * @param {Readonly<MDXComponents> | MergeComponents | null | undefined} [components]
- *   Additional components to use or a function that creates them (optional).
- * @returns {MDXComponents}
- *   Current components.
- */
-function useMDXComponents(components) {
-  const contextComponents = react__WEBPACK_IMPORTED_MODULE_0__.useContext(MDXContext)
-
-  // Memoize to avoid unnecessary top-level context changes
-  return react__WEBPACK_IMPORTED_MODULE_0__.useMemo(
-    function () {
-      // Custom merge via a function prop
-      if (typeof components === 'function') {
-        return components(contextComponents)
-      }
-
-      return {...contextComponents, ...components}
-    },
-    [contextComponents, components]
-  )
-}
-
-/**
- * Provider for MDX context.
- *
- * @param {Readonly<Props>} properties
- *   Properties.
- * @returns {ReactElement}
- *   Element.
- * @satisfies {Component}
- */
-function MDXProvider(properties) {
-  /** @type {Readonly<MDXComponents>} */
-  let allComponents
-
-  if (properties.disableParentContext) {
-    allComponents =
-      typeof properties.components === 'function'
-        ? properties.components(emptyComponents)
-        : properties.components || emptyComponents
-  } else {
-    allComponents = useMDXComponents(properties.components)
-  }
-
-  return react__WEBPACK_IMPORTED_MODULE_0__.createElement(
-    MDXContext.Provider,
-    {value: allComponents},
-    properties.children
-  )
-}
 
 
 /***/ }),

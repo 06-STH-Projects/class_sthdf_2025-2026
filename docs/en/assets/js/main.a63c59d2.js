@@ -403,8 +403,8 @@ function concatDocumentPath(pathItems){return pathItems.join(" › ");}
           "position": "right"
         },
         {
-          "href": "https://github.com/06-STH-Projects/class_sthdf_2025_2026/commit/89465fdb",
-          "label": "Release v2025.11.30-2310-3-g89465fdb • 89465fdb",
+          "href": "https://github.com/06-STH-Projects/class_sthdf_2025_2026/releases",
+          "label": "Release v2025.11.30-2310-4-gcd207e86 • cd207e86",
           "position": "right"
         }
       ],
@@ -412,7 +412,7 @@ function concatDocumentPath(pathItems){return pathItems.join(" › ");}
     },
     "footer": {
       "style": "dark",
-      "copyright": "\n  <div style=\"text-align:center;\">\n    © 2025 SystemThinking<br/>\n    🔖 Release: <strong>v2025.11.30-2310-3-g89465fdb</strong><br/>\n    💡 Commit: <code>89465fdb</code><br/>\n    🕒 Build: 2025-12-01 10:06:42 UTC\n  </div>\n",
+      "copyright": "\n  <div style=\"text-align:center;\">\n    © 2025 SystemThinking<br/>\n    🔖 Release: <strong>v2025.11.30-2310-4-gcd207e86</strong><br/>\n    💡 Commit: <code>cd207e86</code><br/>\n    🕒 Build: 2025-12-01 11:15:47 UTC\n  </div>\n",
       "links": []
     },
     "prism": {
@@ -2956,7 +2956,7 @@ var normalizeContextByPath = __webpack_require__(43385);
 // EXTERNAL MODULE: ./node_modules/lunr/lunr.js
 var lunr = __webpack_require__(58291);
 ;// ./.docusaurus/@easyops-cn/docusaurus-search-local/default/generated-constants.js
-const removeDefaultStopWordFilter=(/* unused pure expression or super */ null && ([]));const language=(/* unused pure expression or super */ null && (["en"]));const searchIndexUrl="search-index{dir}.json?_=2d113e75";const searchResultLimits=8;const fuzzyMatchingDistance=1;
+const removeDefaultStopWordFilter=(/* unused pure expression or super */ null && ([]));const language=(/* unused pure expression or super */ null && (["en"]));const searchIndexUrl="search-index{dir}.json?_=02b1e5a5";const searchResultLimits=8;const fuzzyMatchingDistance=1;
 ;// ./node_modules/@easyops-cn/docusaurus-search-local/dist/client/client/utils/proxiedGeneratedConstants.js
 // This file is auto generated while building.
 
