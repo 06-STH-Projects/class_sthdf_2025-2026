@@ -245,6 +245,6 @@ The minimum must be met in both sections.
 | Person   | Role  | Responsibility| Contact |
 :---------| :----- |:----- |:----- 
 Ing. Roman Kazička, PhD| Course supervisor| ||
-Ing. Roman Kazička, PhD | Knowledge Management Enterprise Architect | Teacher |  <img src="./img/Detail-05.png" alt="kazicka" width="180" /><br /> roman.kazicka@systemthinking.
+Ing. Roman Kazička, PhD | Knowledge Management Enterprise Architect | Teacher |  <img src="./img/Detail-05.png" alt="kazicka" width="180" /><br /> roman.kazicka@systemthinking.sk>
 
 [Back to Home](../index.md)

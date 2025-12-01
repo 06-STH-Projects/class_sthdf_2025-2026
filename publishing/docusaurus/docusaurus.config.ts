@@ -13,6 +13,9 @@ const {
 const commitLink =
   GITHUB_REPO_URL && COMMIT_SHA ? `${GITHUB_REPO_URL}/commit/${COMMIT_SHA}` : '';
 
+const releaseLink =
+  GITHUB_REPO_URL ? `${GITHUB_REPO_URL}/releases` : '';
+
 const config: Config = {
   title: 'KNIFE - Class STHDF 2025-2026- Dashboard',
   url: SITE_URL,
@@ -85,7 +88,7 @@ const config: Config = {
         { to: '/sk/help',  label: 'Help',  position: 'right' },
         { to: '/docs/tags', label: 'Tags', position: 'right' },
         {
-          href: commitLink || '#',
+          href: releaseLink || '#',
           label: `Release ${RELEASE_TAG} • ${COMMIT_SHA}`,
           position: 'right',
         },
