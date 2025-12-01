@@ -7,7 +7,7 @@ const {
   BUILD_DATE = '',
   GITHUB_REPO_URL = '',
   SITE_URL = 'https://sthdf-2025.systemthinking.sk',
-  BASE_URL = '/class_sthdf_2025-2026/',
+  BASE_URL = '/',
 } = process.env;
 
 const commitLink =

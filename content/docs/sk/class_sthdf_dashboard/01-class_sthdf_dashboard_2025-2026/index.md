@@ -140,7 +140,7 @@ Toto je hlavná stránka pre slovenskú časť kurzu **Systémové myslenie v IT
 ---
 
 ## 🔗 Rýchla navigácia
-- 📘 [O predmete](./class-sthdf/about/index.md)
+- 📘 [O predmete](/)
 - 🧭 [Zadania & Míľniky](./conditions/index.md)
 - 👩‍🎓 [Študenti](./students/ST_INDEX.md)
 - 🛠️ [Projekty](./projects/PRJ_INDEX.md)

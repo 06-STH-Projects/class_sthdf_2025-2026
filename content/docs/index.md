@@ -31,8 +31,8 @@ author_id: ""
 author_did: ""
 fm_reserved1: ""
 fm_reserved2: ""
-slug: "/"
-sidebar_position: "1"
+#slug: "/"
+#sidebar_position: "1"
 ---
 # KNIFE – Hub
 

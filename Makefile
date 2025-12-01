@@ -35,10 +35,10 @@ else
 endif
 COMMIT_SHA := $(shell git rev-parse --short HEAD 2>/dev/null || echo local)
 
-GITHUB_REPO_URL ?= https://github.com/KNIFE-Framework/knifes_overview
+GITHUB_REPO_URL ?= https://github.com/06-STH-Projects/class_sthdf_2025_2026
 # Derive repo name for GH Pages baseUrl (e.g., /knifes_overview/)
 REPO_NAME := $(notdir $(basename $(GITHUB_REPO_URL)))
-DEFAULT_SITE_URL := https://knifes.systemthinking.sk
+DEFAULT_SITE_URL := https://sthdf-2025.systemthinking.sk
 DEFAULT_BASE_URL := /
 
 
@@ -202,7 +202,6 @@ build-clean: ## Hard clean + sync + production build (istý reset publish/docs)
 	$(MAKE) build
 SY01-sync-content: ## Sync SSOT content → publishing/docusaurus/docs (hard, delete)
 	@if [ ! -d "$(CONTENT_DOCS_DIR)" ]; then echo "❌ Missing $(CONTENT_DOCS_DIR)"; exit 1; fi
-	@$(MAKE) --no-print-directory knifes-overview
 	@mkdir -p "$(PUB_DOCS_DIR)"
 	rsync -av --delete --checksum \
 	  --exclude 'assets/' \
@@ -303,10 +302,10 @@ W30-commit-deploy: ## Commit & push worktree (deploy)
 	cd "$(WORKTREE_DIR)" && git push origin $(DEPLOY_BRANCH)
 	@echo "✅ Deploy pushnutý → $(DEPLOY_BRANCH)"
 
-deploy: ## Full deploy na vlastnú doménu (SITE_URL=https://knifes.systemthinking.sk BASE_URL=/, no-minify)
+deploy: ## Full deploy na vlastnú doménu (SITE_URL=https://sthdf-2025.systemthinking.sk BASE_URL=/, no-minify)
 	$(MAKE) W10-check-worktree
 	$(MAKE) W05-clean-worktree
-	SITE_URL=https://knifes.systemthinking.sk BASE_URL=/ $(MAKE) build MINIFY=0
+	SITE_URL=https://sthdf-2025.systemthinking.sk BASE_URL=/ $(MAKE) build MINIFY=0
 	$(MAKE) W20-copy-build
 	$(MAKE) W30-commit-deploy
 	@echo "🎉 Full deploy hotový (domain, no-minify)."
