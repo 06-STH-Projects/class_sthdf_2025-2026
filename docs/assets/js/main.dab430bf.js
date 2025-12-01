@@ -403,8 +403,8 @@ function concatDocumentPath(pathItems){return pathItems.join(" › ");}
           "position": "right"
         },
         {
-          "href": "https://github.com/KNIFE-Framework/knifes_overview/commit/92c1b50",
-          "label": "Release v2025.11.30-2310-2-g92c1b50 • 92c1b50",
+          "href": "https://github.com/KNIFE-Framework/knifes_overview/commit/92c1b501",
+          "label": "Release v2025.11.30-2310-2-g92c1b501 • 92c1b501",
           "position": "right"
         }
       ],
@@ -412,7 +412,7 @@ function concatDocumentPath(pathItems){return pathItems.join(" › ");}
     },
     "footer": {
       "style": "dark",
-      "copyright": "\n  <div style=\"text-align:center;\">\n    © 2025 SystemThinking<br/>\n    🔖 Release: <strong>v2025.11.30-2310-2-g92c1b50</strong><br/>\n    💡 Commit: <code>92c1b50</code><br/>\n    🕒 Build: 2025-12-01 07:57:51 UTC\n  </div>\n",
+      "copyright": "\n  <div style=\"text-align:center;\">\n    © 2025 SystemThinking<br/>\n    🔖 Release: <strong>v2025.11.30-2310-2-g92c1b501</strong><br/>\n    💡 Commit: <code>92c1b501</code><br/>\n    🕒 Build: 2025-12-01 08:57:34 UTC\n  </div>\n",
       "links": []
     },
     "prism": {
