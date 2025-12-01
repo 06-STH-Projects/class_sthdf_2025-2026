@@ -35,7 +35,7 @@ else
 endif
 COMMIT_SHA := $(shell git rev-parse --short HEAD 2>/dev/null || echo local)
 
-GITHUB_REPO_URL ?= https://github.com/06-STH-Projects/class_sthdf_2025_2026
+GITHUB_REPO_URL ?= https://github.com/06-STH-Projects/class_sthdf_2025-2026
 # Derive repo name for GH Pages baseUrl (e.g., /knifes_overview/)
 REPO_NAME := $(notdir $(basename $(GITHUB_REPO_URL)))
 DEFAULT_SITE_URL := https://sthdf-2025.systemthinking.sk
