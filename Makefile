@@ -58,8 +58,11 @@ SYNC_CONTENT ?= 1         # 1=generate overview + rsync before build (default); 
 KNIFE_DEBUG  ?= 0         # 1=pass --debug to knife_overview_generate.py
 
 # Worktree deploy → gh-pages-docusaurus:/docs
+# Poznámka: WORKTREE_DIR je unikátny pre každý repozitár (suffix podľa názvu top-level repo),
+# aby sa gh-pages-docusaurus worktree nezdieľal medzi viacerými projektmi v 06-STH-Projects.
 DEPLOY_BRANCH := gh-pages-docusaurus
-WORKTREE_DIR  := ../$(DEPLOY_BRANCH)
+REPO_SLUG := $(notdir $(shell git rev-parse --show-toplevel 2>/dev/null || pwd))
+WORKTREE_DIR  := ../$(DEPLOY_BRANCH)-$(REPO_SLUG)
 PAGES_DIR     := $(WORKTREE_DIR)/docs
 
 # KNIFE / FM / 7Ds skripty
@@ -256,20 +259,32 @@ W05-clean-worktree: ## Vyčistí worktree (zachová .git), vhodné pred rsync
 	@echo "🧹 Čistím worktree: $(WORKTREE_DIR)"
 	@git -C "$(WORKTREE_DIR)" clean -fdx
 W10-check-worktree: ## Vytvorí/overí worktree ../gh-pages-docusaurus → /docs
-	@if [ -d "$(WORKTREE_DIR)" ] && ! git -C "$(WORKTREE_DIR)" rev-parse --is-inside-work-tree >/dev/null 2>&1; then \
-	  echo "⚠️  $(WORKTREE_DIR) existuje, ale nie je git worktree – čistím…"; rm -rf "$(WORKTREE_DIR)"; git worktree prune; \
-	fi; \
-	if ! git worktree list | grep -q "$(WORKTREE_DIR)"; then \
-	  echo "ℹ️  Zakladám worktree pre $(DEPLOY_BRANCH)…"; \
-	  git fetch origin || true; \
-	  if git ls-remote --exit-code --heads origin $(DEPLOY_BRANCH) >/dev/null 2>&1; then \
-	    git worktree add -B $(DEPLOY_BRANCH) "$(WORKTREE_DIR)" origin/$(DEPLOY_BRANCH); \
-	  else \
-	    git worktree add "$(WORKTREE_DIR)" -B $(DEPLOY_BRANCH); \
-	    cd "$(WORKTREE_DIR)" && git commit --allow-empty -m "init $(DEPLOY_BRANCH)" && git push -u origin $(DEPLOY_BRANCH); \
+	@/bin/bash -lc '\
+	  set -e; \
+	  WORKTREE_DIR="$(WORKTREE_DIR)"; \
+	  DEPLOY_BRANCH="$(DEPLOY_BRANCH)"; \
+	  if [ -e "$${WORKTREE_DIR}/.git" ]; then \
+	    echo "⚠️  $${WORKTREE_DIR} je samostatný git repo/worktree – čistím…"; \
+	    rm -rf "$${WORKTREE_DIR}"; \
+	    git worktree prune; \
 	  fi; \
-	fi; \
-	echo "✅ Worktree OK: $(WORKTREE_DIR) → $(DEPLOY_BRANCH)"
+	  if [ -d "$${WORKTREE_DIR}" ] && ! git -C "$${WORKTREE_DIR}" rev-parse --is-inside-work-tree >/dev/null 2>&1; then \
+	    echo "⚠️  $${WORKTREE_DIR} existuje, ale nie je git worktree – čistím…"; \
+	    rm -rf "$${WORKTREE_DIR}"; \
+	    git worktree prune; \
+	  fi; \
+	  if ! git worktree list | grep -q "$${WORKTREE_DIR}"; then \
+	    echo "ℹ️  Zakladám worktree pre $${DEPLOY_BRANCH}…"; \
+	    git fetch origin || true; \
+	    if git ls-remote --exit-code --heads origin $${DEPLOY_BRANCH} >/dev/null 2>&1; then \
+	      git worktree add -B $${DEPLOY_BRANCH} "$${WORKTREE_DIR}" origin/$${DEPLOY_BRANCH}; \
+	    else \
+	      git worktree add "$${WORKTREE_DIR}" -B $${DEPLOY_BRANCH}; \
+	      cd "$${WORKTREE_DIR}" && git commit --allow-empty -m "init $${DEPLOY_BRANCH}" && git push -u origin $${DEPLOY_BRANCH}; \
+	    fi; \
+	  fi; \
+	  echo "✅ Worktree OK: $${WORKTREE_DIR} → $${DEPLOY_BRANCH}"; \
+	'
 
 W20-copy-build: ## Rsync build/ → worktree /docs (bezpečné, chráni .git)
 	@if ! git -C "$(WORKTREE_DIR)" rev-parse --is-inside-work-tree >/dev/null 2>&1; then echo "❌ Spusť najprv W10-check-worktree"; exit 1; fi
