@@ -1,0 +1,25 @@
+<mxfile host="app.diagrams.net">
+  <diagram name="OBS Fundamentals">
+    <mxGraphModel><root>
+      <mxCell id="0"/><mxCell id="1" parent="0"/>
+      <mxCell id="sc" value="Scene Collection" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc" vertex="1" parent="1">
+        <mxGeometry x="60" y="40" width="170" height="50" as="geometry"/>
+      </mxCell>
+      <mxCell id="prof" value="Profile (Hotkeys, Output)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4" vertex="1" parent="1">
+        <mxGeometry x="260" y="40" width="200" height="50" as="geometry"/>
+      </mxCell>
+      <mxCell id="scene" value="Scenes" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc" vertex="1" parent="1">
+        <mxGeometry x="60" y="120" width="120" height="50" as="geometry"/>
+      </mxCell>
+      <mxCell id="src" value="Sources (Display, Camera, Audio, Image, Text)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc" vertex="1" parent="1">
+        <mxGeometry x="60" y="200" width="360" height="70" as="geometry"/>
+      </mxCell>
+      <mxCell id="hk" value="Hotkeys (viazané na Profile)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc" vertex="1" parent="1">
+        <mxGeometry x="260" y="120" width="200" height="50" as="geometry"/>
+      </mxCell>
+      <mxCell id="e1" edge="1" parent="1" source="sc" target="scene"><mxGeometry relative="1" as="geometry"/></mxCell>
+      <mxCell id="e2" edge="1" parent="1" source="scene" target="src"><mxGeometry relative="1" as="geometry"/></mxCell>
+      <mxCell id="e3" edge="1" parent="1" source="prof" target="hk"><mxGeometry relative="1" as="geometry"/></mxCell>
+    </root></mxGraphModel>
+  </diagram>
+</mxfile>

@@ -1,0 +1,11 @@
+"use strict";
+(globalThis["webpackChunkknife_preview"] = globalThis["webpackChunkknife_preview"] || []).push([[55017],{
+
+/***/ 35774:
+/***/ ((module) => {
+
+module.exports = /*#__PURE__*/JSON.parse('{"tag":{"label":"images","permalink":"/en/docs/tags/images","allTagsPath":"/en/docs/tags","count":5,"items":[{"id":"sk/knifes/K000027-git-for-dummies-central-concepts/K000027","title":"K000027 – Git For Dummies – Central Concepts","description":"Jednoduché vysvetlenie Git základov pre začiatočníkov v GitEA (organizácia, repozitár, working directory, atď.)","permalink":"/en/sk/knifes/K000027-git-for-dummies-central-concepts/"},{"id":"sk/knifes/K000064-ga4-gtn-utm/K000064","title":"K000064 – GA4, GTN, UTM","description":"Ako funguje AG4, TGM a UTM?","permalink":"/en/sk/knifes/K000064-ga4-gtn-utm/"},{"id":"sk/knifes/K000068-kruhovy-portret-v-gimp/K000068","title":"K000068 – Kruhový portrét v GIMP","description":"Pri publikovaní na Web potrebujem kruhový formát obrázkov. Najjednoduchšie je použiť GIMP. Práca na 5 minút","permalink":"/en/sk/knifes/K000068-kruhovy-portret-v-gimp/"},{"id":"sk/knifes/K000081-transparentna-stabilna-infrastruktura-pre-sites/K000081","title":"K000081 – Transparentná -Stabilná infraštruktúra pre Sites","description":"Počas práce s GitHub a Pages je potrebné mať zladené prostredie na klientovi a na serveri. Lokál je závislý od OS, od verzií vývojových nástrojov. Ideálne by bolo, keby existovalo stabilné, opakovateľné prostredie pre vytvorenie lokálneho prostredia, bez ohľadu na operačný systém na klientovi – Windows, Mac, Linux.","permalink":"/en/sk/knifes/K000081-transparentna-stabilna-infrastruktura-pre-sites/"},{"id":"sk/knifes/K000084-ako-aktivovat-na-githube-edu-benefity/K000084","title":"K000084 – Ako aktivovať na GitHube EDU benefity","description":"Pokiaľ  spĺňa používateľ kritériá GitHub, môže dostať pre seba pre svoj profil status člena EDU organizácie. Má to viaceroo výhod ako Sites pre privátne repositáre, čo by stálo 3€/mesiac. Detailnejšie v inom Knife. V tomto príspevku je samotná aktivácia týchto benefitov","permalink":"/en/sk/knifes/K000084-ako-aktivovat-na-githube-edu-benefity/"}],"unlisted":false}}');
+
+/***/ })
+
+}]);
