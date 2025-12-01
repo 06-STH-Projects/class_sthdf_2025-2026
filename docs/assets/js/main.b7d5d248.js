@@ -404,7 +404,7 @@ function concatDocumentPath(pathItems){return pathItems.join(" › ");}
         },
         {
           "href": "https://github.com/06-STH-Projects/class_sthdf_2025-2026/releases",
-          "label": "Release v2025.11.30-2310-6-g6fe004b9 • 6fe004b9",
+          "label": "Release v2025_12_01_1400-1-g922df90e • 922df90e",
           "position": "right"
         }
       ],
@@ -412,7 +412,7 @@ function concatDocumentPath(pathItems){return pathItems.join(" › ");}
     },
     "footer": {
       "style": "dark",
-      "copyright": "\n  <div style=\"text-align:center;\">\n    © 2025 SystemThinking<br/>\n    🔖 Release: <strong>v2025.11.30-2310-6-g6fe004b9</strong><br/>\n    💡 Commit: <code>6fe004b9</code><br/>\n    🕒 Build: 2025-12-01 12:49:25 UTC\n  </div>\n",
+      "copyright": "\n  <div style=\"text-align:center;\">\n    © 2025 SystemThinking<br/>\n    🔖 Release: <strong>v2025_12_01_1400-1-g922df90e</strong><br/>\n    💡 Commit: <code>922df90e</code><br/>\n    🕒 Build: 2025-12-01 13:29:50 UTC\n  </div>\n",
       "links": []
     },
     "prism": {
