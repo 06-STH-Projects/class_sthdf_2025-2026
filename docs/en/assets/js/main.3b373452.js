@@ -404,7 +404,7 @@ function concatDocumentPath(pathItems){return pathItems.join(" › ");}
         },
         {
           "href": "https://github.com/06-STH-Projects/class_sthdf_2025-2026/releases",
-          "label": "Release v2025_12_01_1400-1-g922df90e • 922df90e",
+          "label": "Release v2025_12_01_1400-3-gcb4b55db • cb4b55db",
           "position": "right"
         }
       ],
@@ -412,7 +412,7 @@ function concatDocumentPath(pathItems){return pathItems.join(" › ");}
     },
     "footer": {
       "style": "dark",
-      "copyright": "\n  <div style=\"text-align:center;\">\n    © 2025 SystemThinking<br/>\n    🔖 Release: <strong>v2025_12_01_1400-1-g922df90e</strong><br/>\n    💡 Commit: <code>922df90e</code><br/>\n    🕒 Build: 2025-12-01 13:29:50 UTC\n  </div>\n",
+      "copyright": "\n  <div style=\"text-align:center;\">\n    © 2025 SystemThinking<br/>\n    🔖 Release: <strong>v2025_12_01_1400-3-gcb4b55db</strong><br/>\n    💡 Commit: <code>cb4b55db</code><br/>\n    🕒 Build: 2025-12-02 20:18:25 UTC\n  </div>\n",
       "links": []
     },
     "prism": {
@@ -2956,7 +2956,7 @@ var normalizeContextByPath = __webpack_require__(43385);
 // EXTERNAL MODULE: ./node_modules/lunr/lunr.js
 var lunr = __webpack_require__(58291);
 ;// ./.docusaurus/@easyops-cn/docusaurus-search-local/default/generated-constants.js
-const removeDefaultStopWordFilter=(/* unused pure expression or super */ null && ([]));const language=(/* unused pure expression or super */ null && (["en"]));const searchIndexUrl="search-index{dir}.json?_=02b1e5a5";const searchResultLimits=8;const fuzzyMatchingDistance=1;
+const removeDefaultStopWordFilter=(/* unused pure expression or super */ null && ([]));const language=(/* unused pure expression or super */ null && (["en"]));const searchIndexUrl="search-index{dir}.json?_=df62ae40";const searchResultLimits=8;const fuzzyMatchingDistance=1;
 ;// ./node_modules/@easyops-cn/docusaurus-search-local/dist/client/client/utils/proxiedGeneratedConstants.js
 // This file is auto generated while building.
 

@@ -192,6 +192,10 @@ const toc = [{
   "id": "time-roadmap",
   "level": 2
 }, {
+  "value": "Winter Semester 2025-2026, september 2025 - January 2026",
+  "id": "winter-semester-2025-2026-september-2025---january-2026",
+  "level": 3
+}, {
   "value": "Technical conditions/requirements",
   "id": "technical-conditionsrequirements",
   "level": 2
@@ -211,6 +215,7 @@ function _createMdxContent(props) {
     em: "em",
     h1: "h1",
     h2: "h2",
+    h3: "h3",
     header: "header",
     img: "img",
     li: "li",
@@ -365,8 +370,9 @@ function _createMdxContent(props) {
     }), "\n", (0,jsx_runtime.jsx)(_components.h2, {
       id: "time-roadmap",
       children: "Time Roadmap"
-    }), "\n", (0,jsx_runtime.jsx)(_components.p, {
-      children: "Winter Semester 2023-2024, september 2023 - January 2024"
+    }), "\n", (0,jsx_runtime.jsx)(_components.h3, {
+      id: "winter-semester-2025-2026-september-2025---january-2026",
+      children: "Winter Semester 2025-2026, september 2025 - January 2026"
     }), "\n", (0,jsx_runtime.jsx)(_components.h2, {
       id: "technical-conditionsrequirements",
       children: "Technical conditions/requirements"

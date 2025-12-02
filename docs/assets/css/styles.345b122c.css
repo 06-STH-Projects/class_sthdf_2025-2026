@@ -3116,7 +3116,7 @@ html[data-theme='dark'] {
   /* Sidebar šírka (desktop + mobile) */
   --doc-sidebar-width: 540px !important;
   --doc-sidebar-width-mobile: 280px;
-  --doc-toc-width: 300px;
+  --doc-toc-width: 350px;
 }
 
 /* For readability concerns, you should choose a lighter palette in dark mode. */
