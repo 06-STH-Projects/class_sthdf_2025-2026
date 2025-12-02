@@ -195,7 +195,7 @@ Based on 5 principles of Self learning organisation:
 
  ## Time Roadmap
 
-  Winter Semester 2023-2024, september 2023 - January 2024
+ ### Winter Semester 2025-2026, september 2025 - January 2026
 
 ## Technical conditions/requirements
 
