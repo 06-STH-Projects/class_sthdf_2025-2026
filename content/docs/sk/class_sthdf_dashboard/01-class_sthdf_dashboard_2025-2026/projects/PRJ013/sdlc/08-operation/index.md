@@ -138,3 +138,8 @@ fm_reserved2: ""
 - [Prevádzka a podpora](./operations.md)
 
 **Navigation:** [⬆️ SDLC](../index.md) · [⬅️ Projekt](../../index.md)
+
+## Import z drzkabel / 06-Deployment
+
+### 06 Deployment
+Nasadenie do prostredia / prezentácia MVP.

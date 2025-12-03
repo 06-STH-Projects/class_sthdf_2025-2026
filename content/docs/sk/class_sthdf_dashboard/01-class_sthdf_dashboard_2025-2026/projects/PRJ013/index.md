@@ -139,3 +139,7 @@ fm_reserved2: ""
 ## Navigácia
 - [Presentation / Slides](./presentation/slides.md) — záverečný dokument pre rýchlu prezentáciu.
 - [SDLC](./sdlc/index.md) — podklady a detailný obsah.
+- 
+
+
+Vsetko je mozne najst na tejto [webstranke](https://patrikfejda.github.io/drzkabel/sk)
