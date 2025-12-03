@@ -135,3 +135,6 @@ fm_reserved2: ""
 
 [🏠 Domov](../../../index.md) · [⬅️ Nahor](../)
 # ST010 — about-me
+
+
+Všetko o mne je možné prečitať na mojom [Linkedin](https://www.linkedin.com/in/patrikfejda/)
