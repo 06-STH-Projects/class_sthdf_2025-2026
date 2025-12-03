@@ -18,7 +18,7 @@ __webpack_require__.d(__webpack_exports__, {
 });
 
 ;// ./.docusaurus/docusaurus-plugin-content-docs/default/site-docs-index-md-c37.json
-const site_docs_index_md_c37_namespaceObject = /*#__PURE__*/JSON.parse('{"id":"KNIFE_HOME","title":"KNIFE – Hub","description":"Vstupná stránka: preklik na SK a EN dokumentáciu.","source":"@site/docs/index.md","sourceDirName":".","slug":"/","permalink":"/en/","draft":false,"unlisted":false,"tags":[],"version":"current","sidebarPosition":1,"frontMatter":{"fm_version":"1.0.1","fm_build":"2025-10-28T00:00:00Z","fm_version_comment":"Stabilné ID/slug pre navigáciu (hub + SK + EN)","id":"KNIFE_HOME","guid":"4e609387-282e-5744-97f0-e5bb625100ad","dao":"knife","title":"KNIFE – Hub","description":"Vstupná stránka: preklik na SK a EN dokumentáciu.","author":"Roman Kazička","authors":["Roman Kazička"],"category":"","type":"","priority":"no","tags":[],"locale":"sk","created":"2025-10-28","modified":"YYYY-MM-DDTHH:MM:SSZ","status":"draft","privacy":"public","rights_holder_content":"Roman Kazička","rights_holder_system":"Roman Kazička (CAA/KNIFE/LetItGrow)","license":"CC-BY-NC-SA-4.0","disclaimer":"Use at your own risk. Methods provided as-is; participation is voluntary and context-aware.","copyright":"© 2025 Roman Kazička / SystemThinking","origin_repo":"","origin_repo_url":"","origin_commit":"","origin_system":"","author_id":"","author_did":"","fm_reserved1":"","fm_reserved2":"","slug":"/","sidebar_position":1}}');
+const site_docs_index_md_c37_namespaceObject = /*#__PURE__*/JSON.parse('{"id":"KNIFE_HOME","title":"KNIFE – Hub","description":"Vstupná stránka: preklik na SK a EN dokumentáciu.","source":"@site/docs/index.md","sourceDirName":".","slug":"/","permalink":"/","draft":false,"unlisted":false,"tags":[],"version":"current","sidebarPosition":1,"frontMatter":{"fm_version":"1.0.1","fm_build":"2025-10-28T00:00:00Z","fm_version_comment":"Stabilné ID/slug pre navigáciu (hub + SK + EN)","id":"KNIFE_HOME","guid":"4e609387-282e-5744-97f0-e5bb625100ad","dao":"knife","title":"KNIFE – Hub","description":"Vstupná stránka: preklik na SK a EN dokumentáciu.","author":"Roman Kazička","authors":["Roman Kazička"],"category":"","type":"","priority":"no","tags":[],"locale":"sk","created":"2025-10-28","modified":"YYYY-MM-DDTHH:MM:SSZ","status":"draft","privacy":"public","rights_holder_content":"Roman Kazička","rights_holder_system":"Roman Kazička (CAA/KNIFE/LetItGrow)","license":"CC-BY-NC-SA-4.0","disclaimer":"Use at your own risk. Methods provided as-is; participation is voluntary and context-aware.","copyright":"© 2025 Roman Kazička / SystemThinking","origin_repo":"","origin_repo_url":"","origin_commit":"","origin_system":"","author_id":"","author_did":"","fm_reserved1":"","fm_reserved2":"","slug":"/","sidebar_position":1}}');
 // EXTERNAL MODULE: ./node_modules/react/jsx-runtime.js
 var jsx_runtime = __webpack_require__(74848);
 // EXTERNAL MODULE: ./node_modules/@mdx-js/react/lib/index.js
@@ -111,6 +111,22 @@ const toc = [{
 }, {
   "value": "🎓 Triedny dashboard (STHDF 2025–2026)",
   "id": "-triedny-dashboard-sthdf-20252026",
+  "level": 3
+}, {
+  "value": "Class 2025-2026 - Navigation",
+  "id": "class-2025-2026---navigation",
+  "level": 2
+}, {
+  "value": "Students",
+  "id": "students",
+  "level": 3
+}, {
+  "value": "Projects",
+  "id": "projects",
+  "level": 3
+}, {
+  "value": "Best students Project in the year 2025-2026",
+  "id": "best-students-project-in-the-year-2025-2026",
   "level": 3
 }, {
   "value": "🔪 KNIFE Framework",
@@ -620,25 +636,62 @@ function _createMdxContent(props) {
       children: "🎓 Triedny dashboard (STHDF 2025–2026)"
     }), "\n", (0,jsx_runtime.jsxs)(_components.ul, {
       children: ["\n", (0,jsx_runtime.jsxs)(_components.li, {
-        children: ["🧭 ", (0,jsx_runtime.jsx)(_components.a, {
-          href: "./",
-          children: "Prehľad kurzu"
-        })]
+        children: ["\n", (0,jsx_runtime.jsxs)(_components.p, {
+          children: ["🧭 ", (0,jsx_runtime.jsx)(_components.a, {
+            href: "./",
+            children: "Prehľad kurzu"
+          })]
+        }), "\n"]
       }), "\n", (0,jsx_runtime.jsxs)(_components.li, {
-        children: ["📘 ", (0,jsx_runtime.jsx)(_components.a, {
-          href: "/en/",
-          children: "O predmete / About the Course"
-        })]
+        children: ["\n", (0,jsx_runtime.jsxs)(_components.p, {
+          children: ["📘 ", (0,jsx_runtime.jsx)(_components.a, {
+            href: "/",
+            children: "O predmete / About the Course"
+          })]
+        }), "\n"]
       }), "\n", (0,jsx_runtime.jsxs)(_components.li, {
-        children: ["📌 ", (0,jsx_runtime.jsx)(_components.a, {
-          href: "#conditions-for-completing-the-course-2023-2024",
-          children: "Podmienky a pravidlá"
-        })]
+        children: ["\n", (0,jsx_runtime.jsxs)(_components.p, {
+          children: ["📌 ", (0,jsx_runtime.jsx)(_components.a, {
+            href: "#conditions-for-completing-the-course-2023-2024",
+            children: "Podmienky a pravidlá"
+          })]
+        }), "\n"]
       }), "\n", (0,jsx_runtime.jsxs)(_components.li, {
-        children: ["🎞️ ", (0,jsx_runtime.jsx)(_components.a, {
-          href: "/en/sk/class_sthdf_dashboard/class_sthdf_dashboard_2025-2026/class-sthdf/showcase/",
-          children: "Showcase – príklady"
-        })]
+        children: ["\n", (0,jsx_runtime.jsxs)(_components.p, {
+          children: ["🎞️ ", (0,jsx_runtime.jsx)(_components.a, {
+            href: "/sk/class_sthdf_dashboard/class_sthdf_dashboard_2025-2026/class-sthdf/showcase/",
+            children: "Showcase – príklady"
+          })]
+        }), "\n"]
+      }), "\n", (0,jsx_runtime.jsxs)(_components.li, {
+        children: ["\n", (0,jsx_runtime.jsx)(_components.h2, {
+          id: "class-2025-2026---navigation",
+          children: "Class 2025-2026 - Navigation"
+        }), "\n"]
+      }), "\n", (0,jsx_runtime.jsxs)(_components.li, {
+        children: ["\n", (0,jsx_runtime.jsx)(_components.h3, {
+          id: "students",
+          children: (0,jsx_runtime.jsx)(_components.a, {
+            href: "/sk/class_sthdf_dashboard/class_sthdf_dashboard_2025-2026/students/ST_INDEX",
+            children: "Students"
+          })
+        }), "\n"]
+      }), "\n", (0,jsx_runtime.jsxs)(_components.li, {
+        children: ["\n", (0,jsx_runtime.jsx)(_components.h3, {
+          id: "projects",
+          children: (0,jsx_runtime.jsx)(_components.a, {
+            href: "/sk/class_sthdf_dashboard/class_sthdf_dashboard_2025-2026/projects/PRJ_INDEX",
+            children: "Projects"
+          })
+        }), "\n"]
+      }), "\n", (0,jsx_runtime.jsxs)(_components.li, {
+        children: ["\n", (0,jsx_runtime.jsx)(_components.h3, {
+          id: "best-students-project-in-the-year-2025-2026",
+          children: (0,jsx_runtime.jsx)(_components.a, {
+            href: "/sk/class_sthdf_dashboard/class_sthdf_dashboard_2025-2026/class-sthdf/showcase/",
+            children: "Best students Project in the year 2025-2026"
+          })
+        }), "\n"]
       }), "\n"]
     }), "\n", (0,jsx_runtime.jsx)(_components.h3, {
       id: "-knife-framework",
@@ -651,17 +704,17 @@ function _createMdxContent(props) {
         })]
       }), "\n", (0,jsx_runtime.jsxs)(_components.li, {
         children: ["📰 ", (0,jsx_runtime.jsx)(_components.a, {
-          href: "/en/sk/knifes/knifes_overview/KNIFE_OVERVIEW_BLOG",
+          href: "/sk/knifes/knifes_overview/KNIFE_OVERVIEW_BLOG",
           children: "Blogový prehľad KNIFE"
         })]
       }), "\n", (0,jsx_runtime.jsxs)(_components.li, {
         children: ["🗂️ ", (0,jsx_runtime.jsx)(_components.a, {
-          href: "/en/sk/knifes/knifes_overview/KNIFE_OVERVIEW_LIST",
+          href: "/sk/knifes/knifes_overview/KNIFE_OVERVIEW_LIST",
           children: "Zoznam KNIFE"
         })]
       }), "\n", (0,jsx_runtime.jsxs)(_components.li, {
         children: ["📈 ", (0,jsx_runtime.jsx)(_components.a, {
-          href: "/en/sk/knifes/knifes_overview/KNIFE_OVERVIEW_DETAILS",
+          href: "/sk/knifes/knifes_overview/KNIFE_OVERVIEW_DETAILS",
           children: "Detailný prehľad KNIFE"
         })]
       }), "\n"]
@@ -696,7 +749,7 @@ function _createMdxContent(props) {
         })]
       }), "\n", (0,jsx_runtime.jsxs)(_components.li, {
         children: ["ℹ️ ", (0,jsx_runtime.jsx)(_components.a, {
-          href: "/en/sk/about",
+          href: "/sk/about",
           children: "About (SK)"
         })]
       }), "\n"]
