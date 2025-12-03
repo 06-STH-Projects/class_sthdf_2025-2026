@@ -32,7 +32,7 @@ description: "{{DESCRIPTION}}"
 # 👥 AUTHORSHIP ------------------------------------------------------
 
 # Hlavný autor – z globálneho configu
-author: "Roman Kazicka"
+author: "Ákos Lévárdy"
 
 # Zoznam autorov – generuje skript
 authors:
