@@ -83,7 +83,7 @@ privacy: "public"
 # ⚖ INTELLECTUAL PROPERTY -------------------------------------------
 
 # Držiteľ práv k obsahu – dopĺňa skript
-rights_holder_content: "Roman Kazicka"
+rights_holder_content: "Dalibor Doša"
 
 # Systémový vlastník práv
 rights_holder_system: "CAA / KNIFE / LetItGrow"
@@ -135,3 +135,6 @@ fm_reserved2: ""
 
 [🏠 Domov](../../../index.md) · [⬅️ Nahor](../)
 # ST009 — about-me
+
+
+## TEST
