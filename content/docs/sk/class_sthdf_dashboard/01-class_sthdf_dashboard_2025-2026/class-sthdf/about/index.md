@@ -247,4 +247,11 @@ The minimum must be met in both sections.
 Ing. Roman Kazička, PhD| Course supervisor| ||
 Ing. Roman Kazička, PhD | Knowledge Management Enterprise Architect | Teacher |  <img src="./img/Detail-05.png" alt="kazicka" width="180" /><br /> roman.kazicka@systemthinking.sk>
 
+
+## Class 2025-2026 - Navigation
+
+### [Students](../../students/ST_INDEX.md)
+### [Projects](../../projects/PRJ_INDEX.md)
+### [Best students Project in the year 2025-2026](../showcase/index.md)
+
 [Back to Home](../index.md)
