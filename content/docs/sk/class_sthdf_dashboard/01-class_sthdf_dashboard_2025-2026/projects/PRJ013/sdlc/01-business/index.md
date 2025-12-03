@@ -138,3 +138,8 @@ fm_reserved2: ""
 - [Business poznámky](./notes.md)
 
 **Navigation:** [⬆️ SDLC](../index.md) · [⬅️ Projekt](../../index.md)
+
+## Import z drzkabel / 01-Requirements
+
+### 01 Requirements
+Zachytenie potrieb, cieľov a očakávaní používateľov. Pridaj user stories a nefunkčné požiadavky.

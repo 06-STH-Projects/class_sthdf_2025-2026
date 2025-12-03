@@ -134,3 +134,8 @@ fm_reserved2: ""
 <!-- class_sthdf_dashboard_INSTANCE_ID: 01-class_sthdf_dashboard_2025-2026 -->
 
 PRJ013 / 04-analysis / backlog.md
+
+## Import z drzkabel / 01-Requirements
+
+### 🧑‍🤝‍🧑 User Stories
+Zapíš stručné príbehy používateľov (As a … I want … so that …).

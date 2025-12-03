@@ -138,3 +138,8 @@ fm_reserved2: ""
 - [Test report a QA výstupy](./test-report.md)
 
 **Navigation:** [⬆️ SDLC](../index.md) · [⬅️ Projekt](../../index.md)
+
+## Import z drzkabel / 05-Testing
+
+### 05 Testing
+Overenie kvality – test cases, QA, výsledky.

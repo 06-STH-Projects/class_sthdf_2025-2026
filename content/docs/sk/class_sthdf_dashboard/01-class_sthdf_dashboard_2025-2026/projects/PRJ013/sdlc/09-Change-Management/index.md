@@ -138,3 +138,8 @@ fm_reserved2: ""
 - Change log / CR / impact analysis (doplníš podľa potreby).
 
 **Navigation:** [⬆️ SDLC](../index.md) · [⬅️ Projekt](../../index.md)
+
+## Import z drzkabel / 09-ChangeManagement
+
+### 09 ChangeManagement
+Riadenie zmien: change log, impact analýza, CR proces.

@@ -138,3 +138,13 @@ fm_reserved2: ""
 - [Odkazy na kód / repozitáre](./code-links.md)
 
 **Navigation:** [⬆️ SDLC](../index.md) · [⬅️ Projekt](../../index.md)
+
+## Import z drzkabel / 04-Implementation
+
+### 04 Implementation
+Realizácia návrhu – kód, konfigurácia, pipeline.
+
+## Import z drzkabel / 08-Documentation
+
+### 08 Documentation
+Príručky, referencie a podklady na odovzdanie.

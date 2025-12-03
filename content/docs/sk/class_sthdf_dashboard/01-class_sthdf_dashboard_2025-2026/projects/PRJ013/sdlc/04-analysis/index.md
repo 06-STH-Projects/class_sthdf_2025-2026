@@ -138,3 +138,8 @@ fm_reserved2: ""
 - [Backlog a analýzy](./backlog.md)
 
 **Navigation:** [⬆️ SDLC](../index.md) · [⬅️ Projekt](../../index.md)
+
+## Import z drzkabel / 02-Analysis
+
+### 02 Analysis
+Analýza uskutočniteľnosti, rizík a alternatív riešenia.

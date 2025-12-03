@@ -134,3 +134,8 @@ fm_reserved2: ""
 <!-- class_sthdf_dashboard_INSTANCE_ID: 01-class_sthdf_dashboard_2025-2026 -->
 
 PRJ013 / 08-operation / operations.md
+
+## Import z drzkabel / 07-Maintenance
+
+### 07 Maintenance
+Údržba, drobné vylepšenia a plán aktualizácií.

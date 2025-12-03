@@ -138,3 +138,8 @@ fm_reserved2: ""
 - [Prototypy / dizajn](./prototype.md)
 
 **Navigation:** [⬆️ SDLC](../index.md) · [⬅️ Projekt](../../index.md)
+
+## Import z drzkabel / 03-Design
+
+### 03 Design
+Návrh architektúry, dátového modelu a používateľského rozhrania.
