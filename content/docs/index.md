@@ -158,9 +158,9 @@ The minimum must be met in both sections.
 - 🎞️ [Showcase – príklady](./sk/class_sthdf_dashboard/01-class_sthdf_dashboard_2025-2026/class-sthdf/showcase/index.md)
 - ## Class 2025-2026 - Navigation
 
-- ### [Students](../../students/ST_INDEX.md)
-- ### [Projects](../../projects/PRJ_INDEX.md)
-- ### [Best students Project in the year 2025-2026](../showcase/index.md)
+- ### [Students](./sk/class_sthdf_dashboard/01-class_sthdf_dashboard_2025-2026/students/ST_INDEX.md)
+- ### [Projects](./sk/class_sthdf_dashboard/01-class_sthdf_dashboard_2025-2026/projects/PRJ_INDEX.md)
+- ### [Best students Project in the year 2025-2026](./sk/class_sthdf_dashboard/01-class_sthdf_dashboard_2025-2026//class-sthdf/showcase/index.md)
 
 ### 🔪 KNIFE Framework
 - 🗺️ [KNIFE hub](./sk/knifes/)
