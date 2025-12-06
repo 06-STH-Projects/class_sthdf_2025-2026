@@ -214,3 +214,45 @@ Našou víziou je zlepšiť život a pracovné prostredie ľudí, ktorí trávia
   - Základný profil + checklist nastavenia setupu
 - **Odkaz na model (Figma)**
   - [Smart Cable Management App – prototyp](https://www.figma.com/make/x6OcLtSWBVfoPrO1ktyxl8/Smart-Cable-Management-App?node-id=0-4&t=ov0OmfD7uj8mJ02F-1)
+
+Používateľ začína onboardingom, kde WorkNest stručne vysvetľuje svoje ciele — zlepšenie držania tela, organizáciu káblov a vytvorenie estetického pracovného priestoru.
+
+<p align="center"> <img width="280" alt="image" src="https://github.com/user-attachments/assets/982f868d-2fc8-4a04-aa37-2da5f1c44303" /> </p>
+
+Následne zadá svoje základné telesné parametre, ako sú výška, hmotnosť a voliteľne aj pohlavie, aby aplikácia mohla vypočítať personalizované ergonomické odporúčania.
+
+<p align="center"> <img width="280" alt="image" src="https://github.com/user-attachments/assets/bff4fb15-59fd-4cee-83a6-2e353b391d63" /> </p>
+
+V ďalšom kroku si používateľ vyberá typ stola — štandardný, stojaci alebo nastaviteľný — a potom určí typ stoličky.
+
+<p align="center"> <img width="280" alt="image" src="https://github.com/user-attachments/assets/2d68f4e1-029d-4f58-8a28-9abd0c0c6029" /> </p>
+
+Pred dokončením nastavenia zobrazí WorkNest prehľadovú sumarizačnú obrazovku so všetkými zvolenými parametrami.
+
+<p align="center"> <img width="280" alt="image" src="https://github.com/user-attachments/assets/42f23b7b-188d-45a4-9505-5bd50a89b870" /> </p>
+
+Po spustení sa používateľ dostáva na domácu nástenku, kde vidí stav svojho ergonomického nastavenia, štatistiku „sedenie vs. státie“, časovač prestávok a rýchle tipy na úpravu káblov.
+
+<p align="center"> <img width="280" alt="image" src="https://github.com/user-attachments/assets/7bbb161a-0e2d-4290-b273-ee2c4848ee5d" /> </p>
+
+Z tohto miesta môže prejsť na detailné odporúčania pre nastavenie výšky stoličky, stola, monitora a periférií, používať Pomodoro časovač alebo otvoriť sekciu pre správu káblov. Celý postup je navrhnutý tak, aby rýchlo získal potrebné údaje a okamžite poskytol užitočné personalizované tipy na zlepšenie pracovného prostredia.
+
+<p align="center"> <img width="260" alt="image" src="https://github.com/user-attachments/assets/ffb48e1f-ee3d-478a-92c4-272b4efe7eab" /> </p>
+
+Používateľ sa tiež dostáva na hlavný časovač, kde môže vybrať režim práce, sledovať priebeh relácie a dostávať pripomienky na prestávky či zmenu polohy.
+
+<p align="center"> <img width="260" alt="image" src="https://github.com/user-attachments/assets/cecda1c6-cea9-4046-854d-156eda2e4d07" /> </p>
+
+V sekcii Cable Management si prezerá stav organizácie káblov a získava personalizované odporúčania, ako napríklad použitie držiakov alebo káblových návlekov.
+
+<p align="center"> <img width="260" alt="image" src="https://github.com/user-attachments/assets/3117dbe1-1916-46a5-9463-bd4e97a538ef" /> </p>
+
+Obrazovka Ergonomics zobrazuje presné odporúčané hodnoty pre výšku stoličky, stola a vzdialenosť monitora, ktoré si môže označiť ako upravené.
+
+<p align="center"> <img width="240" alt="image" src="https://github.com/user-attachments/assets/01d1d0c1-e4cd-4515-9eca-29371f8bcc94" /> </p>
+
+V profile používateľ spravuje svoje údaje, typy nábytku a upozornenia, môže meniť jazyk a kontrolovať nové funkcie, ako napríklad tmavý režim.
+
+<p align="center"> <img width="260" alt="image" src="https://github.com/user-attachments/assets/36b07485-e54c-49e5-9958-2667cb60c018" /> </p>
+
+Všetky sekcie sú prepojené jednoduchou navigáciou, ktorá umožňuje rýchlo zlepšovať pracovné prostredie a sledovať svoje návyky.
