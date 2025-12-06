@@ -180,3 +180,26 @@ V profile používateľ spravuje svoje údaje, typy nábytku a upozornenia, mô�
 <p align="center"> <img width="260" alt="image" src="https://github.com/user-attachments/assets/36b07485-e54c-49e5-9958-2667cb60c018" /> </p>
 
 Všetky sekcie sú prepojené jednoduchou navigáciou, ktorá umožňuje rýchlo zlepšovať pracovné prostredie a sledovať svoje návyky.
+
+---
+
+## Roadmap
+
+### Teraz (MVP)
+- Onboarding s telesnými údajmi a typom stola/stoličky
+- Základné ergonomické odporúčania (výška sedenia/stola, umiestnenie monitora)
+- Pripomienky prestávok a striedania sedenia/státia, Pomodoro
+- Základný profil a checklist nastavenia setupu
+
+### Ďalej
+- Personalizované kompenzačné cvičenia a tréningové bloky
+- Štatistiky „sedenie vs. státie“, ciele, gamifikácia
+- AI tipy pre cable management na základe fotky setupu
+
+### Neskôr
+- Integrácie: standing desk, smart svetlá
+- Senzory: vzduch/CO₂, svetlo, hluk (otvorené protokoly)
+- Zdieľateľné profily a tímové nastavenia (B2B piloty)
+
+## Odkazy
+- Figma prototyp: [Smart Cable Management App](https://www.figma.com/make/x6OcLtSWBVfoPrO1ktyxl8/Smart-Cable-Management-App?node-id=0-4&t=ov0OmfD7uj8mJ02F-1)

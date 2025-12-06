@@ -133,8 +133,31 @@ fm_reserved2: ""
 
 <!-- class_sthdf_dashboard_INSTANCE_ID: 01-class_sthdf_dashboard_2025-2026 -->
 
-# 03-Solution Architecture
+# 03-Cable holder — Držkábel
 
-- [Solution design](./design.md)
+**Navigation:** [⬆️ SDLC](../index.md) · [⬅️ Projekt](../../index.md)
+
+## Ako sme vyvíjali
+- Otestovali sme viaceré komerčné držáky – nič nevyhovovalo (slabá fixácia, ostré hrany, zlý „return“, neestetika)
+- Navrhli sme vlastný 3D model: plynulý pohyb kábla, jednoduché založenie, istý návrat, stabilita
+- Iterácie podľa reálneho používania; cieľ: jednoduché, spoľahlivé, ľahko vyrábateľné riešenie
+
+## Zlé príklady (čo nechceme)
+![](../../src/bad-cableholder.png)
+![](../../src/bad-cableholder2.png)
+![](../../src/bad-cableholder3.png)
+![](../../src/bad-cableholder4.png)
+
+## Náš návrh
+![](../../src/cableholder-2.png)
+![](../../src/cableholder.jpeg)
+![](../../src/cableholder.png)
+
+## 3D model (STL)
+- [Stiahnuť model STL](../../src/cableholder.stl)
+
+## Poznámky k validácii
+- Testované s rôznymi povrchmi stola a priemerom kábla
+- Zber foto/video feedbacku, priebežné úpravy geometrie
 
 **Navigation:** [⬆️ SDLC](../index.md) · [⬅️ Projekt](../../index.md)

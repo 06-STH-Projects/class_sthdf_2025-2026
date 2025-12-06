@@ -133,8 +133,41 @@ fm_reserved2: ""
 
 <!-- class_sthdf_dashboard_INSTANCE_ID: 01-class_sthdf_dashboard_2025-2026 -->
 
-# 02-Top Level Architecture
+# 02-Project phases
 
-- Pridaj high-level diagram alebo popis architektúry.
+**Navigation:** [⬆️ SDLC](../index.md) · [⬅️ Projekt](../../index.md)
+
+## Prehľad fáz
+- Fáza 1: Držkábel (fyzický produkt, validácia trhu)
+- Fáza 2: Apka (MVP ergonomika + pripomienky + pomodoro)
+- Fáza 3: Feedback (kvalitatívne/kvantitatívne dáta, prioritizácia)
+- Fáza 4: Rozširovanie (integrácie, senzory, doplnky)
+
+## Fáza 1 — Držkábel
+- Výroba a balenie; pilotný predaj a logistika
+- Zber spätnej väzby (photos/video, recenzie, dotazníky)
+- Iterácie dizajnu podľa reálneho používania
+
+## Fáza 2 — Apka
+- MVP: onboarding s telesnými údajmi + základné ergonomické odporúčania
+- Pripomienky sedenie/státie, prestávky; pomodoro timer
+- Základný profil a checklist nastavenia setupu
+
+## Fáza 3 — Feedback od používateľov
+- Metodika: rozhovory, ankety, telemetry v app (aktivácia/retencia)
+- Cieľ: identifikovať top pain‑points a „aha“ momenty
+- Výstup: zoradený backlog + jasné learningy na iterácie
+
+## Fáza 4 — Na tom budeme robiť
+- Roadmapa podľa dát; rozšírenia:
+  - Integrácie: standing desk, svetlá
+  - Senzory: vzduch/CO₂, svetlo, hluk
+  - Ďalšie doplnky: organizéry, držiaky, cable sleeves
+
+## Milníky a timeline (náčrt)
+- M1: Prvé predaje Držkábel + 20+ spät. väzieb
+- M2: MVP app (onboarding + ergonomika + pripomienky + pomodoro)
+- M3: 30‑dňová retencia > X %, NPS > Y
+- M4: Integrácie/senzory – prvé piloty
 
 **Navigation:** [⬆️ SDLC](../index.md) · [⬅️ Projekt](../../index.md)

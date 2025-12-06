@@ -143,3 +143,32 @@ fm_reserved2: ""
 
 ### 01 Requirements
 Zachytenie potrieb, cieľov a očakávaní používateľov. Pridaj user stories a nefunkčné požiadavky.
+
+---
+
+## 01-Business plan — prehľad
+
+### Dlhodobý cieľ
+- Vybudovať ekosystém pre moderné PC pracoviská: zdravie + produktivita + estetika
+- Organický rast podľa reálnych potrieb; interoperabilita s existujúcimi smart produktmi
+- Kombinácia fyzických doplnkov (napr. Držkábel) a inteligentnej aplikácie (ergonómia, návyky)
+
+### Ako chceme rásť
+- Postupné MVP → iterácie na základe používateľskej spätnej väzby
+- Otvorené protokoly a integrácie tretích strán (senzory, svetlá, standing desk)
+- Primárne B2C; neskôr piloty a B2B spolupráce (tímy, školy, coworky)
+
+### Focus na najbližší čas
+- Validácia Držkábel: výroba, pilotný predaj, zber dát, rýchle iterácie
+- MVP app: onboarding, základné ergonomické odporúčania, pripomienky a pomodoro
+- Distribúcia a komunita: mini e‑shop, sociálne siete, spolupráce/piloty
+
+### KPI a validácia
+- Konverzie (návštevy → objednávky), NPS a kvalitatívny feedback
+- Aktivácia v app (dokončený onboarding), retencia (7/30 dní), použitie pripomienok
+- Počet iterácií/mesiac na základe spätnej väzby
+
+### Go‑to‑market (stručne)
+- Komunita (Discord/IG/YouTube), tvorcovia obsahu, micro‑influenceri
+- Piloty: školy/firmy s dlhým sedením pri PC
+- Jednoduchý e‑shop + transparentná roadmapa
