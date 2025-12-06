@@ -134,12 +134,11 @@ fm_reserved2: ""
 <!-- class_sthdf_dashboard_INSTANCE_ID: 01-class_sthdf_dashboard_2025-2026 -->
 
 [🏠 Domov](../../index.md) · [⬅️ Nahor](../PRJ_INDEX.md)
-# PRJ013 — Overview
+# PRJ013 — WorkNest
 
 ## Navigácia
-- [Presentation / Slides](./presentation/slides.md) — záverečný dokument pre rýchlu prezentáciu.
+- [Presentation](./presentation/slides.md) — záverečný dokument pre rýchlu prezentáciu.
 - [SDLC](./sdlc/index.md) — podklady a detailný obsah.
-- 
+  
 
-
-Vsetko je mozne najst na tejto [webstranke](https://patrikfejda.github.io/drzkabel/sk)
+Našou víziou je zlepšiť život a pracovné prostredie ľudí, ktorí trávia veľa času pri počítači – programátorov, office pracovníkov či kreatívcov

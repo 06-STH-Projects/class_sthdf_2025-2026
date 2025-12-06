@@ -83,7 +83,7 @@ privacy: "public"
 # ⚖ INTELLECTUAL PROPERTY -------------------------------------------
 
 # Držiteľ práv k obsahu – dopĺňa skript
-rights_holder_content: "Roman Kazicka"
+rights_holder_content: "Patrik Fejda, Daria Sira"
 
 # Systémový vlastník práv
 rights_holder_system: "CAA / KNIFE / LetItGrow"
@@ -134,80 +134,32 @@ fm_reserved2: ""
 <!-- class_sthdf_dashboard_INSTANCE_ID: 01-class_sthdf_dashboard_2025-2026 -->
 
 [🏠 Domov](../../../index.md) · [⬅️ Nahor](../)
-# PRJ013 — Presentation
+# PRJ013 — WorkNest
 
 --- Headline ---
 ## Headline
-**2025-PRJ-013-ST_013-ST_013-Nazov projektu**
+**2025-PRJ-013-ST_010-ST_043-WorkNest**
 
-> Uvodny obrazok: TODO (dopln odkaz alebo subor).
-
-Strucny text o projekte (1-3 vety, doplni tim).
+![](../src/worknest_logo.png)
 --- Headline ---
 
 --- introduction ---
 ## Introduction
-**2025-PRJ-013-ST_013-ST_013-Nazov projektu**
+**2025-PRJ-013-ST_010-ST_043-WorkNest**
 
-Strucny text o projekte (zhrnutie zadania + prinos).
+Našou víziou je zlepšiť život a pracovné prostredie ľudí, ktorí trávia veľa času pri počítači – programátorov, office pracovníkov či kreatívcov. Zameriavame sa na pohodlie, zdravie a estetiku pracovného setupu. Dlhodobým cieľom je vytvoriť komplexný ekosystém riešení, ktorý pomôže správne nastaviť pracovné miesto.
+
 --- introduction ---
 
 --- obsah ---
 ## Obsah
-- [01-Business](../sdlc/01-business/index.md)
-- [02-Top Level Architecture](../sdlc/02-top-level-architecture/index.md)
-- [03-Solution Architecture](../sdlc/03-solution-architecture/index.md)
-- [04-Analysis](../sdlc/04-analysis/index.md)
-- [05-Design](../sdlc/05-design/index.md)
-- [06-Implementation](../sdlc/06-implementation/index.md)
-- [07-Testing & Verification](../sdlc/07-testing-verification/index.md)
-- [08-Operation](../sdlc/08-operation/index.md)
-- [09-Change Management](../sdlc/09-Change-Management/index.md)
+- [01-Business plan](../sdlc/01-business-plan/index.md)
+- [02-Project phases](../sdlc/02-project-phases/index.md)
+- [03-Cable holder - Držkábel](../sdlc/03-cable-holder/index.md)
+- [04-App](../sdlc/04-app/index.md)
 --- obsah ---
 
-## 01-Business
-## 02-Top Level Architecture
-## 03-Solution Architecture
-## 04-Analysis
-## 05-Design
-## 06-Implementation
-## 07-Testing & Verification
-## 08-Operation
-## 09-Change Management
-
----
-
-## Pitch Presentation (import z drzkabel)
-
-### 🎤 Pitch Presentation
-#### 1. Problém
-- aký problém riešime
-#### 2. Riešenie
-- čo ponúkame
-#### 3. Hodnota
-- kto z toho profituje a ako
-#### 4. Biznis model
-- ako by sme to monetizovali (aj v hypotéze)
-#### 5. Tím
-- prečo sme my tí správni ľudia
-#### 6. Call to action
-- čo potrebujeme od investorov (čas, peniaze, feedback)
-
-#### 🛠️ Štruktúra pitchu
-1. Problém – aký problém riešime?
-2. Riešenie – čo sme vyvinuli?
-3. Trh / Kontext – pre koho to je, aký má dopad?
-4. Tím – kto sme, aké máme roly?
-5. Výzva – čo potrebujeme (čas, ľudí, investíciu)?
-
-#### ⏱️ Časovanie
-- Max 5–7 minút na prezentáciu
-- 2–3 minúty Q&A
-
-#### 📊 Podklady
-- 3–5 slajdov (stručné, vizuálne)
-- 1 demo / ukážka výsledku
-
-#### 🧭 Tipy
-- Menej textu, viac vizualizácií
-- Jedna hlavná myšlienka na slide
+## 01-Business plan
+## 02-Project phases
+## 03-Cable holder - Držkábel
+## 04-App
