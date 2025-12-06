@@ -160,6 +160,57 @@ Našou víziou je zlepšiť život a pracovné prostredie ľudí, ktorí trávia
 --- obsah ---
 
 ## 01-Business plan
+- **Dlhodobý cieľ**
+  - Vybudovať ekosystém pre moderné PC pracovné miesta (zdravie + produktivita + estetika)
+  - Organický rast, reálna hodnota pre používateľa, interoperabilita s existujúcimi smart produktmi
+  - Kombinácia jednoduchých fyzických doplnkov + inteligentnej aplikácie
+- **Ako chceme rásť**
+  - Začať malými, praktickými produktmi a MVP apkou; iterovať na základe feedbacku
+  - Podpora otvorených protokolov a integrácií tretích strán
+  - Primárne B2C; neskôr piloty/B2B príležitosti
+- **Focus na najbližší čas**
+  - Validácia produktu Držkábel (predaj, používateľské testy, iterácie)
+  - MVP app: ergonomické odporúčania, pripomienky sedenie/státie, pomodoro
+  - Distribúcia: komunita, e‑shop, piloty so školami/firmami
+
 ## 02-Project phases
+- **1. Držkábel**
+  - Výroba, balenie, pilotný predaj; zber a vyhodnotenie spätnej väzby
+- **2. Apka**
+  - MVP: ergonomické odporúčania + pripomienky + pomodoro + základný profil
+- **3. Feedback od používateľov**
+  - Testy, dotazníky, rozhovory; metriky používania (čo funguje/nefunguje)
+- **4. Na tom budeme robiť**
+  - Roadmapa podľa dát; rozšírenia: integrácie, senzory, doplnky
+  - Napr. standing desk, svetlá, senzory (vzduch/CO₂, svetlo, hluk), ďalšie organizéry
+
 ## 03-Cable holder - Držkábel
+- **Ako sme vyvíjali**
+  - Otestovali sme viaceré komerčné držáky – nič nevyhovovalo (slabá fixácia, ostré hrany, zlý „return“, neestetika)
+  - Navrhli sme vlastný 3D model: plynulý pohyb kábla, jednoduché založenie, istý návrat, stabilita
+  - Iterácie podľa používania; finále: jednoduché, spoľahlivé, lacné na výrobu
+- **Zlé príklady (čo nechceme)**
+  - ![](../src/bad-cableholder.png)
+  - ![](../src/bad-cableholder2.png)
+  - ![](../src/bad-cableholder3.png)
+  - ![](../src/bad-cableholder4.png)
+- **Náš návrh**
+  - ![](../src/cableholder-2.png)
+  - ![](../src/cableholder.jpeg)
+  - ![](../src/cableholder.png)
+- **3D model (STL)**
+  - [Stiahnuť model STL](../src/cableholder.stl)
+- Skúšali sme ich „mega veľa“, preto sme navrhli vlastné riešenie a iterovali podľa reálneho používania.
+
 ## 04-App
+- **Na čo bude slúžiť v budúcnosti**
+  - Ergonomické odporúčania (výška sedenia/stola, umiestnenie monitora, nastavenie stoličky)
+  - Pripomienky striedania sedenia/státia, sledovanie času v polohách, prestávky
+  - Personalizované kompenzačné cvičenia, pomodoro, AI rady pre cable management
+  - Integrácie tretích strán, malé senzory (svetlo, CO₂, hluk)
+- **Čo obsahuje teraz (MVP/prototyp)**
+  - Onboarding s telesnými údajmi + základné ergonomické odporúčania
+  - Pomodoro timer a jednoduché pripomienky prestávok
+  - Základný profil + checklist nastavenia setupu
+- **Odkaz na model (Figma)**
+  - [Smart Cable Management App – prototyp](https://www.figma.com/make/x6OcLtSWBVfoPrO1ktyxl8/Smart-Cable-Management-App?node-id=0-4&t=ov0OmfD7uj8mJ02F-1)
