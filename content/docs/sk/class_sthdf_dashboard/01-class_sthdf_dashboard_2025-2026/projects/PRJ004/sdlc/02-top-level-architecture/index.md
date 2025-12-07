@@ -169,31 +169,19 @@ USBCAPS funguje ako **bezpečný most** medzi počítačom a cieľovým zariaden
 
 ```mermaid
 flowchart LR
-    subgraph HOST["Host system (PC / notebook)"]
-        OS["OS + terminal / IDE"]
-        USB["USB port"]
-        OS --> USB
-    end
+    PC["Host (PC / notebook)"]
+    USB["USB port"]
+    BRIDGE["USB–UART bridge\n(CP2102 / CH340)"]
+    ESP["ESP32\n(firmware + logika)"]
+    WIFI["Wi-Fi web terminál"]
+    BT["Bluetooth Serial (SPP)"]
+    TARGET["Cieľové zariadenie\n(IoT / embedded board)"]
 
-    subgraph USBCAPS["USBCAPS zariadenie"]
-        UBR["USB–UART bridge (CP2102 / CH340)"]
-        ESP["ESP32 (FW logika)"]
-        WIFI["Wi-Fi web terminál"]
-        BT["Bluetooth Serial (SPP)"]
-        UART_OUT["UART interface<br/>(TX/RX/GND + 3.3/5 V)"]
+    PC --> USB --> BRIDGE --> ESP
+    ESP --> WIFI
+    ESP --> BT
+    ESP --> TARGET
 
-        USB --> UBR
-        UBR --> ESP
-        ESP --> WIFI
-        ESP --> BT
-        ESP --> UART_OUT
-    end
-
-    subgraph TARGET["Cieľové zariadenie"]
-        DEV["IoT / Embedded board<br/>(Arduino / ESP / STM32...)"]
-    end
-
-    UART_OUT --> DEV
 --
 
 **Navigation:** [⬆️ SDLC](../index.md) · [⬅️ Projekt](../../index.md)
