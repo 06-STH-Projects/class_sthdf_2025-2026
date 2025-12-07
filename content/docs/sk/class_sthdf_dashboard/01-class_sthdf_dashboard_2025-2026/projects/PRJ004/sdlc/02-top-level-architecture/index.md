@@ -166,16 +166,15 @@ USBCAPS funguje ako **bezpečný most** medzi počítačom a cieľovým zariaden
 ---
 
 ## 🧩 Architektúra – diagram
-
 ```mermaid
 flowchart LR
-    PC["Host (PC / notebook)"]
-    USB["USB port"]
-    BRIDGE["USB–UART bridge\n(CP2102 / CH340)"]
-    ESP["ESP32\n(firmware + logika)"]
-    WIFI["Wi-Fi web terminál"]
-    BT["Bluetooth Serial (SPP)"]
-    TARGET["Cieľové zariadenie\n(IoT / embedded board)"]
+    PC[Host (PC / notebook)]
+    USB[USB port]
+    BRIDGE[USB–UART bridge (CP2102 / CH340)]
+    ESP[ESP32 (firmware + logika)]
+    WIFI[Wi-Fi web terminal]
+    BT[Bluetooth Serial (SPP)]
+    TARGET[Cieľové zariadenie (IoT / embedded board)]
 
     PC --> USB --> BRIDGE --> ESP
     ESP --> WIFI
