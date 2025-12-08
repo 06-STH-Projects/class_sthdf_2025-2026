@@ -1,78 +1,65 @@
 # 📦 Project Outcomes
 
 ## 🔖 Stav projektu
-Na aktuálnom stave:
-- funguje základný prototyp s ESP32 s modulom,  
+- funguje základný prototyp na ESP32-C6,
 - FW obsahuje:
   - automatickú detekciu baud rate,
-  - automatický RX/TX soft-swap,
-  - Wi-Fi/Bluetooth terminál,
-- PC komunikuje bezdrôtovo – čím je izolovaný od možného USB Killer útoku.
+  - bridge mód,
+  - terminálové menu,
+- prototyp je použiteľný na debug a výuku.
 
 ---
 
 ## 🧩 Výstupy podľa SDLC / V-modelu
 
 ### 1. Business požiadavky
-- ochrana PC pred USB Killer hrozbami cez nepriamu komunikáciu,
-- jednoduchší workflow s UART (žiadne manuálne rx/tx, baud rate).
+- rýchle debugovanie sériovej linky,
+- jednoduchší workflow bez ručného nastavovania baud/rx-tx.
 
 ### 2. Top Level Architecture
-- PC → USB-UART → ESP32 → UART cieľové zariadenie + Wi-Fi/BLE ako bezdrôtový most pre terminál.
+- PC → USB → ESP32-C6 → UART cieľového zariadenia.
 
 ### 3. Solution Architecture
-- ESP32 firmware rieši automatizáciu,
-- WebSocket + BT SPP poskytujú prístup z ľubovoľného zariadenia,
-- HW modul zjednocuje ochranu a diagnostiku.
+- modulárny firmware (Baud Detect, Bridge, Menu),
+- voliteľné TFT/SD prvky pre vizualizáciu a logovanie.
 
 ### 4. Analysis
-- identifikované problémy reálnych USB-TTL adaptérov (žiadna izolácia, manuálne nastavenia),
-- definovaný bezpečnostný risk model USB Killer.
+- bežné USB-TTL adaptéry neponúkajú automatizáciu ani diagnostiku,
+- vzdelávací aj praktický nástroj má vysokú hodnotu.
 
 ### 5. Design
-- návrh PCB layoutu,
-- modulárna FW architektúra (detekcia -> routing -> terminál).
+- návrh FW modulov a koncept HW zapojenia,
+- definované rozšírenia (TFT, SD).
 
 ### 6. Implementation
-- breadboard verzia + prvá FW iterácia,
+- breadboard prototyp + prvá FW iterácia.
 
 ### 7. Verification & Testing
-- testované na viacerých zariadeniach: ESP32, Arduino Nano, STM32,
-- testovaný remote-terminal access cez mobil.
+- test na viacerých UART zariadeniach (ESP, STM32, Arduino),
+- test Bridge a detect funkcie cez sériový terminál.
 
 ### 8. Operation
-- prototyp je funkčný a demonštrovatelný pre výučbu alebo lab. prostredie,
+- prototyp je demonštrateľný a použiteľný v lab prostredí.
 
 ---
 
 ## 🏆 Finálny produkt
-
-Tím reálne dodal:
-- funkčný USB-TTL prototyp s FW inteligenciou a Wi-Fi/BLE terminálom,
-- dokumentovaný návrh HW a koncept PCB,
-- KNIFE článok s popisom technológie a use-cases.
-
-Ako to vyzerá:
-- breadboard prototyp + schéma zapojenia,
-- screenshot web-terminálu,
-- ukážky UART logov cez Wi-Fi a BT.
+Tím dodal:
+- funkčný USB-to-TTL most s automatickou detekciou a bridge módom,
+- dokumentáciu riešenia a demonštračný prototyp.
 
 ---
 
 ## 🧭 Porovnanie s Project Summary
 
-**Čo sme plánovali:**
-- inteligentný USB-TTL adaptér s auto baud, auto RX/TX a bezdrôtovým terminálom,
-- prototyp plus dokumentácia.
+**Plánované:**
+- inteligentný USB-TTL nástroj s autodetekciou a použiteľným UI.
 
-**Čo sme dodali:**
-- prototyp je funkčný, FW implementovaný v základnej verzii,
-- web-terminal je dostupný, ale potrebuje optimalizáciu,
-- PCB návrh je vo verzii konceptu (next iteration).
+**Reálne dodané:**
+- funkčné MVP prototyp so základným menu a detekciou,
+- rozšírenia (displej, logovanie) sú pripravené pre ďalšiu iteráciu.
 
-➡️ **Rozdiel:**  
-Implementácia je v MVP stave
-
+➡️ Projekt je v stave MVP, pripravený na rozširovanie.
 
 ---
 ## Navigácia
