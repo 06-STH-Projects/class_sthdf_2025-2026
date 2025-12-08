@@ -135,6 +135,8 @@ fm_reserved2: ""
 
 # 06-Implementation
 
+- 🌐 Repozitar: [GitHub](https://github.com/thenisvan/SerialyTTY)
+- 🌐 Web: [Web Stranka](https://thenisvan.github.io/SerialyTTY/)
 - [Odkazy na kód / repozitáre](./code-links.md)
 
 **Navigation:** [⬆️ SDLC](../index.md) · [⬅️ Projekt](../../index.md)
