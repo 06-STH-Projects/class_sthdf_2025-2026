@@ -145,6 +145,5 @@ fm_reserved2: ""
 - **SD write speed**: ~100 KB/s
 - **CPU utilization**: 15-25%
 
-- [Test report a QA výstupy](./test-report.md)
 
 **Navigation:** [⬆️ SDLC](../index.md) · [⬅️ Projekt](../../index.md)
