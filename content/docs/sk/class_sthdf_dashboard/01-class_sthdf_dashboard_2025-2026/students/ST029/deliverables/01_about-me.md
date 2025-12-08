@@ -1,8 +1,8 @@
  🙋 About Me
 ## 🔖 Základné informácie
-Juraj Marcinech
-https://github.com/Jammz-kekw
-xmarcinech@stuba.sk
+Juraj Marcinech  
+https://github.com/Jammz-kekw  
+xmarcinech@stuba.sk  
 
 ## 🎯 Profesijné záujmy
 Nadobudnutie skúseností v oblasti 3D tlače
@@ -11,7 +11,7 @@ Nadobudnutie skúseností v oblasti 3D tlače
 Šport, hudba, varenie, DND
 
 ## 🚀 Očakávania od predmetu
-Nadobudnutie skúseností v oblasti 3D tlače
+Nadobudnutie skúseností v oblasti 3D tlače  
 Spolupráca pri výrobe produktu
 
 ## 🚀 Čo viem ponúknuť
