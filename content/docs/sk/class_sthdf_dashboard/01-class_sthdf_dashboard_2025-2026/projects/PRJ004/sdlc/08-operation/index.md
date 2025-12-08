@@ -37,6 +37,8 @@ author: "Roman Kazicka"
 # Zoznam autorov – generuje skript
 authors:
   - "Roman Kazicka"
+  - "Denis Ivan"
+  - "Danylo Bashmakov"
 
 
 # 🗂 CLASSIFICATION ---------------------------------------------------
@@ -134,7 +136,12 @@ fm_reserved2: ""
 <!-- class_sthdf_dashboard_INSTANCE_ID: 01-class_sthdf_dashboard_2025-2026 -->
 
 # 08-Operation
+## 📞 Support & Community
 
+- **Issues & Bugs:** [GitHub Issues](https://github.com/thenisvan/SerialyTTY/issues)
+- **Discussions:** [GitHub Discussions](https://github.com/thenisvan/SerialyTTY/discussions)
+- **Documentation:** See `/docs/` folder for comprehensive guides
+  
 - [Prevádzka a podpora](./operations.md)
 
 **Navigation:** [⬆️ SDLC](../index.md) · [⬅️ Projekt](../../index.md)
