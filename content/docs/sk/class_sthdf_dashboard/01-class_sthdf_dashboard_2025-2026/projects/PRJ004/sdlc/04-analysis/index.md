@@ -37,6 +37,8 @@ author: "Roman Kazicka"
 # Zoznam autorov – generuje skript
 authors:
   - "Roman Kazicka"
+  - "Denis Ivan"
+  - "Danylo Bashmakov"
 
 
 # 🗂 CLASSIFICATION ---------------------------------------------------
@@ -136,39 +138,46 @@ fm_reserved2: ""
 # 04 – Analysis
 
 ## 🔍 Čo bolo potrebné analyzovať
-Aby sme vedeli navrhnúť bezpečný USB-TTL most, museli sme pochopiť:
 
-1) **Aké riziko predstavuje USB Killer útok**
-   - PC môže byť fyzicky zničený cez USB port
-   - väčšina laboratórnych USB-TTL adaptérov nemá žiadnu ochranu
+Aby sme vedeli navrhnúť užitočný USB-to-UART nástroj, museli sme pochopiť:
 
-2) **Ako sa reálne používa UART v praxi**
-   - vývojári často nevedia baud rate cieľového zariadenia
-   - RX/TX bývajú prehodené, čo vedie k nefunkčnému debug procesu
-   - prístup k zariadeniu býva fyzicky obmedzený (kabeláž, vzdialenosť)
+1) **Ako embedded vývojári reálne pracujú so sériovou komunikáciou**  
+   - často nepoznajú baud rate cieľového zariadenia,
+   - debugging stojí čas, kým nájde správne nastavenia.
 
-3) **Aké limity majú existujúce USB-TTL adaptéry**
-   - neponúkajú bezdrôtový prístup
-   - vyžadujú manuálne nastavovanie
-   - neizolujú PC od cieľového HW
+2) **Aké limity majú bežné USB-TTL adaptéry**  
+   - neposkytujú diagnostiku ani spätnú väzbu,
+   - nevedia indikovať, čo sa deje na linke,
+   - neumožňujú jednoduché prepínanie režimov.
+
+3) **Čo je potrebné vo výuke a lab prostredí**  
+   - vizualizácia, štatistiky a možnosť záznamu dát,
+   - jednoducho pochopiteľné UI.
+
+---
 
 ## 🔍 Kľúčové zistenia
-- Skutočný problém nie je len debugovanie UART, ale **bezpečnostné riziko a produktivita**.
-- Riešenie musí byť kombinácia:
-  → ochrana host systému  
-  → automatizácia nastavení  
-  → bezdrôtová práca
-- ESP32 sa ukázalo ako ideálny kandidát kvôli:
-  → Wi-Fi + Bluetooth konektivite  
-  → viacerým UART portom  
-  → dostatočnému výkonu na spracovanie logiky
 
-## 📌 Rozhodovacie body / architektonické dôvody
-- USB-UART bridge má zostať "hlúpy" → ESP32 bude inteligentná vrstva
-- komunikácia s PC bude nepriamou cestou cez wireless → PC je izolovaný
-- riešenie nesmie byť len FW → musí obsahovať aj HW návrh
+- Problém nie je len „prepojenie drôtov“, ale **nedostatok inteligencie a diagnostiky**.
+- Riešenie musí kombinovať:
+  → analýzu komunikácie,  
+  → jednoduché UI,  
+  → možnosť rozširovania o vizualizáciu/logovanie.
+- ESP32-C6 sa ukázalo ako vhodný kandidát kvôli:
+  → natívnemu USB CDC,  
+  → výkonu na spracovanie analýzy,  
+  → rozšíriteľnosti o displej a SD modul.
 
+---
 
+## 📌 Rozhodovacie body
+
+- PC by malo vidieť zariadenie ako obyčajný USB-TTL adaptér,  
+  zatiaľ čo inteligencia beží v ESP32-C6.
+- Architektúra má byť modulárna — režimy sa pridávajú bez prepisovania jadra.
+- UI má byť jednoduché (menu cez terminál), voliteľne vizualizácia na displeji.
+
+---
 - [Backlog a analýzy](./backlog.md)
 
 **Navigation:** [⬆️ SDLC](../index.md) · [⬅️ Projekt](../../index.md)
