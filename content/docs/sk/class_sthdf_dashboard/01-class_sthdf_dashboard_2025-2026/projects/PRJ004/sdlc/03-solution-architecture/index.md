@@ -37,6 +37,8 @@ author: "Roman Kazicka"
 # Zoznam autorov – generuje skript
 authors:
   - "Roman Kazicka"
+  - "Denis Ivan"
+  - "Danylo Bashmakov"
 
 
 # 🗂 CLASSIFICATION ---------------------------------------------------
@@ -133,50 +135,73 @@ fm_reserved2: ""
 
 <!-- class_sthdf_dashboard_INSTANCE_ID: 01-class_sthdf_dashboard_2025-2026 -->
 
-# 03-Solution Architecture
+# 03 – Solution Architecture
+
 ## 🧠 Čo riešenie obsahuje
 
-Riešenie USBCAPS sa skladá z troch hlavných architektonických vrstiev:
+SerialyTTY je rozdelený do troch hlavných architektonických vrstiev:
 
-1. **Hardware Layer (fyzická konektivita a ochrana)**
-2. **Firmware Layer (inteligencia, automatizácia, routing)**
-3. **User Interface Layer (prístup k terminálu a logom)**
+1. **Hardware Layer (fyzická konektivita a voliteľná vizualizácia)**
+2. **Firmware Layer (analýza, automatizácia, bridge logika)**
+3. **User Interface Layer (ovládanie a diagnostika)**
 
-### Komponenty
-- USB–UART bridge (CP2102 / CH340)
-- ESP32-WROOM-32 (MCU + Wi-Fi + BLE)
-- Level shifting (voliteľné: 3.3 ↔ 5 V)
-- Power regulation (5 V USB → 3.3 V MCU)
-- UART konektor (TX, RX, GND + napájanie)
+---
 
-### Hlavné moduly firmware
-Auto Baud Detector  
-   - skenuje rýchlosti 300–115200  
-   - uzamkne správnu hodnotu po identifikácii rámca
-     
-RX/TX Auto-Swap  
-   - detekuje, či dáta prichádzajú  
-   - ak nie, softvérovo vymení RX ↔ TX mapovanie GPIO
+## 🔧 Hardware Layer
 
-Router  
-   - smeruje UART dáta medzi:
-     → USB-UART
-     → Web terminál (Wi-Fi/WebSocket)
-     → Bluetooth Serial
+**Komponenty:**
+- ESP32-C6 DevKit (USB + Wi-Fi/BLE + viac UARTov),
+- UART konektor (TX/RX/GND),
+- voliteľne TFT displej (SPI) a SD karta (FAT32).
 
-Wireless Services
-   - Wi-Fi Access Point + WebSocket server
-   - Bluetooth Serial Profile (SPP)
+**Úloha HW:**
+- poskytuje fyzické rozhranie k cieľovému UART zariadeniu,
+- voliteľne vizualizuje stav a loguje dáta.
 
-Diagnostics hooks (logovanie, status signály)
+---
 
-### Klientské prístupové vrstvy
-- Web terminal
-  → umožňuje posielať príkazy
-- Bluetooth SerialClient
-  → mobilná aplikácia/PC BT terminal
+## 🔁 Firmware Layer
 
+**Hlavné moduly:**
 
+- **Baud Detector**  
+  meria bitovú periódu na RX a určuje správny baud.
+
+- **Bridge Engine**  
+  prepája dáta medzi USB CDC a cieľovým UARTom,  
+  počíta prenesené dáta a vie ukončiť bridge späť do menu.
+
+- **Menu UI**  
+  umožňuje prepínať režimy (`Detect`, `Bridge`, `Info`, `Settings`) cez terminál.
+
+- **Display Manager (voliteľný)**  
+  zobrazuje rýchlosť, RX/TX štatistiky a stav.
+
+- **SD Logger (voliteľný)**  
+  zapisuje UART dáta do súborov s časovými pečiatkami.
+
+Architektúra FW je modulárna, čo umožňuje pridávať režimy bez prepisovania jadra.
+
+---
+
+## 💬 User Interface Layer
+
+- **Terminálové menu (ANSI)**  
+  - umožňuje ovládať režimy a spúšťať detekciu,
+  - funguje v každom bežnom sériovom monitore.
+
+- **Voliteľná vizualizácia na TFT	displayi**  
+  - živý stav, baud, počet dátových rámcov.
+
+---
+
+## 📌 Architektonická myšlienka
+
+Zatiaľ čo pre PC sa SerialyTTY správa ako obyčajný USB-TTL adaptér,  
+vnútri ESP32-C6 vykonáva **analýzu, riadenie a diagnostiku**,  
+čím prináša hodnotu nad rámec klasických USB-UART káblov.
+
+---
 - [Solution design](./design.md)
 
 **Navigation:** [⬆️ SDLC](../index.md) · [⬅️ Projekt](../../index.md)
