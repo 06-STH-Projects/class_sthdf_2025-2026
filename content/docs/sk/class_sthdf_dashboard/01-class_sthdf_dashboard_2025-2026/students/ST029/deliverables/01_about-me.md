@@ -1,19 +1,21 @@
  🙋 About Me
 ## 🔖 Základné informácie
-- Meno a priezvisko 
-- Študentský GitHub profil (link) 
-- Kontaktný e-mail 
+Juraj Marcinech
+https://github.com/Jammz-kekw
+xmarcinech@stuba.sk
+
 ## 🎯 Profesijné záujmy
-- Oblasti, ktoré ma bavia (IT, dizajn, podnikanie, …) 
-- Aké skúsenosti by som chcel získať 
+Nadobudnutie skúseností v oblasti 3D tlače
+
 ## 💡 Moje hobby / záujmy
-- Šport, hudba, varenie, cestovanie … 
-- Čokoľvek, čo odhaľuje „ľudskú stránku“ 
+Šport, hudba, varenie, DND
+
 ## 🚀 Očakávania od predmetu
-- Čo chcem dosiahnuť v rámci kurzu 
-- Čo očakávam od spolupráce s tímom a komunitou 
+Nadobudnutie skúseností v oblasti 3D tlače
+Spolupráca pri výrobe produktu
+
 ## 🚀 Čo viem ponúknuť
-- Čo chcem ponúknuť v rámci kurzu 
+Premenu ideu do produktu
 
 ## Navigácia
 - [↩️ Späť](../index.md)
