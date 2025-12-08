@@ -138,7 +138,6 @@ fm_reserved2: ""
 [🏠 Domov](../../../index.md) · [⬅️ Nahor](../)
 # PRJ004 — Presentation
 
---- Headline ---
 ## Headline
 **2025-PRJ-004-ST_004-ST_004-SerialyTTY**
 
@@ -154,7 +153,7 @@ SerialyTTY je inteligentný USB-to-UART nástroj na ESP32-C6, ktorý automaticky
 Projekt rieši problém neefektívneho debugovania pri práci so sériovou komunikáciou. SerialyTTY prináša automatizáciu, diagnostiku a použiteľnosť pre vývojárov aj univerzitné laboratóriá.
 --- Introduction ---
 
---- obsah ---
+
 ## Obsah
 - [01-Business](../sdlc/01-business/index.md)
 - [02-Top Level Architecture](../sdlc/02-top-level-architecture/index.md)
@@ -165,6 +164,6 @@ Projekt rieši problém neefektívneho debugovania pri práci so sériovou komun
 - [07-Testing & Verification](../sdlc/07-testing-verification/index.md)
 - [08-Operation](../sdlc/08-operation/index.md)
 - [09-Change Management](../sdlc/09-Change-Management/index.md)
---- obsah ---
+
 
 
