@@ -101,7 +101,48 @@ fm_reserved2: ""
 
 <!-- class_sthdf_dashboard_INSTANCE_ID: 01-class_sthdf_dashboard_2025-2026 -->
 
-# 01-Business
+# Business poznámky – SerialyTTY
+
+## 🎯 Hodnota projektu
+SerialyTTY rieši reálny problém embedded vývoja:
+- bežné USB-TTL adaptéry sú „hlúpe“,
+- vývojári strácajú čas hľadaním baud rate a riešením RX/TX,
+- laboratóriá potrebujú nástroj, ktorý učí porozumieť protokolom, nie len prepájať vodiče.
+
+Projekt prináša:
+- rýchlejší debug,
+- vyššiu produktivitu,
+- lepšiu výučbu embedded architektúry.
+
+## 👥 Zákaznícke segmenty
+- univerzitné laby a IoT kurzy,
+- embedded vývojári,
+- servisné a diagnostické tímy.
+
+## 💡 Trhová výhoda
+SerialyTTY kombinuje diagnostiku, autodetekciu, menu UI a rozšíriteľnosť –
+toto bežné USB-TTL adaptéry neponúkajú.
+
+## 📌 Biznis use-cases
+- výukový hardware kit,
+- diagnostický nástroj pre servis,
+- open-source core + rozšírené moduly (TFT, SD logovanie).
+
+## 🚀 Možný vývoj produktu
+- verzia 2.0 s web UI,
+- modul protokolovej analýzy,
+- integrácia do výuky FIIT/STU ako lab nástroj.
+
+## 🧭 Učenie a dopad
+Projekt ukazuje, ako vyzerá:
+- návrh HW/FW architektúry,
+- praktické IoT riešenie,
+- prototypovanie a iterovanie.
+
+Pre FIIT / lab prostredie má hodnotu ako:
+- výukový artefakt,
+- open-source príklad embedded dizajnu,
+- praktický komunitný nástroj.
 
 - [Business poznámky](./notes.md)
 
