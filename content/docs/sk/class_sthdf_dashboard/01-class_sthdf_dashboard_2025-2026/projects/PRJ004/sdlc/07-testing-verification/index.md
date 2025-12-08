@@ -37,6 +37,8 @@ author: "Roman Kazicka"
 # Zoznam autorov – generuje skript
 authors:
   - "Roman Kazicka"
+  - "Denis Ivan"
+  - "Danylo Bashmakov"
 
 
 # 🗂 CLASSIFICATION ---------------------------------------------------
@@ -134,6 +136,14 @@ fm_reserved2: ""
 <!-- class_sthdf_dashboard_INSTANCE_ID: 01-class_sthdf_dashboard_2025-2026 -->
 
 # 07-Testing & Verification
+
+## Performance Metrics
+- **Boot time**: ~3 seconds
+- **Baud detection**: &lt;1 second
+- **Bridge latency**: &lt;1 ms
+- **Display update**: 30 FPS
+- **SD write speed**: ~100 KB/s
+- **CPU utilization**: 15-25%
 
 - [Test report a QA výstupy](./test-report.md)
 
