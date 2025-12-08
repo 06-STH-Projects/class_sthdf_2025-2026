@@ -37,6 +37,8 @@ author: "Roman Kazicka"
 # Zoznam autorov – generuje skript
 authors:
   - "Roman Kazicka"
+  - "Denis Ivan"
+  - "Danylo Bashmakov"
 
 
 # 🗂 CLASSIFICATION ---------------------------------------------------
@@ -138,19 +140,19 @@ fm_reserved2: ""
 
 --- Headline ---
 ## Headline
-**2025-PRJ-004-ST_004-ST_004-Nazov projektu**
+**2025-PRJ-004-ST_004-ST_004-SerialyTTY**
 
-> Uvodny obrazok: TODO (dopln odkaz alebo subor).
+> Úvodný obrázok: TODO (foto prototypu alebo terminálu)
 
-Strucny text o projekte (1-3 vety, doplni tim).
+SerialyTTY je inteligentný USB-to-UART nástroj na ESP32-C6, ktorý automaticky zisťuje baud rate, poskytuje bridge mód a jednoduché menu pre embedded debugovanie.
 --- Headline ---
 
---- introduction ---
+--- Introduction ---
 ## Introduction
-**2025-PRJ-004-ST_004-ST_004-Nazov projektu**
+**2025-PRJ-004-ST_004-ST_004-SerialyTTY**
 
-Strucny text o projekte (zhrnutie zadania + prinos).
---- introduction ---
+Projekt rieši problém neefektívneho debugovania pri práci so sériovou komunikáciou. SerialyTTY prináša automatizáciu, diagnostiku a použiteľnosť pre vývojárov aj univerzitné laboratóriá.
+--- Introduction ---
 
 --- obsah ---
 ## Obsah
@@ -165,12 +167,4 @@ Strucny text o projekte (zhrnutie zadania + prinos).
 - [09-Change Management](../sdlc/09-Change-Management/index.md)
 --- obsah ---
 
-## 01-Business
-## 02-Top Level Architecture
-## 03-Solution Architecture
-## 04-Analysis
-## 05-Design
-## 06-Implementation
-## 07-Testing & Verification
-## 08-Operation
-## 09-Change Management
+
