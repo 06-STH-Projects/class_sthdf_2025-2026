@@ -137,6 +137,30 @@ fm_reserved2: ""
 
 - 🌐 Repozitar: [GitHub](https://github.com/thenisvan/SerialyTTY)
 - 🌐 Web: [Web Stranka](https://thenisvan.github.io/SerialyTTY/)
+
+## 🛠 Použité technológie
+- **PlatformIO + ESP-IDF** – build a flash firmvéru pre ESP32-C6
+- **C / C++** – implementácia firmware modulov (Baud Detect, Bridge, Menu)
+- **VS Code / seriový monitor** – terminál a debug počas vývoja
+
+## 📂 Štruktúra projektu (stručne)
+```
+📁 SerialyTTY/
+├── 📄 README.md                    (This file)
+├── 📄 USER_GUIDE.md                Complete usage manual
+├── 📄 API_DOCUMENTATION.md         Developer API reference
+├── 📄 FAQ_TROUBLESHOOTING.md       Common issues and solutions
+├── 📄 BUILD_GUIDE.md               Detailed build instructions
+├── 📄 LINUX_SETUP.md               Linux-specific setup
+├── 📄 PHASE_3_4_COMPLETE.md        Implementation details
+├── 📄 INTEGRATION_TEST_PLAN.md     Testing procedures
+├── 📁 include/                     Header files (public API)
+├── 📁 src/                         Source code (implementations)
+├── 📄 platformio.ini               Build configuration
+├── 📄 CMakeLists.txt               CMake build config
+└── 📄 sdkconfig.esp32c6            ESP-IDF configuration
+```
+  
 - [Odkazy na kód / repozitáre](./code-links.md)
 
 **Navigation:** [⬆️ SDLC](../index.md) · [⬅️ Projekt](../../index.md)
