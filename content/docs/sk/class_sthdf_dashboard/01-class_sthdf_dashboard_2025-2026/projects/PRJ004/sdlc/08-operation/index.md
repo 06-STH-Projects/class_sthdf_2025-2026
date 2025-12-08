@@ -141,7 +141,6 @@ fm_reserved2: ""
 - **Issues & Bugs:** [GitHub Issues](https://github.com/thenisvan/SerialyTTY/issues)
 - **Discussions:** [GitHub Discussions](https://github.com/thenisvan/SerialyTTY/discussions)
 - **Documentation:** See `/docs/` folder for comprehensive guides
-  
-- [Prevádzka a podpora](./operations.md)
+
 
 **Navigation:** [⬆️ SDLC](../index.md) · [⬅️ Projekt](../../index.md)
