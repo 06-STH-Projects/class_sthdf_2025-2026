@@ -13,91 +13,84 @@
 
 | ST ID | Meno | Rola v tíme | Kompetencie |
 |------|------|--------------|-------------|
-| ST001 | Bc. Ivan Denis | Project Lead | koordinácia, systémový návrh |
-| ST002 | Bc. Špánik Ondrej | Developer | firmware, web terminál, ESP32 |
-| ST003 | Bc. Danylo Bashmakov | Hardware Designer | PCB, napájanie, ochranné obvody |
+| 1 | Bc. Ivan Denis | Project Lead | koordinácia, systémový návrh |
+| 2 | Bc. Špánik Ondrej | Developer | firmware, web terminál, ESP32 |
+| 3 | Bc. Danylo Bashmakov | Hardware Designer | PCB, napájanie, ochranné obvody |
 
 ---
 
 ## 3️⃣ Motivácia tímu
-- Chceme riešiť reálny problém v prostredí vývoja – riziko fyzického zničenia PC pri práci s neznámymi USB zariadeniami (USB Killer, prototypy).  
-- Projekt má význam pre kyberbezpečnosť, embedded vývoj aj výučbu — študenti aj vývojári môžu bezpečne testovať zariadenia bez rizika poškodenia hardvéru.  
-- Fascinovala nás možnosť spojiť bezpečnosť, IoT a inteligentnú automatizáciu v jednom zariadení.  
+- Chceme vytvoriť praktický nástroj, ktorý rieši problémy bežných USB-TTL adaptérov.  
+- Projekt má využitie vo výuke (debug, stavové automaty, ISR→task dizajn).  
+- SerialyTTY nás motivoval ako referenčný open-source, ale chceme ho rozšíriť o vlastné prvky a integráciu.
 
 ---
 
 ## 4️⃣ Cieľ a pridaná hodnota projektu
-- **Cieľ:** vytvoriť hardvérovo-softvérový USB-TTL nástroj, ktorý izoluje počítač od rizikového zariadenia a zároveň zjednodušuje sériovú prácu.  
-- **Úspech meriame takto:**  
-  - počítač je fyzicky chránený (žiadny priamy USB kontakt),  
-  - projekt umožňuje bezdrôtový IEC terminál,  
-  - zariadenie funguje s auto-baud a auto-RX/TX,  
-  - prototyp je demonštrovateľný na prezentácii a použiteľný v laboch.
+- **Cieľ:** vytvoriť kompaktný USB-to-TTL most, ktorý automatizuje sériovú diagnostiku.  
+- **Úspech meriame podľa toho, či:**
+  - dokáže zistiť baud rate neznámeho zariadenia,
+  - vie prepnúť do bridge módu,
+  - je použiteľný v labáku aj v teréne.
 
 ---
 
 ## 5️⃣ Popis riešenia
-Projekt pozostáva z troch častí:
-- **HW modul:** ESP32 + USB-UART bridge + ochranné obvody + voliteľný level-shifter (3,3 V / 5 V).  
-- **FW modul:** auto-baud detection, auto RX/TX swap, Wi-Fi/Bluetooth bridge, WebSocket servis.  
-- **UI vrstva:** webový terminál prehliadateľný na mobile / PC a BT serial podpora.
-
-Riešime bezpečné pripojenie medzi počítačom a embedded zariadením, pri zachovaní pohodlného sériového prístupu.
+Riešenie pozostáva z:
+- **HW vrstva:** ESP32-C6 DevKit + UART IO + voliteľný TFT/SD modul.  
+- **FW vrstva:** Baud Detection, Bridge Mode, menu systém, štatistiky.  
+- **UI vrstva:** textové menu cez sériový terminál (neskôr obrazovka/logovanie).
 
 ---
 
 ## 6️⃣ Projektový plán
-- Odhadovaný čas: **4-5h týždenne na člena tímu**  
-- Predpokladaný stav pri prezentácii: **prototyp s funkčným terminálom a FW**  
+- Odhadovaný čas: **4–5 h/týždeň na člena tímu**  
+- Stav pri prezentácii: **fungujúci prototyp s menu a detekciou baud rate**
 
-### 📅 Milníky a výstupy
-- [x] Návrh riešenia  
-- [x] Firmware (auto-baud + BLE/Wi-Fi)  
-- [ ] PCB návrh  
-- [ ] Testovanie a demo prezentácia
-
-**Do januára dodáme:**
-- [x] funkčný prototyp  
-- [ ] prezentáciu riešenia  
-- [ ] technickú dokumentáciu
+### 📅 Milníky
+- [x] návrh riešenia  
+- [x] základná FW implementácia  
+- [x] rozšírenie o vizualizáciu/logovanie  
+- [x] demo a dokumentácia
 
 ---
 
+## 7️⃣ Zákazník a hodnota
+Používatelia:
+- vývojári IoT/embedded systémov,
+- univerzitné laboratóriá a študenti,
+- servis a diagnostika v teréne.
+
 Hodnota:
-- bezpečnosť (proti USB Killer hrozbám),  
-- jednoduchší workflow (žiadne riešenie baud rate / RX-TX),  
-- vzdialený prístup,  
-- použiteľnosť ako výukový materiál.
+- rýchle debugovanie UART,
+- výukový príklad architektúry,
+- praktický lab nástroj.
 
 ---
 
 ## 8️⃣ Očakávané výstupy
-- Dokumentácia:
-  - README, KNIFE článok, dizajnový popis, návod na použitie  
-- Artefakty:
-  - prototyp dosky, firmware, webový terminál, demonštračné video
+- Dokumentácia: README, KNIFE článok, návod
+- Artefakty: funkčný prototyp, firmware, demo video
 
 ---
 
 ## 📚 Kontext
-- USBCAPS projektová dokumentácia  
-- web https://usbcaps.org  
-- existujúce USB-TTL adaptéry (CH340, CP2102) a ich limity  
-- USB Killer incident (2019) ako kontext hrozby  
+- SerialyTTY dokumentácia  
+- ESP-IDF ako FW základ  
+- bežné USB-TTL adaptéry a ich limity
 
 ---
 
 ## 🧭 Riziká a závislosti
 **Riziká:**
-- výpadky BLE/Wi-Fi stability,  
-- oneskorenie vo FW implementácii auto-detekcie,  
-- neočakávané problémy pri PCB návrhu.
+- obmedzenia hardvéru (TFT/SD dostupnosť),
+- FW komplexita (ISR → task synchronization),
+- časová náročnosť na testovanie.
 
 **Závislosti:**
-- komponenty (ESP32, USB-UART),  
-- prístup do laboratória / meracie zariadenia,  
+- ESP32-C6 moduly,
+- laboratórne vybavenie,
 - čas tímu.
-
 ---
 
 ## Navigácia
