@@ -1,11 +1,25 @@
 ## 9. Reflexia a spätná väzba
-1. Čo bolo pre teba v tomto predmet/úlohe najľahšie?  
-2. Čo bolo najťažšie a prečo?  
-3. Čo nové si sa naučil?  
-4. Ako by si postupoval inak, keby si mal začať odznova?  
-5. Ako to súvisí s tvojím projektom alebo budúcou praxou?  
-6. Akú jednu vetu by si chcel, aby si z tohto zapamätali tvoji spolužiaci?
-7. čo by si doporučil na zlepšenie predmetu?
+
+1. **Najľahšie:**  
+   Navrhnúť logiku riešenia – jasne sme vedeli, čo chceme, a koncept nám dával zmysel.
+
+2. **Najťažšie:**  
+   Zladiť firmware architektúru a testovanie tak, aby všetko fungovalo spoľahlivo. Praktická implementácia zabrala viac času než sme očakávali.
+
+3. **Čo som sa naučil:**  
+   Ako navrhovať modulárny embedded firmware (detect → bridge → UI), ako testovať UART protokoly a ako dokumentovať riešenie.
+
+4. **Ako by som postupoval inak:**  
+   Začal by som skôr s testovaním jednotlivých modulov a venoval viac času UX terminálu.
+
+5. **Prepojenie do praxe:**  
+   Tento typ nástroja sa reálne používa v embedded vývoji a je dobrým príkladom, ako prepájať HW, FW a diagnostiku.
+
+6. **Jedna veta odkaz pre spolužiakov:**  
+   „Aj jednoduchý nástroj vie mať veľký dopad, ak rieši reálny problém.“
+
+7. **Odporúčanie pre zlepšenie predmetu:**  
+   Viac času na testovanie prototypov v labáku a možnosť konzultovať dizajn so skúseným embedded vývojárom.
 ---
 
 ## Navigácia
