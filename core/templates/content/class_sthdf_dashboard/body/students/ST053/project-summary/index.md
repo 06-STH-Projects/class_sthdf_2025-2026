@@ -1,2 +1,0 @@
-[🏠 Domov](../../../index.md) · [⬅️ Nahor](../)
-# ST053 — project-summary

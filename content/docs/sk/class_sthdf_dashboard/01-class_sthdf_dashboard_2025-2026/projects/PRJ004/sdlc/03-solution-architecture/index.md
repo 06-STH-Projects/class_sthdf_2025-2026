@@ -134,6 +134,48 @@ fm_reserved2: ""
 <!-- class_sthdf_dashboard_INSTANCE_ID: 01-class_sthdf_dashboard_2025-2026 -->
 
 # 03-Solution Architecture
+## 🧠 Čo riešenie obsahuje
+
+Riešenie USBCAPS sa skladá z troch hlavných architektonických vrstiev:
+
+1. **Hardware Layer (fyzická konektivita a ochrana)**
+2. **Firmware Layer (inteligencia, automatizácia, routing)**
+3. **User Interface Layer (prístup k terminálu a logom)**
+
+### Komponenty
+- USB–UART bridge (CP2102 / CH340)
+- ESP32-WROOM-32 (MCU + Wi-Fi + BLE)
+- Level shifting (voliteľné: 3.3 ↔ 5 V)
+- Power regulation (5 V USB → 3.3 V MCU)
+- UART konektor (TX, RX, GND + napájanie)
+
+### Hlavné moduly firmware
+Auto Baud Detector  
+   - skenuje rýchlosti 300–115200  
+   - uzamkne správnu hodnotu po identifikácii rámca
+     
+RX/TX Auto-Swap  
+   - detekuje, či dáta prichádzajú  
+   - ak nie, softvérovo vymení RX ↔ TX mapovanie GPIO
+
+Router  
+   - smeruje UART dáta medzi:
+     → USB-UART
+     → Web terminál (Wi-Fi/WebSocket)
+     → Bluetooth Serial
+
+Wireless Services
+   - Wi-Fi Access Point + WebSocket server
+   - Bluetooth Serial Profile (SPP)
+
+Diagnostics hooks (logovanie, status signály)
+
+### Klientské prístupové vrstvy
+- Web terminal
+  → umožňuje posielať príkazy
+- Bluetooth SerialClient
+  → mobilná aplikácia/PC BT terminal
+
 
 - [Solution design](./design.md)
 

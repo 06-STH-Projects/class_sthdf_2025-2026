@@ -133,7 +133,41 @@ fm_reserved2: ""
 
 <!-- class_sthdf_dashboard_INSTANCE_ID: 01-class_sthdf_dashboard_2025-2026 -->
 
-# 04-Analysis
+# 04 – Analysis
+
+## 🔍 Čo bolo potrebné analyzovať
+Aby sme vedeli navrhnúť bezpečný USB-TTL most, museli sme pochopiť:
+
+1) **Aké riziko predstavuje USB Killer útok**
+   - PC môže byť fyzicky zničený cez USB port
+   - väčšina laboratórnych USB-TTL adaptérov nemá žiadnu ochranu
+
+2) **Ako sa reálne používa UART v praxi**
+   - vývojári často nevedia baud rate cieľového zariadenia
+   - RX/TX bývajú prehodené, čo vedie k nefunkčnému debug procesu
+   - prístup k zariadeniu býva fyzicky obmedzený (kabeláž, vzdialenosť)
+
+3) **Aké limity majú existujúce USB-TTL adaptéry**
+   - neponúkajú bezdrôtový prístup
+   - vyžadujú manuálne nastavovanie
+   - neizolujú PC od cieľového HW
+
+## 🔍 Kľúčové zistenia
+- Skutočný problém nie je len debugovanie UART, ale **bezpečnostné riziko a produktivita**.
+- Riešenie musí byť kombinácia:
+  → ochrana host systému  
+  → automatizácia nastavení  
+  → bezdrôtová práca
+- ESP32 sa ukázalo ako ideálny kandidát kvôli:
+  → Wi-Fi + Bluetooth konektivite  
+  → viacerým UART portom  
+  → dostatočnému výkonu na spracovanie logiky
+
+## 📌 Rozhodovacie body / architektonické dôvody
+- USB-UART bridge má zostať "hlúpy" → ESP32 bude inteligentná vrstva
+- komunikácia s PC bude nepriamou cestou cez wireless → PC je izolovaný
+- riešenie nesmie byť len FW → musí obsahovať aj HW návrh
+
 
 - [Backlog a analýzy](./backlog.md)
 

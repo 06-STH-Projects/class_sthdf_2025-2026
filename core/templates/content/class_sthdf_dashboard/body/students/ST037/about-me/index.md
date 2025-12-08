@@ -1,2 +1,0 @@
-[🏠 Domov](../../../index.md) · [⬅️ Nahor](../)
-# ST037 — about-me

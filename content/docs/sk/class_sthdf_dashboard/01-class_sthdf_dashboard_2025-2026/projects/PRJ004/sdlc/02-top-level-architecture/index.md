@@ -133,8 +133,54 @@ fm_reserved2: ""
 
 <!-- class_sthdf_dashboard_INSTANCE_ID: 01-class_sthdf_dashboard_2025-2026 -->
 
-# 02-Top Level Architecture
+# 02 – Top Level Architecture
 
-- Pridaj high-level diagram alebo popis architektúry.
+## 🔭 High-level pohľad
+
+USBCAPS funguje ako **bezpečný most** medzi počítačom a cieľovým zariadením:
+
+- **Host (PC / notebook)**  
+  - beží na ňom bežný OS (Windows / Linux / macOS),  
+  - komunikuje cez USB iba s **USB–UART bridge** (virtuálny COM port).
+
+- **USB–UART bridge (CP2102 / CH340)**  
+  - konvertuje USB signál z PC na UART pre mikrokontrolér,  
+  - pre PC je to bežný sériový port (COMx).
+
+- **ESP32 (core USBCAPS logika)**  
+  - prijíma UART dáta z USB–UART bridge,  
+  - realizuje:
+    - auto-detekciu baud rate,  
+    - auto-swap RX/TX,  
+    - smerovanie dát do **Wi-Fi / Bluetooth** terminálu,  
+    - sériovú komunikáciu s cieľovým zariadením.
+
+- **Bezdrôtový terminál (Wi-Fi / BLE)**  
+  - Wi-Fi: webový terminál (WebSocket) dostupný cez prehliadač,  
+  - Bluetooth: BT Serial (SPP) pre mobil / PC appky.
+
+- **Cieľové zariadenie (IoT / embedded board)**  
+  - napr. Arduino, ESP32, STM32, senzory, priemyselné moduly,  
+  - pripojené cez UART (TX/RX/GND) + voliteľné 3,3 V / 5 V napájanie.
+
+---
+
+## 🧩 Architektúra – diagram
+```text
+PC / notebook
+    │
+    │  USB
+    ▼
+USB–UART bridge
+    │  UART
+    ▼
+ESP32 (auto-baud, auto RX/TX, routing)
+    │                 │
+    │ UART            │ Wi-Fi / Bluetooth
+    ▼                 ▼
+Cieľové zariadenie    Web / mobilný terminál
+(Arduino / ESP / ...) (browser / app)
+
+--
 
 **Navigation:** [⬆️ SDLC](../index.md) · [⬅️ Projekt](../../index.md)

@@ -1,0 +1,173 @@
+---
+# 🧩 Versioning – systém dopĺňa automaticky
+fm_version: "1.0.1"
+
+# Dátum buildu – generuje skript
+fm_build: "2025-11-28T15:54:47.957782+00:00"
+
+# Poznámka k verzii – voliteľné
+fm_version_comment: ""
+
+
+# 🆔 IDENTITY --------------------------------------------------------
+
+# ID generuje CLI / skript
+
+# Unikátne UUID – generuje skript
+guid: "ad916cb1-01e5-4d47-8144-f1d620455ac5"
+
+
+# 🧭 CONTEXT ---------------------------------------------------------
+
+# DAO / doména (knife, sdlc, q12, 7ds...) dopĺňa skript
+dao: "class_sthdf_dashboard"
+
+# Názov zápisu – dopĺňa používateľ
+title: "02 top level architecture"
+
+# Krátky popis – dopĺňa používateľ (voliteľné)
+description: "{{DESCRIPTION}}"
+
+
+# 👥 AUTHORSHIP ------------------------------------------------------
+
+# Hlavný autor – z globálneho configu
+author: "Roman Kazicka"
+
+# Zoznam autorov – generuje skript
+authors:
+  - "Roman Kazicka"
+
+
+# 🗂 CLASSIFICATION ---------------------------------------------------
+
+# Nadradená kategória – môže doplniť používateľ
+category: ""
+
+# Typ dokumentu (guide, case, tutorial...) – používateľ (voliteľné)
+type: ""
+
+# Priorita (low/medium/high) – voliteľné
+priority: ""
+
+# Tagy – odporúča sa 2–6 tagov.
+# Typy tagov:
+#   - rámce: knife, 7ds, sdlc, q12
+#   - účel: tutorial, guide, pattern, case-study
+#   - téma: git, backup, ai, communication
+#   - úroveň: beginner, intermediate, advanced
+tags: []
+
+
+# 🌍 LOCALIZATION -----------------------------------------------------
+
+# Jazyk dokumentu – doplní skript podľa štruktúry
+locale: "sk"
+
+
+# 🕒 LIFECYCLE --------------------------------------------------------
+
+# Dátum vytvorenia – generuje skript
+created: "2025-11-28 16:54"
+
+# Dátum poslednej úpravy – dopĺňa človek
+modified: "2025-11-28 16:54"
+
+# Stav dokumentu – default "backlog"
+status: "backlog"
+
+# Viditeľnosť – default "public"
+privacy: "public"
+
+
+# ⚖ INTELLECTUAL PROPERTY -------------------------------------------
+
+# Držiteľ práv k obsahu – dopĺňa skript
+rights_holder_content: "Roman Kazicka"
+
+# Systémový vlastník práv
+rights_holder_system: "CAA / KNIFE / LetItGrow"
+
+# Licencia
+license: "CC-BY-NC-SA-4.0"
+
+# Disclaimer
+disclaimer: "Use at your own risk. Methods provided as-is; participation is voluntary and context-aware."
+
+# Copyright
+copyright: "© 2025 Roman Kazicka"
+
+
+# 🔗 ORIGIN / PROVENANCE ---------------------------------------------
+
+# Repozitár pôvodu
+origin_repo: ""
+
+# URL pôvodného repozitára
+origin_repo_url: ""
+
+# Commit pôvodu
+origin_commit: ""
+
+# Branch pôvodu
+origin_branch: ""
+
+# Systém pôvodu (CAA/KNIFE/STHDF…)
+origin_system: "CAA"
+
+# Pôvodný autor
+origin_author: "Roman Kazicka"
+
+# Importovaný zdroj
+origin_imported_from: ""
+
+# Dátum importu
+origin_import_date: ""
+
+
+# 🧱 RESERVED ---------------------------------------------------------
+
+fm_reserved1: ""
+fm_reserved2: ""
+---
+
+<!-- class_sthdf_dashboard_INSTANCE_ID: 01-class_sthdf_dashboard_2025-2026 -->
+
+# 02-Project phases
+
+**Navigation:** [⬆️ SDLC](../index.md) · [⬅️ Projekt](../../index.md)
+
+## Prehľad fáz
+- Fáza 1: Držkábel (fyzický produkt, validácia trhu)
+- Fáza 2: Apka (MVP ergonomika + pripomienky + pomodoro)
+- Fáza 3: Feedback (kvalitatívne/kvantitatívne dáta, prioritizácia)
+- Fáza 4: Rozširovanie (integrácie, senzory, doplnky)
+
+## Fáza 1 — Držkábel
+- Výroba a balenie; pilotný predaj a logistika
+- Zber spätnej väzby (photos/video, recenzie, dotazníky)
+- Iterácie dizajnu podľa reálneho používania
+
+## Fáza 2 — Apka
+- MVP: onboarding s telesnými údajmi + základné ergonomické odporúčania
+- Pripomienky sedenie/státie, prestávky; pomodoro timer
+- Základný profil a checklist nastavenia setupu
+
+## Fáza 3 — Feedback od používateľov
+- Metodika: rozhovory, ankety, telemetry v app (aktivácia/retencia)
+- Cieľ: identifikovať top pain‑points a „aha“ momenty
+- Výstup: zoradený backlog + jasné learningy na iterácie
+
+## Fáza 4 — Na tom budeme robiť
+- Roadmapa podľa dát; rozšírenia:
+  - Integrácie: standing desk, svetlá
+  - Senzory: vzduch/CO₂, svetlo, hluk
+  - Ďalšie doplnky: organizéry, držiaky, cable sleeves
+
+## Milníky a timeline (náčrt)
+- M1: Prvé predaje Držkábel + 20+ spät. väzieb
+- M2: MVP app (onboarding + ergonomika + pripomienky + pomodoro)
+- M3: 30‑dňová retencia > X %, NPS > Y
+- M4: Integrácie/senzory – prvé piloty
+
+**Navigation:** [⬆️ SDLC](../index.md) · [⬅️ Projekt](../../index.md)
