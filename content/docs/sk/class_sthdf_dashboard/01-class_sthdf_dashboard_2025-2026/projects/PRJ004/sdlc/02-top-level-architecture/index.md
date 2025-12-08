@@ -137,50 +137,96 @@ fm_reserved2: ""
 
 ## 🔭 High-level pohľad
 
-USBCAPS funguje ako **bezpečný most** medzi počítačom a cieľovým zariadením:
+SerialyTTY funguje ako **inteligentný USB-to-UART most**, ktorý prepája počítač s cieľovým embedded zariadením a pridáva automatizáciu a diagnostiku.
 
 - **Host (PC / notebook)**  
-  - beží na ňom bežný OS (Windows / Linux / macOS),  
-  - komunikuje cez USB iba s **USB–UART bridge** (virtuálny COM port).
+  - komunikuje cez natívny USB CDC port ESP32-C6,
+  - používa bežný sériový terminál.
 
-- **USB–UART bridge (CP2102 / CH340)**  
-  - konvertuje USB signál z PC na UART pre mikrokontrolér,  
-  - pre PC je to bežný sériový port (COMx).
+- **ESP32-C6 (jadro logiky)**  
+  - prijíma UART dáta z PC aj z cieľového zariadenia,
+  - poskytuje funkcie:
+    - automatická detekcia baud rate,
+    - Bridge mód s počítaním RX/TX,
+    - terminálové menu,
+    - voliteľné vizualizačné a logovacie funkcie.
 
-- **ESP32 (core USBCAPS logika)**  
-  - prijíma UART dáta z USB–UART bridge,  
-  - realizuje:
-    - auto-detekciu baud rate,  
-    - auto-swap RX/TX,  
-    - smerovanie dát do **Wi-Fi / Bluetooth** terminálu,  
-    - sériovú komunikáciu s cieľovým zariadením.
+- **User Interface Layer**  
+  - sériový terminál (ANSI menu) pre kontrolu a prepínanie režimov,
+  - voliteľný TFT displej zobrazujúci stav, štatistiky a diagnostiku.
 
-- **Bezdrôtový terminál (Wi-Fi / BLE)**  
-  - Wi-Fi: webový terminál (WebSocket) dostupný cez prehliadač,  
-  - Bluetooth: BT Serial (SPP) pre mobil / PC appky.
+- **Storage / Logging (voliteľné)**  
+  - SD karta (FAT16/FAT32) s logovaním UART dát, časovými pečiatkami a udalosťami.
 
-- **Cieľové zariadenie (IoT / embedded board)**  
-  - napr. Arduino, ESP32, STM32, senzory, priemyselné moduly,  
-  - pripojené cez UART (TX/RX/GND) + voliteľné 3,3 V / 5 V napájanie.
+- **Cieľové zariadenie (embedded board)**  
+  - napr. Arduino, STM32, ESP32, senzory alebo priemyselné moduly,
+  - prepojené cez UART TX/RX/GND.
 
 ---
 
-## 🧩 Architektúra – diagram
-```text
-PC / notebook
-    │
-    │  USB
-    ▼
-USB–UART bridge
-    │  UART
-    ▼
-ESP32 (auto-baud, auto RX/TX, routing)
-    │                 │
-    │ UART            │ Wi-Fi / Bluetooth
-    ▼                 ▼
-Cieľové zariadenie    Web / mobilný terminál
-(Arduino / ESP / ...) (browser / app)
+## 📌 Architektúrna myšlienka
 
---
+Počítač vidí SerialyTTY ako obyčajný USB-TTL most,  
+ale ESP32-C6 medzi tým pridáva **inteligenciu, UI a diagnostiku**,  
+čo bežné adaptéry neponúkajú.
+
+
+## 🏗️ Architecture Overview
+
+### System Components
+```
+┌─────────────────────────────────────────────────────────┐
+│                   USB-TTL Bridge (ESP32-C6)             │
+├─────────────────────────────────────────────────────────┤
+│                                                           │
+│  ┌──────────────────────────────────────────────────┐   │
+│  │           Hardware Detection Module              │   │
+│  │  • I2C Scanner (Display Detection)               │   │
+│  │  • GPIO Detection (SD Card)                      │   │
+│  └──────────────────────────────────────────────────┘   │
+│                           ▼                              │
+│  ┌──────────────────────────────────────────────────┐   │
+│  │          State Machine & Bridge Mode             │   │
+│  │  • BOOTING → WAITING → ANALYZING                │   │
+│  │  → FOUND_SPEED → RUNNING → BRIDGE_MODE          │   │
+│  └──────────────────────────────────────────────────┘   │
+│          ▲                   ▼                    ▲       │
+│  ┌───────┴──────────┐  ┌────────────┐  ┌────────┴───┐   │
+│  │  Baud Detector   │  │  UART1     │  │  BLE UART  │   │
+│  │  (GPIO Timing)   │  │  (Bridge)  │  │  (Nordic)  │   │
+│  └──────────────────┘  └────────────┘  └────────────┘   │
+│          ▼                                        ▼       │
+│  ┌─────────────────────────────────────────────────┐    │
+│  │    Display Manager (ILI9341 TFT - Optional)    │    │
+│  │  • Boot, Menu, Analyzing, Bridge screens       │    │
+│  └─────────────────────────────────────────────────┘    │
+│          ▼                                               │
+│  ┌─────────────────────────────────────────────────┐    │
+│  │    SD Logger (FAT Filesystem - Optional)        │    │
+│  │  • Timestamped logs with hex dumps              │    │
+│  └─────────────────────────────────────────────────┘    │
+│                                                           │
+│  ┌─────────────────────────────────────────────────┐    │
+│  │    Menu System & Communication Tester           │    │
+│  │  • Interactive terminal interface               │    │
+│  └─────────────────────────────────────────────────┘    │
+│                                                           │
+└─────────────────────────────────────────────────────────┘
+```
+
+### Key Modules
+
+| Module | File | Purpose |
+|--------|------|---------|
+| **Baud Detector** | `baud_detector.cpp` | GPIO interrupt-based baud rate detection |
+| **UART Bridge** | `bridge_mode.cpp` | Transparent serial passthrough |
+| **Display Manager** | `display_manager.cpp` | TFT control and screen management |
+| **SD Logger** | `sd_logger.cpp` | SD card initialization and logging |
+| **Menu System** | `menu_system.cpp` | Terminal-based interactive menu |
+| **Hardware Detector** | `hardware_detector.cpp` | Peripheral scanning and detection |
+| **BLE Manager** | `bluetooth_manager.cpp` | Bluetooth Low Energy stub |
+| **Comm Tester** | `comm_tester.cpp` | Communication testing utilities |
+
+---
 
 **Navigation:** [⬆️ SDLC](../index.md) · [⬅️ Projekt](../../index.md)
