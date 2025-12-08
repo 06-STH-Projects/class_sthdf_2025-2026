@@ -11,117 +11,71 @@ fm_version_comment: ""
 
 # 🆔 IDENTITY --------------------------------------------------------
 
-# ID generuje CLI / skript
-
-# Unikátne UUID – generuje skript
 guid: "98a25ed9-ba17-4e57-a2fe-c290226f83de"
 
 
 # 🧭 CONTEXT ---------------------------------------------------------
 
-# DAO / doména (knife, sdlc, q12, 7ds...) dopĺňa skript
 dao: "class_sthdf_dashboard"
 
-# Názov zápisu – dopĺňa používateľ
 title: "about me"
 
-# Krátky popis – dopĺňa používateľ (voliteľné)
-description: "{{DESCRIPTION}}"
+description: "Stručné predstavenie – profesionálne skúsenosti, vzdelanie, zručnosti a osobný profil."
 
 
 # 👥 AUTHORSHIP ------------------------------------------------------
 
-# Hlavný autor – z globálneho configu
 author: "Roman Kazicka"
 
-# Zoznam autorov – generuje skript
 authors:
   - "Roman Kazicka"
 
 
 # 🗂 CLASSIFICATION ---------------------------------------------------
 
-# Nadradená kategória – môže doplniť používateľ
-category: ""
+category: "profile"
+type: "case"
+priority: "medium"
 
-# Typ dokumentu (guide, case, tutorial...) – používateľ (voliteľné)
-type: ""
-
-# Priorita (low/medium/high) – voliteľné
-priority: ""
-
-# Tagy – odporúča sa 2–6 tagov.
-# Typy tagov:
-#   - rámce: knife, 7ds, sdlc, q12
-#   - účel: tutorial, guide, pattern, case-study
-#   - téma: git, backup, ai, communication
-#   - úroveň: beginner, intermediate, advanced
-tags: []
+tags:
+  - profile
+  - about-me
+  - career
+  - skills
+  - ai
 
 
 # 🌍 LOCALIZATION -----------------------------------------------------
 
-# Jazyk dokumentu – doplní skript podľa štruktúry
 locale: "sk"
 
 
 # 🕒 LIFECYCLE --------------------------------------------------------
 
-# Dátum vytvorenia – generuje skript
 created: "2025-11-28 16:54"
-
-# Dátum poslednej úpravy – dopĺňa človek
 modified: "2025-11-28 16:54"
-
-# Stav dokumentu – default "backlog"
 status: "backlog"
-
-# Viditeľnosť – default "public"
 privacy: "public"
 
 
 # ⚖ INTELLECTUAL PROPERTY -------------------------------------------
 
-# Držiteľ práv k obsahu – dopĺňa skript
 rights_holder_content: "Roman Kazicka"
-
-# Systémový vlastník práv
 rights_holder_system: "CAA / KNIFE / LetItGrow"
-
-# Licencia
 license: "CC-BY-NC-SA-4.0"
-
-# Disclaimer
 disclaimer: "Use at your own risk. Methods provided as-is; participation is voluntary and context-aware."
-
-# Copyright
 copyright: "© 2025 Roman Kazicka"
 
 
 # 🔗 ORIGIN / PROVENANCE ---------------------------------------------
 
-# Repozitár pôvodu
 origin_repo: ""
-
-# URL pôvodného repozitára
 origin_repo_url: ""
-
-# Commit pôvodu
 origin_commit: ""
-
-# Branch pôvodu
 origin_branch: ""
-
-# Systém pôvodu (CAA/KNIFE/STHDF…)
 origin_system: "CAA"
-
-# Pôvodný autor
 origin_author: "Roman Kazicka"
-
-# Importovaný zdroj
 origin_imported_from: ""
-
-# Dátum importu
 origin_import_date: ""
 
 
@@ -135,3 +89,90 @@ fm_reserved2: ""
 
 [🏠 Domov](../../../index.md) · [⬅️ Nahor](../)
 # ST034 — about-me
+
+## 🧑‍💼 O mne
+Som priateľský a zodpovedný človek, ktorý rád trávi čas s ľuďmi, spoznáva ich a spolupracuje v tíme.  
+Viem dodržiavať slovo a prinášať výsledky aj v náročných situáciách.  
+Zaujímam sa o informatiku, programovanie a moderné technológie, pričom rád kombinujem technické schopnosti s organizovaním podujatí a tímovou prácou.  
+:contentReference[oaicite:1]{index=1}
+
+---
+
+## 💼 Pracovné skúsenosti
+
+### **Programátor – Realtime, s.r.o.**  
+**Bratislava | 07/2023 – 06/2024**  
+- Vývoj informačných systémov pre laboratóriá  
+- Tvorba dátových riešení pre lekárov  
+- Spolupráca v tíme na softvérových projektoch  
+:contentReference[oaicite:2]{index=2}
+
+### **Študentská stáž – BECOM, s.r.o.**  
+**05/2019 – 08/2019**  
+- Pomocné práce pri montáži  
+:contentReference[oaicite:3]{index=3}
+
+---
+
+## 🎓 Vzdelanie
+
+### **STU – FIIT Bratislava**  
+**Bakalárske štúdium Informatika (2021 – 2024)** – úspešne ukončené  
+:contentReference[oaicite:4]{index=4}
+
+### **STU – FIIT Bratislava**  
+**Inteligentné softvérové systémy (denné, prezenčné)**  
+**2024 – súčasnosť**  
+:contentReference[oaicite:5]{index=5}
+
+### **Masarykova univerzita – Fakulta informatiky**  
+**2019 – 2020**  
+:contentReference[oaicite:6]{index=6}
+
+### **Stredná priemyselná škola elektrotechnická**  
+Informačné a telekomunikačné systémy (2015 – 2019)  
+:contentReference[oaicite:7]{index=7}
+
+---
+
+## 🛠 Zručnosti
+
+### Programovanie
+- **Python** – pokročilý  
+- **SQL** – pokročilý  
+- **C, Java, InterSystems Caché, Vue.js, HTML** – skúsený  
+- **C#, Bash, CSS** – základná až mierne pokročilá úroveň  
+:contentReference[oaicite:8]{index=8}
+
+### Ostatné technológie
+- Git, Linux, Haskell, Wireshark  
+:contentReference[oaicite:9]{index=9}
+
+---
+
+## 🌐 Jazykové znalosti
+- **Slovenský jazyk** – C1  
+- **Anglický jazyk** – B2  
+- **Poľský jazyk** – A2  
+:contentReference[oaicite:10]{index=10}
+
+---
+
+## 🪪 Certifikáty
+- **Level Up – Hemisféra (2018 – 2019)**  
+- **C# Intermediate – Udemy (2020)**  
+- **C# Basics – Udemy (2020)**  
+:contentReference[oaicite:11]{index=11}
+
+---
+
+## ❤️ Záujmy
+Lezenie (Bouldering), posilka, organizovanie eventov a táborov pre mládež.  
+Skúsenosti z týchto aktivít mi priniesli schopnosti v oblasti komunikácie, práce v tíme, riešenia problémov a organizácie.  
+:contentReference[oaicite:12]{index=12}
+
+---
+
+## 🚗 Vodičský preukaz
+Skupina B  
+:contentReference[oaicite:13]{index=13}
