@@ -134,3 +134,63 @@ fm_reserved2: ""
 <!-- class_sthdf_dashboard_INSTANCE_ID: 01-class_sthdf_dashboard_2025-2026 -->
 
 PRJ028 / 01-business / notes.md
+
+# BUSINESS DOCUMENTATION
+
+## 1. Business Case
+Automatické navíjanie bandáží v mnohých oblastiach – šport, medicína, fyzioterapia či výroba. Ručné navíjanie je časovo náročné, nepraktické. Cieľom projektu je vytvoriť kompaktné a spoľahlivé zariadenie, ktoré proces výrazne urýchli a zjednoduší. 
+
+## 2. Motivácia a prínos projektu
+Projekt prináša používateľom:
+- úsporu času,
+- pohodlné používanie po tréningu alebo počas práce,
+- možnosť komercializácie produktu v budúcnosti.
+
+## 3. Market & Competitor Overview
+Športové kluby, fyzioterapeuti, medicínske zariadenia aj logistické prevádzky môžu z tohto produktu priamo profitovať. Automatický navijak im ušetrí čas, zjednoduší prácu a pomôže udržiavať poriadok vo vybavení. Pri väčších objemoch používaných bandáží výrazne znižuje manuálnu záťaž, zrýchľuje prípravu aj upratovanie, a zároveň zabezpečuje rovnomerné, profesionálne navinutie každého kusu.
+
+Aktuálne sa na trhu nachádzajú prevažne jednoduché ručné navíjacie mechanizmy, ktoré sú pomalé a vyžadujú fyzickú námahu. Automatické alebo motorické riešenia sú veľmi obmedzené alebo úplne chýbajú, čo vytvára jasnú trhovú príležitosť pre cenovo dostupný a praktický elektrický navijak.
+
+## 4. Stakeholder Analysis
+| Stakeholder | Typ | Očakávania |
+|------------|------|-------------|
+| Autori projektu | Internal | Dokončenie prototypu, technická realizácia |
+| Športovci | End-user | Rýchle a spoľahlivé navíjanie |
+| Tréneri a fyzioterapeuti | End-user | Úspora času, organizácia vybavenia |
+| Servis/výroba | Operational | Jednoduchá údržba, lacné diely |
+| Potenciálni investori | Business | Nízke náklady, trhový potenciál |
+
+## 6. Product Vision Statement
+**„Urobiť navíjanie bandáží rýchlym, bezproblémovým a konzistentným pomocou kompaktného elektrického zariadenia.”**
+
+## 7. High-Level Business Requirements
+1. Zariadenie musí navinúť bandáž automaticky.
+2. Produkt musí byť prenosný a ľahký.
+3. Napájanie pomocou batérie.
+4. Jednoduché ovládanie (1–2 tlačidlá).
+5. Bezpečný mechanizmus pre prsty a textílie.
+
+## 8. Success Metrics / KPIs
+- Čas navíjania < 30 sekúnd    
+- Výdrž batérie min. 20 navinutí  
+- Poruchovosť max. 2 %  
+- Spokojnosť používateľov > 8/10  
+
+## 9. Risks & Constraints
+
+### Riziká 
+- Rôzne hrúbky bandáží môžu komplikovať proces  
+- Mechanické opotrebovanie  
+- Potreba bezpečnostných prvkov  
+
+### Obmedzenia
+- Obmedzený rozpočet  
+- Prototypové materiály a 3D tlač  
+- Limitované možnosti výroby  
+
+## 10. Out-of-Scope
+- Mobilná aplikácia  
+- Automatická detekcia typu bandáže  
+- Inteligentné senzory  
+- Hromadná výroba  
+- Pokročilé UI/UX alebo displeje  
