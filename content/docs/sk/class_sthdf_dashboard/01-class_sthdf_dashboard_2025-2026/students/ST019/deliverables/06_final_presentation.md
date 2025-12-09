@@ -1,3 +1,10 @@
+---
+fm_version: 1.0.1
+fm_version_comment: ''
+locale: sk
+fm_build: '2025-12-09T21:04:48Z'
+---
+
 # 📦 PFinal Presentation
 ## 🔖 Stav projektu
 - Stručný update (čo funguje, čo nie)  

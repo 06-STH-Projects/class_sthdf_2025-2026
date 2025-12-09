@@ -1,15 +1,11 @@
 ---
-# 🧩 Versioning – systém dopĺňa automaticky
-fm_version: "1.0.1"
+fm_version: 1.0.1
+fm_build: '2025-11-24T15:50:07.128943+00:00'
+fm_version_comment: ''
+locale: sk
+---
 
-# Dátum buildu – generuje skript
-fm_build: "2025-11-24T15:50:07.128943+00:00"
-
-# Poznámka k verzii – voliteľné
-fm_version_comment: ""
-
-
-# 🆔 IDENTITY --------------------------------------------------------
+-----------------------------------------------------
 
 # ID generuje CLI / skript
 

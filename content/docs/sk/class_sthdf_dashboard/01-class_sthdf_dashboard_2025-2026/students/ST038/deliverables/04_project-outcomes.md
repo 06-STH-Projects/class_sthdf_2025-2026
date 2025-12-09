@@ -1,13 +1,11 @@
 ---
-# 🧩 Versioning – systém dopĺňa automaticky
-fm_version: "1.0.1"
+fm_version: 1.0.1
+fm_build: '2025-11-24T15:50:07.130400+00:00'
+fm_version_comment: ''
+locale: sk
+---
 
-fm_build: "2025-11-24T15:50:07.130400+00:00"
-
-fm_version_comment: ""
-
-
-# 🆔 IDENTITY --------------------------------------------------------
+-----------------------------------------------------
 
 guid: "99814b1c-cf02-4840-a715-3ad8f4b9d34a"
 

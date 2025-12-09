@@ -1,15 +1,11 @@
 ---
-# 🧩 Versioning – systém dopĺňa automaticky
-fm_version: "1.0.1"
+fm_version: 1.0.1
+fm_build: '2025-11-24T15:50:07.130106+00:00'
+fm_version_comment: ''
+locale: sk
+---
 
-# Dátum buildu – generuje skript
-fm_build: "2025-11-24T15:50:07.130106+00:00"
-
-# Poznámka k verzii – voliteľné
-fm_version_comment: ""
-
-
-# 🆔 IDENTITY --------------------------------------------------------
+-----------------------------------------------------
 
 # ID generuje CLI / skript
 
@@ -26,7 +22,7 @@ dao: "sthdf"
 title: "2025_ST_038 – STHDF – Študent 038 (script)"
 
 # Krátky popis – dopĺňa používateľ (voliteľné)
-description: "{{DESCRIPTION}}"
+description: "DESCRIPTION"
 
 
 # 👥 AUTHORSHIP ------------------------------------------------------
