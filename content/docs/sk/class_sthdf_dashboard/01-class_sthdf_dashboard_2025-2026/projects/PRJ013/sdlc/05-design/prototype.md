@@ -3,7 +3,7 @@
 fm_version: "1.0.1"
 
 # Dátum buildu – generuje skript
-fm_build: "2025-11-28T15:54:47.951670+00:00"
+fm_build: "2025-11-28T15:54:47.936298+00:00"
 
 # Poznámka k verzii – voliteľné
 fm_version_comment: ""
@@ -14,7 +14,7 @@ fm_version_comment: ""
 # ID generuje CLI / skript
 
 # Unikátne UUID – generuje skript
-guid: "b4a32e30-a25c-44ef-9919-51d267f96e5b"
+guid: "304c8915-364b-4d46-bcfc-c1aa250510a7"
 
 
 # 🧭 CONTEXT ---------------------------------------------------------
@@ -23,7 +23,7 @@ guid: "b4a32e30-a25c-44ef-9919-51d267f96e5b"
 dao: "class_sthdf_dashboard"
 
 # Názov zápisu – dopĺňa používateľ
-title: "sdlc"
+title: "prototype"
 
 # Krátky popis – dopĺňa používateľ (voliteľné)
 description: "{{DESCRIPTION}}"
@@ -133,16 +133,4 @@ fm_reserved2: ""
 
 <!-- class_sthdf_dashboard_INSTANCE_ID: 01-class_sthdf_dashboard_2025-2026 -->
 
-# Prehľad semestrálnych projektov s školsom roku 2025-2026
-
-
-**Navigation:** [⬅️ Projekt](../index.md)
-- [01-Business](./01-business/index.md)
-- [02-Top Level Architecture](./02-top-level-architecture/index.md)
-- [03-Solution Architecture](./03-solution-architecture/index.md)
-- [04-Analysis](./04-analysis/index.md)
-- [05-Design](./05-design/index.md)
-- [06-Implementation](./06-implementation/index.md)
-- [07-Testing & Verification](./07-testing-verification/index.md)
--  [08-operation](./08-operation/index.md)
-- [09-Change Management](./09-Change-Management/index.md)
+PRJ007 / 05-design / prototype.md
