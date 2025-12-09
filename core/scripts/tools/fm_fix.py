@@ -28,7 +28,7 @@ import argparse
 import os
 import re
 import sys
-from datetime import datetime
+from datetime import datetime, timezone
 
 try:
     import yaml
@@ -38,6 +38,14 @@ except ImportError:
 
 
 HASH_SUFFIX_RE = re.compile(r"_[A-F0-9]{3,5}$", re.IGNORECASE)
+
+
+def is_placeholder_value(value) -> bool:
+    """
+    Return True if the value looks like a template placeholder such as {{ID}}, {{TITLE}}, etc.
+    We don't want to inject these literal placeholders into real frontmatter.
+    """
+    return isinstance(value, str) and "{{" in value and "}}" in value
 
 
 def load_template_fm(path: str) -> dict:
@@ -74,19 +82,29 @@ def normalize_id(value: str) -> str:
     return HASH_SUFFIX_RE.sub("", value)
 
 
-def process_file(path: str, template_fm: dict, mode: str, backup: bool, strip_hash_id: bool, locale_default: str):
+def process_file(path: str, template_fm: dict, mode: str, backup: bool, strip_hash_id: bool, locale_default: str, no_guid: bool):
     rel = path
     with open(path, "r", encoding="utf-8") as f:
         text = f.read()
 
-    fm_orig, body, had_fm = split_frontmatter(text)
+    try:
+        fm_orig, body, had_fm = split_frontmatter(text)
+    except yaml.YAMLError as e:
+        print(f"[ERROR] {rel}: invalid YAML frontmatter: {e}")
+        return False
 
     # výsledné FM začíname originálom (ADD-ONLY)
     fm_new = dict(fm_orig)
 
     # 1) doplniť chýbajúce z template
     for k, v in template_fm.items():
+        # optionally skip guid entirely if requested
+        if no_guid and k == "guid":
+            continue
         if k not in fm_new or fm_new.get(k) in (None, "", []):
+            # avoid copying literal placeholders like "{{ID}}", "{{TITLE}}", etc.
+            if is_placeholder_value(v):
+                continue
             fm_new[k] = v
 
     # 2) špeciálne doplnenia
@@ -100,7 +118,7 @@ def process_file(path: str, template_fm: dict, mode: str, backup: bool, strip_ha
 
     # 4) doplniť fm_build, ak chýba
     if "fm_build" not in fm_new or not fm_new["fm_build"]:
-        fm_new["fm_build"] = datetime.utcnow().strftime("%Y-%m-%dT%H:%M:%SZ")
+        fm_new["fm_build"] = datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
 
     # zmenené?
     changed = (yaml.safe_dump(fm_new, sort_keys=False, allow_unicode=True) !=
@@ -148,6 +166,7 @@ def main():
     ap.add_argument("--backup", action="store_true", help="create .fm.bak when applying")
     ap.add_argument("--strip-hash-id", action="store_true", help="remove _A735-like postfix from id:")
     ap.add_argument("--locale", default="sk", help="default locale to set when missing")
+    ap.add_argument("--no-guid", action="store_true", help="do not add guid from template if missing")
     args = ap.parse_args()
 
     template_fm = load_template_fm(args.template)
@@ -163,6 +182,7 @@ def main():
             args.backup,
             args.strip_hash_id,
             args.locale,
+            args.no_guid,
         ):
             changed += 1
 

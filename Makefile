@@ -360,9 +360,15 @@ release-gh: ## Vytvorí GitHub release pre TAG (TAG=v0.4.0, RELEASE_TITLE='...',
 # ─────────────────────────────────────────────────────────
 # FRONT MATTER – audit / lint / fix
 # ─────────────────────────────────────────────────────────
+
 .PHONY: FM10-audit FM11-lint FM20-fix-dry FM20-fix-apply
-FM10-audit: ## Audit Front Matter (read-only) – root=content/docs (OPTS=--root dir)
-	@python3 $(FM_TOOL) --root "$(CONTENT_DOCS_DIR)" --dry-run $(OPTS) || true
+FM10-audit: ## Audit Front Matter (read-only) – root=content/docs (OPTS=extra args)
+	@mkdir -p logs
+	@python3 core/scripts/tools/fm_audit.py \
+	  --root "$(CONTENT_DOCS_DIR)" \
+	  --template core/templates/system/FM-Core.md \
+	  --output logs/fm_audit_sk.csv \
+	  --short $(OPTS) || true
 
 FM11-lint: ## Lint Front Matter (read-only) – root=content/docs
 	@python3 $(FM_LINT) --root "$(CONTENT_DOCS_DIR)" || true
