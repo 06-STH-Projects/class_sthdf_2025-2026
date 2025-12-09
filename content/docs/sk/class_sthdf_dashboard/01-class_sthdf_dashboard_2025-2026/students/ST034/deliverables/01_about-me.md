@@ -13,7 +13,6 @@ fm_build: '2025-12-09T21:04:48Z'
 - **Študentský GitHub profil:** [NotPatrik](https://github.com/NotPatrik)
 - **Kontaktný e-mail:** [xminarovicp@stuba.sk](mailto:xminarovicp@stuba.sk)
 
-
 ## 🎯 Profesijné záujmy
 
 Zaujímam sa o informatiku, programovanie a vývoj softvéru. Baví ma riešiť technické problémy, pracovať s dátami a vytvárať riešenia, ktoré majú praktický dopad — čo som si vyskúšal aj počas práce na informačných systémoch pre laboratóriá.

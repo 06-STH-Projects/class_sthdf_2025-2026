@@ -8,9 +8,11 @@ fm_build: '2025-12-09T21:04:48Z'
 # 📦 Project Outcomes
 
 ## 🔖 Stav projektu
+
 - Stručný update (čo funguje, čo nie)  
 
 ## 🧩 Výstupy podľa SDLC / V-modelu
+
 1. Business požiadavky  
 2. Top Level Architecture  
 3. Solution Architecture  
@@ -21,13 +23,16 @@ fm_build: '2025-12-09T21:04:48Z'
 8. Operation  
 
 ## 🏆 Finálny produkt
+
 - Čo tím reálne dodal  
 - Ako to vyzerá (screenshoty, demo, repo link)  
 
 ## 🧭 Porovnanie s Project Summary
+
 - Čo sme plánovali vs. čo sme naozaj dodali  
 
-
 ---
+
 ## Navigácia
+
 - [↩️ Späť](../index.md)

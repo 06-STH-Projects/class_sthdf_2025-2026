@@ -5,8 +5,13 @@ locale: sk
 fm_build: '2025-12-09T21:04:48Z'
 ---
 
-[🏠 Domov](../../index.md) · [⬅️ Nahor](../ST_INDEX.md)
+
 # ST034
+
+[🏠 Domov](../../index.md) · [⬅️ Nahor](../ST_INDEX.md)
+
+
+
 - [Deliverables (A1–A4, 05–07)](./deliverables/index.md)
 - [A1 – About Me](./deliverables/01_about-me.md)
 - [A2 – Knowledge Contribution](./deliverables/02_knowledge-contribution.md)
