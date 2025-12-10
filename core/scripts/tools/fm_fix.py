@@ -1,34 +1,26 @@
-# core/scripts/tools/fm_fix.py
-# -----------------------------------------------------------
-# FM normalizer – 3 režimy: audit | dry | apply
-# VerzIA: 2025-11-02
-#
-# Použitie:
-#   python3 core/scripts/tools/fm_fix.py --root docs/sk/7Ds --template core/templates/system/FM-Core.md --mode audit
-#   python3 core/scripts/tools/fm_fix.py --root docs/sk/7Ds --template core/templates/system/FM-Core.md --mode dry
-#   python3 core/scripts/tools/fm_fix.py --root docs/sk/7Ds --template core/templates/system/FM-Core.md --mode apply --backup
-#
-# Logika:
-# 1. Načíta FM z template (FM-Core.md) – prvý blok --- ... ---
-# 2. Prejde všetky .md pod --root
-# 3. Každý súbor:
-#    - vyberie existujúci FM
-#    - porovná s template
-#    - zachová existujúce hodnoty
-#    - doplní chýbajúce z template
-#    - voliteľne odstráni hash postfix v `id:` (napr. _A735)
-# 4. V režime audit/dry len vypíše, v apply zapíše
-#
-# Poznámka:
-#   Skript je písaný tak, aby NEMENIL polia, ktoré už máš v súbore,
-#   iba dopĺňal chýbajúce – to je tvoj „add-only“ princíp.
-# -----------------------------------------------------------
+#!/usr/bin/env python3
+"""
+core/scripts/tools/fm_fix.py
+
+Front-matter normalizer based on FM-Core template.
+
+Modes:
+  - audit : only print what would be changed
+  - dry   : like apply, but do NOT write files, just log
+  - apply : rewrite files in-place (optionally creating .bak backups)
+
+This version is add-only:
+  * never changes existing keys/values
+  * only adds missing keys from FM-Core
+  * can backfill fm_version, fm_build, locale, title
+"""
 
 import argparse
 import os
 import re
 import sys
 from datetime import datetime, timezone
+from typing import Dict, Tuple, Optional
 
 try:
     import yaml
@@ -36,160 +28,263 @@ except ImportError:
     print("❌ Missing PyYAML. Install: pip install pyyaml")
     sys.exit(1)
 
+# --- Front matter helpers ----------------------------------------------------
 
-HASH_SUFFIX_RE = re.compile(r"_[A-F0-9]{3,5}$", re.IGNORECASE)
+# Jednoduchší, robustný pattern: YAML blok na začiatku súboru
+FRONT_MATTER_RE = re.compile(r'^---\n(.*?)\n---\n', re.DOTALL)
 
 
-def is_placeholder_value(value) -> bool:
+def split_front_matter(text: str) -> Tuple[Optional[str], str]:
     """
-    Return True if the value looks like a template placeholder such as {{ID}}, {{TITLE}}, etc.
-    We don't want to inject these literal placeholders into real frontmatter.
+    Returns (fm_text or None, body_text).
     """
-    return isinstance(value, str) and "{{" in value and "}}" in value
+    m = FRONT_MATTER_RE.match(text)
+    if not m:
+        return None, text
+    fm_text = m.group(1)
+    body = text[m.end():]
+    return fm_text, body
 
 
-def load_template_fm(path: str) -> dict:
-    if not os.path.exists(path):
-        raise FileNotFoundError(f"Template FM not found: {path}")
+def load_template_fm(path: str) -> Dict:
+    """
+    Load first front-matter block from FM-Core.md (or any template).
+    Only keys are important; values serve as defaults (ale v tomto
+    fixeri ich berieme hlavne ako zoznam kľúčov).
+    """
     with open(path, "r", encoding="utf-8") as f:
-        text = f.read()
-    if not text.lstrip().startswith("---"):
-        raise RuntimeError("Template must start with '---' frontmatter block.")
-    parts = text.split("---", 2)
-    fm_str = parts[1]
-    return yaml.safe_load(fm_str) or {}
+        raw = f.read()
+    fm_text, _ = split_front_matter(raw)
+    if fm_text is None:
+        raise SystemExit(f"❌ Template {path} does not contain YAML front matter.")
+    data = yaml.safe_load(fm_text) or {}
+    if not isinstance(data, dict):
+        raise SystemExit(f"❌ Template {path} front matter is not a mapping.")
+    return data
 
 
-def split_frontmatter(md_text: str):
-    """Return (fm_dict, body, had_fm)"""
-    if md_text.lstrip().startswith("---"):
-        parts = md_text.split("---", 2)
-        fm_str = parts[1]
-        body = parts[2].lstrip("\n")
-        fm = yaml.safe_load(fm_str) or {}
-        return fm, body, True
+def detect_locale(path: str, default_locale: str) -> str:
+    """
+    Very simple heuristic: content/docs/<locale>/...
+    If nothing found, use default_locale.
+    """
+    parts = path.replace("\\", "/").split("/")
+    for p in parts:
+        if p in {"sk", "en"}:
+            return p
+    return default_locale
+
+
+def infer_title(body: str, fallback: str) -> str:
+    """
+    Try to guess title from first level-1 heading; fallback to given string.
+    Example:
+      # ST001        -> "ST001"
+      # About Course -> "About Course"
+    """
+    for line in body.splitlines():
+        line = line.strip()
+        if line.startswith("# "):
+            return line[2:].strip()
+    return fallback
+
+
+# --- Core unify logic --------------------------------------------------------
+
+
+def unify_front_matter(
+    existing: Optional[Dict],
+    template_keys: Dict,
+    body: str,
+    path: str,
+    locale_default: str,
+) -> Tuple[Dict, Dict]:
+    """
+    Build new_fm (add-only) and return (new_fm, changes).
+    changes = { "added_keys": [...], "autofilled": [...] }
+    """
+    fm = dict(existing) if isinstance(existing, dict) else {}
+    changes = {"added_keys": [], "autofilled": []}
+
+    # 1) Ensure fm_version
+    if "fm_version" not in fm or not fm.get("fm_version"):
+        fm["fm_version"] = "1.0.1"
+        changes["autofilled"].append("fm_version")
+
+    # 2) Ensure locale
+    if "locale" not in fm or not fm.get("locale"):
+        fm["locale"] = detect_locale(path, locale_default)
+        changes["autofilled"].append("locale")
+
+    # 3) Ensure fm_build (iba ak chýba)
+    if "fm_build" not in fm or not fm.get("fm_build"):
+        fm["fm_build"] = (
+            datetime.now(timezone.utc)
+            .isoformat(timespec="seconds")
+            .replace("+00:00", "Z")
+        )
+        changes["autofilled"].append("fm_build")
+
+    # 4) Ensure title (pre sidebar)
+    if "title" in template_keys and not fm.get("title"):
+        filename = os.path.basename(path)
+        stem = os.path.splitext(filename)[0]
+        fm["title"] = infer_title(body, stem)
+        changes["autofilled"].append("title")
+
+    # 5) Add all missing keys from template (prázdne hodnoty – doplníme neskôr)
+    for key in template_keys.keys():
+        if key not in fm:
+            fm[key] = ""
+            changes["added_keys"].append(key)
+
+    return fm, changes
+
+
+def format_yaml_block(data: Dict) -> str:
+    """Dump YAML with stable ordering (rešpektuje insertion order)."""
+    return (
+        yaml.safe_dump(
+            data,
+            sort_keys=False,
+            allow_unicode=True,
+            width=1000,  # nech nám netrhá krátke riadky
+        ).rstrip()
+        + "\n"
+    )
+
+
+# --- File processing ---------------------------------------------------------
+
+
+def process_file(
+    path: str,
+    template_fm: Dict,
+    mode: str,
+    backup: bool,
+    locale_default: str,
+) -> Tuple[bool, Dict]:
+    """
+    Process single .md file. Returns (changed, changes_info).
+    """
+    with open(path, "r", encoding="utf-8") as f:
+        original = f.read()
+
+    fm_text, body = split_front_matter(original)
+    if fm_text is None:
+        existing_fm: Optional[Dict] = None
     else:
-        return {}, md_text, False
+        try:
+            existing_fm = yaml.safe_load(fm_text) or {}
+            if not isinstance(existing_fm, dict):
+                print(f"⚠️  {path}: front matter is not a mapping, skipping.")
+                return False, {}
+        except Exception as e:
+            print(f"⚠️  {path}: YAML parse error in front matter: {e}, skipping.")
+            return False, {}
 
+    new_fm, changes = unify_front_matter(
+        existing=existing_fm,
+        template_keys=template_fm,
+        body=body,
+        path=path,
+        locale_default=locale_default,
+    )
 
-def dump_frontmatter(fm: dict) -> str:
-    return "---\n" + yaml.safe_dump(fm, sort_keys=False, allow_unicode=True) + "---\n"
+    if not (changes["added_keys"] or changes["autofilled"]):
+        # nothing to change
+        return False, changes
 
+    new_yaml = format_yaml_block(new_fm)
+    new_content = f"---\n{new_yaml}---\n\n{body.lstrip()}"
 
-def normalize_id(value: str) -> str:
-    if not value:
-        return value
-    return HASH_SUFFIX_RE.sub("", value)
-
-
-def process_file(path: str, template_fm: dict, mode: str, backup: bool, strip_hash_id: bool, locale_default: str, no_guid: bool):
-    rel = path
-    with open(path, "r", encoding="utf-8") as f:
-        text = f.read()
-
-    try:
-        fm_orig, body, had_fm = split_frontmatter(text)
-    except yaml.YAMLError as e:
-        print(f"[ERROR] {rel}: invalid YAML frontmatter: {e}")
-        return False
-
-    # výsledné FM začíname originálom (ADD-ONLY)
-    fm_new = dict(fm_orig)
-
-    # 1) doplniť chýbajúce z template
-    for k, v in template_fm.items():
-        # optionally skip guid entirely if requested
-        if no_guid and k == "guid":
-            continue
-        if k not in fm_new or fm_new.get(k) in (None, "", []):
-            # avoid copying literal placeholders like "{{ID}}", "{{TITLE}}", etc.
-            if is_placeholder_value(v):
-                continue
-            fm_new[k] = v
-
-    # 2) špeciálne doplnenia
-    if "locale" not in fm_new or not fm_new["locale"]:
-        fm_new["locale"] = locale_default
-
-    # 3) id bez hash postfixu (iba ak chceme)
-    if strip_hash_id and "id" in fm_new and fm_new["id"]:
-        fixed = normalize_id(str(fm_new["id"]))
-        fm_new["id"] = fixed
-
-    # 4) doplniť fm_build, ak chýba
-    if "fm_build" not in fm_new or not fm_new["fm_build"]:
-        fm_new["fm_build"] = datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
-
-    # zmenené?
-    changed = (yaml.safe_dump(fm_new, sort_keys=False, allow_unicode=True) !=
-               yaml.safe_dump(fm_orig, sort_keys=False, allow_unicode=True))
-
+    rel_path = path
     if mode == "audit":
-        if changed:
-            print(f"[AUDIT] {rel} → needs fix")
-        return changed
-
-    if mode == "dry":
-        if changed:
-            print(f"[DRY] {rel}")
-        return changed
-
-    if mode == "apply":
-        if not changed:
-            return False
-        # backup
+        print(f"[AUDIT] {rel_path}")
+        if changes["autofilled"]:
+            print("   autofilled:", ", ".join(changes["autofilled"]))
+        if changes["added_keys"]:
+            print("   added keys:", ", ".join(changes["added_keys"]))
+    elif mode == "dry":
+        print(f"[DRY] would update {rel_path}")
+        if changes["autofilled"]:
+            print("   autofilled:", ", ".join(changes["autofilled"]))
+        if changes["added_keys"]:
+            print("   added keys:", ", ".join(changes["added_keys"]))
+    elif mode == "apply":
         if backup:
-            bak_path = path + ".fm.bak"
-            with open(bak_path, "w", encoding="utf-8") as bf:
-                bf.write(text)
-        new_text = dump_frontmatter(fm_new) + "\n" + body.lstrip("\n")
+            bak_path = path + ".bak"
+            if not os.path.exists(bak_path):
+                with open(bak_path, "w", encoding="utf-8") as f:
+                    f.write(original)
         with open(path, "w", encoding="utf-8") as f:
-            f.write(new_text)
-        print(f"[APPLY] {rel}")
-        return True
+            f.write(new_content)
+        print(f"[APPLY] updated {rel_path}")
+    else:
+        raise SystemExit(f"Unknown mode: {mode}")
 
-    return False
-
-
-def iter_md_files(root: str):
-    for dirpath, _, filenames in os.walk(root):
-        for fn in filenames:
-            if fn.endswith(".md") or fn.endswith(".mdx"):
-                yield os.path.join(dirpath, fn)
+    return True, changes
 
 
-def main():
-    ap = argparse.ArgumentParser(description="FM audit/dry/apply tool")
-    ap.add_argument("--root", required=True, help="root folder with .md")
-    ap.add_argument("--template", required=True, help="FM-Core.md (only FM block will be used)")
-    ap.add_argument("--mode", choices=["audit", "dry", "apply"], default="audit")
-    ap.add_argument("--backup", action="store_true", help="create .fm.bak when applying")
-    ap.add_argument("--strip-hash-id", action="store_true", help="remove _A735-like postfix from id:")
-    ap.add_argument("--locale", default="sk", help="default locale to set when missing")
-    ap.add_argument("--no-guid", action="store_true", help="do not add guid from template if missing")
-    args = ap.parse_args()
-
-    template_fm = load_template_fm(args.template)
-
+def walk_root(root: str, template_fm: Dict, mode: str, backup: bool, locale_default: str) -> None:
     total = 0
     changed = 0
-    for path in iter_md_files(args.root):
-        total += 1
-        if process_file(
-            path,
-            template_fm,
-            args.mode,
-            args.backup,
-            args.strip_hash_id,
-            args.locale,
-            args.no_guid,
-        ):
-            changed += 1
+    for dirpath, _, filenames in os.walk(root):
+        for fname in filenames:
+            if not fname.endswith(".md"):
+                continue
+            path = os.path.join(dirpath, fname)
+            total += 1
+            ch, _ = process_file(
+                path=path,
+                template_fm=template_fm,
+                mode=mode,
+                backup=backup,
+                locale_default=locale_default,
+            )
+            if ch:
+                changed += 1
+    print(f"✅ Done. Scanned {total} files, changed {changed}.")
 
-    print(f"✅ done: scanned={total}, affected={changed}, mode={args.mode}")
-    if args.mode != "apply" and changed > 0:
-        # nech to v CI vie spadnúť
-        sys.exit(2)
+
+def main() -> None:
+    p = argparse.ArgumentParser(description="FM-Core fixer (add-only).")
+    p.add_argument(
+        "--root",
+        required=True,
+        help="Root folder with .md files (e.g. content/docs or content/docs/sk/class_sthdf_dashboard)",
+    )
+    p.add_argument(
+        "--template",
+        required=True,
+        help="FM-Core template .md (with YAML front matter)",
+    )
+    p.add_argument(
+        "--mode",
+        choices=["audit", "dry", "apply"],
+        default="audit",
+        help="What to do: audit (default), dry, apply",
+    )
+    p.add_argument(
+        "--backup",
+        action="store_true",
+        help="Create .bak files when writing (apply mode)",
+    )
+    p.add_argument(
+        "--locale-default",
+        default="sk",
+        help="Fallback locale if not inferred from path",
+    )
+    args = p.parse_args()
+
+    template_fm = load_template_fm(args.template)
+    walk_root(
+        root=args.root,
+        template_fm=template_fm,
+        mode=args.mode,
+        backup=args.backup,
+        locale_default=args.locale_default,
+    )
 
 
 if __name__ == "__main__":
