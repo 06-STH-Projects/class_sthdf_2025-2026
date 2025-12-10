@@ -203,3 +203,33 @@ Všetky sekcie sú prepojené jednoduchou navigáciou, ktorá umožňuje rýchlo
 
 ## Odkazy
 - Figma prototyp: [Smart Cable Management App](https://www.figma.com/make/x6OcLtSWBVfoPrO1ktyxl8/Smart-Cable-Management-App?node-id=0-4&t=ov0OmfD7uj8mJ02F-1)
+
+## EA
+
+### Use Case diagram – WorkNest
+
+Use Case diagram zobrazuje, ako používateľ interaguje s aplikáciou WorkNest pri nastavovaní svojho pracovného miesta. Ukazuje hlavné činnosti, ako sú registrácia, pridanie pracovného stola, zariadení a káblov a získanie odporúčaní na ergonómiu a organizáciu káblov. V diagrame je vidno, že všetky dôležité funkcie (ergonomické odporúčania, prehľad setupu, synchronizácia do cloudu) vychádzajú z akcií jedného hlavného aktéra – používateľa. Pomáha to vysvetliť rozsah aplikácie a to, ktoré funkcie musia byť implementované, aby WorkNest dával používateľovi praktickú pridanú hodnotu.
+
+![](../../src/IMG_9612.JPG)
+
+
+### Activity diagram – WorkNest
+
+Activity diagram opisuje typický tok krokov, ktorým používateľ prechádza od otvorenia WorkNest až po získanie odporúčaní. Začína sa kontrolou, či je používateľ prihlásený, pokračuje vytvorením pracovného miesta, pridaním zariadení a káblov a generovaním odporúčaní. Rozhodovacie uzly ukazujú, kde sa tok vetví (napríklad pri prihlasovaní alebo pri opakovanom generovaní odporúčaní po úprave setupu). Diagram tak pomáha pochopiť logiku obrazoviek a to, v akom poradí má aplikácia jednotlivé funkcie ponúkať.
+
+![](../../src/IMG_9611.JPG)
+
+
+
+### Component diagram – WorkNest
+
+Component diagram rozdeľuje WorkNest na hlavné technické časti: mobilnú aplikáciu, backendovú službu a databázu. Ukazuje, že mobilná appka obsahuje UI pre správu pracovísk, zariadení a odporúčaní a komunikuje s backendom cez jednotné API. Backend je zasa rozdelený na moduly pre správu používateľov, výpočet odporúčaní a generovanie dát pre vizuálne schémy, pričom všetky ukladajú dáta do spoločnej databázy. Tento pohľad vysvetľuje, ako je systém navrhnutý z hľadiska architektúry a kde majú jednotlivé časti zodpovednosť.
+
+![](../../src/IMG_9610.JPG)
+
+
+### Sequence diagram – WorkNest
+
+Sequence diagram pre WorkNest zobrazuje časovú postupnosť správ medzi používateľom, mobilnou aplikáciou, backendom a modulom odporúčaní. Scenár ukazuje, ako používateľ zadá údaje o svojom pracovisku (stôl, zariadenia, káble), aplikácia ich odošle na server a backend spolu s RecommendationEngine vypočíta ergonomické a káblové odporúčania. Následne sa výsledky vrátia späť do mobilnej aplikácie, ktorá používateľovi zobrazí odporúčania a vizuálnu schému setupu. Tento diagram pomáha pochopiť, ktorá časť systému za čo zodpovedá počas jedného konkrétneho použitia funkcie „získať odporúčania“.
+
+![](../../src/IMG_9609.JPG)
