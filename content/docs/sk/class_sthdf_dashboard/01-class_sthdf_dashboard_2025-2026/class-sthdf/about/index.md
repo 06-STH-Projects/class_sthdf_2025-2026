@@ -124,7 +124,7 @@ origin_imported_from: ""
 # Dátum importu
 origin_import_date: ""
 
-slug: /
+# slug: /
 # 🧱 RESERVED ---------------------------------------------------------
 
 fm_reserved1: ""
@@ -133,8 +133,6 @@ fm_reserved2: ""
 keywords: [STHDF, course, overview]
 
 <!-- class_sthdf_dashboard_INSTANCE_ID: 01-class_sthdf_dashboard_2025-2026 -->
-
-[🏠 Domov](../../index.md) · [⬅️ Nahor](../index.md)
 
 # System thinking in IT and Digital Fabrication
 
@@ -255,3 +253,5 @@ Ing. Roman Kazička, PhD | Knowledge Management Enterprise Architect | Teacher |
 ### [Best students Project in the year 2025-2026](../showcase/index.md)
 
 [Back to Home](../index.md)
+
+[🏠 Domov](../../index.md) · [⬅️ Nahor](../index.md)

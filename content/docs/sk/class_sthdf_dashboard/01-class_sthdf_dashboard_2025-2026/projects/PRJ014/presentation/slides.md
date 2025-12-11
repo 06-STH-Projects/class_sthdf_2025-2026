@@ -133,7 +133,6 @@ fm_reserved2: ""
 
 <!-- class_sthdf_dashboard_INSTANCE_ID: 01-class_sthdf_dashboard_2025-2026 -->
 
-[🏠 Domov](../../../index.md) · [⬅️ Nahor](../)
 # PRJ014 — Presentation
 
 --- Headline ---
@@ -174,3 +173,5 @@ Strucny text o projekte (zhrnutie zadania + prinos).
 ## 07-Testing & Verification
 ## 08-Operation
 ## 09-Change Management
+
+[🏠 Domov](../../../index.md) · [⬅️ Nahor](../)
