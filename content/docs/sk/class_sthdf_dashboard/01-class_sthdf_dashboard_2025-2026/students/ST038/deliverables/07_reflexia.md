@@ -1,6 +1,7 @@
 ---
 fm_version: 1.0.1
 fm_build: '2025-11-24T15:50:07.128617+00:00'
+title: 🧭 CONTEXT ---------------------------------------------------------
 fm_version_comment: ''
 locale: sk
 ---
@@ -146,3 +147,4 @@ Ale celkovo hodnotím predmet **pozitívne**, lebo núti študenta vytvoriť nie
 
 ## Navigácia
 - [↩️ Späť](../index.md)
+

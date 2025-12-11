@@ -3,6 +3,7 @@ fm_version: 1.0.1
 fm_version_comment: ''
 locale: sk
 fm_build: '2025-12-09T21:04:48Z'
+title: 🙋 About Me
 ---
 
 # 🙋 About Me
@@ -40,3 +41,4 @@ Nemám očakávania vysoké očakávania. Bez očakávaní človek nemôže byť
 
 - [↩️ Späť na študenta](../index.md)
 - [👥 Zoznam študentov](../../ST_INDEX.md)
+

@@ -12,7 +12,7 @@ fm_version_comment: ""
 # 🆔 IDENTITY --------------------------------------------------------
 
 # ID generuje CLI / skript
-id: Home
+id: class-sthdf-about
 # Unikátne UUID – generuje skript
 guid: "dc14de04-7845-4c96-9117-aedb7d0474e7"
 
@@ -124,7 +124,7 @@ origin_imported_from: ""
 # Dátum importu
 origin_import_date: ""
 
-# slug: /
+# slug intentionally omitted to keep default path and avoid root collision
 # 🧱 RESERVED ---------------------------------------------------------
 
 fm_reserved1: ""

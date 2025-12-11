@@ -3,6 +3,7 @@ fm_version: 1.0.1
 fm_version_comment: ''
 locale: sk
 fm_build: '2025-12-09T21:04:48Z'
+title: ST031
 ---
 
 # ST031
@@ -16,3 +17,4 @@ fm_build: '2025-12-09T21:04:48Z'
 - [07 – Reflexia](./deliverables/07_reflexia.md)
 
 [🏠 Domov](../../index.md) · [⬅️ Nahor](../ST_INDEX.md)
+

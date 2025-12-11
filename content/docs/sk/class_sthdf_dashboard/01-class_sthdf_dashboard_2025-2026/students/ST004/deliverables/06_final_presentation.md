@@ -3,6 +3,7 @@ fm_version: 1.0.1
 fm_version_comment: ''
 locale: sk
 fm_build: '2025-12-09T21:04:48Z'
+title: 📦 Final Presentation
 ---
 
 # 📦 Final Presentation
@@ -93,3 +94,4 @@ Projekt je vo fáze **funkčného MVP prototypu**:
 ---
 ## Navigácia
 - [↩️ Späť](../index.md)
+

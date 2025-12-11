@@ -1,6 +1,7 @@
 ---
 fm_version: 1.0.1
 fm_build: '2025-11-28T15:54:47.764756+00:00'
+title: ID generuje CLI / skript
 fm_version_comment: ''
 locale: sk
 ---
@@ -189,3 +190,4 @@ fm_reserved2: ""
 - [ST058](./ST058/index.md)
 - [ST059](./ST059/index.md)
 - [ST060](./ST060/index.md)
+
