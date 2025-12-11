@@ -8,67 +8,48 @@ fm_build: "2025-11-28T15:54:47.815822+00:00"
 # Poznámka k verzii – voliteľné
 fm_version_comment: ""
 
-
 # 🆔 IDENTITY --------------------------------------------------------
-
 guid: "98a25ed9-ba17-4e57-a2fe-c290226f83de"
 
-
 # 🧭 CONTEXT ---------------------------------------------------------
-
 dao: "class_sthdf_dashboard"
-
 title: "ST_034-about me"
-
 description: "Stručné predstavenie – profesionálne skúsenosti, vzdelanie, zručnosti a osobný profil."
 
-
 # 👥 AUTHORSHIP ------------------------------------------------------
-
 author: "Roman Kazicka"
-
 authors:
-	- "Roman Kazicka"
-
+- "Roman Kazicka"
 
 # 🗂 CLASSIFICATION ---------------------------------------------------
-
 category: "profile"
 type: "case"
 priority: "medium"
 
 tags:
-	- profile
-	- about-me
-	- career
-	- skills
-	- ai
-
+- "profile"
+- "about-me"
+- "career"
+- "skills"
+- "ai"
 
 # 🌍 LOCALIZATION -----------------------------------------------------
-
 locale: "sk"
 
-
 # 🕒 LIFECYCLE --------------------------------------------------------
-
 created: "2025-11-28 16:54"
 modified: "2025-11-28 16:54"
 status: "backlog"
 privacy: "public"
 
-
 # ⚖ INTELLECTUAL PROPERTY -------------------------------------------
-
 rights_holder_content: "Roman Kazicka"
 rights_holder_system: "CAA / KNIFE / LetItGrow"
 license: "CC-BY-NC-SA-4.0"
 disclaimer: "Use at your own risk. Methods provided as-is; participation is voluntary and context-aware."
 copyright: "© 2025 Roman Kazicka"
 
-
 # 🔗 ORIGIN / PROVENANCE ---------------------------------------------
-
 origin_repo: ""
 origin_repo_url: ""
 origin_commit: ""
@@ -78,12 +59,12 @@ origin_author: "Roman Kazicka"
 origin_imported_from: ""
 origin_import_date: ""
 
-
 # 🧱 RESERVED ---------------------------------------------------------
-
 fm_reserved1: ""
 fm_reserved2: ""
 ---
+
+
 # ST034 — about-me
 
 ## 🧑‍💼 O mne
@@ -160,4 +141,4 @@ Skúsenosti z týchto aktivít mi priniesli schopnosti v oblasti komunikácie, p
 ## 🚗 Vodičský preukaz
 Skupina B
 
-[🏠 Domov](../../../index.md) · [⬅️ Nahor](../)
+[🏠 Domov](../../../index.md) · [⬅️ Nahor](../index.md)
