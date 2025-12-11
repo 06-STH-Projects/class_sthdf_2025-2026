@@ -133,8 +133,6 @@ fm_reserved2: ""
 
 <!-- class_sthdf_dashboard_INSTANCE_ID: 01-class_sthdf_dashboard_2025-2026 -->
 
-[🏠 Domov](../index.md)
-
 # Class STHDF — Overview
 
 Rýchly rozcestník pre interné stránky kurzu.
@@ -142,3 +140,5 @@ Rýchly rozcestník pre interné stránky kurzu.
 - [About the Course](/)
 - [Assignments & Milestones](../conditions/index.md)
 - [Showcase](showcase/index.md)
+
+[🏠 Domov](../index.md)

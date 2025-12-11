@@ -133,7 +133,6 @@ fm_reserved2: ""
 
 <!-- class_sthdf_dashboard_INSTANCE_ID: 01-class_sthdf_dashboard_2025-2026 -->
 
-[🏠 Domov](../../index.md) · [⬅️ Nahor](../PRJ_INDEX.md)
 # PRJ013 — WorkNest
 
 ## Navigácia
@@ -142,3 +141,5 @@ fm_reserved2: ""
   
 
 Našou víziou je zlepšiť život a pracovné prostredie ľudí, ktorí trávia veľa času pri počítači – programátorov, office pracovníkov či kreatívcov
+
+[🏠 Domov](../../index.md) · [⬅️ Nahor](../PRJ_INDEX.md)

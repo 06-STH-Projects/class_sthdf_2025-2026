@@ -134,8 +134,6 @@ keywords: [assignments, milestones, grading]
 
 <!-- class_sthdf_dashboard_INSTANCE_ID: 01-class_sthdf_dashboard_2025-2026 -->
 
-[🏠 Domov](../../index.md) · [⬅️ Nahor](../index.md)
-
 # Assignments & Milestones
 
 Popíš pravidlá, termíny a hodnotenie. (Nahradíš vlastným obsahom.)
@@ -151,3 +149,5 @@ Popíš pravidlá, termíny a hodnotenie. (Nahradíš vlastným obsahom.)
 
 ## Hodnotenie
 - Rubriky v Private/assignments.
+
+[🏠 Domov](../../index.md) · [⬅️ Nahor](../index.md)
