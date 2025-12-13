@@ -135,6 +135,8 @@ fm_reserved2: ""
 
 # 02-Top Level Architecture
 
-- Pridaj high-level diagram alebo popis architektúry.
+System layer zobrazuje hlavné komponenty a ich vzájomné prepojenie. Obsahuje 3D tlačený kvetináč, zásobník, Arudino, vlhkostný senzor, OLED displej a zdroj. 
+
+![business process viewpoint](../../images/system.bmp)
 
 **Navigation:** [⬆️ SDLC](../index.md) · [⬅️ Projekt](../../index.md)

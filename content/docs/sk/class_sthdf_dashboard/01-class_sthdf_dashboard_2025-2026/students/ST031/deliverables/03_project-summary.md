@@ -9,68 +9,69 @@ fm_build: '2025-12-09T21:04:48Z'
 
 ## 🔖 Identifikácia
 ## 1️⃣ Názov projektu
-*(Jasný, výstižný, inšpiratívny – ako by sa mal objaviť na plagáte.)*
-- **Názov projektu:** `PRJ_XXX_<Názov>_<ST_XXX>_<ST_XXX>`
-- **Stručný popis:** 2–3 vety  
+- **Názov projektu:** 2025_PRJ_012 – SmartPot
+- **Stručný popis:** SmartPot spája 3D tlač a jednoduchú elektroniku, aby uľahčil starostlivosť o rastliny každému používateľovi, od začiatočníkov až po nadšencov. Umožňuje presné meranie vlhkosti a poskytuje jasnú vizuálnu informáciu o tom, či rastlina potrebuje vodu.
 
 ## 2️⃣ Členovia tímu
 
 | ST ID | Meno | Rola v tíme| Kompetencie | 
 |-------|------|------|-------------|
-| ST001 |      | Project Lead | koordinácia |
-| ST002 |      | Developer | implementácia |
-| ST003 |      | Designer | UI/UX |
+| 2025_ST_031 | Miroslava | Project Lead | zapojenie elektroniky a testovanie, programovanie, dokumentovanie |
+| 2025_ST_039 | Filip | Developer | návrh 3D modelu a návrh zapojenia senzorov, 3D model, EA modelovanie |
 
 ## 3️⃣ Motivácia tímu
-- Prečo ste si vybrali tento projekt?  
-- Aký osobný alebo profesný zmysel má pre vás riešenie tejto témy?
-- Prečo je projekt dôležitý  
-- Aký problém rieši  
+Dodanie plne funkčného produktu, ktorý je spoľahlivý, intuitívny a dokáže reálne pomôcť pri starostlivosti o rastliny, najmä pre používateľov, ktorí zabúdajú zalievať alebo prelievajú rastliny.
+
 
 ## 4️⃣ Cieľ a pridaná hodnota projektu
-
-- Aký je finálny cieľ  
-- Ako spoznáme, že projekt je úspešný  
+Vytvoriť lacný a ľahko použiteľný inteligentný kvetináč, ktorý kombinuje 3D tlač, elektroniku a jednoduchý softvér, a tým výrazne uľahčí každodennú starostlivosť o rastliny.  
 
 ## 5️⃣ Popis riešenia
-- Stručne opíšte architektúru, nástroje a technológie, ktoré použijete.  
-- Zamerajte sa na **“čo”** riešite, nie ešte “ako”.
+SmartPot je inteligentný samozavlažovací kvetináč, ktorý kombinuje 3D tlačený kvetináč so vstavaným zásobníkom vody, vlhkostný senzor, Arduino Nano a OLED displej. Senzor meria vlhkosť pôdy v reálnom čase a Arduino spracováva namerané údaje, ktoré sa následne zobrazujú na displeji formou percentuálneho ukazovateľa a smajlíka.  
+
+Tento systém umožňuje používateľovi okamžite vidieť, či rastlina potrebuje zálievku, a tým znižuje riziko prelievania alebo vysychania. SmartPot tak poskytuje praktické, intuitívne a spoľahlivé riešenie pre každodennú starostlivosť o rastliny.
 
 ## 6️⃣ Projektový plán
-- Odhadovaný čas na prácu: _x hodín / týždeň_  
-- Predpokladaný stav v čase prezentácie: _MVP / prototyp / dokumentácia / funkčný produkt_  
-- Hlavné míľniky:  
-  - [ ] Príprava  
-  - [ ] Implementácia  
-  - [ ] Testovanie  
-  - [ ] Prezentácia
-  - [ ] 
+Celkový projekt si vyžiadal približne 4 týždne práce, rozdelenej do štyroch fáz:
+
+1. **Návrh 3D modelu a prepojenia (0.5 týždňa)**  
+   - Papierové skice kvetináča, zásobníka vody a miesta pre elektroniku.  
+   - Náčrt základnej logiky prepojenia Arduina, dispela a senzora.
+
+2. **Návrh modelu vo Fusion, zapojenie komponentov a programovanie (2 týždne)**  
+   - Vytvorenie 3D modelov vo Fusion 360
+   - Zapojenie senzora a OLED displeja na breadboarde.
+   - Programovanie základnej funkcionality na Arduino Nano: čítanie vlhkosti, prepočet na percentá, zobrazenie na displeji s vizuálnym indikátorom.
+
+3. **3D tlač, implementácia senzorov a testovanie (1 týždeň)** 
+   - Vytlačenie kvetináča vo FabLabe.  
+   - Prepojenie a integrácia elektroniky do 3D tlačeného modelu.  
+   - Testovanie senzora a displeja priamo na rastline.
+
+4. **Finalizácia a dokumentácia (0,5 týždňa)**  
+   - Dokončenie dokumentácie vrátane náčrtov, fotografií a popisu architektúry.
+
+Každá fáza bola realizovaná postupne, pričom sme pri iteráciách kombinovali testovanie 3D modelu, elektroniky a softvéru, aby sme dosiahli plne funkčný a stabilný prototyp SmartPot.
+
 ###  📅 Milníky a výstupy
-- **Do januára dodáme:**  
-  - [ ] prototyp  
-  - [ ] prezentáciu  
-  - [ ] dokumentáciu  
+- Vytvoriť plne funkčný prototyp SmartPot.  
+- Zabezpečiť spoľahlivé meranie vlhkosti pôdy senzorom.  
+- OLED displej musí prehľadne zobrazovať aktuálnu vlhkosť a vizuálne indikovať stav rastliny (smajkík + percento).  
+- Produkt má byť intuitívny, použiteľný a praktický pre domácich používateľov bez predchádzajúcich skúseností so starostlivosťou o rastliny.
 
 ## 7️⃣ Zákazník a hodnoty
-- Kto by mohol byť používateľom projektu?  
-- Čo mu to prinesie?
+Cieľová skupina sú všetci používatelia, ktorí majú problémy s pravidelným polievaním rastlín, napríklad študenti, zaneprázdnení ľudia alebo začiatočníci, ktorí často zabúdajú zalievať rastliny alebo ich jednoducho prelievajú. Alebo jednoducho ktokoľvek, kto chce vidieť, akú "náladu" má práve ich rastlina.
   
 ## 8️⃣ Očakávané výstupy
-- Dokumentácia: (napr. README, KNIFE článok, demo stránka...)  
-- Artefakty: (napr. prototyp, appka, vizualizácia...)
+- Dokumentácia: README, KNIFE článok  
+- Artefakty: 3D kvetináč, prototyp senzoru
 
 
 
 ## 📚 Kontext
-- KNIFE príspevky, literatúra, inšpirácie  
-
 ## 🧭 Riziká a závislosti
-- Riziká projektu  
-- Na čom závisí  
-
 ## 9️⃣ Reflexia a ďalšie kroky
-Čo očakávate, že sa naučíte?  
-Ako by sa projekt mohol rozvíjať ďalej?
+
 
 
 ---
