@@ -133,7 +133,62 @@ fm_reserved2: ""
 
 <!-- class_sthdf_dashboard_INSTANCE_ID: 01-class_sthdf_dashboard_2025-2026 -->
 
-# 03-Solution Architecture
+# 03 – Solution Architecture
+
+Tento dokument popisuje **konkrétne riešenie prototypu FightWrap Winder** na úrovni hlavných modulov, ich rozhraní a tokov (mechanika, elektronika, ovládanie). Nejde o výrobné výkresy – cieľom je mať jasne pomenované komponenty, zodpovednosti a väzby.
+
+---
+
+## 1️⃣ Ciele riešenia (Solution Goals)
+
+- Automatizovať navíjanie bandáže pomocou jednoduchého elektromechanického riešenia.
+- Zabezpečiť jednoduché ovládanie (spustenie/zastavenie) bez potreby zložitého UI.
+- Navrhnúť modulárnu konštrukciu vhodnú na prototypovanie (3D tlač, dostupné diely).
+
+---
+
+## 2️⃣ Rozsah riešenia
+
+### V scope
+- Mechanická konštrukcia + navíjací mechanizmus
+- Motor + prenos sily (spojka/prevod)
+- Napájanie
+- Ovládacie tlačidlo + LED indikácia
+
+### Out of scope
+- Mobilná aplikácia, cloud, telemetria
+- Pokročilé režimy, automatická detekcia typu bandáže
+- Priemyselná certifikácia / masová výroba
+
+---
+
+## 3️⃣ Prehľad modulov (Solution Building Blocks)
+
+### 3.1 Mechanický modul
+**Zodpovednosť:** drží bandáž a umožňuje jej navíjanie.
+- Navíjacia oska (spool)
+- Držiak bandáže / vedenie
+- Nosná konštrukcia (3D tlač)
+- Krytovanie (ochrana prstov)
+
+### 3.2 Pohonný modul
+**Zodpovednosť:** vytvára rotáciu a prenáša krútiaci moment na osku.
+- DC motor (príp. motor s prevodovkou)
+- Spojka / prevod (podľa dostupnosti)
+- Uchytenie motora do rámu
+
+### 3.3 Elektronický modul
+**Zodpovednosť:** napájanie a spínanie motora.
+- Napájací vstup (USB / batéria)
+- Spínanie motora (napr. tranzistor / driver modul)
+- Ochrany (základné: poistka alebo ochrana proti skratu – podľa možností)
+
+### 3.4 Ovládanie a indikácia (UI modul)
+**Zodpovednosť:** jednoduché ovládanie a informovanie používateľa.
+- Tlačidlo START/STOP
+- LED indikácia (napájanie / beží / chyba – voliteľné)
+
+---
 
 - [Solution design](./design.md)
 

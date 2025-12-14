@@ -149,8 +149,11 @@ Strucny text o projekte (1-3 vety, doplni tim).
 ## Introduction
 **2025-PRJ-028-ST_028-ST_028-Nazov projektu**
 
-Strucny text o projekte (zhrnutie zadania + prinos).
+
 --- introduction ---
+FightWrap Winder je elektromechanické zariadenie určené pre športovcov a trénerov, ktoré rieši bežný problém časovo náročného ručného navíjania bandáží.  
+Projekt sa zameriava na návrh architektúry, vývoj prototypu a jeho otestovanie v reálnom použití.
+
 
 --- obsah ---
 ## Obsah
@@ -161,16 +164,57 @@ Strucny text o projekte (zhrnutie zadania + prinos).
 - [05-Design](../sdlc/05-design/index.md)
 - [06-Implementation](../sdlc/06-implementation/index.md)
 - [07-Testing & Verification](../sdlc/07-testing-verification/index.md)
-- [08-Operation](../sdlc/08-operation/index.md)
-- [09-Change Management](../sdlc/09-Change-Management/index.md)
 --- obsah ---
 
 ## 01-Business
+
+### Problém a cieľ projektu
+Ručné navíjanie bandáží je časovo náročné, nepraktické a často odkladané.  
+Cieľom projektu FightWrap Winder je vytvoriť kompaktné elektrické zariadenie, ktoré tento proces výrazne zjednoduší a urýchli.
+
+---
+
+### Business pohľad na proces
+![Business process viewpoint](../../images/business_process.png)
+
+---
+
+### Prínos projektu
+- úspora času po tréningu alebo práci  
+- menej manuálnej námahy  
+- lepšia organizácia bandáží  
+- potenciál ďalšieho využitia a komercializácie  
+
+---
+
+### Pre koho je projekt určený
+- športovci  
+- tréneri a fyzioterapeuti  
+- športové kluby a fitness centrá  
+
+---
+
+### Vízia produktu
+> **Urobiť navíjanie bandáží rýchlym a bezproblémovým pomocou jednoduchého elektrického zariadenia.**
+
+---
+
+### Riziká a obmedzenia (stručne)
+- rôzne typy a hrúbky bandáží  
+- mechanické opotrebovanie  
+- obmedzený rozpočet a prototypové materiály
+
 ## 02-Top Level Architecture
+
+Top-level architektúrny diagram zobrazuje hlavný systém FightWrap Winder a jeho základné komponenty a aktérov. Diagram zahŕňa zariadenie FightWrap Winder, motorček, napájanie, používateľa (športovec/tréner) a servisného technika, spolu s ich vzájomnými vzťahmi na najvyššej úrovni abstrakcie.
+
+![business process viewpoint](../../images/top_lvl_architecture.png)
+
 ## 03-Solution Architecture
+
+
 ## 04-Analysis
 ## 05-Design
 ## 06-Implementation
 ## 07-Testing & Verification
-## 08-Operation
-## 09-Change Management
+
