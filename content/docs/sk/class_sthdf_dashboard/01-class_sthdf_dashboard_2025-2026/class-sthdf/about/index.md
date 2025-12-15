@@ -200,7 +200,7 @@ keywords: [STHDF, course, overview]
    - **Team learning** (creating synergies)
    - **Systems thinking** (success is not an accident)
 
-### 2) Assessment – 75% of the final grade
+### 2) Grading – 75% of the final grade
 
 1. **Contributions to shared knowledge (KNIFEs).**
 2. **Systematic work**
@@ -219,7 +219,7 @@ keywords: [STHDF, course, overview]
    - Within the KNIFE ecosystem (world-wide)
      - Number and quality of contributions
 
-### 3) Assessment – 25% of the final grade
+### 3) Grading – 25% of the final grade
 
 1. **Final presentation of outcomes**
    - Individual contribution
@@ -253,7 +253,7 @@ Based on 5 principles of Self learning organisation:
    >> Coordinations, Templates, communication is performed via Class confluence
    >> Final Students Outputs is via class Bitbucket
 
-## Conditions for completing the course 2023-2024
+## Conditions for completing the course 2025-2026
 
 There are defined 5 maturity levels:
 * F - Passive approach
