@@ -1,7 +1,102 @@
 "use strict";
-(globalThis["webpackChunkknife_preview"] = globalThis["webpackChunkknife_preview"] || []).push([[45742],{
+(globalThis["webpackChunkknife_preview"] = globalThis["webpackChunkknife_preview"] || []).push([[53759],{
 
-/***/ 12939:
+/***/ 28453:
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   R: () => (/* binding */ useMDXComponents),
+/* harmony export */   x: () => (/* binding */ MDXProvider)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(96540);
+/**
+ * @import {MDXComponents} from 'mdx/types.js'
+ * @import {Component, ReactElement, ReactNode} from 'react'
+ */
+
+/**
+ * @callback MergeComponents
+ *   Custom merge function.
+ * @param {Readonly<MDXComponents>} currentComponents
+ *   Current components from the context.
+ * @returns {MDXComponents}
+ *   Additional components.
+ *
+ * @typedef Props
+ *   Configuration for `MDXProvider`.
+ * @property {ReactNode | null | undefined} [children]
+ *   Children (optional).
+ * @property {Readonly<MDXComponents> | MergeComponents | null | undefined} [components]
+ *   Additional components to use or a function that creates them (optional).
+ * @property {boolean | null | undefined} [disableParentContext=false]
+ *   Turn off outer component context (default: `false`).
+ */
+
+
+
+/** @type {Readonly<MDXComponents>} */
+const emptyComponents = {}
+
+const MDXContext = react__WEBPACK_IMPORTED_MODULE_0__.createContext(emptyComponents)
+
+/**
+ * Get current components from the MDX Context.
+ *
+ * @param {Readonly<MDXComponents> | MergeComponents | null | undefined} [components]
+ *   Additional components to use or a function that creates them (optional).
+ * @returns {MDXComponents}
+ *   Current components.
+ */
+function useMDXComponents(components) {
+  const contextComponents = react__WEBPACK_IMPORTED_MODULE_0__.useContext(MDXContext)
+
+  // Memoize to avoid unnecessary top-level context changes
+  return react__WEBPACK_IMPORTED_MODULE_0__.useMemo(
+    function () {
+      // Custom merge via a function prop
+      if (typeof components === 'function') {
+        return components(contextComponents)
+      }
+
+      return {...contextComponents, ...components}
+    },
+    [contextComponents, components]
+  )
+}
+
+/**
+ * Provider for MDX context.
+ *
+ * @param {Readonly<Props>} properties
+ *   Properties.
+ * @returns {ReactElement}
+ *   Element.
+ * @satisfies {Component}
+ */
+function MDXProvider(properties) {
+  /** @type {Readonly<MDXComponents>} */
+  let allComponents
+
+  if (properties.disableParentContext) {
+    allComponents =
+      typeof properties.components === 'function'
+        ? properties.components(emptyComponents)
+        : properties.components || emptyComponents
+  } else {
+    allComponents = useMDXComponents(properties.components)
+  }
+
+  return react__WEBPACK_IMPORTED_MODULE_0__.createElement(
+    MDXContext.Provider,
+    {value: allComponents},
+    properties.children
+  )
+}
+
+
+/***/ }),
+
+/***/ 32636:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 // ESM COMPAT FLAG
@@ -13,56 +108,59 @@ __webpack_require__.d(__webpack_exports__, {
   contentTitle: () => (/* binding */ contentTitle),
   "default": () => (/* binding */ MDXContent),
   frontMatter: () => (/* binding */ frontMatter),
-  metadata: () => (/* reexport */ site_docs_index_md_c37_namespaceObject),
+  metadata: () => (/* reexport */ site_docs_sk_class_sthdf_dashboard_01_class_sthdf_dashboard_2025_2026_class_sthdf_about_index_md_2ff_namespaceObject),
   toc: () => (/* binding */ toc)
 });
 
-;// ./.docusaurus/docusaurus-plugin-content-docs/default/site-docs-index-md-c37.json
-const site_docs_index_md_c37_namespaceObject = /*#__PURE__*/JSON.parse('{"id":"KNIFE_HOME","title":"KNIFE – Hub","description":"Vstupná stránka: preklik na SK a EN dokumentáciu.","source":"@site/docs/index.md","sourceDirName":".","slug":"/","permalink":"/en/","draft":false,"unlisted":false,"tags":[],"version":"current","sidebarPosition":1,"frontMatter":{"fm_version":"1.0.1","fm_build":"2025-10-28T00:00:00Z","fm_version_comment":"Stabilné ID/slug pre navigáciu (hub + SK + EN)","id":"KNIFE_HOME","guid":"4e609387-282e-5744-97f0-e5bb625100ad","dao":"knife","title":"KNIFE – Hub","description":"Vstupná stránka: preklik na SK a EN dokumentáciu.","author":"Roman Kazička","authors":["Roman Kazička"],"category":"","type":"","priority":"no","tags":[],"locale":"sk","created":"2025-10-28","modified":"YYYY-MM-DDTHH:MM:SSZ","status":"draft","privacy":"public","rights_holder_content":"Roman Kazička","rights_holder_system":"Roman Kazička (CAA/KNIFE/LetItGrow)","license":"CC-BY-NC-SA-4.0","disclaimer":"Use at your own risk. Methods provided as-is; participation is voluntary and context-aware.","copyright":"© 2025 Roman Kazička / SystemThinking","origin_repo":"","origin_repo_url":"","origin_commit":"","origin_system":"","author_id":"","author_did":"","fm_reserved1":"","fm_reserved2":"","slug":"/","sidebar_position":1}}');
+;// ./.docusaurus/docusaurus-plugin-content-docs/default/site-docs-sk-class-sthdf-dashboard-01-class-sthdf-dashboard-2025-2026-class-sthdf-about-index-md-2ff.json
+const site_docs_sk_class_sthdf_dashboard_01_class_sthdf_dashboard_2025_2026_class_sthdf_about_index_md_2ff_namespaceObject = /*#__PURE__*/JSON.parse('{"id":"sk/class_sthdf_dashboard/class_sthdf_dashboard_2025-2026/class-sthdf/about/class-sthdf-about","title":"📘 About the Course","description":"Overview of the STHDF 2025–2026 course – goals, format, tooling, and outcomes.","source":"@site/docs/sk/class_sthdf_dashboard/01-class_sthdf_dashboard_2025-2026/class-sthdf/about/index.md","sourceDirName":"sk/class_sthdf_dashboard/01-class_sthdf_dashboard_2025-2026/class-sthdf/about","slug":"/sk/class_sthdf_dashboard/class_sthdf_dashboard_2025-2026/class-sthdf/about/","permalink":"/sk/class_sthdf_dashboard/class_sthdf_dashboard_2025-2026/class-sthdf/about/","draft":false,"unlisted":false,"tags":[{"inline":true,"label":"course","permalink":"/docs/tags/course"},{"inline":true,"label":"overview","permalink":"/docs/tags/overview"}],"version":"current","frontMatter":{"fm_version":"1.0.1","fm_build":"2025-11-28T15:54:47.767015+00:00","fm_version_comment":"","id":"class-sthdf-about","guid":"dc14de04-7845-4c96-9117-aedb7d0474e7","dao":"class_sthdf_dashboard","title":"📘 About the Course","description":"Overview of the STHDF 2025–2026 course – goals, format, tooling, and outcomes.","author":"Roman Kazicka","authors":["Roman Kazicka"],"category":"","type":"","priority":"","tags":["course","overview"],"locale":"sk","created":"2025-11-28 16:54","modified":"2025-11-28 16:54","status":"backlog","privacy":"public","rights_holder_content":"Roman Kazicka","rights_holder_system":"CAA / KNIFE / LetItGrow","license":"CC-BY-NC-SA-4.0","disclaimer":"Use at your own risk. Methods provided as-is; participation is voluntary and context-aware.","copyright":"© 2025 Roman Kazicka","origin_repo":"","origin_repo_url":"","origin_commit":"","origin_branch":"","origin_system":"CAA","origin_author":"Roman Kazicka","origin_imported_from":"","origin_import_date":"","fm_reserved1":"","fm_reserved2":""},"sidebar":"tutorialSidebar","previous":{"title":"🧭 Class STHDF – Overview","permalink":"/sk/class_sthdf_dashboard/class_sthdf_dashboard_2025-2026/class-sthdf/"},"next":{"title":"✨ Showcase — Best of 2025","permalink":"/sk/class_sthdf_dashboard/class_sthdf_dashboard_2025-2026/class-sthdf/showcase/"}}');
 // EXTERNAL MODULE: ./node_modules/react/jsx-runtime.js
 var jsx_runtime = __webpack_require__(74848);
 // EXTERNAL MODULE: ./node_modules/@mdx-js/react/lib/index.js
 var lib = __webpack_require__(28453);
-;// ./docs/index.md
+;// ./docs/sk/class_sthdf_dashboard/01-class_sthdf_dashboard_2025-2026/class-sthdf/about/index.md
 
 
 const frontMatter = {
 	fm_version: '1.0.1',
-	fm_build: '2025-10-28T00:00:00Z',
-	fm_version_comment: 'Stabilné ID/slug pre navigáciu (hub + SK + EN)',
-	id: 'KNIFE_HOME',
-	guid: '4e609387-282e-5744-97f0-e5bb625100ad',
-	dao: 'knife',
-	title: 'KNIFE – Hub',
-	description: 'Vstupná stránka: preklik na SK a EN dokumentáciu.',
-	author: 'Roman Kazička',
+	fm_build: '2025-11-28T15:54:47.767015+00:00',
+	fm_version_comment: '',
+	id: 'class-sthdf-about',
+	guid: 'dc14de04-7845-4c96-9117-aedb7d0474e7',
+	dao: 'class_sthdf_dashboard',
+	title: '📘 About the Course',
+	description: 'Overview of the STHDF 2025–2026 course – goals, format, tooling, and outcomes.',
+	author: 'Roman Kazicka',
 	authors: [
-		'Roman Kazička'
+		'Roman Kazicka'
 	],
 	category: '',
 	type: '',
-	priority: 'no',
-	tags: [],
+	priority: '',
+	tags: [
+		'course',
+		'overview'
+	],
 	locale: 'sk',
-	created: '2025-10-28',
-	modified: 'YYYY-MM-DDTHH:MM:SSZ',
-	status: 'draft',
+	created: '2025-11-28 16:54',
+	modified: '2025-11-28 16:54',
+	status: 'backlog',
 	privacy: 'public',
-	rights_holder_content: 'Roman Kazička',
-	rights_holder_system: 'Roman Kazička (CAA/KNIFE/LetItGrow)',
+	rights_holder_content: 'Roman Kazicka',
+	rights_holder_system: 'CAA / KNIFE / LetItGrow',
 	license: 'CC-BY-NC-SA-4.0',
 	disclaimer: 'Use at your own risk. Methods provided as-is; participation is voluntary and context-aware.',
-	copyright: '© 2025 Roman Kazička / SystemThinking',
+	copyright: '© 2025 Roman Kazicka',
 	origin_repo: '',
 	origin_repo_url: '',
 	origin_commit: '',
-	origin_system: '',
-	author_id: '',
-	author_did: '',
+	origin_branch: '',
+	origin_system: 'CAA',
+	origin_author: 'Roman Kazicka',
+	origin_imported_from: '',
+	origin_import_date: '',
 	fm_reserved1: '',
-	fm_reserved2: '',
-	slug: '/',
-	sidebar_position: '1'
+	fm_reserved2: ''
 };
 const contentTitle = 'System thinking in IT and Digital Fabrication';
 
@@ -73,46 +171,6 @@ const assets = {
 
 
 const toc = [{
-  "value": "Vision",
-  "id": "vision",
-  "level": 2
-}, {
-  "value": "Mission",
-  "id": "mission",
-  "level": 2
-}, {
-  "value": "Commitment",
-  "id": "commitment",
-  "level": 2
-}, {
-  "value": "Strategy",
-  "id": "strategy",
-  "level": 2
-}, {
-  "value": "Time Roadmap",
-  "id": "time-roadmap",
-  "level": 2
-}, {
-  "value": "Technical conditions/requirements",
-  "id": "technical-conditionsrequirements",
-  "level": 2
-}, {
-  "value": "Conditions for completing the course 2023-2024",
-  "id": "conditions-for-completing-the-course-2023-2024",
-  "level": 2
-}, {
-  "value": "Meet the team",
-  "id": "meet-the-team",
-  "level": 2
-}, {
-  "value": "🔭 Navigácia – kam ďalej?",
-  "id": "-navigácia--kam-ďalej",
-  "level": 2
-}, {
-  "value": "🎓 Triedny dashboard (STHDF 2025–2026)",
-  "id": "-triedny-dashboard-sthdf-20252026",
-  "level": 3
-}, {
   "value": "Class 2025-2026 - Navigation",
   "id": "class-2025-2026---navigation",
   "level": 2
@@ -129,20 +187,72 @@ const toc = [{
   "id": "best-students-project-in-the-year-2025-2026",
   "level": 3
 }, {
-  "value": "🔪 KNIFE Framework",
-  "id": "-knife-framework",
+  "value": "Vision",
+  "id": "vision",
+  "level": 2
+}, {
+  "value": "Mission",
+  "id": "mission",
+  "level": 2
+}, {
+  "value": "Commitment",
+  "id": "commitment",
+  "level": 2
+}, {
+  "value": "Principles",
+  "id": "principles",
+  "level": 2
+}, {
+  "value": "1) Core principles",
+  "id": "1-core-principles",
   "level": 3
 }, {
-  "value": "⚙️ 7Ds – rámec",
-  "id": "️-7ds--rámec",
+  "value": "2) Grading – 75% of the final grade",
+  "id": "2-grading--75-of-the-final-grade",
   "level": 3
 }, {
-  "value": "🧱 SDLC / integračné modely",
-  "id": "-sdlc--integračné-modely",
+  "value": "3) Grading – 25% of the final grade",
+  "id": "3-grading--25-of-the-final-grade",
   "level": 3
 }, {
-  "value": "🧭 Ďalšie sekcie",
-  "id": "-ďalšie-sekcie",
+  "value": "Strategy",
+  "id": "strategy",
+  "level": 2
+}, {
+  "value": "Time Roadmap",
+  "id": "time-roadmap",
+  "level": 2
+}, {
+  "value": "Winter Semester 2025-2026, september 2025 - January 2026",
+  "id": "winter-semester-2025-2026-september-2025---january-2026",
+  "level": 3
+}, {
+  "value": "Technical conditions/requirements",
+  "id": "technical-conditionsrequirements",
+  "level": 2
+}, {
+  "value": "Conditions for completing the course 2025-2026",
+  "id": "conditions-for-completing-the-course-2025-2026",
+  "level": 2
+}, {
+  "value": "Meet the team",
+  "id": "meet-the-team",
+  "level": 2
+}, {
+  "value": "Class 2025-2026 - Navigation",
+  "id": "class-2025-2026---navigation-1",
+  "level": 2
+}, {
+  "value": "Students",
+  "id": "students-1",
+  "level": 3
+}, {
+  "value": "Projects",
+  "id": "projects-1",
+  "level": 3
+}, {
+  "value": "Best students Project in the year 2025-2026",
+  "id": "best-students-project-in-the-year-2025-2026-1",
   "level": 3
 }];
 function _createMdxContent(props) {
@@ -154,7 +264,6 @@ function _createMdxContent(props) {
     h2: "h2",
     h3: "h3",
     header: "header",
-    hr: "hr",
     img: "img",
     li: "li",
     ol: "ol",
@@ -171,7 +280,9 @@ function _createMdxContent(props) {
     ...props.components
   };
   return (0,jsx_runtime.jsxs)(jsx_runtime.Fragment, {
-    children: [(0,jsx_runtime.jsx)(_components.header, {
+    children: [(0,jsx_runtime.jsx)(_components.p, {
+      children: "keywords: [STHDF, course, overview]"
+    }), "\n", (0,jsx_runtime.jsx)(_components.header, {
       children: (0,jsx_runtime.jsx)(_components.h1, {
         id: "system-thinking-in-it-and-digital-fabrication",
         children: "System thinking in IT and Digital Fabrication"
@@ -182,6 +293,27 @@ function _createMdxContent(props) {
         src: (__webpack_require__(92595)/* ["default"] */ .A) + "",
         width: "1141",
         height: "336"
+      })
+    }), "\n", (0,jsx_runtime.jsx)(_components.h2, {
+      id: "class-2025-2026---navigation",
+      children: "Class 2025-2026 - Navigation"
+    }), "\n", (0,jsx_runtime.jsx)(_components.h3, {
+      id: "students",
+      children: (0,jsx_runtime.jsx)(_components.a, {
+        href: "/sk/class_sthdf_dashboard/class_sthdf_dashboard_2025-2026/students/ST_INDEX",
+        children: "Students"
+      })
+    }), "\n", (0,jsx_runtime.jsx)(_components.h3, {
+      id: "projects",
+      children: (0,jsx_runtime.jsx)(_components.a, {
+        href: "/sk/class_sthdf_dashboard/class_sthdf_dashboard_2025-2026/projects/PRJ_INDEX",
+        children: "Projects"
+      })
+    }), "\n", (0,jsx_runtime.jsx)(_components.h3, {
+      id: "best-students-project-in-the-year-2025-2026",
+      children: (0,jsx_runtime.jsx)(_components.a, {
+        href: "/sk/class_sthdf_dashboard/class_sthdf_dashboard_2025-2026/class-sthdf/showcase/",
+        children: "Best students Project in the year 2025-2026"
       })
     }), "\n", (0,jsx_runtime.jsx)(_components.h2, {
       id: "vision",
@@ -241,7 +373,7 @@ function _createMdxContent(props) {
     }), "\n", (0,jsx_runtime.jsxs)(_components.ul, {
       children: ["\n", (0,jsx_runtime.jsxs)(_components.li, {
         children: ["\n", (0,jsx_runtime.jsx)(_components.p, {
-          children: "Without COMMUNICATION      There is NO UNDERSTANDING"
+          children: "Without COMMUNICATION      There is NO UNDERSTANDING       a"
         }), "\n"]
       }), "\n", (0,jsx_runtime.jsxs)(_components.li, {
         children: ["\n", (0,jsx_runtime.jsx)(_components.p, {
@@ -277,6 +409,130 @@ function _createMdxContent(props) {
         }), "\n"]
       }), "\n"]
     }), "\n", (0,jsx_runtime.jsx)(_components.h2, {
+      id: "principles",
+      children: "Principles"
+    }), "\n", (0,jsx_runtime.jsx)(_components.h3, {
+      id: "1-core-principles",
+      children: "1) Core principles"
+    }), "\n", (0,jsx_runtime.jsxs)(_components.ol, {
+      children: ["\n", (0,jsx_runtime.jsx)(_components.li, {
+        children: (0,jsx_runtime.jsx)(_components.strong, {
+          children: "The goal is the journey."
+        })
+      }), "\n", (0,jsx_runtime.jsx)(_components.li, {
+        children: (0,jsx_runtime.jsx)(_components.strong, {
+          children: "Knowledge is a by-product of every activity of a knowledge worker."
+        })
+      }), "\n", (0,jsx_runtime.jsx)(_components.li, {
+        children: (0,jsx_runtime.jsx)(_components.strong, {
+          children: "Documentation is a snapshot of my current state of knowledge in a given context."
+        })
+      }), "\n", (0,jsx_runtime.jsxs)(_components.li, {
+        children: [(0,jsx_runtime.jsx)(_components.strong, {
+          children: "A learning organization mindset (inspired by Peter Senge) – we practice:"
+        }), "\n", (0,jsx_runtime.jsxs)(_components.ul, {
+          children: ["\n", (0,jsx_runtime.jsxs)(_components.li, {
+            children: [(0,jsx_runtime.jsx)(_components.strong, {
+              children: "Shared vision"
+            }), " (values)"]
+          }), "\n", (0,jsx_runtime.jsxs)(_components.li, {
+            children: [(0,jsx_runtime.jsx)(_components.strong, {
+              children: "Mental models"
+            }), " (culture)"]
+          }), "\n", (0,jsx_runtime.jsxs)(_components.li, {
+            children: [(0,jsx_runtime.jsx)(_components.strong, {
+              children: "Knowledge sharing"
+            }), " (", (0,jsx_runtime.jsx)(_components.em, {
+              children: "\"I share knowledge so that we can grow together.\""
+            }), ")"]
+          }), "\n", (0,jsx_runtime.jsxs)(_components.li, {
+            children: [(0,jsx_runtime.jsx)(_components.strong, {
+              children: "Team learning"
+            }), " (creating synergies)"]
+          }), "\n", (0,jsx_runtime.jsxs)(_components.li, {
+            children: [(0,jsx_runtime.jsx)(_components.strong, {
+              children: "Systems thinking"
+            }), " (success is not an accident)"]
+          }), "\n"]
+        }), "\n"]
+      }), "\n"]
+    }), "\n", (0,jsx_runtime.jsx)(_components.h3, {
+      id: "2-grading--75-of-the-final-grade",
+      children: "2) Grading – 75% of the final grade"
+    }), "\n", (0,jsx_runtime.jsxs)(_components.ol, {
+      children: ["\n", (0,jsx_runtime.jsx)(_components.li, {
+        children: (0,jsx_runtime.jsx)(_components.strong, {
+          children: "Contributions to shared knowledge (KNIFEs)."
+        })
+      }), "\n", (0,jsx_runtime.jsxs)(_components.li, {
+        children: [(0,jsx_runtime.jsx)(_components.strong, {
+          children: "Systematic work"
+        }), "\n", (0,jsx_runtime.jsxs)(_components.ul, {
+          children: ["\n", (0,jsx_runtime.jsxs)(_components.li, {
+            children: ["Ongoing capture of activities and ideas (", (0,jsx_runtime.jsx)(_components.strong, {
+              children: "PWES"
+            }), ")"]
+          }), "\n", (0,jsx_runtime.jsx)(_components.li, {
+            children: "KNIFEs"
+          }), "\n"]
+        }), "\n"]
+      }), "\n", (0,jsx_runtime.jsxs)(_components.li, {
+        children: [(0,jsx_runtime.jsx)(_components.strong, {
+          children: "Project intent and quality"
+        }), "\n", (0,jsx_runtime.jsxs)(_components.ul, {
+          children: ["\n", (0,jsx_runtime.jsx)(_components.li, {
+            children: "Helping others through the project"
+          }), "\n", (0,jsx_runtime.jsx)(_components.li, {
+            children: "Professional know-how"
+          }), "\n", (0,jsx_runtime.jsx)(_components.li, {
+            children: "Level of completeness across SDLC"
+          }), "\n", (0,jsx_runtime.jsxs)(_components.li, {
+            children: ["Quality of outputs", "\n", (0,jsx_runtime.jsxs)(_components.ul, {
+              children: ["\n", (0,jsx_runtime.jsx)(_components.li, {
+                children: "Interim outputs"
+              }), "\n", (0,jsx_runtime.jsx)(_components.li, {
+                children: "Final outputs"
+              }), "\n"]
+            }), "\n"]
+          }), "\n"]
+        }), "\n"]
+      }), "\n", (0,jsx_runtime.jsx)(_components.li, {
+        children: (0,jsx_runtime.jsx)(_components.strong, {
+          children: "Responsibility for the shared final outcome."
+        })
+      }), "\n", (0,jsx_runtime.jsxs)(_components.li, {
+        children: [(0,jsx_runtime.jsx)(_components.strong, {
+          children: "Teamwork and synergy seeking"
+        }), "\n", (0,jsx_runtime.jsxs)(_components.ul, {
+          children: ["\n", (0,jsx_runtime.jsx)(_components.li, {
+            children: "Within the class"
+          }), "\n", (0,jsx_runtime.jsxs)(_components.li, {
+            children: ["Within the KNIFE ecosystem (world-wide)", "\n", (0,jsx_runtime.jsxs)(_components.ul, {
+              children: ["\n", (0,jsx_runtime.jsx)(_components.li, {
+                children: "Number and quality of contributions"
+              }), "\n"]
+            }), "\n"]
+          }), "\n"]
+        }), "\n"]
+      }), "\n"]
+    }), "\n", (0,jsx_runtime.jsx)(_components.h3, {
+      id: "3-grading--25-of-the-final-grade",
+      children: "3) Grading – 25% of the final grade"
+    }), "\n", (0,jsx_runtime.jsxs)(_components.ol, {
+      children: ["\n", (0,jsx_runtime.jsxs)(_components.li, {
+        children: [(0,jsx_runtime.jsx)(_components.strong, {
+          children: "Final presentation of outcomes"
+        }), "\n", (0,jsx_runtime.jsxs)(_components.ul, {
+          children: ["\n", (0,jsx_runtime.jsx)(_components.li, {
+            children: "Individual contribution"
+          }), "\n", (0,jsx_runtime.jsx)(_components.li, {
+            children: "Team collaboration"
+          }), "\n", (0,jsx_runtime.jsx)(_components.li, {
+            children: "Delivered KNIFE(s)"
+          }), "\n"]
+        }), "\n"]
+      }), "\n"]
+    }), "\n", (0,jsx_runtime.jsx)(_components.h2, {
       id: "strategy",
       children: "Strategy"
     }), "\n", (0,jsx_runtime.jsx)(_components.p, {
@@ -298,8 +554,9 @@ function _createMdxContent(props) {
     }), "\n", (0,jsx_runtime.jsx)(_components.h2, {
       id: "time-roadmap",
       children: "Time Roadmap"
-    }), "\n", (0,jsx_runtime.jsx)(_components.p, {
-      children: "Winter Semester 2023-2024, september 2023 - January 2024"
+    }), "\n", (0,jsx_runtime.jsx)(_components.h3, {
+      id: "winter-semester-2025-2026-september-2025---january-2026",
+      children: "Winter Semester 2025-2026, september 2025 - January 2026"
     }), "\n", (0,jsx_runtime.jsx)(_components.h2, {
       id: "technical-conditionsrequirements",
       children: "Technical conditions/requirements"
@@ -312,8 +569,8 @@ function _createMdxContent(props) {
         }), "\n"]
       }), "\n"]
     }), "\n", (0,jsx_runtime.jsx)(_components.h2, {
-      id: "conditions-for-completing-the-course-2023-2024",
-      children: "Conditions for completing the course 2023-2024"
+      id: "conditions-for-completing-the-course-2025-2026",
+      children: "Conditions for completing the course 2025-2026"
     }), "\n", (0,jsx_runtime.jsx)(_components.p, {
       children: "There are defined 5 maturity levels:"
     }), "\n", (0,jsx_runtime.jsxs)(_components.ul, {
@@ -344,7 +601,7 @@ function _createMdxContent(props) {
       }), "\n"]
     }), "\n", (0,jsx_runtime.jsx)(_components.p, {
       children: (0,jsx_runtime.jsx)(_components.em, {
-        children: "Presentation of final outputs in Confluence."
+        children: "Presentation of final outputs in GitHub."
       })
     }), "\n", (0,jsx_runtime.jsx)(_components.p, {
       children: "Original in own organization, copy in SystemThinking-In-IT, Bitbucket"
@@ -618,141 +875,50 @@ function _createMdxContent(props) {
               textAlign: "left"
             },
             children: [(0,jsx_runtime.jsx)("img", {
-              src: "./assets/img/rka-portret.png",
+              src: "./img/Detail-05.png",
               alt: "kazicka",
-              width: "200"
+              width: "180"
             }), (0,jsx_runtime.jsx)("br", {}), " ", (0,jsx_runtime.jsx)(_components.a, {
               href: "mailto:roman.kazicka@systemthinking.sk",
               children: "roman.kazicka@systemthinking.sk"
-            })]
+            }), ">"]
           })]
         })]
       })]
-    }), "\n", (0,jsx_runtime.jsx)(_components.hr, {}), "\n", (0,jsx_runtime.jsx)(_components.h2, {
-      id: "-navigácia--kam-ďalej",
-      children: "🔭 Navigácia – kam ďalej?"
+    }), "\n", (0,jsx_runtime.jsx)(_components.h2, {
+      id: "class-2025-2026---navigation-1",
+      children: "Class 2025-2026 - Navigation"
     }), "\n", (0,jsx_runtime.jsx)(_components.h3, {
-      id: "-triedny-dashboard-sthdf-20252026",
-      children: "🎓 Triedny dashboard (STHDF 2025–2026)"
-    }), "\n", (0,jsx_runtime.jsxs)(_components.ul, {
-      children: ["\n", (0,jsx_runtime.jsxs)(_components.li, {
-        children: ["\n", (0,jsx_runtime.jsxs)(_components.p, {
-          children: ["🧭 ", (0,jsx_runtime.jsx)(_components.a, {
-            href: "./",
-            children: "Prehľad kurzu"
-          })]
-        }), "\n"]
-      }), "\n", (0,jsx_runtime.jsxs)(_components.li, {
-        children: ["\n", (0,jsx_runtime.jsxs)(_components.p, {
-          children: ["📘 ", (0,jsx_runtime.jsx)(_components.a, {
-            href: "/en/sk/class_sthdf_dashboard/class_sthdf_dashboard_2025-2026/class-sthdf/about/",
-            children: "O predmete / About the Course"
-          })]
-        }), "\n"]
-      }), "\n", (0,jsx_runtime.jsxs)(_components.li, {
-        children: ["\n", (0,jsx_runtime.jsxs)(_components.p, {
-          children: ["📌 ", (0,jsx_runtime.jsx)(_components.a, {
-            href: "#conditions-for-completing-the-course-2023-2024",
-            children: "Podmienky a pravidlá"
-          })]
-        }), "\n"]
-      }), "\n", (0,jsx_runtime.jsxs)(_components.li, {
-        children: ["\n", (0,jsx_runtime.jsxs)(_components.p, {
-          children: ["🎞️ ", (0,jsx_runtime.jsx)(_components.a, {
-            href: "/en/sk/class_sthdf_dashboard/class_sthdf_dashboard_2025-2026/class-sthdf/showcase/",
-            children: "Showcase – príklady"
-          })]
-        }), "\n"]
-      }), "\n", (0,jsx_runtime.jsxs)(_components.li, {
-        children: ["\n", (0,jsx_runtime.jsx)(_components.h2, {
-          id: "class-2025-2026---navigation",
-          children: "Class 2025-2026 - Navigation"
-        }), "\n"]
-      }), "\n", (0,jsx_runtime.jsxs)(_components.li, {
-        children: ["\n", (0,jsx_runtime.jsx)(_components.h3, {
-          id: "students",
-          children: (0,jsx_runtime.jsx)(_components.a, {
-            href: "/en/sk/class_sthdf_dashboard/class_sthdf_dashboard_2025-2026/students/ST_INDEX",
-            children: "Students"
-          })
-        }), "\n"]
-      }), "\n", (0,jsx_runtime.jsxs)(_components.li, {
-        children: ["\n", (0,jsx_runtime.jsx)(_components.h3, {
-          id: "projects",
-          children: (0,jsx_runtime.jsx)(_components.a, {
-            href: "/en/sk/class_sthdf_dashboard/class_sthdf_dashboard_2025-2026/projects/PRJ_INDEX",
-            children: "Projects"
-          })
-        }), "\n"]
-      }), "\n", (0,jsx_runtime.jsxs)(_components.li, {
-        children: ["\n", (0,jsx_runtime.jsx)(_components.h3, {
-          id: "best-students-project-in-the-year-2025-2026",
-          children: (0,jsx_runtime.jsx)(_components.a, {
-            href: "/en/sk/class_sthdf_dashboard/class_sthdf_dashboard_2025-2026/class-sthdf/showcase/",
-            children: "Best students Project in the year 2025-2026"
-          })
-        }), "\n"]
-      }), "\n"]
+      id: "students-1",
+      children: (0,jsx_runtime.jsx)(_components.a, {
+        href: "/sk/class_sthdf_dashboard/class_sthdf_dashboard_2025-2026/students/ST_INDEX",
+        children: "Students"
+      })
     }), "\n", (0,jsx_runtime.jsx)(_components.h3, {
-      id: "-knife-framework",
-      children: "🔪 KNIFE Framework"
-    }), "\n", (0,jsx_runtime.jsxs)(_components.ul, {
-      children: ["\n", (0,jsx_runtime.jsxs)(_components.li, {
-        children: ["🗺️ ", (0,jsx_runtime.jsx)(_components.a, {
-          href: "./sk/knifes/",
-          children: "KNIFE hub"
-        })]
-      }), "\n", (0,jsx_runtime.jsxs)(_components.li, {
-        children: ["📰 ", (0,jsx_runtime.jsx)(_components.a, {
-          href: "/en/sk/knifes/knifes_overview/KNIFE_OVERVIEW_BLOG",
-          children: "Blogový prehľad KNIFE"
-        })]
-      }), "\n", (0,jsx_runtime.jsxs)(_components.li, {
-        children: ["🗂️ ", (0,jsx_runtime.jsx)(_components.a, {
-          href: "/en/sk/knifes/knifes_overview/KNIFE_OVERVIEW_LIST",
-          children: "Zoznam KNIFE"
-        })]
-      }), "\n", (0,jsx_runtime.jsxs)(_components.li, {
-        children: ["📈 ", (0,jsx_runtime.jsx)(_components.a, {
-          href: "/en/sk/knifes/knifes_overview/KNIFE_OVERVIEW_DETAILS",
-          children: "Detailný prehľad KNIFE"
-        })]
-      }), "\n"]
+      id: "projects-1",
+      children: (0,jsx_runtime.jsx)(_components.a, {
+        href: "/sk/class_sthdf_dashboard/class_sthdf_dashboard_2025-2026/projects/PRJ_INDEX",
+        children: "Projects"
+      })
     }), "\n", (0,jsx_runtime.jsx)(_components.h3, {
-      id: "️-7ds--rámec",
-      children: "⚙️ 7Ds – rámec"
-    }), "\n", (0,jsx_runtime.jsxs)(_components.ul, {
-      children: ["\n", (0,jsx_runtime.jsxs)(_components.li, {
-        children: ["⚙️ ", (0,jsx_runtime.jsx)(_components.a, {
-          href: "./sk/7Ds/",
-          children: "7Ds – hlavná stránka"
-        })]
-      }), "\n"]
-    }), "\n", (0,jsx_runtime.jsx)(_components.h3, {
-      id: "-sdlc--integračné-modely",
-      children: "🧱 SDLC / integračné modely"
-    }), "\n", (0,jsx_runtime.jsxs)(_components.ul, {
-      children: ["\n", (0,jsx_runtime.jsxs)(_components.li, {
-        children: ["🧱 ", (0,jsx_runtime.jsx)(_components.a, {
-          href: "./sk/sdlc/",
-          children: "SDLC – integračný hub"
-        })]
-      }), "\n"]
-    }), "\n", (0,jsx_runtime.jsx)(_components.h3, {
-      id: "-ďalšie-sekcie",
-      children: "🧭 Ďalšie sekcie"
-    }), "\n", (0,jsx_runtime.jsxs)(_components.ul, {
-      children: ["\n", (0,jsx_runtime.jsxs)(_components.li, {
-        children: ["🧭 ", (0,jsx_runtime.jsx)(_components.a, {
-          href: "./sk/q12/",
-          children: "Q12 – Twelve Quadrants"
-        })]
-      }), "\n", (0,jsx_runtime.jsxs)(_components.li, {
-        children: ["ℹ️ ", (0,jsx_runtime.jsx)(_components.a, {
-          href: "/en/sk/about",
-          children: "About (SK)"
-        })]
-      }), "\n"]
+      id: "best-students-project-in-the-year-2025-2026-1",
+      children: (0,jsx_runtime.jsx)(_components.a, {
+        href: "/sk/class_sthdf_dashboard/class_sthdf_dashboard_2025-2026/class-sthdf/showcase/",
+        children: "Best students Project in the year 2025-2026"
+      })
+    }), "\n", (0,jsx_runtime.jsx)(_components.p, {
+      children: (0,jsx_runtime.jsx)(_components.a, {
+        href: "/sk/class_sthdf_dashboard/class_sthdf_dashboard_2025-2026/class-sthdf/",
+        children: "Back to Home"
+      })
+    }), "\n", (0,jsx_runtime.jsxs)(_components.p, {
+      children: [(0,jsx_runtime.jsx)(_components.a, {
+        href: "/sk/class_sthdf_dashboard/class_sthdf_dashboard_2025-2026/",
+        children: "🏠 Domov"
+      }), " · ", (0,jsx_runtime.jsx)(_components.a, {
+        href: "/sk/class_sthdf_dashboard/class_sthdf_dashboard_2025-2026/class-sthdf/",
+        children: "⬅️ Nahor"
+      })]
     })]
   });
 }
@@ -769,101 +935,6 @@ function MDXContent(props = {}) {
   }) : _createMdxContent(props);
 }
 
-
-
-/***/ }),
-
-/***/ 28453:
-/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
-
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   R: () => (/* binding */ useMDXComponents),
-/* harmony export */   x: () => (/* binding */ MDXProvider)
-/* harmony export */ });
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(96540);
-/**
- * @import {MDXComponents} from 'mdx/types.js'
- * @import {Component, ReactElement, ReactNode} from 'react'
- */
-
-/**
- * @callback MergeComponents
- *   Custom merge function.
- * @param {Readonly<MDXComponents>} currentComponents
- *   Current components from the context.
- * @returns {MDXComponents}
- *   Additional components.
- *
- * @typedef Props
- *   Configuration for `MDXProvider`.
- * @property {ReactNode | null | undefined} [children]
- *   Children (optional).
- * @property {Readonly<MDXComponents> | MergeComponents | null | undefined} [components]
- *   Additional components to use or a function that creates them (optional).
- * @property {boolean | null | undefined} [disableParentContext=false]
- *   Turn off outer component context (default: `false`).
- */
-
-
-
-/** @type {Readonly<MDXComponents>} */
-const emptyComponents = {}
-
-const MDXContext = react__WEBPACK_IMPORTED_MODULE_0__.createContext(emptyComponents)
-
-/**
- * Get current components from the MDX Context.
- *
- * @param {Readonly<MDXComponents> | MergeComponents | null | undefined} [components]
- *   Additional components to use or a function that creates them (optional).
- * @returns {MDXComponents}
- *   Current components.
- */
-function useMDXComponents(components) {
-  const contextComponents = react__WEBPACK_IMPORTED_MODULE_0__.useContext(MDXContext)
-
-  // Memoize to avoid unnecessary top-level context changes
-  return react__WEBPACK_IMPORTED_MODULE_0__.useMemo(
-    function () {
-      // Custom merge via a function prop
-      if (typeof components === 'function') {
-        return components(contextComponents)
-      }
-
-      return {...contextComponents, ...components}
-    },
-    [contextComponents, components]
-  )
-}
-
-/**
- * Provider for MDX context.
- *
- * @param {Readonly<Props>} properties
- *   Properties.
- * @returns {ReactElement}
- *   Element.
- * @satisfies {Component}
- */
-function MDXProvider(properties) {
-  /** @type {Readonly<MDXComponents>} */
-  let allComponents
-
-  if (properties.disableParentContext) {
-    allComponents =
-      typeof properties.components === 'function'
-        ? properties.components(emptyComponents)
-        : properties.components || emptyComponents
-  } else {
-    allComponents = useMDXComponents(properties.components)
-  }
-
-  return react__WEBPACK_IMPORTED_MODULE_0__.createElement(
-    MDXContext.Provider,
-    {value: allComponents},
-    properties.children
-  )
-}
 
 
 /***/ }),
