@@ -188,7 +188,47 @@ Tento dokument popisuje **konkrétne riešenie prototypu FightWrap Winder** na �
 - Tlačidlo START/STOP
 - LED indikácia (napájanie / beží / chyba – voliteľné)
 
+
+
 ---
+
+## 4️⃣ Vývoj produktu
+
+Počiatočný návrh bol vypracovaný pomocou skíc v zošite. Nasledujúce obrázky dokumentujú základné koncepty mechanického usporiadania a tokov energie v prototypu.
+
+![business process viewpoint](../../images/krezba01.png)
+![business process viewpoint](../../images/krezba02.png)
+
+Tento návrh sme neskôr preniesli do 3D formatu pomocou Fusion360
+![business process viewpoint](../../images/model_stl_01.png)
+
+No a už len vytlačili, a prvá verzia nášho produktu bola na svete.
+![business process viewpoint](../../images/wrapper01.jpg)
+
+Neskôr sme sa rozhodli tento náš produkt posunúť ďalej, aby bol zaujímavejší a tak sme sa rozhodli ho obohatiť o motorček na samonavýjanie. Tak sme sa snažili vymyslieť ako by to asi išlo a čo by sme nato potrebovali.
+
+## Tu je zoznam súčiastok čo sme si napísali:
+| Komponent | Typ | Množstvo | Parametre | Modul |
+|-----------|-----|----------|-----------|-------|
+| Motor | DC motor | 1 | 12V, 100–500 RPM | Pohonný |
+| Spojka | Flex spojka | 1 | D5–8mm | Pohonný |
+| Batéria | Li-Ion 18650 / akumulátor | 1 | 12V | Elektronika |
+| Tlačidlo | Push button | 1 | Momentálne | UI |
+| Dióda | 1N4007 | 1 | Ochrana motora | Elektronika |
+| Konektory | JST / DuPont | podľa potreby | — | Elektronika |
+
+Následne navrhli nový model
+![business process viewpoint](../../images/model_stl_02.png)
+
+Súčiastky sme sa snažili zohnať kde sa dalo, dokonca sme rozoberali aj stare eci čo sme našli doma. Kupodivu mali to čo sme potrebovali.
+![business process viewpoint](../../images/suciastky.jpg)
+
+Tvorba dalšieho prototypu prebiehala v low-budget forme. Cielom bolo spraviť PoC (Proof of Concept), tak ako sa to robí v reálnom podnikaní pred tým ako sa plne spustí do projektu.
+![business process viewpoint](../../images/prototyp_01.jpg)
+![business process viewpoint](../../images/prototyp_02.jpg)
+
+Finalna verzia produktu v stl formate:
+![business process viewpoint](../../images/final_version_stl.png)
 
 - [Solution design](./design.md)
 
