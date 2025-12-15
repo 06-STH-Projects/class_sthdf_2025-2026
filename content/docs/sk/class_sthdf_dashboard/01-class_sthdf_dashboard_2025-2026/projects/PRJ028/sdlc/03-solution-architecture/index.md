@@ -188,8 +188,6 @@ Tento dokument popisuje **konkrétne riešenie prototypu FightWrap Winder** na �
 - Tlačidlo START/STOP
 - LED indikácia (napájanie / beží / chyba – voliteľné)
 
-
-
 ---
 
 ## 4️⃣ Vývoj produktu
