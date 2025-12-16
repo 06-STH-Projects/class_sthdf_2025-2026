@@ -134,3 +134,39 @@ fm_reserved2: ""
 <!-- class_sthdf_dashboard_INSTANCE_ID: 01-class_sthdf_dashboard_2025-2026 -->
 
 PRJ021 / 03-solution-architecture / design.md
+
+# Solution Design
+
+## Hardware Design
+Zariadenie je postavené na Mini-ITX základovej doske s integrovaným procesorom a operačnou pamäťou.
+Ako úložisko slúži 2.5" SSD disk, na ktorom je nainštalovaný operačný systém a používateľské dáta.
+Napájanie zabezpečuje samostatný elektrický zdroj.
+
+## Case Construction
+Hardvérové komponenty sú umiestnené do dreveného púzdra vyrobeného z preglejky.
+Púzdro je navrhnuté ako viacvrstvová konštrukcia s medzerami medzi jednotlivými vrstvami,
+čo umožňuje prirodzenú cirkuláciu vzduchu a zlepšuje odvádzanie tepla.
+
+## Cooling Concept
+Základná doska disponuje pasívnym chladením procesora.
+Konštrukcia púzdra je navrhnutá ako viacvrstvová s medzerami medzi jednotlivými drevenými úrovňami,
+čo podporuje prirodzenú cirkuláciu vzduchu.
+
+Odvod teplého vzduchu z vnútra púzdra je zabezpečený napájacím zdrojom,
+ktorý je umiestnený v skrinke a aktívne odvádza teplý vzduch smerom von zo zariadenia.
+Týmto spôsobom je zabezpečený základný airflow bez potreby dodatočných chladiacich ventilátorov.
+
+## Software Architecture
+Na zariadení je nainštalovaný operačný systém Android TV alebo Android s TV rozhraním,
+ktorý je spúšťaný priamo z SSD disku a slúži ako primárne používateľské prostredie
+pre multimediálne využitie.
+
+Zariadenie zároveň podporuje operačný systém Windows,
+ktorý je nainštalovaný na rovnakom SSD disku a je dostupný prostredníctvom dualboot riešenia.
+Používateľ si pri štarte zariadenia môže zvoliť, ktorý operačný systém bude spustený.
+
+
+## Design Decisions
+- použitie dreveného púzdra z dôvodu jednoduchosti výroby a estetiky,
+- využitie existujúcich PC komponentov,
+- dôraz na nízku spotrebu energie a tichú prevádzku.
