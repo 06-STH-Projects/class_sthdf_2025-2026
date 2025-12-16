@@ -134,3 +134,33 @@ fm_reserved2: ""
 <!-- class_sthdf_dashboard_INSTANCE_ID: 01-class_sthdf_dashboard_2025-2026 -->
 
 PRJ021 / 08-operation / operations.md
+
+# Operation Manual
+
+## System Startup
+Po pripojení zariadenia k elektrickej sieti a televízoru prostredníctvom HDMI
+je možné Smart TV Box zapnúť pomocou napájacieho tlačidla alebo pripojeného zdroja.
+Pri štarte zariadenia má používateľ možnosť zvoliť operačný systém
+(Android TV alebo Windows) prostredníctvom dualboot menu.
+
+## Normal Operation
+Po spustení operačného systému Android TV môže používateľ:
+- používať multimediálne aplikácie,
+- prehrávať video a audio obsah,
+- pristupovať k internetovým službám.
+
+Ovládanie zariadenia je možné pomocou:
+- klávesnice alebo myši pripojenej cez USB,
+- diaľkového ovládača kompatibilného s Android TV.
+
+## Maintenance
+Zariadenie nevyžaduje pravidelnú údržbu.
+Odporúča sa však:
+- občasná kontrola vnútorného priestoru púzdra,
+- odstránenie prípadného prachu,
+- kontrola správneho odvádzania tepla.
+
+## Safety Considerations
+- zariadenie by malo byť umiestnené na dobre vetranom mieste,
+- nesmie byť zakryté predmetmi brániacimi prúdeniu vzduchu,
+- počas prevádzky by nemalo byť vystavené vlhkosti.
