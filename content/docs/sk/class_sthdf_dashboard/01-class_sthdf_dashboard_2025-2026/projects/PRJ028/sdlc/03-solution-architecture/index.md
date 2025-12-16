@@ -194,8 +194,8 @@ Tento dokument popisuje **konkrétne riešenie prototypu FightWrap Winder** na �
 
 Počiatočný návrh bol vypracovaný pomocou skíc v zošite. Nasledujúce obrázky dokumentujú základné koncepty mechanického usporiadania a tokov energie v prototypu.
 
-![business process viewpoint](../../images/krezba01.png)
-![business process viewpoint](../../images/krezba02.png)
+![business process viewpoint](../../images/krezba01.jpg)
+![business process viewpoint](../../images/krezba02.jpg)
 
 Tento návrh sme neskôr preniesli do 3D formatu pomocou Fusion360
 ![business process viewpoint](../../images/model_stl_01.png)

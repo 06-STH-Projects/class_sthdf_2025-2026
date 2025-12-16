@@ -175,7 +175,7 @@ Cieľom projektu FightWrap Winder je vytvoriť kompaktné elektrické zariadenie
 ---
 
 ### Business pohľad na proces
-![Business process viewpoint](../../images/business_process.png)
+![Business process viewpoint](../images/business_process.png)
 
 ---
 
@@ -208,7 +208,7 @@ Cieľom projektu FightWrap Winder je vytvoriť kompaktné elektrické zariadenie
 
 Top-level architektúrny diagram zobrazuje hlavný systém FightWrap Winder a jeho základné komponenty a aktérov. Diagram zahŕňa zariadenie FightWrap Winder, motorček, napájanie, používateľa (športovec/tréner) a servisného technika, spolu s ich vzájomnými vzťahmi na najvyššej úrovni abstrakcie.
 
-![business process viewpoint](../../images/top_lvl_architecture.png)
+![business process viewpoint](../images/top_lvl_architecture.png)
 
 ## 03-Solution Architecture
 
@@ -271,14 +271,14 @@ Tento dokument popisuje **konkrétne riešenie prototypu FightWrap Winder** na �
 
 Počiatočný návrh bol vypracovaný pomocou skíc v zošite. Nasledujúce obrázky dokumentujú základné koncepty mechanického usporiadania a tokov energie v prototypu.
 
-![business process viewpoint](../../images/krezba01.png)
-![business process viewpoint](../../images/krezba02.png)
+![business process viewpoint](../images/krezba01.jpg)
+![business process viewpoint](../images/krezba02.jpg)
 
 Tento návrh sme neskôr preniesli do 3D formatu pomocou Fusion360
-![business process viewpoint](../../images/model_stl_01.png)
+![business process viewpoint](../images/model_stl_01.png)
 
 No a už len vytlačili, a prvá verzia nášho produktu bola na svete.
-![business process viewpoint](../../images/wrapper01.jpg)
+![business process viewpoint](../images/wrapper01.jpg)
 
 Neskôr sme sa rozhodli tento náš produkt posunúť ďalej, aby bol zaujímavejší a tak sme sa rozhodli ho obohatiť o motorček na samonavýjanie. Tak sme sa snažili vymyslieť ako by to asi išlo a čo by sme nato potrebovali.
 
@@ -293,17 +293,17 @@ Neskôr sme sa rozhodli tento náš produkt posunúť ďalej, aby bol zaujímave
 | Konektory | JST / DuPont | podľa potreby | — | Elektronika |
 
 Následne navrhli nový model
-![business process viewpoint](../../images/model_stl_02.png)
+![business process viewpoint](../images/model_stl_02.png)
 
 Súčiastky sme sa snažili zohnať kde sa dalo, dokonca sme rozoberali aj stare eci čo sme našli doma. Kupodivu mali to čo sme potrebovali.
-![business process viewpoint](../../images/suciastky.jpg)
+![business process viewpoint](../images/suciastky.jpg)
 
 Tvorba dalšieho prototypu prebiehala v low-budget forme. Cielom bolo spraviť PoC (Proof of Concept), tak ako sa to robí v reálnom podnikaní pred tým ako sa plne spustí do projektu.
-![business process viewpoint](../../images/prototyp_01.jpg)
-![business process viewpoint](../../images/prototyp_02.jpg)
+![business process viewpoint](../images/prototyp_01.jpg)
+![business process viewpoint](../images/prototyp_02.jpg)
 
 Finalna verzia produktu v stl formate:
-![business process viewpoint](../../images/final_version_stl.png)
+![business process viewpoint](../images/final_version_stl.png)
 
 
 ## 04-Analysis
