@@ -140,7 +140,8 @@ fm_reserved2: ""
 ## Headline
 **2025-PRJ-028-ST_028-ST_028-Nazov projektu**
 
-> Uvodny obrazok: TODO (dopln odkaz alebo subor).
+> Uvodny obrazok: 
+![Business process viewpoint](../images/cover.png)
 
 Strucny text o projekte (1-3 vety, doplni tim).
 --- Headline ---
@@ -304,6 +305,10 @@ Tvorba dalšieho prototypu prebiehala v low-budget forme. Cielom bolo spraviť P
 
 Finalna verzia produktu v stl formate:
 ![business process viewpoint](../images/final_version_stl.png)
+![business process viewpoint](../images/bigpic.png)
+![business process viewpoint](../images/final_version_01.png)
+![business process viewpoint](../images/prdct.png)
+
 
 
 ## 04-Analysis
