@@ -133,7 +133,7 @@ fm_reserved2: ""
 
 <!-- class_sthdf_dashboard_INSTANCE_ID: 01-class_sthdf_dashboard_2025-2026 -->
 
-[🏠 Domov](../../../index.md) · [⬅️ Nahor](../)
+
 
 #  ST037 - 🙋‍♂️ About Me
 
@@ -207,3 +207,4 @@ Popri práci kreslím, trénujem **thajský box** a hrám **ľadový hokej** ako
 
 Painting, drawing, doodling, designing, custom clothing, martial arts, graffiti, mobility & conditioning training, skating, ice hockey, biking, basketball, cooking, bartending, latte art, gaming.
 
+[🏠 Domov](../../../index.md) · [⬅️ Nahor](../)

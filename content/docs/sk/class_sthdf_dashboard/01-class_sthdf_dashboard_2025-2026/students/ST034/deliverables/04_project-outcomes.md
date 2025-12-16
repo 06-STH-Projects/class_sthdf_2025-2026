@@ -9,9 +9,11 @@ title: 📦 Project Outcomes
 # 📦 Project Outcomes
 
 ## 🔖 Stav projektu
+
 - Stručný update (čo funguje, čo nie)  
 
 ## 🧩 Výstupy podľa SDLC / V-modelu
+
 1. Business požiadavky  
 2. Top Level Architecture  
 3. Solution Architecture  
@@ -22,13 +24,16 @@ title: 📦 Project Outcomes
 8. Operation  
 
 ## 🏆 Finálny produkt
+
 - Čo tím reálne dodal  
 - Ako to vyzerá (screenshoty, demo, repo link)  
 
 ## 🧭 Porovnanie s Project Summary
+
 - Čo sme plánovali vs. čo sme naozaj dodali  
 
-
 ---
+
 ## Navigácia
+
 - [↩️ Späť](../index.md)

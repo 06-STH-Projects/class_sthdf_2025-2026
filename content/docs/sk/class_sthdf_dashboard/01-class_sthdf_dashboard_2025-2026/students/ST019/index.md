@@ -17,4 +17,3 @@ title: ST019
 - [07 – Reflexia](./deliverables/07_reflexia.md)
 
 [🏠 Domov](../../index.md) · [⬅️ Nahor](../ST_INDEX.md)
-

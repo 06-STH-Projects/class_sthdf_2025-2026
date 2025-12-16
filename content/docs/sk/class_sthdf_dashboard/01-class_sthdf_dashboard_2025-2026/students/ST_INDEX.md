@@ -1,12 +1,10 @@
 ---
 fm_version: 1.0.1
 fm_build: '2025-11-28T15:54:47.764756+00:00'
-title: ID generuje CLI / skript
 fm_version_comment: ''
-locale: sk
----
 
------------------------------------------------------
+
+
 
 # ID generuje CLI / skript
 

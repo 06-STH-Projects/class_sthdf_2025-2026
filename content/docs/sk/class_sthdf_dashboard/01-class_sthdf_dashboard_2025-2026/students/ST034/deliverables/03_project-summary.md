@@ -10,32 +10,38 @@ title: 📝 Project Summary
 
 ## 🔖 Identifikácia
 ## 1️⃣ Názov projektu
-*(Jasný, výstižný, inšpiratívny – ako by sa mal objaviť na plagáte.)*
-- **Názov projektu:** `PRJ_XXX_<Názov>_<ST_XXX>_<ST_XXX>`
-- **Stručný popis:** 2–3 vety  
+- **Názov projektu:** `PRJ_028_FightWrap Winder_<ST_037>_<ST_034>`
+- **Stručný popis:** FightWrap Winder je kompaktné elektrické zariadenie určené na rýchle a jednoduché navíjanie tréningových bandáží. Cieľom projektu je vytvoriť prototyp, ktorý ušetrí čas a uľahčí prácu športovcom a trénerom po tréningu. 
 
 ## 2️⃣ Členovia tímu
 
 | ST ID | Meno | Rola v tíme| Kompetencie | 
 |-------|------|------|-------------|
-| ST001 |      | Project Lead | koordinácia |
-| ST002 |      | Developer | implementácia |
-| ST003 |      | Designer | UI/UX |
+| ST037 | Oliver Ondruš | Project Lead | koordinácia tímu, 3D modelovanie, návrh mechaniky |
+| ST034 | Patrik Minarovič | Developer | dokumentácia, technické riešenie, elektronika |
 
 ## 3️⃣ Motivácia tímu
-- Prečo ste si vybrali tento projekt?  
-- Aký osobný alebo profesný zmysel má pre vás riešenie tejto témy?
-- Prečo je projekt dôležitý  
-- Aký problém rieši  
+Navíjanie bandáží po tréningu je únavný, nudný a časovo náročný proces, ktorý zbytočne zdržiava športovcov aj trénerov. V praxi ho každý odkladá alebo robí narýchlo, čo vedie k neporiadku a nepríjemnej povinnosti po tréningu.  
+Vybrali sme si túto tému, pretože ide o reálny problém, s ktorým sa stretávame aj my sami. Tento projekt dokáže ušetriť čas, zjednodušiť rutinú údržbu výstroja a spríjemniť život ľuďom, ktorí trénujú pravidelne.
+
 
 ## 4️⃣ Cieľ a pridaná hodnota projektu
+**Cieľ projektu:**  
+Vytvoriť funkčný prototyp motorického navíjaka na bandáže, ktorý zabezpečí rýchle, pohodlné a bezproblémové navíjanie bez potreby manuálnej práce.
 
-- Aký je finálny cieľ  
-- Ako spoznáme, že projekt je úspešný  
+**Ako spoznáme úspech projektu:**  
+- prototyp dokáže navinúť bandáž 
+- používanie je jednoduché 
+- zariadenie je dostatočne silné na navinutie bežnej športovej bandáže 
 
 ## 5️⃣ Popis riešenia
-- Stručne opíšte architektúru, nástroje a technológie, ktoré použijete.  
-- Zamerajte sa na **“čo”** riešite, nie ešte “ako”.
+Zariadenie bude pozostávať z **malého elektrického motora**, ktorý roztočí osku a navinie bandáž bez manuálneho sťahovania alebo točenia rukou.  
+Použijeme základné elektronické komponenty (DC motor, vypínač, napájanie) a 3D tlačené súčiastky. Riešenie bude modulárne a pripravené na budúce rozšírenia, napríklad variabilná rýchlosť alebo senzor zastavenia.
+
+Zameriavame sa hlavne na:  
+- automatizáciu navíjania,  
+- zníženie času, ktorý strávia športovci po tréningu prácou,  
+- jednoduché a spoľahlivé používanie.
 
 ## 6️⃣ Projektový plán
 - Odhadovaný čas na prácu: _x hodín / týždeň_  
@@ -45,10 +51,10 @@ title: 📝 Project Summary
   - [ ] Implementácia  
   - [ ] Testovanie  
   - [ ] Prezentácia
-  - [ ] 
+
 ###  📅 Milníky a výstupy
 - **Do januára dodáme:**  
-  - [ ] prototyp  
+  - [x] prototyp  
   - [ ] prezentáciu  
   - [ ] dokumentáciu  
 

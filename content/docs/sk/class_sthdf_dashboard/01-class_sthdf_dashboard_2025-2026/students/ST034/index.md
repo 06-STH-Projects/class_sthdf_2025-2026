@@ -6,7 +6,11 @@ fm_build: '2025-12-09T21:04:48Z'
 title: ST034
 ---
 
+
 # ST034
+
+
+
 - [Deliverables (A1–A4, 05–07)](./deliverables/index.md)
 - [A1 – About Me](./deliverables/01_about-me.md)
 - [A2 – Knowledge Contribution](./deliverables/02_knowledge-contribution.md)
@@ -17,4 +21,3 @@ title: ST034
 - [07 – Reflexia](./deliverables/07_reflexia.md)
 
 [🏠 Domov](../../index.md) · [⬅️ Nahor](../ST_INDEX.md)
-

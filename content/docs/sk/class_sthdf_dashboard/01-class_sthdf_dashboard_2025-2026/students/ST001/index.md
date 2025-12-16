@@ -3,8 +3,10 @@ fm_version: 1.0.1
 fm_version_comment: ''
 locale: sk
 fm_build: '2025-12-09T21:04:48Z'
-title: ST001
+
 ---
+
+# H1-2025_ST_001-deliverables
 
 # ST001
 - [Deliverables (A1–A4, 05–07)](./deliverables/index.md)
@@ -17,4 +19,3 @@ title: ST001
 - [07 – Reflexia](./deliverables/07_reflexia.md)
 
 [🏠 Domov](../../index.md) · [⬅️ Nahor](../ST_INDEX.md)
-

@@ -6,7 +6,12 @@ fm_build: '2025-12-09T21:04:48Z'
 title: 📦 PFinal Presentation
 ---
 
-# 📦 PFinal Presentation
+# 📦 Final Presentation
+Jednotlivé časti projektu sú popísané na nasledujúcom odkaze:
+
+**Navigation:** [⬅️ Projekt](/sk/class_sthdf_dashboard/class_sthdf_dashboard_2025-2026/projects/PRJ012/presentation/slides)
+
+
 ## 🔖 Stav projektu
 - Stručný update (čo funguje, čo nie)  
 ## 🧩 Výstupy podľa SDLC / V-modelu
