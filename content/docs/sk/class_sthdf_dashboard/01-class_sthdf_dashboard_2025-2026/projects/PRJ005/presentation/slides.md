@@ -140,9 +140,12 @@ fm_reserved2: ""
 ## Headline
 **2025-PRJ-005-ST_005-ST_005-Nazov projektu**
 
-> Uvodny obrazok: TODO (dopln odkaz alebo subor).
+<img src="../sdlc/obrazky/inspiracia.jpg" alt="Vizuálna inšpirácia" width="500">
+*Obr. 1: Požadovaný vizuálny štýl a inšpirácia pre projekt.*
 
-Strucny text o projekte (1-3 vety, doplni tim).
+## Téma Projektu
+Vývoj a výroba funkčného prototypu inteligentnej misky pre psa, ktorá automaticky deteguje nízku hladinu vody a zabezpečí jej doplnenie. Projekt spája hardvér (mikrokontrolér Arduino a senzory), softvér (programovanie v C++), 3D modelovanie a 3D tlač do jedného funkčného celku.
+
 --- Headline ---
 
 --- introduction ---
@@ -166,11 +169,65 @@ Strucny text o projekte (zhrnutie zadania + prinos).
 --- obsah ---
 
 ## 01-Business
+
+<img src="../sdlc/obrazky/nakresy.jpg" alt="Vizuálna inšpirácia" width="500">
+*Obr. 2 a 3: Moje vlastné počiatočné nákresy a detailnejšie rozpracovanie dizajnu.*
+
 ## 02-Top Level Architecture
+
+### Fyzický Model
+Fyzický model zobrazuje konkrétne hardvérové komponenty, z ktorých sa systém skladá, a ich prepojenie. Identifikuje hlavné časti ako Arduino, senzor, ovládač motora (MOSFET) a samotnú pumpu.
+
+<img src="../sdlc/obrazky/fyzicky_model.png" alt="Fyzický model komponentov" width="700">
+*Obr.: Fyzický model hardvérových komponentov a ich prepojení.*
+
+### Logický Model (Štruktúra Kódu)
+Logický model sa zameriava na softvérovú architektúru. Definuje hlavné triedy a ich metódy, ako napríklad `MiskaController`, `PumpaController` a `SenzorHladiny`, a ukazuje, ako spolu komunikujú.
+
+<img src="../sdlc/obrazky/logicky_model.png" alt="Logický model a štruktúra kódu" width="700">
+*Obr.: Logický model definujúci štruktúru softvéru.*
+
 ## 03-Solution Architecture
+
+### 5.1. Prvé Experimenty a Prototypovanie
+Práca začala experimentovaním s hardvérom. Prvotný plán bol použiť ultrazvukový senzor na meranie hladiny vody. Zostavila som testovací obvod s Arduinom a senzorom na breadboarde, aby som overila jeho funkčnosť.
+
+<img src="../sdlc/obrazky/prototyp-na-stole.jpg" alt="Vizuálna inšpirácia" width="500">
+*Obr. 4: Testovacie prostredie – Arduino, breadboard, ultrazvukový senzor a ďalšie komponenty.*
+
 ## 04-Analysis
 ## 05-Design
 ## 06-Implementation
+# 06-Implementation
+
+### 5.3. Finálny Kód
+S novým hardvérovým návrhom som finalizovala aj kód pre Arduino. Kód neustále monitoruje analógový pin pripojený k sondám. Ak hodnota klesne pod prahovú úroveň (voda chýba), aktivuje pin, ktorý spína čerpadlo.
+
+```cpp
+// Definovanie pinov
+constexpr int testPin = A0;      // Vstupny pin na citanie stavu vodivosti
+constexpr int controlPWM = 3;    // Vystupny pin na ovladanie cerpadla
+
+void setup() {
+  pinMode(testPin, INPUT);
+  pinMode(controlPWM, OUTPUT);
+  Serial.begin(9600);
+}
+
+void loop() {
+  static int sensorValue = 0, u = 0;
+  sensorValue = analogRead(testPin);
+
+  // Ak je hodnota nízka (pod 60), voda chýba -> aktivuj cerpadlo
+  if (sensorValue < 60) {
+    u = 255;
+  } else {
+    u = 0;
+  }
+  analogWrite(controlPWM, u);
+  delay(500);
+}
+```
 ## 07-Testing & Verification
 ## 08-Operation
 ## 09-Change Management

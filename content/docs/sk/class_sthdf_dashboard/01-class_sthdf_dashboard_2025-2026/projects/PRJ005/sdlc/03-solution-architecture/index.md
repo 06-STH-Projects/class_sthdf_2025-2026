@@ -135,6 +135,22 @@ fm_reserved2: ""
 
 # 03-Solution Architecture
 
+## 5. Postup Práce a Implementácia
+
+### 5.1. Prvé Experimenty a Prototypovanie
+Práca začala experimentovaním s hardvérom. Prvotný plán bol použiť ultrazvukový senzor na meranie hladiny vody. Zostavila som testovací obvod s Arduinom a senzorom na breadboarde, aby som overila jeho funkčnosť.
+
+<img src="../obrazky/prototyp-na-stole.jpg" alt="Vizuálna inšpirácia" width="500">
+*Obr. 4: Testovacie prostredie – Arduino, breadboard, ultrazvukový senzor a ďalšie komponenty.*
+
+### 5.2. Zásadný Pivot a Finálny Návrh Elektroniky
+Počas testovania sa ukázal kľúčový problém: ultrazvukový senzor **nedokázal spoľahlivo merať hladinu cez stenu misky**. Preto som sa rozhodla pre radikálnu zmenu prístupu (**pivot**). Nové riešenie bolo založené na spoľahlivejšom **meraní vodivosti vody** pomocou dvoch sond. Na základe toho som navrhla finálnu a detailnú schému elektroniky.
+
+<img src="../obrazky/schematic-kicad.png" alt="Vizuálna inšpirácia" width="500">
+*Obr. 5: Detailná schéma finálneho zapojenia, vrátane napájania, riadenia a senzorov.*
+
+
+
 - [Solution design](./design.md)
 
 **Navigation:** [⬆️ SDLC](../index.md) · [⬅️ Projekt](../../index.md)

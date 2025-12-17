@@ -135,6 +135,50 @@ fm_reserved2: ""
 
 # 06-Implementation
 
+### 5.3. Finálny Kód
+S novým hardvérovým návrhom som finalizovala aj kód pre Arduino. Kód neustále monitoruje analógový pin pripojený k sondám. Ak hodnota klesne pod prahovú úroveň (voda chýba), aktivuje pin, ktorý spína čerpadlo.
+
+```cpp
+// Definovanie pinov
+constexpr int testPin = A0;      // Vstupny pin na citanie stavu vodivosti
+constexpr int controlPWM = 3;    // Vystupny pin na ovladanie cerpadla
+
+void setup() {
+  pinMode(testPin, INPUT);
+  pinMode(controlPWM, OUTPUT);
+  Serial.begin(9600);
+}
+
+void loop() {
+  static int sensorValue = 0, u = 0;
+  sensorValue = analogRead(testPin);
+
+  // Ak je hodnota nízka (pod 60), voda chýba -> aktivuj cerpadlo
+  if (sensorValue < 60) {
+    u = 255;
+  } else {
+    u = 0;
+  }
+  analogWrite(controlPWM, u);
+  delay(500);
+}
+```
+### 5.4. 3D Modelovanie a Príprava na Tlač
+Na základe nákresov a finálnych rozmerov elektroniky som vytvorila detailný 3D model misky. Model sa skladá z troch častí: vnútornej misky, vonkajšieho dekoratívneho plášťa a spodného krytu, ktorý chráni elektroniku.
+
+<img src="../obrazky/3d-model-rozpad.png" alt="Vizuálna inšpirácia" width="500">
+*Obr. 6: Explodovaný pohľad na jednotlivé časti 3D modelu.*
+
+<img src="../obrazky/3d-model-pohlady.png" alt="Vizuálna inšpirácia" width="500">
+*Obr. 7: Finálny 3D model z rôznych uhlov pohľadu pripravený na 3D tlač.*
+
+### 5.5. Výsledný Produkt
+Po vytlačení všetkých častí a finálnej montáži elektroniky vznikol plne funkčný prototyp, ktorý spĺňa všetky pôvodné požiadavky.
+
+<img src="../obrazky/finalny-produkt.jpg" alt="Vizuálna inšpirácia" width="500">
+*Obr. 8: Finálny produkt – funkčná automatická miska pripravená na použitie. (Sem vlož fotku reálneho produktu)*
+
+
 - [Odkazy na kód / repozitáre](./code-links.md)
 
 **Navigation:** [⬆️ SDLC](../index.md) · [⬅️ Projekt](../../index.md)

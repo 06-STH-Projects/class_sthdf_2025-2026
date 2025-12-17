@@ -134,6 +134,26 @@ fm_reserved2: ""
 <!-- class_sthdf_dashboard_INSTANCE_ID: 01-class_sthdf_dashboard_2025-2026 -->
 
 # 01-Business
+## 1. Téma Projektu
+Vývoj a výroba funkčného prototypu inteligentnej misky pre psa, ktorá automaticky deteguje nízku hladinu vody a zabezpečí jej doplnenie. Projekt spája hardvér (mikrokontrolér Arduino a senzory), softvér (programovanie v C++), 3D modelovanie a 3D tlač do jedného funkčného celku.
+
+## 2. Motivácia a Počiatočný Návrh
+Primárnou motiváciou pre tento projekt bola praktická potreba mojej sestry. Chcela pre svojho psa moderné a pohodlné riešenie, ktoré by zabezpečilo, že bude mať vždy prístup k čerstvej vode. Ako vizuálna inšpirácia poslúžila ružová miska v štýle "Hello Kitty".
+
+<img src="../obrazky/inspiracia.jpg" alt="Vizuálna inšpirácia" width="500">
+*Obr. 1: Požadovaný vizuálny štýl a inšpirácia pre projekt.*
+
+Na základe tejto predstavy som začala pracovať na vlastných nákresoch, kde som rozpracovala základný tvar misky, umiestnenie elektroniky, napájania (USB-C) a princíp fungovania.
+
+<img src="../obrazky/nakresy.jpg" alt="Vizuálna inšpirácia" width="500">
+*Obr. 2 a 3: Moje vlastné počiatočné nákresy a detailnejšie rozpracovanie dizajnu.*
+
+## 3. Ciele Projektu
+Na začiatku projektu som si stanovila nasledujúce kľúčové ciele:
+*   **Automatizácia:** Systém musí byť schopný samostatne detegovať pokles hladiny vody.
+*   **Funkčnosť:** Po detekcii nízkej hladiny musí systém automaticky aktivovať čerpadlo na doplnenie vody.
+*   **Bezpečnosť a Hygiena:** Miska musí byť vyrobená z materiálu bezpečného pre styk s potravinami (food-safe).
+*   **Samostatnosť:** Zariadenie má byť napájané z batérie, aby bolo prenosné a bezpečné.
 
 - [Business poznámky](./notes.md)
 
