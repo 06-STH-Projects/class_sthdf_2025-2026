@@ -166,17 +166,23 @@ void loop() {
 ### 5.4. 3D Modelovanie a Príprava na Tlač
 Na základe nákresov a finálnych rozmerov elektroniky som vytvorila detailný 3D model misky. Model sa skladá z troch častí: vnútornej misky, vonkajšieho dekoratívneho plášťa a spodného krytu, ktorý chráni elektroniku.
 
-<img src="../obrazky/3d-model-rozpad.png" alt="Vizuálna inšpirácia" width="500">
-*Obr. 6: Explodovaný pohľad na jednotlivé časti 3D modelu.*
+<figure>
+  <img src="../obrazky/3d-model-rozpad.png" alt="Vizuálna inšpirácia" width="500" />
+  <figcaption>Obr. 6: Explodovaný pohľad na jednotlivé časti 3D modelu.</figcaption>
+</figure>
 
-<img src="../obrazky/3d-model-pohlady.png" alt="Vizuálna inšpirácia" width="500">
-*Obr. 7: Finálny 3D model z rôznych uhlov pohľadu pripravený na 3D tlač.*
+<figure>
+  <img src="../obrazky/3d-model-pohlady.png" alt="Vizuálna inšpirácia" width="500" />
+  <figcaption>Obr. 7: Finálny 3D model z rôznych uhlov pohľadu pripravený na 3D tlač.</figcaption>
+</figure>
 
 ### 5.5. Výsledný Produkt
 Po vytlačení všetkých častí a finálnej montáži elektroniky vznikol plne funkčný prototyp, ktorý spĺňa všetky pôvodné požiadavky.
 
-<img src="../obrazky/finalny-produkt.jpg" alt="Vizuálna inšpirácia" width="500">
-*Obr. 8: Finálny produkt – funkčná automatická miska pripravená na použitie. (Sem vlož fotku reálneho produktu)*
+<figure>
+  <img src="../obrazky/finalny-produkt.jpg" alt="Vizuálna inšpirácia" width="500" />
+  <figcaption>Obr. 8: Finálny produkt – funkčná automatická miska pripravená na použitie. (Sem vlož fotku reálneho produktu)</figcaption>
+</figure>
 
 
 - [Odkazy na kód / repozitáre](./code-links.md)

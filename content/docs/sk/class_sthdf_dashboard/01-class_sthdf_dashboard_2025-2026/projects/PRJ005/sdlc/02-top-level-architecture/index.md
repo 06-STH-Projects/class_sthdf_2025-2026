@@ -139,21 +139,24 @@ fm_reserved2: ""
 Pre lepšie pochopenie štruktúry a funkčnosti systému som v nástroji Sparx Enterprise Architect vytvorila logický a fyzický model. Tieto diagramy pomohli definovať komponenty, ich zodpovednosti a vzájomné prepojenia ešte pred samotnou implementáciou.
 
 **Celý model si môžete stiahnuť a otvoriť priamo v Enterprise Architect:**
-*   **[Stiahnuť Sparx EA model (MiskaPrePsa.qea)](MiskaPrePsa.qea)**
 
 ---
 
 ### Fyzický Model
 Fyzický model zobrazuje konkrétne hardvérové komponenty, z ktorých sa systém skladá, a ich prepojenie. Identifikuje hlavné časti ako Arduino, senzor, ovládač motora (MOSFET) a samotnú pumpu.
 
-<img src="../obrazky/fyzicky_model.png" alt="Fyzický model komponentov" width="700">
-*Obr.: Fyzický model hardvérových komponentov a ich prepojení.*
+<figure>
+  <img src="../obrazky/fyzicky_model.png" alt="Fyzický model komponentov" width="700" />
+  <figcaption>Obr.: Fyzický model hardvérových komponentov a ich prepojení.</figcaption>
+</figure>
 
 ### Logický Model (Štruktúra Kódu)
 Logický model sa zameriava na softvérovú architektúru. Definuje hlavné triedy a ich metódy, ako napríklad `MiskaController`, `PumpaController` a `SenzorHladiny`, a ukazuje, ako spolu komunikujú.
 
-<img src="../obrazky/logicky_model.png" alt="Logický model a štruktúra kódu" width="700">
-*Obr.: Logický model definujúci štruktúru softvéru.*
+<figure>
+  <img src="../obrazky/logicky_model.png" alt="Logický model a štruktúra kódu" width="700" />
+  <figcaption>Obr.: Logický model definujúci štruktúru softvéru.</figcaption>
+</figure>
 
 
 - Pridaj high-level diagram alebo popis architektúry.
