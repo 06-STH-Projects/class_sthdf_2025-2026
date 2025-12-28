@@ -22,10 +22,9 @@ fm_build: '2025-12-09T21:04:48Z'
 3. **Solution Architecture**  
    - Použitý materiál: 3 mm kartón.  
    - Nástroj: laserový rezač (nízky výkon, vysoká rýchlosť).  
-   - Montáž: PVA lepidlo, spevnenie vnútornými pásikmi.
+   - Montáž: Herkules lepidlo, spevnenie zapadajúcimi zúbkami
 
 4. **Analysis**  
-   - Šablóna overená na testovom reze.  
    - Kontrola kompatibility hrúbky materiálu s výrezmi a slotmi.
 
 5. **Design**  
@@ -42,7 +41,7 @@ fm_build: '2025-12-09T21:04:48Z'
    - Úpravy lepenia a spevnenie rohov podľa potreby.
 
 8. **Operation**  
-   - Rakvy úspešne použité počas premiéry aj repríz.  
+   - Rakvy úspešne použité počas generálky a premiéry.  
    - Jednoduché skladovanie a opätovné použitie.
 
 ## 🏆 Finálny produkt
@@ -65,7 +64,6 @@ fm_build: '2025-12-09T21:04:48Z'
 - **Rozdiely:**  
   - Projekt prebehol podľa plánu bez významných odchýlok.  
   - Výsledná pevnosť a vizuálna kvalita boli lepšie než pôvodne očakávané.
-
 
 ---
 ## Navigácia
