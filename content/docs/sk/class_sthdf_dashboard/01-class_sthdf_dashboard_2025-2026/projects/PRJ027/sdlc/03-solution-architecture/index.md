@@ -135,6 +135,20 @@ fm_reserved2: ""
 
 # 03-Solution Architecture
 
+**Prvé testy:** Breadboard s ESP32, senzory testované jednotlivo.
+<figure>
+  <img src="../../sdlc/images/breadBoard.png" alt="test" width="700" />
+  <figcaption>Obr.:  Produkt</figcaption>
+</figure>
+
+**Dizajn iterácie:**
+1. Jednoduchý kontajner na pôdu
+2. Kompartmenty: voda, elektronika, senzory
+3. Finálny dizajn
+
+**Výstup:** 3D model kvetináča s integrovanými priestormi.
+
+
 - [Solution design](./design.md)
 
 **Navigation:** [⬆️ SDLC](../index.md) · [⬅️ Projekt](../../index.md)

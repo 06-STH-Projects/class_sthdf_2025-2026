@@ -135,6 +135,52 @@ fm_reserved2: ""
 
 # 06-Implementation
 
+**3D tlač:** modeling, post-processing .
+Finálny 3D model 
+<figure>
+  <img src="../../sdlc/images/3dModel.png" alt="3D model" width="700" />
+  <figcaption>Obr.:  3D model inteligentného kvetináča</figcaption>
+</figure>
+
+
+
+**HW montáž:** Senzory zapájané, MOSFET na pumpu, LED pripojena.
+
+<figure>
+  <img src="../sdlc/images/impl.jpg" alt="HW test" width="700" />
+  <figcaption>Obr.: 3D model</figcaption>
+</figure>
+
+**Softvér (C++ + Arduino IDE):**
+```cpp
+
+int moisture = readSensorMedian(GPIO34);
+int light = readSensorMedian(GPIO35);
+
+if (moisture > 2800) {
+  digitalWrite(GPIO12, HIGH);
+  delay(5000);
+  digitalWrite(GPIO12, LOW);   
+}
+
+if (light > 2500) {
+  digitalWrite(GPIO14, HIGH); 
+} else {
+  digitalWrite(GPIO14, LOW); 
+}
+
+delay(60000);
+```
+
+---
+
+Finálny produkt
+<figure>
+  <img src="../../sdlc/images/Product.png" alt="Produkt TODO" width="700" />
+  <figcaption>Obr.:  Produkt</figcaption>
+</figure>
+
+
 - [Odkazy na kód / repozitáre](./code-links.md)
 
 **Navigation:** [⬆️ SDLC](../index.md) · [⬅️ Projekt](../../index.md)
