@@ -138,3 +138,16 @@ fm_reserved2: ""
 - [Backlog a analýzy](./backlog.md)
 
 **Navigation:** [⬆️ SDLC](../index.md) · [⬅️ Projekt](../../index.md)
+
+### Funkčné požiadavky
+- Systém musí umožniť zber telemetrických dát z IoT zariadenia.
+- Systém musí ukladať namerané hodnoty do databázy.
+- Systém musí zobrazovať aktuálne a historické dáta v prezentačnej aplikácii.
+- Systém musí detegovať výnimočné stavy na základe definovaných pravidiel.
+- Systém musí informovať používateľa o výnimočných stavoch prostredníctvom notifikácií.
+
+### Nefunkčné požiadavky
+- Systém musí umožňovať vzdialený prístup k dátam.
+- Systém musí zabezpečiť základnú dostupnosť služby.
+- Systém musí byť navrhnutý ako prototypové riešenie.
+- Systém musí byť rozšíriteľný o ďalšie monitorované parametre.

@@ -135,6 +135,9 @@ fm_reserved2: ""
 
 # 02-Top Level Architecture
 
-- Pridaj high-level diagram alebo popis architektúry.
-
 **Navigation:** [⬆️ SDLC](../index.md) · [⬅️ Projekt](../../index.md)
+
+
+Navrhovaná top-level architektúra systému pozostáva z hardvérovej časti umiestnenej priamo vo včelom úli a zo softvérovej časti prevádzkovanej na virtuálnom serveri. Hardvérové zariadenie založené na mikrokontroléri zabezpečuje zber telemetrických dát zo senzorov a ich prenos prostredníctvom dostupných komunikačných technológií do IoT platformy. Centrálna IoT platforma zabezpečuje spracovanie, ukladanie a sprístupnenie dát, ktoré sú následne vizualizované v prezentačnej webovej aplikácii pre koncového používateľa.
+
+![Top-level architektúra](../../images/diagram_cely_system.png)
