@@ -134,3 +134,39 @@ fm_reserved2: ""
 <!-- class_sthdf_dashboard_INSTANCE_ID: 01-class_sthdf_dashboard_2025-2026 -->
 
 PRJ021 / 07-testing-verification / test-report.md
+
+# 07 – Testing & Verification (Test report & QA výstupy)
+
+## Cieľ testovania
+Cieľom testovania bolo overiť funkčnosť zariadenia Smart TV Box v reálnych podmienkach používania, najmä na televízoroch, ktoré nepodporujú Smart TV funkcionalitu. Testovanie sa zameriavalo na kompatibilitu, stabilitu systému Android TV a používateľský komfort.
+
+## Testovacie prostredie
+Zariadenie bolo testované na viacerých typoch starších televízorov rôznych výrobcov, ktoré disponujú HDMI vstupom, ale nemajú vlastný Smart TV operačný systém.  
+Pripojenie k internetu bolo realizované výhradne pomocou káblového pripojenia cez rozhranie **RJ-45 (Ethernet)**, aby bola zabezpečená stabilita siete počas testovania.
+
+![Android TV](../../images/android_tv.jpg)
+
+## Scenáre testovania
+Počas testovania boli vykonané nasledovné scenáre:
+- spustenie zariadenia a boot operačného systému Android TV,
+- inicializácia obrazu a zvuku po pripojení k televízoru,
+- test funkčnosti sieťového pripojenia cez RJ-45,
+- inštalácia a spustenie multimediálnych aplikácií,
+- dlhodobejšie prehrávanie obsahu.
+
+## Testované aplikácie
+Funkčnosť zariadenia bola overená najmä pomocou bežne používaných streamovacích služieb:
+- **YouTube** – prehrávanie videí v rôznych rozlíšeniach,
+- **Netflix** – prehrávanie filmov a seriálov po prihlásení do používateľského účtu.
+
+Aplikácie sa spúšťali korektne, bez pádov a bez viditeľného oneskorenia používateľského rozhrania.
+
+## Výsledky testovania
+- Zariadenie bolo úspešne rozpoznané všetkými testovanými televízormi.
+- Obraz aj zvuk boli prenášané bez chýb cez HDMI rozhranie.
+- Sieťové pripojenie cez RJ-45 bolo stabilné počas celého testovania.
+- Multimediálne aplikácie fungovali spoľahlivo a bez výpadkov.
+- Počas testovania nebolo zaznamenané prehrievanie zariadenia.
+
+## Záver testovania
+Na základe vykonaných testov je možné uvažovať, že Smart TV Box spĺňa požadované funkčné a kvalitatívne kritériá. Zariadenie je vhodné na bežné domáce používanie ako náhrada Smart TV funkcionality pre staršie televízory a spĺňa očakávania definované v návrhovej fáze projektu.

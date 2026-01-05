@@ -134,3 +134,30 @@ fm_reserved2: ""
 <!-- class_sthdf_dashboard_INSTANCE_ID: 01-class_sthdf_dashboard_2025-2026 -->
 
 PRJ021 / 01-business / notes.md
+
+# Business Context
+
+## Problem Statement
+Mnoho používateľov stále vlastní staršie televízory, ktoré nedisponujú Smart TV funkcionalitou.
+Tieto zariadenia síce poskytujú kvalitný obraz, avšak neumožňujú používanie moderných aplikácií
+ako YouTube, Netflix alebo streamovacie služby bez dodatočného hardvéru.
+
+## Project Goal
+Cieľom projektu Smart TV Box je vytvoriť zariadenie, ktoré umožní rozšíriť funkcionalitu
+bežného televízora o Smart TV vlastnosti pomocou externého zariadenia.
+
+## Target Users
+- používatelia starších televízorov bez Smart TV podpory
+- technicky zdatní používatelia
+- domácnosti hľadajúce lacnejšiu alternatívu ku komerčným riešeniam
+
+## Value Proposition
+Projekt ponúka:
+- lacnú alternatívu ku komerčným Smart TV Boxom,
+- možnosť využitia existujúceho hardvéru,
+- flexibilné a rozšíriteľné riešenie založené na Android platforme.
+
+## Constraints
+- obmedzený výkon použitých komponentov,
+- DIY charakter riešenia,
+- neoficiálna podpora operačného systému Android TV.

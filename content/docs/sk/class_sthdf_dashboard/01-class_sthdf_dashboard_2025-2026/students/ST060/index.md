@@ -5,7 +5,6 @@ locale: sk
 fm_build: '2025-12-09T21:04:48Z'
 ---
 
-[🏠 Domov](../../index.md) · [⬅️ Nahor](../ST_INDEX.md)
 # ST060
 - [Deliverables (A1–A4, 05–07)](./deliverables/index.md)
 - [A1 – About Me](./deliverables/01_about-me.md)
@@ -15,3 +14,5 @@ fm_build: '2025-12-09T21:04:48Z'
 - [05 – Pitch Presentation](./deliverables/05_pitch_presentation.md)
 - [06 – Final Presentation](./deliverables/06_final_presentation.md)
 - [07 – Reflexia](./deliverables/07_reflexia.md)
+
+[🏠 Domov](../../index.md) · [⬅️ Nahor](../ST_INDEX.md)

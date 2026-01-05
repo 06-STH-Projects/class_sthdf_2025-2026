@@ -134,3 +134,40 @@ fm_reserved2: ""
 <!-- class_sthdf_dashboard_INSTANCE_ID: 01-class_sthdf_dashboard_2025-2026 -->
 
 PRJ021 / 06-implementation / code-links.md
+
+# Implementation Overview
+
+## Hardware Implementation
+Implementácia hardvérovej časti zahŕňa montáž základovej dosky,
+SSD disku a napájacieho zdroja do navrhnutého dreveného púzdra.
+Jednotlivé časti púzdra boli vyrezané z preglejky podľa technických výkresov
+vytvorených v nástroji Fusion 360 a následne zlepené do finálnej konštrukcie.
+
+Na nasledujúcich obrázkoch je znazornený vzhľad dreveného púzdra
+vyrezaného z preglejky, ale pred umiestnením hardvérových komponentov.
+
+![Púzdro 1](../../images/puzdro1.jpg)
+
+![Púzdro 2](../../images/puzdro2.jpg)
+
+![Púzdro 3](../../images/puzdro3.jpg)
+
+Po umiestnení hardvérových komponentov, zariadenie vyzeralo následovne:
+
+![Hardvér 1](../../images/hardver1.jpg)
+
+![Hardvér 2](../../images/hardver2.jpg)
+
+![Hardvér 3](../../images/hardver3.jpg)
+
+## Software Implementation
+Na SSD disk bol nainštalovaný operačný systém Android TV alebo Android s TV rozhraním
+ako primárne používateľské prostredie.
+Zároveň bol nainštalovaný operačný systém Windows,
+pričom oba systémy sú dostupné prostredníctvom dualboot riešenia:
+
+![Dualboot](../../images/dualboot.jpg)
+
+## Current State
+V aktuálnej fáze projektu je zariadenie zostavené po hardvérovej stránke
+a pripravené na ďalšie testovanie softvéru, stability a teplotného správania.

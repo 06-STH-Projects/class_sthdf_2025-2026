@@ -134,6 +134,15 @@ fm_reserved2: ""
 <!-- class_sthdf_dashboard_INSTANCE_ID: 01-class_sthdf_dashboard_2025-2026 -->
 
 # 01-Business
+Business Layer zachytáva potrebu zjednodušenia starostlivosti o rastliny. Definuje hlavné požiadavky na systém a znázorňuje, ako systém sleduje a vyhodnocuje úroveň vlhkosti.
+
+### Requirements
+![requirements](../../images/requirements.bmp)
+
+
+### Business Process
+![business process viewpoint](../../images/business_process_viewpoint.bmp)
+
 
 - [Business poznámky](./notes.md)
 

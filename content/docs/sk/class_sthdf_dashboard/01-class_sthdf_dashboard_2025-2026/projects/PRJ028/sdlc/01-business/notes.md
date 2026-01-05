@@ -140,6 +140,8 @@ PRJ028 / 01-business / notes.md
 ## 1. Business Case
 Automatické navíjanie bandáží v mnohých oblastiach – šport, medicína, fyzioterapia či výroba. Ručné navíjanie je časovo náročné, nepraktické. Cieľom projektu je vytvoriť kompaktné a spoľahlivé zariadenie, ktoré proces výrazne urýchli a zjednoduší. 
 
+![business process viewpoint](../../images/business_process.png)
+
 ## 2. Motivácia a prínos projektu
 Projekt prináša používateľom:
 - úsporu času,

@@ -135,6 +135,8 @@ fm_reserved2: ""
 
 # 02-Top Level Architecture
 
-- Pridaj high-level diagram alebo popis architektúry.
+Top-level architektúrny diagram zobrazuje hlavný systém FightWrap Winder a jeho základné komponenty a aktérov. Diagram zahŕňa zariadenie FightWrap Winder, motorček, napájanie, používateľa (športovec/tréner) a servisného technika, spolu s ich vzájomnými vzťahmi na najvyššej úrovni abstrakcie.
+
+![business process viewpoint](../../images/top_lvl_architecture.png)
 
 **Navigation:** [⬆️ SDLC](../index.md) · [⬅️ Projekt](../../index.md)

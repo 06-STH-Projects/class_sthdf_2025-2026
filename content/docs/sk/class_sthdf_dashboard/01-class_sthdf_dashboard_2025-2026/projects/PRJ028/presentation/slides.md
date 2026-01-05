@@ -140,7 +140,8 @@ fm_reserved2: ""
 ## Headline
 **2025-PRJ-028-ST_028-ST_028-Nazov projektu**
 
-> Uvodny obrazok: TODO (dopln odkaz alebo subor).
+> Uvodny obrazok: 
+![Business process viewpoint](../images/cover.png)
 
 Strucny text o projekte (1-3 vety, doplni tim).
 --- Headline ---
@@ -149,8 +150,11 @@ Strucny text o projekte (1-3 vety, doplni tim).
 ## Introduction
 **2025-PRJ-028-ST_028-ST_028-Nazov projektu**
 
-Strucny text o projekte (zhrnutie zadania + prinos).
+
 --- introduction ---
+FightWrap Winder je elektromechanické zariadenie určené pre športovcov a trénerov, ktoré rieši bežný problém časovo náročného ručného navíjania bandáží.  
+Projekt sa zameriava na návrh architektúry, vývoj prototypu a jeho otestovanie v reálnom použití.
+
 
 --- obsah ---
 ## Obsah
@@ -161,16 +165,154 @@ Strucny text o projekte (zhrnutie zadania + prinos).
 - [05-Design](../sdlc/05-design/index.md)
 - [06-Implementation](../sdlc/06-implementation/index.md)
 - [07-Testing & Verification](../sdlc/07-testing-verification/index.md)
-- [08-Operation](../sdlc/08-operation/index.md)
-- [09-Change Management](../sdlc/09-Change-Management/index.md)
 --- obsah ---
 
 ## 01-Business
+
+### Problém a cieľ projektu
+Ručné navíjanie bandáží je časovo náročné, nepraktické a často odkladané.  
+Cieľom projektu FightWrap Winder je vytvoriť kompaktné elektrické zariadenie, ktoré tento proces výrazne zjednoduší a urýchli.
+
+---
+
+### Business pohľad na proces
+![Business process viewpoint](../images/business_process.png)
+
+---
+
+### Prínos projektu
+- úspora času po tréningu alebo práci  
+- menej manuálnej námahy  
+- lepšia organizácia bandáží  
+- potenciál ďalšieho využitia a komercializácie  
+
+---
+
+### Pre koho je projekt určený
+- športovci  
+- tréneri a fyzioterapeuti  
+- športové kluby a fitness centrá  
+
+---
+
+### Vízia produktu
+> **Urobiť navíjanie bandáží rýchlym a bezproblémovým pomocou jednoduchého elektrického zariadenia.**
+
+---
+
+### Riziká a obmedzenia (stručne)
+- rôzne typy a hrúbky bandáží  
+- mechanické opotrebovanie  
+- obmedzený rozpočet a prototypové materiály
+
 ## 02-Top Level Architecture
+
+Top-level architektúrny diagram zobrazuje hlavný systém FightWrap Winder a jeho základné komponenty a aktérov. Diagram zahŕňa zariadenie FightWrap Winder, motorček, napájanie, používateľa (športovec/tréner) a servisného technika, spolu s ich vzájomnými vzťahmi na najvyššej úrovni abstrakcie.
+
+![business process viewpoint](../images/top_lvl_architecture.png)
+
 ## 03-Solution Architecture
+
+Tento dokument popisuje **konkrétne riešenie prototypu FightWrap Winder** na úrovni hlavných modulov, ich rozhraní a tokov (mechanika, elektronika, ovládanie). Nejde o výrobné výkresy – cieľom je mať jasne pomenované komponenty, zodpovednosti a väzby.
+
+---
+
+## 1️⃣ Ciele riešenia (Solution Goals)
+
+- Automatizovať navíjanie bandáže pomocou jednoduchého elektromechanického riešenia.
+- Zabezpečiť jednoduché ovládanie (spustenie/zastavenie) bez potreby zložitého UI.
+- Navrhnúť modulárnu konštrukciu vhodnú na prototypovanie (3D tlač, dostupné diely).
+
+---
+
+## 2️⃣ Rozsah riešenia
+
+### V scope
+- Mechanická konštrukcia + navíjací mechanizmus
+- Motor + prenos sily (spojka/prevod)
+- Napájanie
+- Ovládacie tlačidlo + LED indikácia
+
+### Out of scope
+- Mobilná aplikácia, cloud, telemetria
+- Pokročilé režimy, automatická detekcia typu bandáže
+- Priemyselná certifikácia / masová výroba
+
+---
+
+## 3️⃣ Prehľad modulov (Solution Building Blocks)
+
+### 3.1 Mechanický modul
+**Zodpovednosť:** drží bandáž a umožňuje jej navíjanie.
+- Navíjacia oska (spool)
+- Držiak bandáže / vedenie
+- Nosná konštrukcia (3D tlač)
+- Krytovanie (ochrana prstov)
+
+### 3.2 Pohonný modul
+**Zodpovednosť:** vytvára rotáciu a prenáša krútiaci moment na osku.
+- DC motor (príp. motor s prevodovkou)
+- Spojka / prevod (podľa dostupnosti)
+- Uchytenie motora do rámu
+
+### 3.3 Elektronický modul
+**Zodpovednosť:** napájanie a spínanie motora.
+- Napájací vstup (USB / batéria)
+- Spínanie motora (napr. tranzistor / driver modul)
+- Ochrany (základné: poistka alebo ochrana proti skratu – podľa možností)
+
+### 3.4 Ovládanie a indikácia (UI modul)
+**Zodpovednosť:** jednoduché ovládanie a informovanie používateľa.
+- Tlačidlo START/STOP
+- LED indikácia (napájanie / beží / chyba – voliteľné)
+
+---
+
+## 4️⃣ Vývoj produktu
+
+Počiatočný návrh bol vypracovaný pomocou skíc v zošite. Nasledujúce obrázky dokumentujú základné koncepty mechanického usporiadania a tokov energie v prototypu.
+
+![business process viewpoint](../images/krezba01.jpg)
+![business process viewpoint](../images/krezba02.jpg)
+
+Tento návrh sme neskôr preniesli do 3D formatu pomocou Fusion360
+![business process viewpoint](../images/model_stl_01.png)
+
+No a už len vytlačili, a prvá verzia nášho produktu bola na svete.
+![business process viewpoint](../images/wrapper01.jpg)
+
+Neskôr sme sa rozhodli tento náš produkt posunúť ďalej, aby bol zaujímavejší a tak sme sa rozhodli ho obohatiť o motorček na samonavýjanie. Tak sme sa snažili vymyslieť ako by to asi išlo a čo by sme nato potrebovali.
+
+## Tu je zoznam súčiastok čo sme si napísali:
+| Komponent | Typ | Množstvo | Parametre | Modul |
+|-----------|-----|----------|-----------|-------|
+| Motor | DC motor | 1 | 12V, 100–500 RPM | Pohonný |
+| Spojka | Flex spojka | 1 | D5–8mm | Pohonný |
+| Batéria | Li-Ion 18650 / akumulátor | 1 | 12V | Elektronika |
+| Tlačidlo | Push button | 1 | Momentálne | UI |
+| Dióda | 1N4007 | 1 | Ochrana motora | Elektronika |
+| Konektory | JST / DuPont | podľa potreby | — | Elektronika |
+
+Následne navrhli nový model
+![business process viewpoint](../images/model_stl_02.png)
+
+Súčiastky sme sa snažili zohnať kde sa dalo, dokonca sme rozoberali aj stare eci čo sme našli doma. Kupodivu mali to čo sme potrebovali.
+![business process viewpoint](../images/suciastky.jpg)
+
+Tvorba dalšieho prototypu prebiehala v low-budget forme. Cielom bolo spraviť PoC (Proof of Concept), tak ako sa to robí v reálnom podnikaní pred tým ako sa plne spustí do projektu.
+![business process viewpoint](../images/prototyp_01.jpg)
+![business process viewpoint](../images/prototyp_02.jpg)
+
+Finalna verzia produktu v stl formate:
+![business process viewpoint](../images/final_version_stl.png)
+![business process viewpoint](../images/bigpic.png)
+![business process viewpoint](../images/final_version_01.png)
+![business process viewpoint](../images/prdct.png)
+
+
+
 ## 04-Analysis
 ## 05-Design
 ## 06-Implementation
 ## 07-Testing & Verification
-## 08-Operation
-## 09-Change Management
+

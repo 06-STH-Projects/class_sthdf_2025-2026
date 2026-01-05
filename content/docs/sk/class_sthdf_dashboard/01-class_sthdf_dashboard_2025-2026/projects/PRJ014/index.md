@@ -133,9 +133,10 @@ fm_reserved2: ""
 
 <!-- class_sthdf_dashboard_INSTANCE_ID: 01-class_sthdf_dashboard_2025-2026 -->
 
-[🏠 Domov](../../index.md) · [⬅️ Nahor](../PRJ_INDEX.md)
 # PRJ014 — Overview
 
 ## Navigácia
 - [Presentation / Slides](./presentation/slides.md) — záverečný dokument pre rýchlu prezentáciu.
 - [SDLC](./sdlc/index.md) — podklady a detailný obsah.
+
+[🏠 Domov](../../index.md) · [⬅️ Nahor](../PRJ_INDEX.md)

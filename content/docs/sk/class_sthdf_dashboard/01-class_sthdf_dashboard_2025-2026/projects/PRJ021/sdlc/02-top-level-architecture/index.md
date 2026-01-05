@@ -135,6 +135,27 @@ fm_reserved2: ""
 
 # 02-Top Level Architecture
 
-- Pridaj high-level diagram alebo popis architektúry.
+## System Description
+Smart TV Box je externé zariadenie, ktoré sa pripája k televízoru prostredníctvom HDMI rozhrania
+a poskytuje používateľovi rozhranie operačného systému Android TV alebo jeho funkčného ekvivalentu.
+
+## Main Components
+Systém pozostáva z nasledujúcich hlavných častí:
+- hardvérová jednotka (základná doska, SSD, napájanie),
+- operačný systém Android,
+- používateľské vstupné zariadenia,
+- zobrazovacie zariadenie (televízor).
+
+## External Interfaces
+- HDMI výstup pre obraz a zvuk,
+- USB porty pre vstupné zariadenia,
+- Ethernet rozhranie pre pripojenie na internet,
+- napájací vstup.
+
+## User Interaction
+Používateľ interaguje so systémom prostredníctvom:
+- diaľkového ovládača,
+- klávesnice alebo myši,
+- grafického používateľského rozhrania Android TV.
 
 **Navigation:** [⬆️ SDLC](../index.md) · [⬅️ Projekt](../../index.md)

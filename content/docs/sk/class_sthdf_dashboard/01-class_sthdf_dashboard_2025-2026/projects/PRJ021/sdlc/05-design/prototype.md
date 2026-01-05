@@ -134,3 +134,51 @@ fm_reserved2: ""
 <!-- class_sthdf_dashboard_INSTANCE_ID: 01-class_sthdf_dashboard_2025-2026 -->
 
 PRJ021 / 05-design / prototype.md
+
+# System Design
+
+## Overall Design Concept
+Systém je navrhnutý ako kompaktné externé zariadenie umiestnené v drevenom púzdre.
+Návrh kladie dôraz na jednoduchú výrobu, dobrú ventiláciu a prístupnosť portov.
+
+## Hardware Design
+Hardvérová časť pozostáva z Mini-ITX základovej dosky s integrovaným procesorom,
+2.5" SSD disku a napájacieho zdroja.
+
+Na nasledujúcom obrázku je zobrazená základová doska ASRock J4105B-ITX
+![Základová doska](../../images/zakladova_doska.png)
+
+Napájaci zdroj bol vybraný Seasonic SS-300TFX
+![Napájací zdroj](../../images/zdroj.png)
+
+Komponenty sú rozmiestnené tak, aby bol zabezpečený prirodzený airflow
+a zároveň jednoduchý prístup k vstupno-výstupným rozhraniam.
+
+## Case Design
+Púzdro zariadenia je vyrobené z preglejky a navrhnuté ako viacvrstvová konštrukcia.
+Medzery medzi jednotlivými vrstvami podporujú cirkuláciu vzduchu
+a pomáhajú odvádzať teplo z vnútra zariadenia.
+
+## Cooling Design
+Chladenie zariadenia je založené na pasívnom chladení procesora
+a prirodzenej ventilácii púzdra.
+Odvod teplého vzduchu je podporený napájacím zdrojom,
+ktorý aktívne odvádza teplý vzduch smerom von zo skrinky.
+
+## Software Design
+Primárnym operačným systémom zariadenia je Android TV alebo Android s TV rozhraním.
+Zariadenie zároveň podporuje operačný systém Windows,
+ktorý je dostupný prostredníctvom dualboot riešenia.
+Výber operačného systému prebieha pri štarte zariadenia.
+
+## Design Tools
+Návrh mechanickej konštrukcie zariadenia bol vytvorený v nástroji Fusion 360.
+V rámci návrhu bol spracovaný 3D model púzdra a technické výkresy (drawings) jednotlivých dielov potrebné pre výrobu.
+
+Na ďalších dvoch obrázkoch je zobrazený výsledný 3D model púzdra aj jeho technický výkres s popisom 
+exterierových rozmerov.
+
+![3D model púzdra](../../images/model.png)
+
+![Technický výkres](../../images/schema.png)
+

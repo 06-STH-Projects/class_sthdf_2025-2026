@@ -3,6 +3,7 @@ fm_version: 1.0.1
 fm_version_comment: ''
 locale: sk
 fm_build: '2025-12-09T21:04:48Z'
+title: Študentské deliverables
 ---
 
 <!-- FM:INJECT FROM FM-Core.md -->
@@ -211,5 +212,6 @@ Ale celkovo hodnotím predmet **pozitívne**, lebo núti študenta vytvoriť nie
 - ↩️ [Späť na študenta](../index.md)  
 
 <!-- NAV:END -->
+
 
 

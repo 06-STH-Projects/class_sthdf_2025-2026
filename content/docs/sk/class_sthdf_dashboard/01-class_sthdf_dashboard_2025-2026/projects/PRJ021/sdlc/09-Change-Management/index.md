@@ -133,8 +133,42 @@ fm_reserved2: ""
 
 <!-- class_sthdf_dashboard_INSTANCE_ID: 01-class_sthdf_dashboard_2025-2026 -->
 
-# 09-Change Management
+# 09 – Change Management (Change log / CR / Impact analysis)
 
-- Change log / CR / impact analysis (doplníš podľa potreby).
+## Pôvodný návrh
+V pôvodnom návrhu projektu Smart TV Box sa počítalo s použitím **3D tlačeného držiaka pre 2.5" SSD disk**, ktorý mal byť:
+- navrhnutý v CAD nástroji,
+- vytlačený na 3D tlačiarni,
+- pevne integrovaný do vnútorného priestoru dreveného púzdra.
+
+Cieľom tohto riešenia bolo zlepšiť mechanickú stabilitu disku, vnútornú organizáciu komponentov a celkovú modularitu zariadenia.
+
+## Identifikovaná zmena (Change Request)
+Počas realizácie projektu bol identifikovaný časový limit, ktorý neumožnil dokončenie návrhu a výroby 3D tlačeného držiaka SSD disku v plánovanom rozsahu.
+
+Z tohto dôvodu bolo rozhodnuté:
+- neimplementovať 3D tlačený držiak SSD disku v aktuálnej verzii projektu,
+- ponechať SSD disk umiestnený v púzdre bez dedikovaného držiaka.
+
+## Analýza dopadu (Impact Analysis)
+Dopad tejto zmeny na projekt bol vyhodnotený nasledovne:
+- **Funkčnosť zariadenia** nebola ovplyvnená, SSD disk je plne funkčný.
+- **Časový harmonogram projektu** bol dodržaný.
+- **Bezpečnosť a stabilita** zariadenia ostala na akceptovateľnej úrovni pre školský projekt.
+- **Estetika a modularita** vnútorného usporiadania môže byť mierne znížená.
+
+## Záznam zmeny (Change log)
+- **Zmena:** Neimplementovaný 3D tlačený držiak pre SSD disk  
+- **Dôvod:** Nedostatok času na návrh a výrobu  
+- **Stav:** Odložené / nerealizované  
+- **Dátum rozhodnutia:** počas realizácie projektu  
+
+## Potenciálne zlepšenia (Future Improvements)
+Nerealizovaný 3D tlačený držiak SSD disku je možné považovať za:
+- potenciálne rozšírenie projektu,
+- vylepšenie budúcej verzie zariadenia,
+- vhodnú úlohu pre ďalšiu iteráciu alebo nadväzujúci projekt.
+
+Implementácia tohto prvku by mohla zvýšiť mechanickú odolnosť, servisovateľnosť a profesionálny charakter výsledného riešenia.
 
 **Navigation:** [⬆️ SDLC](../index.md) · [⬅️ Projekt](../../index.md)

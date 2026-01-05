@@ -134,3 +134,34 @@ fm_reserved2: ""
 <!-- class_sthdf_dashboard_INSTANCE_ID: 01-class_sthdf_dashboard_2025-2026 -->
 
 PRJ021 / 04-analysis / backlog.md
+
+# Analysis
+
+## Problem Analysis
+Cieľom projektu je vytvoriť externé zariadenie, ktoré rozšíri funkcionalitu
+bežného televízora bez Smart TV podpory o moderné multimediálne služby.
+Riešenie musí byť cenovo dostupné, kompaktné a vhodné na domáce použitie.
+
+## Functional Requirements
+- zariadenie musí umožniť pripojenie k televízoru prostredníctvom HDMI,
+- systém musí poskytovať používateľské rozhranie Android TV alebo jeho funkčný ekvivalent,
+- zariadenie musí podporovať prehrávanie multimediálneho obsahu,
+- systém musí umožniť spustenie operačného systému Windows pomocou dualboot riešenia,
+- používateľ musí mať prístup k vstupno-výstupným rozhraniam základovej dosky.
+
+## Non-Functional Requirements
+- tichá prevádzka zariadenia,
+- nízka spotreba energie,
+- zabezpečené dostatočné chladenie komponentov,
+- estetické vyhotovenie vhodné do domácnosti,
+
+## Hardware Constraints
+- použitie Mini-ITX základovej dosky s integrovaným procesorom,
+- použitie 2.5" SSD disku ako hlavného úložiska,
+- použitie samostatného napájacieho zdroja,
+- obmedzený výkon hardvérových komponentov.
+
+## Software Constraints
+- neoficiálna podpora Android TV na x86 platforme,
+- obmedzená dostupnosť ovládačov v prostredí Android,
+- nutnosť manuálnej konfigurácie dualboot riešenia.

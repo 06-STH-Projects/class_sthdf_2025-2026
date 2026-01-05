@@ -3,6 +3,7 @@ fm_version: 1.0.1
 fm_version_comment: ''
 locale: sk
 fm_build: '2025-12-09T21:04:47Z'
+title: Študentské deliverables
 ---
 
 <!-- FM:INJECT FROM FM-Core.md -->
@@ -57,5 +58,6 @@ Nižšie nájdeš rýchle odkazy na všetky povinné výstupy. Odkazy sú **rela
 - ↩️ [Späť na študenta](../index.md)  
 
 <!-- NAV:END -->
+
 
 

@@ -134,10 +134,10 @@ keywords: [showcase, highlights]
 
 <!-- class_sthdf_dashboard_INSTANCE_ID: 01-class_sthdf_dashboard_2025-2026 -->
 
-[🏠 Domov](../../index.md) · [⬅️ Nahor](../index.md)
-
 # Showcase — Best of 2025
 
 Sem vyber prehľadne najlepšie práce (schválené do Public).
 
 - Tip: Pri každej položke uveď alias študenta a projekt (STxxx / PRJxxx) a link na konkrétny artefakt.
+
+[🏠 Domov](../../index.md) · [⬅️ Nahor](../index.md)
