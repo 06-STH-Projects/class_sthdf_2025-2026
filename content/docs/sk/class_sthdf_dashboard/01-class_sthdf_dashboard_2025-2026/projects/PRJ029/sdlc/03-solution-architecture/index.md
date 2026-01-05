@@ -135,6 +135,8 @@ fm_reserved2: ""
 
 # 03-Solution Architecture
 
-- [Solution design](./design.md)
+Kapitola popisuje architektúru riešenia GloveBlower a princíp jeho fungovania.
 
-**Navigation:** [⬆️ SDLC](../index.md) · [⬅️ Projekt](../../index.md)
+**Navigation:** [⬅️ Top Level Architecture](../02-top-level-architecture/index.md) · [➡️ Design](./design.md)
+
+

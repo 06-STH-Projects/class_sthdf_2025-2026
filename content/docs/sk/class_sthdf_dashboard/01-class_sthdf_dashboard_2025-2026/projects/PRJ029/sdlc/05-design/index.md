@@ -135,6 +135,8 @@ fm_reserved2: ""
 
 # 05-Design
 
-- [Prototypy / dizajn](./prototype.md)
+Táto kapitola sa venuje návrhu 3D modelu GloveBlower vo Fusion 360.
 
-**Navigation:** [⬆️ SDLC](../index.md) · [⬅️ Projekt](../../index.md)
+**Navigation:** [⬅️ Analysis](../04-analysis/index.md) · [➡️ Prototype](./prototype.md)
+
+

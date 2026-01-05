@@ -133,8 +133,36 @@ fm_reserved2: ""
 
 <!-- class_sthdf_dashboard_INSTANCE_ID: 01-class_sthdf_dashboard_2025-2026 -->
 
-# 02-Top Level Architecture
 
-- Pridaj high-level diagram alebo popis architektúry.
+# 02 – Top Level Architecture
 
-**Navigation:** [⬆️ SDLC](../index.md) · [⬅️ Projekt](../../index.md)
+Top Level Architecture popisuje hlavné komponenty systému **GloveBlower** a ich vzťahy bez detailov implementácie.
+
+Cieľom je ukázať:
+- kto so systémom interaguje,
+- z čoho sa systém skladá,
+- ako sú komponenty navzájom prepojené.
+
+## Kontext systému
+
+Používateľ používa fyzické zariadenie GloveBlower, ktoré je napájané z USB zdroja a vháňa vzduch do boxerskej rukavice.
+
+![Top Level Architecture](../../images/ea4.png)
+
+## Hlavné komponenty
+
+- **Používateľ** – iniciuje proces sušenia
+- **USB zdroj** – napájanie zariadenia
+- **USB ventilátor (60×60 mm)** – zdroj prúdenia vzduchu
+- **GloveBlower** – 3D tlačený stojan / adaptér
+- **Boxerská rukavica** – objekt, ktorý sa suší
+
+---
+
+## Vzťahy
+
+- USB zdroj napája ventilátor
+- Ventilátor vháňa vzduch do GloveBlower
+- GloveBlower vedie vzduch do rukavice
+- Používateľ obsluhuje celý proces
+
