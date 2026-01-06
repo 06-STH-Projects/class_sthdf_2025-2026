@@ -10,16 +10,16 @@ fm_build: '2025-12-09T21:04:47Z'
 ## 🔖 Identifikácia
 ## 1️⃣ Názov projektu
 *(Jasný, výstižný, inšpiratívny – ako by sa mal objaviť na plagáte.)*
-- **Názov projektu:** `PRJ_XXX_<Názov>_<ST_XXX>_<ST_XXX>`
+- **Názov projektu:** 2025_PRJ_016-Smartclock
 - **Stručný popis:** 2–3 vety  
 
 ## 2️⃣ Členovia tímu
 
 | ST ID | Meno | Rola v tíme| Kompetencie | 
 |-------|------|------|-------------|
-| ST001 |      | Project Lead | koordinácia |
-| ST002 |      | Developer | implementácia |
-| ST003 |      | Designer | UI/UX |
+| ST001 | Ákos | Project Lead | koordinácia |
+| ST002 | Gabriel | Developer | implementácia |
+| ST003 | Lukáš | Designer | UI/UX |
 
 ## 3️⃣ Motivácia tímu
 - Prečo ste si vybrali tento projekt?  
