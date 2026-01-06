@@ -137,18 +137,20 @@ fm_reserved2: ""
 
 --- Headline ---
 ## Headline
-**2025-PRJ-027-ST_027-ST_027-Nazov projektu**
+**2025-PRJ-027-ST_009-ST_012-SmartPotOne**
+<figure>
+  <img src="/sthdf_2025/PRJ_027/images/Product.png" alt="SmartPotOne" width="500" />
+  <figcaption>Obr. 1: Product</figcaption>
+</figure>
 
-> Uvodny obrazok: TODO (dopln odkaz alebo subor).
-
-Strucny text o projekte (1-3 vety, doplni tim).
---- Headline ---
+## Téma Projektu
+Vývoj a výroba funkcného prototypu inteligentného kvetináča (SmartPot One), ktorý automaticky deteguje nízku vlhkosť pôdy a nedostatek svetla, a podľa toho spúšťa automatické zavlažovanie a doplnkové LED osvetlenie. Projekt spája hardvér (mikrokontrolér STM32, senzory vlhkosti a svetla, vodná pumpa), softvér (programovanie v C++), 3D modelovanie a 3D tlač do jedného funkcného celku. --- Headline ---
 
 --- introduction ---
 ## Introduction
-**2025-PRJ-027-ST_027-ST_027-Nazov projektu**
+**2025-PRJ-027-ST_009-ST_012-SmartPotOne**
 
-Strucny text o projekte (zhrnutie zadania + prinos).
+SmartPot One je riešenie pre zaneprázdnených ľudí a technických nadšencov, ktorí si chcú udržať rastliny bez potreby manuálneho zalievania. Projekt kombinuje senzory, mikrokontrolér STM32, senzor vlhkosti pôdy, svetelný senzor a malú vodnu pumpu v jednom 3D tlačenom kvetináči, ktorý dokáže udržať rastlinu pri živote bez manuálneho zásahu. Výsledkom je funkcný prototyp schopný automaticky riadiť polievanie a osvetlenie na základe parametrov prostredia.
 --- introduction ---
 
 --- obsah ---
@@ -165,13 +167,104 @@ Strucny text o projekte (zhrnutie zadania + prinos).
 --- obsah ---
 
 ## 01-Business
+Problém: Ľudia zabúdajú zalievať rastliny.
+Riešenie: SmartPot One automaticky deteguje vlhkosť pôdy a svetlo, spúšťa pumpu a LED.
+Cieľ: Zaneprázdnení ľudia, tech nadšenci.
+Pridaná hodnota: Automácia, monitorovanie.
+
 ## 02-Top Level Architecture
+**Fyzické komponenty:**
+- STM32 DevKit
+- Senzor vlhkosti pôdy
+- Svetelný senzor LDR
+- Vodná pumpa 5V
+- LED pásik
+- 3D tlačený kvetináč s nádržou
+
+**Logická štruktúra:**
+```
+Setup() → Inicializácia pinov
+Loop() → Čítaj senzory → Porovnaj prahy → Spusti pumpu/LED → Čakaj 600s → Opakuj
+```
+
+<figure>
+  <img src="/sthdf_2025/PRJ_027/images/schema.png" alt="Schema zapojenia" width="700" />
+  <figcaption>Obr.: Logický model definujúci štruktúru softvéru.</figcaption>
+</figure>
+
+
 ## 03-Solution Architecture
+**Prvé testy:** Breadboard s STM32, senzory testované jednotlivo.
+
+**Dizajn iterácie:**
+1. Jednoduchý kontajner na pôdu
+2. Kompartmenty: voda, elektronika, senzory
+3. Finálny dizajn
+
+**Výstup:** 3D model kvetináča s integrovanými priestormi.
+
 ## 04-Analysis
+
+**Požiadavky:**
+- Automatické zavlažovanie pri nízke vlhkosti
+- Monitorovanie vlhkosti a svetla
+- LED osvetlenie pri nedostatku svetla
+- Výdrž nádrže min. 2 týždne
+- Bezpečnosť
 ## 05-Design
+
+<figure>
+  <img src="/sthdf_2025/PRJ_027/images/drawing.jpg" alt="Drawing" width="700" />
+  <figcaption>Obr.: plan</figcaption>
+</figure>
+
+<figure>
+  <img src="/sthdf_2025/PRJ_027/images/3dModel.png" alt="3D model" width="700" />
+  <figcaption>Obr.: 3D model</figcaption>
+</figure>
+
+
 ## 06-Implementation
+
+**3D tlač:** modeling, post-processing .
+
+**HW montáž:** Senzory zapájané, MOSFET na pumpu, LED pripojena.
+
+<figure>
+  <img src="/sthdf_2025/PRJ_027/images/impl.jpg" alt="HW test" width="700" />
+  <figcaption>Obr.: Implementacia</figcaption>
+</figure>
+
+**Softvér (C++ + Arduino IDE):**
+```cpp
+
+int moisture = readSensorMedian(GPIO34);
+int light = readSensorMedian(GPIO35);
+
+if (moisture > 2800) {
+  digitalWrite(GPIO12, HIGH);
+  delay(5000);
+  digitalWrite(GPIO12, LOW);   
+}
+
+if (light > 2500) {
+  digitalWrite(GPIO14, HIGH); 
+} else {
+  digitalWrite(GPIO14, LOW); 
+}
+
+delay(60000);
+```
+
+---
+
 ## 07-Testing & Verification
 ## 08-Operation
 ## 09-Change Management
 
-[🏠 Domov](../../../index.md) · [⬅️ Nahor](../)
+Príklad pre merge v LemonTree
+
+<figure>
+  <img src="/sthdf_2025/PRJ_027/images/lemonTree.png" alt="HW test" width="1900" />
+  <figcaption>Obr.: LemonTree</figcaption>
+</figure>

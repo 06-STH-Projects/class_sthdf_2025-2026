@@ -135,6 +135,10 @@ fm_reserved2: ""
 
 # 07-Testing & Verification
 
+## 6. Záver a Získané Skúsenosti
+Projekt úspešne splnil všetky stanovené ciele. Počas práce som si osvojila širokú škálu zručností – od návrhu elektronických obvodov, cez programovanie mikrokontrolérov, až po 3D modelovanie a tlač. Najdôležitejším poznatkom bola dôležitosť flexibility a schopnosti urobiť "pivot", keď sa pôvodný plán ukáže ako nefunkčný.
+
+
 - [Test report a QA výstupy](./test-report.md)
 
 **Navigation:** [⬆️ SDLC](../index.md) · [⬅️ Projekt](../../index.md)

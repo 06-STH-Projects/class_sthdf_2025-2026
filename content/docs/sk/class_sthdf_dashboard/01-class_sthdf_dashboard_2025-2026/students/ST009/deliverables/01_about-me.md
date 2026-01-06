@@ -134,20 +134,19 @@ fm_reserved2: ""
 
 # 🙋 About Me
 ## 🔖 Základné informácie
-- Meno a priezvisko 
-- Študentský GitHub profil (link) 
-- Kontaktný e-mail 
+- Dalibor Doša
+- Github profil: https://github.com/DaliborDosa1
+- Email : xdosa@stuba.sk  
 ## 🎯 Profesijné záujmy
-- Oblasti, ktoré ma bavia (IT, dizajn, podnikanie, …) 
-- Aké skúsenosti by som chcel získať 
+- IT Fullstack dev, 3D printers,   
+- 3D modelovanie
 ## 💡 Moje hobby / záujmy
-- Šport, hudba, varenie, cestovanie … 
-- Čokoľvek, čo odhaľuje „ľudskú stránku“ 
+- Šport, auto/moto, cestovanie …  
 ## 🚀 Očakávania od predmetu
-- Čo chcem dosiahnuť v rámci kurzu 
-- Čo očakávam od spolupráce s tímom a komunitou 
+- Vytvorenie zaujimaveho projektu
+- Čo očakávam od spolupráce s tímom a komunitou : komunikacia,  praca
 ## 🚀 Čo viem ponúknuť
-- Čo chcem ponúknuť v rámci kurzu 
+- spolupracu, zanalosti ohladom Arduino, development skusenosti...
 
 ## Navigácia
 - [↩️ Späť](../index.md)

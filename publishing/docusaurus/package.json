@@ -46,6 +46,7 @@
     "@docusaurus/plugin-client-redirects": "^3.9.2",
     "@docusaurus/tsconfig": "^3.9.2",
     "@docusaurus/types": "^3.9.2",
+    "baseline-browser-mapping": "^2.9.11",
     "cross-env": "^7.0.3",
     "cssnano": "6.0.1",
     "csv-parse": "^6.1.0",
