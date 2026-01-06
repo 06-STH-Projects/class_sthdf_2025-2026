@@ -28,10 +28,10 @@ const config: Config = {
   // serve files directly from `publishing/docusaurus/docs` as static files.
   // This can help with legacy HTML <img src="..."> paths when they resolve to URLs under /sk/...
   // NOTE: Exposes the `docs/` tree as static files.
-  staticDirectories: [
-    path.join(__dirname, 'static'),
-    path.join(__dirname, 'docs'),
-  ],
+  //staticDirectories: [
+   // path.join(__dirname, 'static'),
+   // path.join(__dirname, 'docs'),
+  //],
 
   i18n: {
     defaultLocale: 'sk',
