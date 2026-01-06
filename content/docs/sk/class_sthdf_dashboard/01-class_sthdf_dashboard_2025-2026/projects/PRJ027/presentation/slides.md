@@ -139,7 +139,7 @@ fm_reserved2: ""
 ## Headline
 **2025-PRJ-027-ST_009-ST_012-SmartPotOne**
 <figure>
-  <img src="../sdlc/images/Product.png" alt="SmartPotOne" width="500" />
+  <img src="/sthdf_2025/PRJ_027/images/Product.png" alt="SmartPotOne" width="500" />
   <figcaption>Obr. 1: Product</figcaption>
 </figure>
 
@@ -188,7 +188,7 @@ Loop() → Čítaj senzory → Porovnaj prahy → Spusti pumpu/LED → Čakaj 60
 ```
 
 <figure>
-  <img src="../sdlc/images/schema.png" alt="Schema zapojenia" width="700" />
+  <img src="/sthdf_2025/PRJ_027/images/schema.png" alt="Schema zapojenia" width="700" />
   <figcaption>Obr.: Logický model definujúci štruktúru softvéru.</figcaption>
 </figure>
 
@@ -214,12 +214,12 @@ Loop() → Čítaj senzory → Porovnaj prahy → Spusti pumpu/LED → Čakaj 60
 ## 05-Design
 
 <figure>
-  <img src="../sdlc/images/drawing.jpg" alt="Drawing" width="700" />
+  <img src="/sthdf_2025/PRJ_027/images/drawing.jpg" alt="Drawing" width="700" />
   <figcaption>Obr.: plan</figcaption>
 </figure>
 
 <figure>
-  <img src="../sdlc/images/3dModel.png" alt="3D model" width="700" />
+  <img src="/sthdf_2025/PRJ_027/images/3dModel.png" alt="3D model" width="700" />
   <figcaption>Obr.: 3D model</figcaption>
 </figure>
 
@@ -231,7 +231,7 @@ Loop() → Čítaj senzory → Porovnaj prahy → Spusti pumpu/LED → Čakaj 60
 **HW montáž:** Senzory zapájané, MOSFET na pumpu, LED pripojena.
 
 <figure>
-  <img src="../sdlc/images/impl.jpg" alt="HW test" width="700" />
+  <img src="/sthdf_2025/PRJ_027/images/impl.jpg" alt="HW test" width="700" />
   <figcaption>Obr.: Implementacia</figcaption>
 </figure>
 
@@ -265,6 +265,6 @@ delay(60000);
 Príklad pre merge v LemonTree
 
 <figure>
-  <img src="../sdlc/images/lemonTree.png" alt="HW test" width="700" />
+  <img src="/sthdf_2025/PRJ_027/images/lemonTree.png" alt="HW test" width="1900" />
   <figcaption>Obr.: LemonTree</figcaption>
 </figure>
