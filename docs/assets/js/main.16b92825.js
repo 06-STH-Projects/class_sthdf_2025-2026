@@ -412,7 +412,7 @@ function concatDocumentPath(pathItems){return pathItems.join(" › ");}
     },
     "footer": {
       "style": "dark",
-      "copyright": "\n  <div style=\"text-align:center;\">\n    © 2025 SystemThinking<br/>\n    🔖 Release: <strong>v2025_12_01_1400-103-gdc40ba0b5</strong><br/>\n    💡 Commit: <code>dc40ba0b5</code><br/>\n    🕒 Build: 2025-12-16 16:23:39 UTC\n  </div>\n",
+      "copyright": "\n  <div style=\"text-align:center;\">\n    © 2026 SystemThinking<br/>\n    🔖 Release: <strong>v2025_12_01_1400-103-gdc40ba0b5</strong><br/>\n    💡 Commit: <code>dc40ba0b5</code><br/>\n    🕒 Build: 2026-01-06 22:21:23 UTC\n  </div>\n",
       "links": []
     },
     "prism": {
