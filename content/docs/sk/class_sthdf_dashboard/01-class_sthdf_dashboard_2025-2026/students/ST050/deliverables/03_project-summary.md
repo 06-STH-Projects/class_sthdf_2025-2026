@@ -35,14 +35,13 @@ Projekt používa jednoduchú architektúru:
 Zameriavame sa na efektívnu výrobu viacerých rovnakých kusov z lacného materiálu.
 
 ## 6️⃣ Projektový plán
-- Odhadovaný čas na prácu: _x hodín / týždeň_  
-- Predpokladaný stav v čase prezentácie: _MVP / prototyp / dokumentácia / funkčný produkt_  
+- Odhadovaný čas na prácu: 2 hodiny / týždeň  
+- Predpokladaný stav v čase prezentácie: funkčný produkt
 - Hlavné míľniky:  
-  - [ ] Príprava  
-  - [ ] Implementácia  
-  - [ ] Testovanie  
-  - [ ] Prezentácia
-  - [ ] 
+  - [ 25.11.2025 ] Príprava  
+  - [ 01.12.2025 ] Implementácia  
+  - [ 05.12.2025 ] Testovanie  
+  - [ 14.01.2026 ] Prezentácia
 
 Projekt zabral približne 4 týždne
 
@@ -51,14 +50,20 @@ Projekt zabral približne 4 týždne
    - Cenový odhad
    - Hľadanie materiálu a vhodného modelu
 
+![Inspiration](../../../projects/PRJ010/pictures/coffin_inspiration.png)
+
 2. **Implementácia**  
    - Vytvorenie 3D modelu pre rezačku
    - Vyrezanie 7 rakiev na laserovej rezačke vo FabLabe
    - Poskladanie, zlepenie rakiev (s pomocou backstage teamu študentského divadla)
 
+![Not yet assembled components](../../../projects/PRJ010/pictures/coffins_not_assambled.jpg)
+
 3. **Testovanie** 
    - Odskúšanie rakiev na divadelnej skúške
    - Využitie rakiev na premiére (17.12.2025, Teatro Colorato)
+
+![Coffins during the performance](../../../projects/PRJ010/pictures/coffins_performance.jpg)
 
 4. **Dokumentácia**  
    - Zhotovenie dokumentácie a prezentácie

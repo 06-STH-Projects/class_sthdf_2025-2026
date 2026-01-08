@@ -48,8 +48,9 @@ fm_build: '2025-12-09T21:04:48Z'
 - **Čo tím reálne dodal:**  
   - 7 hotových rakiev z kartónu (~25 cm)
 - **Ako to vyzerá:**  
-  - TODO obrazky 
   - Rakvy pôsobia ako malé drevené modely, sú ľahké, pevné a vhodné na scénu.
+
+![Vizuálna inšpirácia](../../../projects/PRJ010/pictures/coffin_closeup.jpg)
 
 ## 🧭 Porovnanie s Project Summary
 - **Plánovali sme:**  
