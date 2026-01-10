@@ -135,6 +135,12 @@ fm_reserved2: ""
 
 # 06-Implementation
 
+* Vyrezanie všetkých dielov laserom.
+* Zlepenie jednotlivých rakiev.
+* Farba / patina podľa potreby scény.
+
+![Drawings](../../pictures/coffins_not_assambled.jpg)
+
 - [Odkazy na kód / repozitáre](./code-links.md)
 
 **Navigation:** [⬆️ SDLC](../index.md) · [⬅️ Projekt](../../index.md)

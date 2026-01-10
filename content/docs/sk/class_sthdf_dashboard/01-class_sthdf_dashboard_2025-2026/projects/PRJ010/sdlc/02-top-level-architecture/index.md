@@ -135,6 +135,7 @@ fm_reserved2: ""
 
 # 02-Top Level Architecture
 
-- Pridaj high-level diagram alebo popis architektúry.
+* Rekvizita rozdelená na laserom rezané diely z kartónu (telo, veko, bočné steny).
+* Jednoduchá 3D konštrukcia skladaná lepením.
 
 **Navigation:** [⬆️ SDLC](../index.md) · [⬅️ Projekt](../../index.md)

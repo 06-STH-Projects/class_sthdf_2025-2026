@@ -135,6 +135,9 @@ fm_reserved2: ""
 
 # 07-Testing & Verification
 
+* Test pevnosti počas skúšok.
+* Úpravy lepenia a spevnenie rohov podľa potreby.
+
 - [Test report a QA výstupy](./test-report.md)
 
 **Navigation:** [⬆️ SDLC](../index.md) · [⬅️ Projekt](../../index.md)
