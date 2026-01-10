@@ -37,13 +37,7 @@ sidebar_position: "1"
 # System thinking in IT and Digital Fabrication
 
 
-- ## Class 2025-2026 - Navigation
-
-- ### [Students](./sk/class_sthdf_dashboard/01-class_sthdf_dashboard_2025-2026/students/ST_INDEX.md)
-- ### [Projects](./sk/class_sthdf_dashboard/01-class_sthdf_dashboard_2025-2026/projects/PRJ_INDEX.md)
-- ### [Best students Project in the year 2025-2026](./sk/class_sthdf_dashboard/01-class_sthdf_dashboard_2025-2026//class-sthdf/showcase/index.md)
-
-![Journey-Banner.png](./sk/class_sthdf_dashboard/01-class_sthdf_dashboard_2025-2026/class-sthdf/about/img/Journey-Banner.png)	
+![Journey-Banner.png](./content/docs/sk/class_sthdf_dashboard/01-class_sthdf_dashboard_2025-2026/class-sthdf/about/img/Journey-Banner.png)	
 ## Vision
 
 * We are building Trusted Single source of truth <br /> **3Rs: Right Information - For Right Role - in Right Time**
@@ -81,46 +75,6 @@ sidebar_position: "1"
 * **fostering collaborations** among internal and external stakeholders, 
 
 * aligning with the principles of **system thinking and holistic problem-solving**.
-## Principles
-
-### 1) Core principles
-
-1. **The goal is the journey.**
-2. **Knowledge is a by-product of every activity of a knowledge worker.**
-3. **Documentation is a snapshot of my current state of knowledge in a given context.**
-4. **A learning organization mindset (inspired by Peter Senge) – we practice:**
-   - **Shared vision** (values)
-   - **Mental models** (culture)
-   - **Knowledge sharing** (*"I share knowledge so that we can grow together."*)
-   - **Team learning** (creating synergies)
-   - **Systems thinking** (success is not an accident)
-
-### 2) Grading – 75% of the final grade (continuous work)
-
-1. **Contributions to shared knowledge (KNIFEs).**
-2. **Systematic work**
-   - Ongoing capture of activities and ideas (**PWES**)
-   - KNIFEs
-3. **Project intent and quality**
-   - Helping others through the project
-   - Professional know-how
-   - Level of completeness across SDLC
-   - Quality of outputs
-     - Interim outputs
-     - Final outputs
-4. **Responsibility for the shared final outcome.**
-5. **Teamwork and synergy seeking**
-   - Within the class
-   - Within the KNIFE ecosystem (world-wide)
-     - Number and quality of contributions
-
-### 3) Grading – 25% of the final grade (final presentation)
-
-1. **Final presentation of outcomes**
-   - Individual contribution
-   - Team collaboration
-   - Delivered KNIFE(s)
-
 ## Strategy
 
 Based on 5 principles of Self learning organisation:
@@ -190,7 +144,7 @@ The minimum must be met in both sections.
 | Person                    | Role                                | Responsibility | Contact |
 | :------------------------ | :---------------------------------- | :------------- | :------ |
 | Ing. Roman Kazička, PhD  | Course supervisor                   |                |         |
-| Ing. Roman Kazička, PhD  | Knowledge Management Enterprise Architect | Teacher        | <img src="./assets/img/rka-portret.png" alt="kazicka" width="200" /><br /> [roman.kazicka@systemthinking.sk](mailto:roman.kazicka@systemthinking.sk) |
+| Ing. Roman Kazička, PhD  | Knowledge Management Enterprise Architect | Teacher        | <img src="./publishing/docusaurus/static/assets/img/rka-portret.png" alt="kazicka" width="200" /><br /> [roman.kazicka@systemthinking.sk](mailto:roman.kazicka@systemthinking.sk) |
 
 ---
 
@@ -198,29 +152,28 @@ The minimum must be met in both sections.
 ## 🔭 Navigácia – kam ďalej?
 
 ### 🎓 Triedny dashboard (STHDF 2025–2026)
-- 🧭 [Prehľad kurzu](./)
-- 📘 [O predmete / About the Course](./sk/class_sthdf_dashboard/01-class_sthdf_dashboard_2025-2026/class-sthdf/about/index.md)
+- 🧭 [Prehľad kurzu](./content/docs/index.md)
+- 📘 [O predmete / About the Course](./content/docs/sk/class_sthdf_dashboard/01-class_sthdf_dashboard_2025-2026/class-sthdf/about/index.md)
 - 📌 [Podmienky a pravidlá](#conditions-for-completing-the-course-2023-2024)
-- 🎞️ [Showcase – príklady](./sk/class_sthdf_dashboard/01-class_sthdf_dashboard_2025-2026/class-sthdf/showcase/index.md)
-  
+- 🎞️ [Showcase – príklady](./content/docs/sk/class_sthdf_dashboard/01-class_sthdf_dashboard_2025-2026/class-sthdf/showcase/index.md)
 - ## Class 2025-2026 - Navigation
 
-- ### [Students](./sk/class_sthdf_dashboard/01-class_sthdf_dashboard_2025-2026/students/ST_INDEX.md)
-- ### [Projects](./sk/class_sthdf_dashboard/01-class_sthdf_dashboard_2025-2026/projects/PRJ_INDEX.md)
-- ### [Best students Project in the year 2025-2026](./sk/class_sthdf_dashboard/01-class_sthdf_dashboard_2025-2026//class-sthdf/showcase/index.md)
+- ### [Students](./content/docs/sk/class_sthdf_dashboard/01-class_sthdf_dashboard_2025-2026/students/ST_INDEX.md)
+- ### [Projects](./content/docs/sk/class_sthdf_dashboard/01-class_sthdf_dashboard_2025-2026/projects/PRJ_INDEX.md)
+- ### [Best students Project in the year 2025-2026](./content/docs/sk/class_sthdf_dashboard/01-class_sthdf_dashboard_2025-2026/class-sthdf/showcase/index.md)
 
 ### 🔪 KNIFE Framework
-- 🗺️ [KNIFE hub](./sk/knifes/)
-- 📰 [Blogový prehľad KNIFE](./sk/knifes/knifes_overview/KNIFE_Overview_Blog.md)
-- 🗂️ [Zoznam KNIFE](./sk/knifes/knifes_overview/KNIFE_Overview_List.md)
-- 📈 [Detailný prehľad KNIFE](./sk/knifes/knifes_overview/KNIFE_Overview_Details.md)
+- 🗺️ [KNIFE hub](./content/docs/sk/knifes/)
+- 📰 [Blogový prehľad KNIFE](./content/docs/sk/knifes/knifes_overview/KNIFE_Overview_Blog.md)
+- 🗂️ [Zoznam KNIFE](./content/docs/sk/knifes/knifes_overview/KNIFE_Overview_List.md)
+- 📈 [Detailný prehľad KNIFE](./content/docs/sk/knifes/knifes_overview/KNIFE_Overview_Details.md)
 
 ### ⚙️ 7Ds – rámec
-- ⚙️ [7Ds – hlavná stránka](./sk/7Ds/)
+- ⚙️ [7Ds – hlavná stránka](./content/docs/sk/7Ds/)
 
 ### 🧱 SDLC / integračné modely
-- 🧱 [SDLC – integračný hub](./sk/sdlc/)
+- 🧱 [SDLC – integračný hub](./content/docs/sk/sdlc/)
 
 ### 🧭 Ďalšie sekcie
-- 🧭 [Q12 – Twelve Quadrants](./sk/q12/)
-- ℹ️ [About (SK)](./sk/about.md)
+- 🧭 [Q12 – Twelve Quadrants](./content/docs/sk/q12/)
+- ℹ️ [About (SK)](./content/docs/sk/about.md)
