@@ -1,4 +1,5 @@
 name: Deploy MkDocs to GitHub Pages
+run-name: "MkDocs deploy • ${{ github.ref_name }} • ${{ github.event_name }}"
 on:
   workflow_dispatch:
 
@@ -7,6 +8,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
+      - name: Context info
+        run: |
+          echo "Branch: ${{ github.ref_name }}" >> $GITHUB_STEP_SUMMARY
+          echo "Event:  ${{ github.event_name }}" >> $GITHUB_STEP_SUMMARY
+          echo "SHA:    ${{ github.sha }}" >> $GITHUB_STEP_SUMMARY
       - uses: actions/setup-python@v4
         with:
           python-version: '3.x'
