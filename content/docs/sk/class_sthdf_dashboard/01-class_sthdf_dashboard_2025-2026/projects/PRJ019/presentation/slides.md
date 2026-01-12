@@ -140,7 +140,7 @@ fm_reserved2: ""
 ## Headline
 **2025-PRJ-019-ST_019-ST_019-Nazov projektu**
 
-> Uvodny obrazok: TODO (dopln odkaz alebo subor).
+> Uvodny obrazok: ![IMG_20260112_215330](https://github.com/user-attachments/assets/2b3cfd71-556d-4c5c-a87f-393515b26201)
 
 Strucny text o projekte (1-3 vety, doplni tim).
 --- Headline ---
