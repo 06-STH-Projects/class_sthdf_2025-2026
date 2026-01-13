@@ -380,3 +380,24 @@ Používateľské rozhranie je navrhnuté s dôrazom na:
 * Rozšírenie UI o nové režimy
 * Optimalizácia spotreby energie
 
+---
+
+## 10 – Device diagram
+
+<img width="2532" height="1600" alt="nakres" src="https://github.com/user-attachments/assets/dd43698a-2c0d-4554-9a6e-f6b46bbb0bb7" />
+<img width="1254" height="732" alt="zapojenie" src="https://github.com/user-attachments/assets/f72809f6-fbf7-40f8-9706-68dd35a03a67" />
+
+---
+
+## 11 – Screen
+
+<img width="405" height="305" alt="obrazovka" src="https://github.com/user-attachments/assets/7669ec5f-929b-4d0a-8503-211d9bf72d6b" />
+
+---
+
+## 12 – Models
+
+<img width="1102" height="669" alt="history" src="https://github.com/user-attachments/assets/06905b05-95a4-41c2-856b-8ee9928fab76" />
+<img width="820" height="699" alt="3dwithelectr" src="https://github.com/user-attachments/assets/66b190f5-75dc-448c-9339-1749aa036df6" />
+<img width="1152" height="505" alt="3dfinal" src="https://github.com/user-attachments/assets/5941b46d-2fe2-4200-86b5-9391f7444e1c" />
+
