@@ -140,7 +140,7 @@ fm_reserved2: ""
 ## Headline
 **2025-PRJ-019-ST_019-ST_019-Nazov projektu**
 
-> Uvodny obrazok: ![IMG_20260112_215330](https://github.com/user-attachments/assets/2b3cfd71-556d-4c5c-a87f-393515b26201)
+> Uvodny obrazok: ![IMG_20260113_185346](https://github.com/user-attachments/assets/edcf22c8-0a60-4d4d-bf82-4ffba263c3b4)
 
 --- Headline ---
 **Smart Retro Display** je dotykový displej zasadený do štýlového retro vizuálu.
@@ -284,6 +284,9 @@ Používateľ potrebuje:
 ---
 
 ## 05 – Design
+
+![IMG_20260113_185551](https://github.com/user-attachments/assets/5e52e238-2086-45f7-8af9-b8d98f4fcb9b)
+![IMG_20260113_185356](https://github.com/user-attachments/assets/6b12d47b-7aae-40aa-a663-257243f2d8cb)
 
 ### Návrh používateľského rozhrania
 
