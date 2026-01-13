@@ -136,5 +136,28 @@ fm_reserved2: ""
 # 06-Implementation
 
 - [Odkazy na kód / repozitáre](./code-links.md)
-
+  
 **Navigation:** [⬆️ SDLC](../index.md) · [⬅️ Projekt](../../index.md)
+
+#  Hardvérové zapojenie
+
+- Použitý mikrokontrolér: ESP32-WROOM-32D.
+- Senzor teploty a vlhkosti DHT11.
+  
+## Základné zapojenie:
+
+- VCC (DHT11) → 3.3V na ESP32
+- GND (DHT11) → GND na ESP32
+- DATA (DHT11) → GPIO17 na ESP32
+
+## Konfigurácia projektu v Arduino IDE
+
+- Ďalším krokom bolo nainštalovanie driverov pre ESP32 a zvolenie konkrétneho modulu pre zariadenie
+- Tools → Board → ESP32 Dev Module
+- Tools → Port → zvoliť port, kde je ESP32 pripojené.
+
+## Nahratie kódu
+
+- Pre nahratie kódu je potrebné pripojiť ESP32 cez USB k počítaču a následne v Arduino IDE kliknúť na Upload
+- Po verifikácii kódu sa na Arduino IDE zobrazí pokus o pripojenie k ESP32, kde je následne potrebné podržať na hardvéri tlačidlo pripojenia a počkať na úspešný upload
+- Následne v Serial Monitor nastavíme správny baud rate (115200) a uvidíme, že sa nám pravidelne zobrazujú hodnoty teploty a vlhkosti z DHT11 
