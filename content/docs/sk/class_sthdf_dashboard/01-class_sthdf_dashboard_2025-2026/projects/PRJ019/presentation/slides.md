@@ -218,6 +218,10 @@ Používateľ → Vstupy (dotyk/tlačidlá)
            → Zobrazenie / sieťová komunikácia
 ```
 
+Nasledujúci diagram znázorňuje komponentovú architektúru systému Retro displej na vysokej úrovni. Diagram ilustruje rozdelenie systému na jednotlivé softvérové moduly, ich vzájomné vzťahy, ako aj interakciu s externými hardvérovými komponentmi a sieťovými službami.
+<img width="691" height="682" alt="usecase diagram" src="https://github.com/user-attachments/assets/68830290-2055-4869-90a4-2654578bf1de" />
+
+
 ---
 
 ## 03 – Solution Architecture
