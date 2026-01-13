@@ -138,3 +138,9 @@ fm_reserved2: ""
 - [Prototypy / dizajn](./prototype.md)
 
 **Navigation:** [⬆️ SDLC](../index.md) · [⬅️ Projekt](../../index.md)
+
+# ThingsBoard
+
+- Dizajn tohto riešenia je realizovaný ako webový dashboard v službe Thingsboard, kde si môže používateľ rýchlo zobraziť prehľad a štatistiky o stave úľov bez zbytočných technických detailov.
+- Dashboard obsahuje jednoduché vizualizácie kľúčových parametrov a to teplota, vlhkosť a prevrátenie úľa.
+- Táto služba taktiež umožňuje jednoducho pridať ďalšie parametre, ktoré by sme chceli dodatočne sledovaŤ a tak vieme zabezpečiť aj budúce rozširovanie systému podľa potrieb používateľa.
