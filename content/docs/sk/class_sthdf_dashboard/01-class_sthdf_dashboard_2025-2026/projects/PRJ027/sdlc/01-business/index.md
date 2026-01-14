@@ -135,6 +135,27 @@ fm_reserved2: ""
 
 # 01-Business
 
+## Téma Projektu
+Vývoj a výroba funkcného prototypu inteligentného kvetináča, ktorý automaticky deteguje nízku vlhkosť pôdy a nedostatek svetla, a zabezpečí automatické zavlažovanie a doplnkové LED osvetlenie. Projekt spája hardvér (STM32, senzory), softvér (C++), 3D modelovanie a tlač do jedného funkcného celku.
+
+
+## Motivácia a Počiatočný Návrh
+
+Primárnou motiváciou bolo riešenie bežného problému: ľudia zabúdajú zalievať rastliny. SmartPot One poskytuje autonómne riešenie pre zaneprázdnených ľudí a tech nadšencov.
+
+<figure>
+  <img src="../../sdlc/images/Product.png" alt="Schema zapojenia" width="700" />
+  <figcaption>Obr.:  3D model inteligentného kvetináča</figcaption>
+</figure>
+
+## Ciele Projektu
+
+- Automatické zavlažovanie pri nízkej vlhkosti
+- Monitorovanie vlhkosti a svetla
+- LED osvetlenie pri nedostatku svetla
+- Velka výdrž nádrže
+- Bezpečnosť
+
 - [Business poznámky](./notes.md)
 
 **Navigation:** [⬆️ SDLC](../index.md) · [⬅️ Projekt](../../index.md)
