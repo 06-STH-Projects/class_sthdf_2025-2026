@@ -5,39 +5,80 @@ locale: sk
 fm_build: '2025-12-09T21:04:48Z'
 ---
 
-# 🎤 Pitch Presentation
+# Pitch Presentation — LED Piano Trainer
+
 ## 1. Problém
-- aký problém riešime  
+Učenie hry na klavíri je pre začiatočníkov náročné:
+- čítanie nôt je komplikované,
+- motivácia detí rýchlo klesá,
+- klasické metódy učenia sú málo vizuálne,
+- rodičia a učitelia hľadajú jednoduchšie spôsoby, ako deti zaujať.
+
+**Výsledok:** veľa detí prestane hrať ešte skôr, ako sa naučia základné pesničky.
+
+---
+
 ## 2. Riešenie
-- čo ponúkame  
+**LED Piano Trainer** – 3D tlačená svetelná nadstavba pre klavír, ktorá:
+- rozsvieti presne ten kláves, ktorý má dieťa stlačiť,
+- mení učenie na *rytmickú hru*,
+- funguje s lacnými MIDI klávesnicami,
+- využíva Raspberry Pi Pico a MicroPython,
+- umožňuje prehrať akúkoľvek skladbu (napr. z YouTube transkripcie).
+
+**Namiesto čítania nôt → dieťa nasleduje svetlá.**
+
+---
+
 ## 3. Hodnota
-- kto z toho profituje a ako  
-## 4. Biznis model
-- ako by sme to monetizovali (aj v hypotéze)  
+### Pre koho?
+- deti a úplní začiatočníci,
+- rodičia hľadajúci dostupnú edukačnú pomôcku,
+- učitelia hudby,
+- hobby hráči milujúci vizuálne učenie.
+
+### Aká hodnota?
+- rýchlejšie učenie → okamžitá vizuálna spätná väzba,
+- vyššia motivácia → gamifikácia,
+- univerzálne riešenie → LED bar funguje na akomkoľvek 25-key keyboarde,
+- nízka cena → dostupné pre rodiny aj školy.
+
+---
+
+## 4. Biznis model (hypoteticky)
+Možné modely monetizácie:
+1. **DIY kit** — balík 3D modelov + návod + firmware (nízke náklady).  
+2. **Predaj hotového produktu** — 3D tlačený LED bar + kontrolér.  
+3. **Premium aplikácia** — knižnica skladieb, vlastné lekcie, gamifikácia.  
+4. **Partnerstvá s hudobnými školami** — multilicencia.  
+5. **Freemium** — základ zadarmo, platené doplnky (sound packs, lekcie).
+
+Najrealistickejší štart: **DIY kit + open-source komunita**.
+
+---
+
 ## 5. Tím
-- prečo sme my tí správni ľudia  
+**Samuel Kohút**  
+- systémový dizajnér, hardware developer, firmware developer,  
+- skúsenosti s embedded systémami, 3D tlačou a Python/Pico,  
+- schopnosť pokryť celý proces od návrhu → implementácie → testovania → prezentácie.
+
+**Prečo ja?**  
+- Problém osobne poznám (cieľová skupina v rodine).  
+- Viem spojiť softvér, hardvér a edukáciu.  
+- Projekt je už vo funkčnom prototypovom štádiu.
+
+---
+
 ## 6. Call to action
-- čo potrebujeme od investorov (čas, peniaze, feedback) 
+Čo potrebujem:
+- **Feedback** na dizajn, použiteľnosť a potenciál produktu,  
+- prípadne **mentorstvá** v oblasti edukačných pomôcok,  
+- odporúčania pre ďalšie kroky k reálnemu produktu.
 
+Nežiadam financie – aktuálne potrebujem *odborné smerovanie a podporu*.
 
-## 🛠️ Štruktúra pitchu
-1. **Problém** – aký problém riešime?  
-2. **Riešenie** – čo sme vyvinuli?  
-3. **Trh / Kontext** – pre koho to je, aký má dopad?  
-4. **Tím** – kto sme, aké máme roly?  
-5. **Výzva** – čo potrebujeme (čas, ľudí, investíciu)?  
-
-## ⏱️ Časovanie
-- Max 5–7 minút na prezentáciu  
-- 2–3 minúty Q&A  
-
-## 📊 Podklady
-- 3–5 slajdov (stručné, vizuálne)  
-- 1 demo / ukážka výsledku  
-
-## 🧭 Tipy
-- Menej textu, viac vizualizácií  
-- Jedna hlavná myšlienka na slide
+---
 
 ## Navigácia
 - [↩️ Späť](../index.md)
