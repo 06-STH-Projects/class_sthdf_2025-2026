@@ -280,23 +280,25 @@ Cieľom projektu je vytvoriť zariadenie na monitorovanie kvality ovzdušia, kto
 
 ### Databázová schéma
 
-**users** (väzba používateľ ↔ zariadenie)
-| Stĺpec        | Typ     | Popis                         |
-|---------------|---------|-------------------------------|
-| id            | INTEGER | Primárny kľúč                 |
-| serial_number | TEXT    | Jedinečný identifikátor zariadenia |
+#### users (väzba používateľ ↔ zariadenie)
 
-**sensor_realtime** (posledné merania na používateľa/zariadenie)
-| Stĺpec      | Typ     | Popis                          |
-|-------------|---------|--------------------------------|
-| id          | INTEGER | Primárny kľúč                  |
-| user_id     | INTEGER | FK na users.id                 |
-| temperature | REAL    | Teplota v °C                   |
-| humidity    | REAL    | Relatívna vlhkosť v %          |
-| aqi         | INTEGER | Index kvality vzduchu          |
-| co2         | REAL    | eCO₂ v ppm                     |
-| tvoc        | REAL    | TVOC                           |
-| timestamp   | INTEGER | Unix čas merania               |
+| Stĺpec        | Typ     | Popis                                  |
+|---------------|---------|----------------------------------------|
+| id            | INTEGER | Primárny kľúč                         |
+| serial_number | TEXT    | Jedinečný identifikátor zariadenia    |
+
+#### sensor_realtime (posledné merania na používateľa/zariadenie)
+
+| Stĺpec      | Typ     | Popis                                  |
+|-------------|---------|----------------------------------------|
+| id          | INTEGER | Primárny kľúč                         |
+| user_id     | INTEGER | FK na users.id                        |
+| temperature | REAL    | Teplota v °C                          |
+| humidity    | REAL    | Relatívna vlhkosť v %                 |
+| aqi         | INTEGER | Index kvality vzduchu                 |
+| co2         | REAL    | eCO₂ v ppm                            |
+| tvoc        | REAL    | TVOC                                  |
+| timestamp   | INTEGER | Unix čas merania  
 
 ---
 
@@ -384,6 +386,8 @@ def receive_data():
         print("Error:", error)
         return fill_json_response(status=STATUS_ERROR, error="Internal server error")
 ```
+
+Server je hostovaný na platforme **Azure**.
 
 #### Zapojenie hardvéru a prototypovanie
 <figure>

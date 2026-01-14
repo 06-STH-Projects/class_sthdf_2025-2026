@@ -233,6 +233,8 @@ void readSensorData(unsigned long currentMillis) {
 
 ### Kód servera
 
+Server je hostovaný na platforme **Azure**.
+
 Serverová časť prijíma dáta od ESP32 cez HTTP POST a:
 - kontroluje, či bol odoslaný validný JSON,
 - overuje schému dát (musí obsahovať všetky požadované kľúče),
