@@ -140,17 +140,24 @@ fm_reserved2: ""
 ## Headline
 **2025-PRJ-019-ST_019-ST_019-Nazov projektu**
 
-> Uvodny obrazok: TODO (dopln odkaz alebo subor).
+> Uvodny obrazok: ![IMG_20260113_185551](https://github.com/user-attachments/assets/5e52e238-2086-45f7-8af9-b8d98f4fcb9b)
 
-Strucny text o projekte (1-3 vety, doplni tim).
 --- Headline ---
+**Smart Retro Display** je dotykový displej zasadený do štýlového retro vizuálu.
 
 --- introduction ---
 ## Introduction
 **2025-PRJ-019-ST_019-ST_019-Nazov projektu**
 
-Strucny text o projekte (zhrnutie zadania + prinos).
 --- introduction ---
+**Smart Retro Display** je dotykový displej zasadený do štýlového retro vizuálu. Zariadenie je navrhnuté tak, aby bolo multifunkčné a prispôsobiteľné pre rôzne scenáre:
+
+* **Ovládanie:** Interaktívny panel pre iné smart zariadenia.
+* **Informácie:** Zobrazovanie aktuálnych dát z internetu (počasie, správy, notifikácie).
+* **Umenie:** Platforma pre vizuálne zaujímavé digitálne umenie.
+* **DIY:** Otvorený systém vhodný pre ďalšie domáce projekty a experimenty.
+
+Vďaka pripojeniu na **internet** a architektúre, ktorá umožňuje ľahké nasadenie nového kódu, sa počíta s tým, že schopnosti zariadenia sa budú časom rozširovať.
 
 --- obsah ---
 ## Obsah
@@ -165,12 +172,239 @@ Strucny text o projekte (zhrnutie zadania + prinos).
 - [09-Change Management](../sdlc/09-Change-Management/index.md)
 --- obsah ---
 
-## 01-Business
-## 02-Top Level Architecture
-## 03-Solution Architecture
-## 04-Analysis
-## 05-Design
-## 06-Implementation
-## 07-Testing & Verification
-## 08-Operation
-## 09-Change Management
+## 01 – Business
+
+### Prehľad projektu
+
+Retro displej je inteligentné stolové zariadenie, ktoré spája funkcie informačného displeja, interaktívneho ovládacieho rozhrania a platformy pre ďalší rozvoj IoT aplikácií. Projekt je navrhnutý s dôrazom na modularitu, udržateľnosť a dlhodobú rozšíriteľnosť.
+
+Cieľom projektu nie je len vytvoriť jedno konkrétne zariadenie, ale **overiť koncept univerzálneho smart displeja**, ktorý môže slúžiť ako základ pre ďalšie projekty v oblasti domácej automatizácie a embedded systémov.
+
+### Vízia
+
+Víziou projektu Retro displej je vytvoriť otvorenú, rozšíriteľnú a energeticky efektívnu platformu, ktorá umožní:
+
+* jednoduchý prístup k relevantným informáciám v reálnom čase,
+* zníženie potreby používania energeticky náročných zariadení (PC, telefón),
+* experimentovanie s modernými technológiami v oblasti IoT.
+
+### Prínos projektu
+
+* Vzdelávacia hodnota v oblasti embedded systémov
+* Praktická ukážka prepojenia hardvéru, softvéru a dizajnu
+* Základ pre ďalší vývoj a rozšírenia
+
+---
+
+## 02 – Top Level Architecture
+
+### Vysoká úroveň architektúry
+
+Systém je postavený na centrálnom mikrokontroléri, ktorý zabezpečuje spracovanie dát, komunikáciu so sieťou a vykresľovanie používateľského rozhrania.
+
+### Hlavné komponenty systému
+
+* Riadiaca jednotka (ESP32)
+* Dotykový displej
+* Hardvérové tlačidlá
+* Napájací modul
+* Externé dátové zdroje (API)
+
+### Tok dát
+
+```
+Používateľ → Vstupy (dotyk/tlačidlá)
+           → Riadiaca logika (ESP32)
+           → Zobrazenie / sieťová komunikácia
+```
+
+Nasledujúci diagram znázorňuje komponentovú architektúru systému Retro displej na vysokej úrovni. Diagram ilustruje rozdelenie systému na jednotlivé softvérové moduly, ich vzájomné vzťahy, ako aj interakciu s externými hardvérovými komponentmi a sieťovými službami.
+<img width="691" height="682" alt="usecase diagram" src="https://github.com/user-attachments/assets/68830290-2055-4869-90a4-2654578bf1de" />
+
+
+---
+
+## 03 – Solution Architecture
+
+### Hardvérová architektúra
+
+* ESP32 slúži ako hlavný výpočtový a komunikačný prvok
+* Displej poskytuje výstupné informácie a dotykové ovládanie
+* Tlačidlá umožňujú rýchlu a spoľahlivú interakciu
+* Napájanie je riešené externým zdrojom
+
+### Softvérová architektúra
+
+Softvér je navrhnutý modulárne, aby bolo možné:
+
+* jednoducho pridávať nové funkcie,
+* izolovať chyby,
+* zjednodušiť testovanie.
+
+Moduly:
+
+* UI modul
+* Network modul
+* Data provider modul
+* Input handler modul
+* System services modul
+
+---
+
+## 04 – Analysis
+
+### Analýza potrieb
+
+Používateľ potrebuje:
+
+* rýchly prístup k informáciám bez nutnosti používať telefón,
+* jednoduché a intuitívne ovládanie,
+* spoľahlivú prevádzku bez častých zásahov.
+
+### Funkčné požiadavky
+
+* Zobrazenie počasia v reálnom čase
+* Zobrazenie správ alebo notifikácií
+* Možnosť prepínania obrazoviek
+* Pripojenie na Wi-Fi sieť
+
+### Nefunkčné požiadavky
+
+* Nízka spotreba energie
+* Rýchly štart systému
+* Stabilita a plynulosť UI
+* Jednoduchá údržba
+
+### Riziká
+
+* Nestabilita externých API
+* Obmedzené HW zdroje
+* Komplexnosť UI na malom displeji
+
+---
+
+## 05 – Design
+![IMG_20260113_185346](https://github.com/user-attachments/assets/edcf22c8-0a60-4d4d-bf82-4ffba263c3b4)
+
+![IMG_20260113_185356](https://github.com/user-attachments/assets/6b12d47b-7aae-40aa-a663-257243f2d8cb)
+
+### Návrh používateľského rozhrania
+
+Používateľské rozhranie je navrhnuté s dôrazom na:
+
+* čitateľnosť,
+* minimalizmus,
+* konzistentnosť ovládania.
+
+### Mechanický dizajn
+
+* 3D tlačený kryt
+* Modulárna konštrukcia
+* Prístup k portom bez demontáže
+
+### Dizajnové rozhodnutia
+
+* Preferencia fyzických tlačidiel ako zálohy k dotyku
+* Jednoduché farebné schémy
+* Optimalizácia rozloženia prvkov
+
+---
+
+## 06 – Implementation
+
+### Implementácia hardvéru
+
+* Zapojenie mikrokontroléra, displeja a tlačidiel
+* Testovanie napájania a stability
+* Integrácia do krytu
+
+### Implementácia softvéru
+
+* Firmware implementovaný v Arduino / PlatformIO
+* Použitie externých knižníc
+* Komunikácia s API službami
+
+### Organizácia repozitára
+
+* `/firmware` – zdrojový kód
+* `/docs` – dokumentácia
+* `/3d` – modely krytu
+
+---
+
+## 07 – Testing & Verification
+
+### Testovanie
+
+* Funkčné testy jednotlivých modulov
+* Testovanie interakcie používateľa
+* Testovanie sieťovej komunikácie
+
+### Overenie
+
+* Overenie správnosti zobrazovaných dát
+* Overenie odozvy systému
+* Dlhodobý beh bez reštartu
+
+---
+
+## 08 – Operation
+
+### Prevádzka systému
+
+* Automatické spustenie po pripojení napájania
+* Pripojenie k Wi-Fi sieti
+* Spustenie predvolenej obrazovky
+
+### Údržba
+
+* Aktualizácia firmvéru
+* Možnosť rozšírenia funkcionality
+
+### Používateľská podpora
+
+* Dokumentácia v README
+* Základné návody na riešenie problémov
+
+---
+
+## 09 – Change Management
+
+### Riadenie zmien
+
+* Všetky zmeny sú evidované v Git repozitári
+* Použitie vetiev pre vývoj nových funkcií
+
+### Riadenie verzií
+
+* Postupné verziovanie projektu
+* Evidencia zmien v changelogu
+
+### Budúci rozvoj
+
+* Integrácia ďalších senzorov
+* Podpora domácich automatizačných systémov
+* Rozšírenie UI o nové režimy
+* Optimalizácia spotreby energie
+
+---
+
+## 10 – Device diagram
+
+<img width="2532" height="1600" alt="nakres" src="https://github.com/user-attachments/assets/dd43698a-2c0d-4554-9a6e-f6b46bbb0bb7" />
+<img width="1254" height="732" alt="zapojenie" src="https://github.com/user-attachments/assets/f72809f6-fbf7-40f8-9706-68dd35a03a67" />
+
+---
+
+## 11 – Screen
+
+<img width="405" height="305" alt="obrazovka" src="https://github.com/user-attachments/assets/7669ec5f-929b-4d0a-8503-211d9bf72d6b" />
+
+---
+
+## 12 – Models
+
+<img width="1102" height="669" alt="history" src="https://github.com/user-attachments/assets/06905b05-95a4-41c2-856b-8ee9928fab76" />
+<img width="820" height="699" alt="3dwithelectr" src="https://github.com/user-attachments/assets/66b190f5-75dc-448c-9339-1749aa036df6" />
+<img width="1152" height="505" alt="3dfinal" src="https://github.com/user-attachments/assets/5941b46d-2fe2-4200-86b5-9391f7444e1c" />
+
