@@ -135,6 +135,10 @@ fm_reserved2: ""
 
 # 03-Solution Architecture
 
+* Použitý materiál: 3 mm kartón.
+* Nástroj: laserový rezač (nízky výkon, vysoká rýchlosť).
+* Montáž: Herkules lepidlo, spevnenie zapadajúcimi zúbkami
+
 - [Solution design](./design.md)
 
 **Navigation:** [⬆️ SDLC](../index.md) · [⬅️ Projekt](../../index.md)

@@ -135,6 +135,10 @@ fm_reserved2: ""
 
 # 01-Business
 
+- Študentské divadlo potrebuje vizuálne atraktívne rekvizity, no má veľmi obmedzený rozpočet.  
+- Hotové rekvizity sú drahé, neflexibilné alebo nesedia rozmerovo.  
+- Pre inscenáciu bolo potrebné pripraviť 7 malých rakiev (~25 cm).
+
 - [Business poznámky](./notes.md)
 
 **Navigation:** [⬆️ SDLC](../index.md) · [⬅️ Projekt](../../index.md)
