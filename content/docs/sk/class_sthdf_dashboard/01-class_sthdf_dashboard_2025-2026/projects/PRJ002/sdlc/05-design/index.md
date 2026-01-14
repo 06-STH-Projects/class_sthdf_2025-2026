@@ -138,3 +138,48 @@ fm_reserved2: ""
 - [Prototypy / dizajn](./prototype.md)
 
 **Navigation:** [⬆️ SDLC](../index.md) · [⬅️ Projekt](../../index.md)
+
+### Value stream 
+Základný value stream nášho systému, zobrazenie dát o včelích úľoch.
+![Value stream](../../images/value_stream.png)
+
+
+### Zmena stavu včelstva a odoslanie notifikácie na základe frekvencie
+![Zmena stavu včelstva](../../images/stav_vcelstva_diagram.png)
+
+### Odosielanie notifikácií
+![Odosielanie notifikácií](../../images/alerts.png)
+
+### Štruktúra GEO dát v prezentačnej webovej aplikácií
+Vo webovej aplikácií budeme mať mapu, kde si bude môcť verejnosť pozrieť kde sa nachádzajú monitorované včelie úle, preto potrebujeme štruktúru dát ako budeme tieto GEO dáta ukladať.
+
+![GEO databáza](../../images/diagram_geojson.png)
+
+### Device DB - prezentačný web
+Štruktúra objektu Device v databáze prezentačného webu, Device predstavuje jeden včelí úľ, ktorý je zobrazený na interaktívnej mape. Nie sú to namerané dáta, tie sú uložené v platforme Thingbsoard, ktorá má vlastnú databázu.
+![GEO databáza](../../images/databaza.png)
+
+## Wireframes
+
+### Prezentačný web
+![Wireframe](../../images/wireframe_homepage.png)
+![Wireframe](../../images/wireframe_mapa.png)
+![Wireframe](../../images/wireframe_about_project1.png)
+![Wireframe](../../images/wireframe_about_projet2.png)
+![Wireframe](../../images/wireframe_about.png)
+
+### Návrh dashboardov s dátami
+![Wireframe](../../images/Dashboard-súkromný.png)
+
+
+### Návrh rule engine v IoT platforme Thingsboard
+TODO - popisat
+![Wireframe](../../images/rule_engine.png)
+
+
+
+
+
+
+
+

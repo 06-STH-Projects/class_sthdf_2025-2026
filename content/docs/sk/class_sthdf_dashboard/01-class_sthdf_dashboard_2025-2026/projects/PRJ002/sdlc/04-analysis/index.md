@@ -151,3 +151,17 @@ fm_reserved2: ""
 - Systém musí zabezpečiť základnú dostupnosť služby.
 - Systém musí byť navrhnutý ako prototypové riešenie.
 - Systém musí byť rozšíriteľný o ďalšie monitorované parametre.
+
+### Používateľské roly 
+- Včelár 
+- Administrátor IoT platformy 
+
+![Thinsboard - štruktúra používateľov](../../images/struktura_thingsboard.png)
+
+### Analýza stavov včelstva na základe frekvencie 
+Na základe analýzy sme zistili, aké výnimočné stavy včelstva, môžeme vyhodnotiť a identifikovať na základe nameranej frekvencie.
+Ak namerané hodnoty frekvencie budú v týchto rozsahoch, budeme včelárovi odosielať notifikácie. 
+
+![Stavy včelstva](../../images/stavy.png)
+
+
