@@ -165,4 +165,23 @@ Pre ďalšiu verziu projektu boli identifikované možnosti vylepšenia:
 
 Implementácia týchto vylepšení by zvýšila presnosť meraní, mechanickú stabilitu a profesionálny vzhľad zariadenia.
 
+## EA & LemonTree
+
+<figure>
+  <img src="../../images/lemontree_1.png" alt="lemontree" width="700" />
+</figure>
+
+<figure>
+  <img src="../../images/lemontree_2.png" alt="lemontree" width="700" />
+</figure>
+
+<figure>
+  <img src="../../images/lemontree_3.png" alt="lemontree" width="700" />
+</figure>
+
+<figure>
+  <img src="../../images/lemontree_4.png" alt="lemontree" width="700" />
+</figure>
+
+
 **Navigation:** [⬆️ SDLC](../index.md) · [⬅️ Projekt](../../index.md)

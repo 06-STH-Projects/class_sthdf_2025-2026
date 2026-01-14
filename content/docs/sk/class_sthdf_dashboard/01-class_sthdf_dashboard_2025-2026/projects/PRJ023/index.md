@@ -139,4 +139,12 @@ fm_reserved2: ""
 - [Presentation / Slides](./presentation/slides.md) — záverečný dokument pre rýchlu prezentáciu.
 - [SDLC](./sdlc/index.md) — podklady a detailný obsah.
 
+## Sociálne siete
+
+- [🌐 YouTube](https://www.youtube.com/@SmartSolutions-t5x)
+- [🌐 LinkedIn](https://www.linkedin.com/in/smart-solutions-a16650395/)
+- [🌐 Patreon](https://www.linkedin.com/in/smart-solutions-a16650395/)
+
+---
+
 [🏠 Domov](../../index.md) · [⬅️ Nahor](../PRJ_INDEX.md)
