@@ -141,6 +141,14 @@ fm_reserved2: ""
 
 ### Názov projektu: Inteligentné monitorovanie včelích úľov pomocou IoT
 
+## Včelie úle kedysi
+![Včelí úľ kedysi](../../images/beehive.jpg)
+
+## Včelie úle dnes 
+![Včelí úľ dnes](../../images/actual.png)
+
+
+
 ## Project Summary
 Navrhovaný systém slúži na inteligentné monitorovanie stavu včelích úľov prostredníctvom siete IoT senzorov, ktoré priebežne zhromažďujú údaje o vnútorných a vonkajších podmienkach úľa, ako sú teplota, vlhkosť, aktivita včelstva a ďalšie relevantné parametre. Získané dáta sú spracovávané v reálnom čase a následne prezentované používateľovi prostredníctvom prehľadného a interaktívneho používateľského rozhrania.
 

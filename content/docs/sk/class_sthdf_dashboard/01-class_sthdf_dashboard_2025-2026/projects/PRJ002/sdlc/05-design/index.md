@@ -172,11 +172,6 @@ Vo webovej aplikácií budeme mať mapu, kde si bude môcť verejnosť pozrieť 
 ![Wireframe](../../images/Dashboard-súkromný.png)
 
 
-### Návrh rule engine v IoT platforme Thingsboard
-TODO - popisat
-![Wireframe](../../images/rule_engine.png)
-
-
 
 
 

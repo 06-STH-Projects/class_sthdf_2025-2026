@@ -161,3 +161,39 @@ fm_reserved2: ""
 - Pre nahratie kódu je potrebné pripojiť ESP32 cez USB k počítaču a následne v Arduino IDE kliknúť na Upload
 - Po verifikácii kódu sa na Arduino IDE zobrazí pokus o pripojenie k ESP32, kde je následne potrebné podržať na hardvéri tlačidlo pripojenia a počkať na úspešný upload
 - Následne v Serial Monitor nastavíme správny baud rate (115200) a uvidíme, že sa nám pravidelne zobrazujú hodnoty teploty a vlhkosti z DHT11 
+
+# Implementácia softvéru 
+
+## IoT platforma Thingsboard - 
+
+- IoT platforma ThingsBoard bola nainštalovaná v lokálnom prostredí na operačnom systéme Windows podľa oficiálnej dokumentácie výrobcu.
+
+- Ako databázové úložisko bol použitý databázový systém PostgreSQL (verzia 16), ktorý slúži na perzistenciu telemetrických a konfiguračných dát.
+
+- Po úspešnej inštalácii bola platforma spustená ako systémová služba, čím bola zabezpečená jej automatická dostupnosť po štarte systému.
+
+- V rámci platformy boli vytvorené tenanti a účty tenant administrátorov, ktoré slúžia na logické oddelenie a správu jednotlivých častí systému.
+
+- Pre účely monitorovania včelích úľov boli definované IoT zariadenia (devices) reprezentujúce jednotlivé hardvérové jednotky.
+
+- Pre každé zariadenie boli nakonfigurované atribúty a telemetrické veličiny, ktoré definujú sledované parametre (napr. teplota, vlhkosť, stav prevrátenia).
+
+- Na vizualizáciu dát boli vytvorené dashboardy, ktoré umožňujú prehľadné zobrazenie aktuálnych a historických hodnôt meraní.
+
+- ThingsBoard bol použitý ako centrálny bod pre zber, spracovanie a sprístupnenie dát prezentačnej webovej aplikácii prostredníctvom dostupných rozhraní.
+
+### Rule engine v IoT platforme Thingsboard
+![Wireframe](../../images/rule_engine.png)
+
+## Prezentačný web 
+- Prezentačná webová aplikácia bola implementovaná pomocou frameworku Spring Boot (Java) a slúži na prezentovanie projektu širokej verejnosti.
+
+- Aplikácia poskytuje centrálne webové rozhranie pre zobrazenie informácií o monitorovaných včelích úľoch a sprístupňuje vybrané funkcionality systému verejným používateľom.
+
+- Na ukladanie aplikačných dát bola použitá SQLite databáza, ktorá zabezpečuje perzistenciu základných informácií potrebných pre chod prezentačnej časti systému.
+
+- Webová aplikácia obsahuje interaktívnu mapu, na ktorej sú zobrazené jednotlivé včelie úle spolu s ich geografickou polohou.
+
+- Na implementáciu mapovej funkcionality bol použitý mapový softvér Mapbox, ktorý umožňuje vizuálne a prehľadné zobrazenie úľov v priestore.
+
+- Používateľ má možnosť prechádzať z mapového rozhrania na verejne prístupné dashboardy, ktoré zobrazujú detailné údaje a vizualizácie nameraných hodnôt.
