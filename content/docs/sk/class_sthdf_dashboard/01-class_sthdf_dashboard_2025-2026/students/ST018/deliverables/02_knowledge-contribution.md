@@ -10,8 +10,8 @@ title: 📚 Knowledge Contribution
 
 
 ## 🔖 Názov a stručný popis
-- Téma, ktorou prispievam  
-- Prečo je dôležitá  
+- Retro displej v podobe televizora
+- Moze sluzit ako nastroj pre zacinajucich programatorov pripadne deti ktore sa chcu naucit programovat a okamzite vidiet vysledok.
 
 
 ## 🎯 Čo rieši (účel, cieľ)

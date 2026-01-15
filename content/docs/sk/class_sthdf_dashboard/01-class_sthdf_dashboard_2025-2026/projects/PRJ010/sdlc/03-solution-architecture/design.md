@@ -131,6 +131,10 @@ fm_reserved1: ""
 fm_reserved2: ""
 ---
 
+- Vytvorenie laserových šablón (použitý SW: Inkscape)
+
+![Drawings](../../pictures/coffin_draft.png)
+
 <!-- class_sthdf_dashboard_INSTANCE_ID: 01-class_sthdf_dashboard_2025-2026 -->
 
 PRJ010 / 03-solution-architecture / design.md

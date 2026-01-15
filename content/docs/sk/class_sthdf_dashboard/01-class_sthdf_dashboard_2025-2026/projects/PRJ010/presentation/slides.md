@@ -135,23 +135,16 @@ fm_reserved2: ""
 
 # PRJ010 — Presentation
 
---- Headline ---
 ## Headline
-**2025-PRJ-010-ST_010-ST_010-Nazov projektu**
+**2025-PRJ-010-ST_010-ST_010-Laserové rakvy**
 
-> Uvodny obrazok: TODO (dopln odkaz alebo subor).
+![Vizuálna inšpirácia](../../../projects/PRJ010/pictures/coffin_closeup.jpg)
 
-Strucny text o projekte (1-3 vety, doplni tim).
---- Headline ---
-
---- introduction ---
 ## Introduction
-**2025-PRJ-010-ST_010-ST_010-Nazov projektu**
+**2025-PRJ-010-ST_010-ST_010-Laserové rakvy**
 
-Strucny text o projekte (zhrnutie zadania + prinos).
---- introduction ---
+V projekte sme navrhli a vyrobili sedem malých rakiev ako divadelných rekvizít pomocou laserového rezu a lacného materiálu – kartónu. Cieľom je vytvoriť vizuálne presvedčivé, ľahké a funkčné rekvizity pre potreby inscenácie.
 
---- obsah ---
 ## Obsah
 - [01-Business](../sdlc/01-business/index.md)
 - [02-Top Level Architecture](../sdlc/02-top-level-architecture/index.md)
@@ -162,16 +155,56 @@ Strucny text o projekte (zhrnutie zadania + prinos).
 - [07-Testing & Verification](../sdlc/07-testing-verification/index.md)
 - [08-Operation](../sdlc/08-operation/index.md)
 - [09-Change Management](../sdlc/09-Change-Management/index.md)
---- obsah ---
 
 ## 01-Business
+
+* Vytvoriť 7 kusov malých, vizuálne presvedčivých a ľahkých rakiev pre divadelnú hru.
+* Dodržať nízky rozpočet a termín premiéry.
+
 ## 02-Top Level Architecture
+
+* Rekvizita rozdelená na laserom rezané diely z kartónu (telo, veko, bočné steny).
+* Jednoduchá 3D konštrukcia skladaná lepením.
+
 ## 03-Solution Architecture
+
+* Použitý materiál: 3 mm kartón.
+* Nástroj: laserový rezač (nízky výkon, vysoká rýchlosť).
+* Montáž: Herkules lepidlo, spevnenie zapadajúcimi zúbkami
+
 ## 04-Analysis
+
+* Porovnanie rôznych modelov na internete
+* Prieskum ohľadom dostupných materiálov
+
+![Inspiration](../../../projects/PRJ010/pictures/coffin_inspiration.png)
+
 ## 05-Design
+
+* Vytvorenie laserových šablón (použitý SW: Inkscape)
+
+![Drawings](../pictures/nakres.jpg)
+![Drawings](../../../projects/PRJ010/pictures/coffin_draft.png)
+
 ## 06-Implementation
+
+* Vyrezanie všetkých dielov laserom.
+* Zlepenie jednotlivých rakiev.
+
+![Drawings](../../../projects/PRJ010/pictures/coffins_not_assambled.jpg)
+
 ## 07-Testing & Verification
+
+* Test pevnosti počas skúšok.
+* Úpravy lepenia a spevnenie rohov podľa potreby.
+
 ## 08-Operation
+
+* Rakvy úspešne použité počas generálky a premiéry.
+* Jednoduché skladovanie a opätovné použitie.
+
+![Drawings](../../../projects/PRJ010/pictures/coffins_performance.jpg)
+
 ## 09-Change Management
 
-[🏠 Domov](../../../index.md) · [⬅️ Nahor](../)
+* Drobné úpravy boli potrebné (spevnenie 1 z rakiev lepiacou páskou po páde, pilníkovanie hrán 1 z komponentov)

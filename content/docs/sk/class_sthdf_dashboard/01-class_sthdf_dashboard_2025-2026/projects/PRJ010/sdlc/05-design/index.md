@@ -135,6 +135,11 @@ fm_reserved2: ""
 
 # 05-Design
 
+- Vytvorenie laserových šablón (použitý SW: Inkscape)
+
+![Drawings](../../pictures/nakres.jpg)
+![Drawings](../../pictures/coffin_draft.png)
+
 - [Prototypy / dizajn](./prototype.md)
 
 **Navigation:** [⬆️ SDLC](../index.md) · [⬅️ Projekt](../../index.md)

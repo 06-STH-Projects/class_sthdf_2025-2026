@@ -11,27 +11,26 @@ title: 📝 Project Summary
 ## 🔖 Identifikácia
 ## 1️⃣ Názov projektu
 *(Jasný, výstižný, inšpiratívny – ako by sa mal objaviť na plagáte.)*
-- **Názov projektu:** `PRJ_XXX_<Názov>_<ST_XXX>_<ST_XXX>`
-- **Stručný popis:** 2–3 vety  
+- **Názov projektu:** `PRJ_2025_Retro_Displej_PRJ_019`
+- **Stručný popis:** Diplej pre graficke zobrazovanie kodu. Moze byt napriklad budik/
 
 ## 2️⃣ Členovia tímu
 
 | ST ID | Meno | Rola v tíme| Kompetencie | 
 |-------|------|------|-------------|
-| ST001 |      | Project Lead | koordinácia |
+| ST036 |novotny| Project Lead | koordinácia |
 | ST002 |      | Developer | implementácia |
-| ST003 |      | Designer | UI/UX |
+| ST017 |xkello| Designer | UI/UX |
 
 ## 3️⃣ Motivácia tímu
-- Prečo ste si vybrali tento projekt?  
-- Aký osobný alebo profesný zmysel má pre vás riešenie tejto témy?
-- Prečo je projekt dôležitý  
-- Aký problém rieši  
+- Znelo to zaujimavo a malo to realne vyuzitie
+- Naucit sa modelovat 3d modely
+- Sluzi ako pomocka na ucenie
+- Motivaciu ludi kedze vidia priamo co naprogramuju v realnom svete 
 
 ## 4️⃣ Cieľ a pridaná hodnota projektu
 
-- Aký je finálny cieľ  
-- Ako spoznáme, že projekt je úspešný  
+- Finalny ciel bude funkcna produkt ktory zobrazuje naprogramovanu cast implementacie
 
 ## 5️⃣ Popis riešenia
 - Stručne opíšte architektúru, nástroje a technológie, ktoré použijete.  
