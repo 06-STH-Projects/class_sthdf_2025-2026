@@ -6,29 +6,72 @@ fm_build: '2025-12-09T21:04:48Z'
 title: 📦 Project Outcomes
 ---
 
-# 📦 Project Outcomes
+# Project Outcomes
 
-## 🔖 Stav projektu
-- Stručný update (čo funguje, čo nie)  
+## Dosiahnuté výsledky
+- Funkčná hardvérová platforma: Raspberry Pi Pico + WS2812B pás + napájanie + MIDI klavír.  
+- Plne funkčná **3D-tlačená LED nadstavba** a krabička na elektroniku, upevnená na klavíri.  
+- LED dokážu svietiť v jednotlivých boxoch s dobrou difúziou a zarovnaním.  
+- GitHub a OneNote obsahujú úvodnú dokumentáciu, fotky, setup tutoriály a celkový vývoj projektu od jeho počiatkov.
 
-## 🧩 Výstupy podľa SDLC / V-modelu
-1. Business požiadavky  
-2. Top Level Architecture  
-3. Solution Architecture  
-4. Analysis  
-5. Design  
-6. Implementation  
-7. Verification & Testing  
-8. Operation  
+## Knifes
+- Nastavenie Raspberry Pi so svetelným LED pásom  
+- Nastavenie Raspberry Pi s Thonny prostredím  
+- Nastavenie AKAI MIDI klávesnice  
+- Nastavenie brand účtu na YouTube (nie je súčasťou verejného repozitára)
+- Nastavenie brand účtu na LinkedIne (nie je súčasťou verejného repozitára)
+- Nastavenie nášho prodktu pre správne použitie !!!
 
 ## 🏆 Finálny produkt
-- Čo tím reálne dodal  
-- Ako to vyzerá (screenshoty, demo, repo link)  
 
-## 🧭 Porovnanie s Project Summary
-- Čo sme plánovali vs. čo sme naozaj dodali  
+### 🔧 Hardvérový výsledok
+Po sérii experimentov s hrúbkou priečok a ohýbaním LED pásu vznikla plne funkčná svetelná nadstavba, ktorá rovnomerne osvetľuje jednotlivé klávesy.
 
+#### Počiatočné experimenty s hrúbkou a ohýbaním
+<figure> <img src="./images/ledbar_experiments.png" width="600"> </figure>
+
+#### Prvá verzia (chybná – chýbajúci posledný box)
+<figure> <img src="./images/ledbar_v1.png" width="600"> </figure>
+
+#### Opravená finálna verzia s doplneným boxom
+<figure> <img src="./images/ledbar_final.png" width="600"> </figure>
+
+#### 3D tlačená krabička pre Raspberry + káble
+<figure> <img src="./images/raspberry_box.png" width="600"> </figure>
+
+### 💻 Softvérový výsledok
+Finálna verzia PC aplikácie obsahuje:
+- MIDI detekciu  
+- prepojenie s Pico  
+- generovanie LED sekvencií z MIDI alebo automatickej transkripcie  
+
+#### Piano Trainer App Prvotné
+<figure> <img src="./images/app_first_draft.png" width="600"> </figure>
+
+#### Piano Trainer App Experimentálne
+<figure> <img src="./images/piano_trainer_app.png" width="600"> </figure>
+
+#### Piano Trainer App Finálne
+<figure> <img src="./images/app_final.png" width="600"> </figure>
+
+### 🎬 Demo video
+
+[LED Piano Showcase](https://www.youtube.com/watch?v=GONJa6kOOnw)
+
+> YouTube demonštrácia LED reakcií na prehrávané tóny.
+
+### 📦 Celkový dodaný produkt
+- 3D tlačená LED nadstavba → **kompletne funkčná**  
+- Krabička pre Raspberry → **hotová**  
+- Prepojenie keyboard → PC → Pico → LED → **funguje**  
+- PC aplikácia → **funkčný prototyp (demo-ready)**  
+- Firmware pre Pico → **stabilný základ**  
 
 ---
+
+🟣 **Výsledok:** Projekt prekročil pôvodné očakávania v kvalite hardvéru a estetickom prevedení. Softvér existuje ako funkčný prototyp pripravený na ďalší rozvoj.
+
+---
+
 ## Navigácia
 - [↩️ Späť](../index.md)

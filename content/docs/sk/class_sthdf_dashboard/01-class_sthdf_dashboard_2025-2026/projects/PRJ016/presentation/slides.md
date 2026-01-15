@@ -1,177 +1,130 @@
----
-# 🧩 Versioning – systém dopĺňa automaticky
-fm_version: "1.0.1"
+# SmartClock
 
-# Dátum buildu – generuje skript
-fm_build: "2025-11-28T15:54:48.076989+00:00"
+## 1. Prehľad projektu
+Cieľom projektu je zostaviť jednoduché riešenie postavené na **Raspberry Pi** a **LCD displeji**, ktoré po spustení vykresľuje vybrané informácie priamo na lokálny displej.
 
-# Poznámka k verzii – voliteľné
-fm_version_comment: ""
+Riešenie je rozdelené na:
+- **HW vrstvu**: Raspberry Pi + 3.5" LCD displej
+- **SW vrstvu**: Raspberry Pi OS + driver displeja + Python script
 
+> Displej 320×480, kompatibilný s rôznymi verziami Raspberry Pi.  
+> Ovládač sme riešili cez projekt LCD-show (https://github.com/waveshareteam/LCD-show),   
+> Referencie: LCDWiki / LCD-show / Raspberry Pi Imager.  
 
-# 🆔 IDENTITY --------------------------------------------------------
+## 2. Obsah repozitára
+Aktuálna štruktúra repozitára (https://github.com/drizzle021/rpiclock):
+- `main.py` – hlavný Python skript
+- `requirements.txt` – Závislosti projektu
+- `screens/` – skript jednotlivých obrazoviek aplikácie
+- `assets/1x/` – grafické assets (ikony, obrázky…)
 
-# ID generuje CLI / skript
+## 3. Hardvér a fyzická integrácia
+### 3.1 Použitý hardvér
+- Raspberry zero W 2
+- 3.5" LCD s dotykovou vrstvou (rezistívny touch)
+- Spájač na piny
+- microSD karta
+- Napájanie (USB adaptér)
 
-# Unikátne UUID – generuje skript
-guid: "5fc3f2b9-bd18-49e7-8189-a924843131bc"
+### 3.2 Mechanická časť
+V projekte používame aj jednoduchý mechanický 3D vytlačený pop-in obal.  
 
+#### Ručný nákres prototypu na papier
 
-# 🧭 CONTEXT ---------------------------------------------------------
-
-# DAO / doména (knife, sdlc, q12, 7ds...) dopĺňa skript
-dao: "class_sthdf_dashboard"
-
-# Názov zápisu – dopĺňa používateľ
-title: "slides"
-
-# Krátky popis – dopĺňa používateľ (voliteľné)
-description: "{{DESCRIPTION}}"
-
-
-# 👥 AUTHORSHIP ------------------------------------------------------
-
-# Hlavný autor – z globálneho configu
-author: "Roman Kazicka"
-
-# Zoznam autorov – generuje skript
-authors:
-  - "Roman Kazicka"
+![](images/drawing.jpg)
 
 
-# 🗂 CLASSIFICATION ---------------------------------------------------
+#### Nákres
 
-# Nadradená kategória – môže doplniť používateľ
-category: ""
+![Mechanical drawing](images/parameters_cover.png)
 
-# Typ dokumentu (guide, case, tutorial...) – používateľ (voliteľné)
-type: ""
+Parametre boli navrhnuté tak, aby sme mohli náš displej ľahko vtlačiť do vytlačeného obalu tak, že tam zapadne a bude držať. Časť okolo displeja bola navrhnutá aby držala displej pevne, zatiaľ čo časť obalu okolo dosky je mriežkovaná kvôli vetraniu, takisto boli vyrezané diery na potrebné porty.
 
-# Priorita (low/medium/high) – voliteľné
-priority: ""
+#### Model obalu v softvére
 
-# Tagy – odporúča sa 2–6 tagov.
-# Typy tagov:
-#   - rámce: knife, 7ds, sdlc, q12
-#   - účel: tutorial, guide, pattern, case-study
-#   - téma: git, backup, ai, communication
-#   - úroveň: beginner, intermediate, advanced
-tags: []
+![](images/model_top.png)
+![](images/model_side.png)
+![](images/model_bottom.png)
 
+## 4. Softvér a architektúra riešenia
+### 4.1 Softvérové vrstvy
+1. **Raspberry Pi OS**
+2. **Driver displeja** 
+3. **Python aplikácia**:
+   - získa dáta (čas, systémové metriky, …)
+   - vykreslí UI (texty/ikony)
+   - pošle frame na displej
+   - cyklicky opakuje aktualizáciu
 
-# 🌍 LOCALIZATION -----------------------------------------------------
+### 4.2 Diagramy
+Diagramy sú exportované z Enterprise Architect.
 
-# Jazyk dokumentu – doplní skript podľa štruktúry
-locale: "sk"
+- **Deployment diagram** (HW/SW nasadenie)  
 
+  ![Deployment](images/deployment_diagram.jpg)
 
-# 🕒 LIFECYCLE --------------------------------------------------------
+- **Component diagram** (softvérové komponenty)  
+  ![Components](images/component_diagram.jpg)
 
-# Dátum vytvorenia – generuje skript
-created: "2025-11-28 16:54"
+- **Sequence diagram** (runtime update loop)  
+  ![Sequence](images/sequence.jpg)
 
-# Dátum poslednej úpravy – dopĺňa človek
-modified: "2025-11-28 16:54"
+- **Activity diagram** (inštalačný postup)  
+```mermaid
+flowchart TB
+  PC[PC/Mac/Linux] --> IMAGER[Raspberry Pi Imager]
+  IMAGER --> SD[microSD s Raspberry Pi OS]
+  SD --> BOOT[Vložiť do dosky]
+  BOOT --> DRIVER[Inštalácia LCD-show]
+  DRIVER --> REBOOT[Reboot]
+  REBOOT --> VENV[python venv + pip deps]
+  VENV --> RUN[Spustenie main.py]
+  RUN --> OK[Dashboard na displeji]
+```
 
-# Stav dokumentu – default "backlog"
-status: "backlog"
+## 5. Inštalácia a spustenie
+### 5.1 Príprava microSD (Raspberry Pi Imager)
 
-# Viditeľnosť – default "public"
-privacy: "public"
+Na prípravu OS používame Raspberry Pi Imager (https://www.raspberrypi.com/software):
 
+1. Vyber Raspberry Pi OS
+2. Zapíš image na microSD
+3. Vlož kartu do Raspberry Pi a nabootuj
 
-# ⚖ INTELLECTUAL PROPERTY -------------------------------------------
-
-# Držiteľ práv k obsahu – dopĺňa skript
-rights_holder_content: "Roman Kazicka"
-
-# Systémový vlastník práv
-rights_holder_system: "CAA / KNIFE / LetItGrow"
-
-# Licencia
-license: "CC-BY-NC-SA-4.0"
-
-# Disclaimer
-disclaimer: "Use at your own risk. Methods provided as-is; participation is voluntary and context-aware."
-
-# Copyright
-copyright: "© 2025 Roman Kazicka"
-
-
-# 🔗 ORIGIN / PROVENANCE ---------------------------------------------
-
-# Repozitár pôvodu
-origin_repo: ""
-
-# URL pôvodného repozitára
-origin_repo_url: ""
-
-# Commit pôvodu
-origin_commit: ""
-
-# Branch pôvodu
-origin_branch: ""
-
-# Systém pôvodu (CAA/KNIFE/STHDF…)
-origin_system: "CAA"
-
-# Pôvodný autor
-origin_author: "Roman Kazicka"
-
-# Importovaný zdroj
-origin_imported_from: ""
-
-# Dátum importu
-origin_import_date: ""
+![Imager](images/imager.png)
 
 
-# 🧱 RESERVED ---------------------------------------------------------
+### 5.2 Inštalácia driveru displeja
+```bash
+sudo apt update
+sudo apt install -y git
+git clone https://github.com/waveshareteam/LCD-show.git
+cd LCD-show
+sudo ./LCD35-show
+```
 
-fm_reserved1: ""
-fm_reserved2: ""
----
+## 6. Finálny produkt
+### Vypnutý displej
+![](images/final_1.jpg)
+![](images/final_2.jpg)
+![](images/final_3.jpg)
+![](images/final_4.jpg)
+![](images/final_5.jpg)
 
-<!-- class_sthdf_dashboard_INSTANCE_ID: 01-class_sthdf_dashboard_2025-2026 -->
+### Fungujúci SmartClock
 
-# PRJ016 — Presentation
+![](images/final_on_1.jpg)
+![](images/final_on_2.jpg)
+![](images/final_on_3.jpg)
 
---- Headline ---
-## Headline
-**2025-PRJ-016-ST_016-ST_016-Nazov projektu**
+## 7. Záver
+Projekt **SmartClock** ukazuje praktický spôsob, ako na Raspberry Pi vytvoriť lokálny „dashboard“ bez potreby externého monitora. Kombinácia Raspberry Pi, displeja a jednoduchého skriptu umožňuje vykresľovať informácie v reálnom čase priamo na zariadení a riešenie je zároveň rozšíriteľné o ďalšie obrazovky alebo vstupy (dotykové ovládanie).
 
-> Uvodny obrazok: TODO (dopln odkaz alebo subor).
+Z pohľadu architektúry sme si overili celý reťazec od fyzickej integrácie (osadenie displeja, obal, prístup k portom a vetranie) až po softvérovú časť (inštalácia driveru, závislosti vykresľovanie UI). Výsledkom je funkčný prototyp, pri ktorom sme sa naučili: prácu s HW perifériou, nasadenie na konkrétnu platformu a UI vykresľovanie na displej.
 
-Strucny text o projekte (1-3 vety, doplni tim).
---- Headline ---
+Možné zlepšenia do budúcna:
+- automatické spúšťanie aplikácie po spustení
+- konfigurovateľné obrazovky (config)
+- doplnenie externých dát (notifikácie)
+- využitie dotyku na prepínanie obrazoviek / interakciu
 
---- introduction ---
-## Introduction
-**2025-PRJ-016-ST_016-ST_016-Nazov projektu**
-
-Strucny text o projekte (zhrnutie zadania + prinos).
---- introduction ---
-
---- obsah ---
-## Obsah
-- [01-Business](../sdlc/01-business/index.md)
-- [02-Top Level Architecture](../sdlc/02-top-level-architecture/index.md)
-- [03-Solution Architecture](../sdlc/03-solution-architecture/index.md)
-- [04-Analysis](../sdlc/04-analysis/index.md)
-- [05-Design](../sdlc/05-design/index.md)
-- [06-Implementation](../sdlc/06-implementation/index.md)
-- [07-Testing & Verification](../sdlc/07-testing-verification/index.md)
-- [08-Operation](../sdlc/08-operation/index.md)
-- [09-Change Management](../sdlc/09-Change-Management/index.md)
---- obsah ---
-
-## 01-Business
-## 02-Top Level Architecture
-## 03-Solution Architecture
-## 04-Analysis
-## 05-Design
-## 06-Implementation
-## 07-Testing & Verification
-## 08-Operation
-## 09-Change Management
-
-[🏠 Domov](../../../index.md) · [⬅️ Nahor](../)

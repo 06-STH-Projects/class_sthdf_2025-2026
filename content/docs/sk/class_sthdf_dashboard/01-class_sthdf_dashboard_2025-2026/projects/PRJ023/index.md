@@ -135,8 +135,23 @@ fm_reserved2: ""
 
 # PRJ023 — Overview
 
-## Navigácia
+## KNIFEs [📖 [link]](https://peterbartos157.github.io/smvit-air-sensor/knifes/)
+
+
+## Project summary [🗂️ [link]](sdlc/00-project-summary/index.md)
+
+## Navigácia 🗺️
 - [Presentation / Slides](./presentation/slides.md) — záverečný dokument pre rýchlu prezentáciu.
 - [SDLC](./sdlc/index.md) — podklady a detailný obsah.
+
+## Živé dáta senzora [📡 [link]](https://smvit-super-server-hvash7e3dfe6drcb.polandcentral-01.azurewebsites.net/visualize-data?user=A9F3D72C1B84E65F0C2A7B9E4D81F630)
+
+## Sociálne siete 🌍
+
+- [🌐 YouTube](https://www.youtube.com/@SmartSolutions-t5x)
+- [🌐 LinkedIn](https://www.linkedin.com/in/smart-solutions-a16650395/)
+- [🌐 Patreon](https://www.linkedin.com/in/smart-solutions-a16650395/)
+
+---
 
 [🏠 Domov](../../index.md) · [⬅️ Nahor](../PRJ_INDEX.md)

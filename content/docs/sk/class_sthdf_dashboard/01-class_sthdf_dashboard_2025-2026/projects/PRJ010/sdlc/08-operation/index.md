@@ -135,6 +135,11 @@ fm_reserved2: ""
 
 # 08-Operation
 
+* Rakvy úspešne použité počas generálky a premiéry.
+* Jednoduché skladovanie a opätovné použitie.
+
+![Drawings](../../pictures/coffins_performance.jpg)
+
 - [Prevádzka a podpora](./operations.md)
 
 **Navigation:** [⬆️ SDLC](../index.md) · [⬅️ Projekt](../../index.md)

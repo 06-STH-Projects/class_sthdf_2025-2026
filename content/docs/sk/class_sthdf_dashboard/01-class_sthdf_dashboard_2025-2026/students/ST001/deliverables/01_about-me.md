@@ -8,20 +8,18 @@ title: 🙋 About Me
 
 # 🙋 About Me
 ## 🔖 Základné informácie
-- Meno a priezvisko 
-- Študentský GitHub profil (link) 
-- Kontaktný e-mail 
-## 🎯 Profesijné záujmy
-- Oblasti, ktoré ma bavia (IT, dizajn, podnikanie, …) 
-- Aké skúsenosti by som chcel získať 
-## 💡 Moje hobby / záujmy
-- Šport, hudba, varenie, cestovanie … 
-- Čokoľvek, čo odhaľuje „ľudskú stránku“ 
-## 🚀 Očakávania od predmetu
-- Čo chcem dosiahnuť v rámci kurzu 
-- Čo očakávam od spolupráce s tímom a komunitou 
-## 🚀 Čo viem ponúknuť
-- Čo chcem ponúknuť v rámci kurzu 
+- Meno a priezvisko: Gabriel Ábrahám
+- Študentský GitHub profil (link): https://github.com/drizzle021
 
+## 🎯 Profesijné záujmy
+- Oblasti, ktoré ma bavia: IT, webový dizajn
+
+## 💡 Moje hobby / záujmy
+- Anime, manga, zbieranie figúrok
+
+## 🚀 Očakávania od predmetu
+- Čo chcem dosiahnuť v rámci kurzu: vytvoriť niečo užitočné
+  
 ## Navigácia
 - [↩️ Späť](../index.md)
+

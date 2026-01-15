@@ -8,20 +8,20 @@ title: 🙋 About Me
 
 # 🙋 About Me
 ## 🔖 Základné informácie
-- Meno a priezvisko 
-- Študentský GitHub profil (link) 
-- Kontaktný e-mail 
+- Lukáš Lovás
+- Študentský GitHub profil (https://github.com/LukasLovas) 
+- lukaslovas17@gmail.com
 ## 🎯 Profesijné záujmy
-- Oblasti, ktoré ma bavia (IT, dizajn, podnikanie, …) 
-- Aké skúsenosti by som chcel získať 
+- BE development, AI agents, automatizacia procesov
+- 3D modelovanie, hands-on skusenosti
 ## 💡 Moje hobby / záujmy
-- Šport, hudba, varenie, cestovanie … 
-- Čokoľvek, čo odhaľuje „ľudskú stránku“ 
+- Box, hudba, videohry, šoférovanie 
+- Veľmi rád cestujem a zbieram rôzne zážitky či už na Slovensku alebo po svete 
 ## 🚀 Očakávania od predmetu
-- Čo chcem dosiahnuť v rámci kurzu 
+- Čo chcem dosiahnuť v rámci kurzu: niečo vytvoriť
 - Čo očakávam od spolupráce s tímom a komunitou 
 ## 🚀 Čo viem ponúknuť
-- Čo chcem ponúknuť v rámci kurzu 
+- Komunikáciu, nápady, skúsenosti s programovaním a problem-solvingom
 
 ## Navigácia
 - [↩️ Späť](../index.md)

@@ -135,6 +135,9 @@ fm_reserved2: ""
 
 # 04-Analysis
 
+* Porovnanie rôznych modelov na internete
+* Prieskum ohľadom dostupných materiálov
+
 - [Backlog a analýzy](./backlog.md)
 
 **Navigation:** [⬆️ SDLC](../index.md) · [⬅️ Projekt](../../index.md)
