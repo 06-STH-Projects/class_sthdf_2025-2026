@@ -28,16 +28,24 @@ title: 📦 Project Outcomes
 Po sérii experimentov s hrúbkou priečok a ohýbaním LED pásu vznikla plne funkčná svetelná nadstavba, ktorá rovnomerne osvetľuje jednotlivé klávesy.
 
 #### Počiatočné experimenty s hrúbkou a ohýbaním
-<figure> <img src="./images/ledbar_experiments.png" width="600"> </figure>
+![ledbar_experiments](./images/ledbar_experiments.png)
+
+<figure><img src="/students/ST019/deliverables/images/ledbar_experiments.png" width="600" /></figure>
 
 #### Prvá verzia (chybná – chýbajúci posledný box)
-<figure> <img src="./images/ledbar_v1.png" width="600"> </figure>
+![ledbar_v1](./images/ledbar_v1.png)
+
+<figure><img src="/students/ST019/deliverables/images/ledbar_v1.png" width="600" /></figure>
 
 #### Opravená finálna verzia s doplneným boxom
-<figure> <img src="./images/ledbar_final.png" width="600"> </figure>
+![ledbar_final](./images/ledbar_final.png)
+
+<figure><img src="/students/ST019/deliverables/images/ledbar_final.png" width="600" /></figure>
 
 #### 3D tlačená krabička pre Raspberry + káble
-<figure> <img src="./images/raspberry_box.png" width="600"> </figure>
+![raspberry_box](./images/raspberry_box.png)
+
+<figure><img src="/students/ST019/deliverables/images/raspberry_box.png" width="600" /></figure>
 
 ### 💻 Softvérový výsledok
 Finálna verzia PC aplikácie obsahuje:
@@ -46,13 +54,19 @@ Finálna verzia PC aplikácie obsahuje:
 - generovanie LED sekvencií z MIDI alebo automatickej transkripcie  
 
 #### Piano Trainer App Prvotné
-<figure> <img src="./images/app_first_draft.png" width="600"> </figure>
+![app_first_draft](./images/app_first_draft.png)
+
+<figure><img src="/students/ST019/deliverables/images/app_first_draft.png" width="600" /></figure>
 
 #### Piano Trainer App Experimentálne
-<figure> <img src="./images/piano_trainer_app.png" width="600"> </figure>
+![piano_trainer_app](./images/piano_trainer_app.png)
+
+<figure><img src="/students/ST019/deliverables/images/piano_trainer_app.png" width="600" /></figure>
 
 #### Piano Trainer App Finálne
-<figure> <img src="./images/app_final.png" width="600"> </figure>
+![app_final](./images/app_final.png)
+
+<figure><img src="/students/ST019/deliverables/images/app_final.png" width="600" /></figure>
 
 ### 🎬 Demo video
 

@@ -484,49 +484,67 @@ void loop() {
 
 Pre testovanie sme pridali rastlinu a pozorovali sme funkčnosť systému.
 
+![Obr.: Testovanie – finálny produkt](../sdlc/images/final1.jpg)
+
 <figure>
-  <img src="../sdlc/images/final1.jpg" alt="Finalny produkt" width="700" />
+  <img src="/sthdf_2025/PRJ_027/images/final1.jpg" alt="Finalny produkt" width="700" />
   <figcaption>Obr.: Testovanie – finálny produkt</figcaption>
 </figure>
 
+![Obr.: Testovanie – finálny produkt](../sdlc/images/final2.jpg)
+
 <figure>
-  <img src="../sdlc/images/final2.jpg" alt="Finalny produkt" width="700" />
+  <img src="/sthdf_2025/PRJ_027/images/final2.jpg" alt="Finalny produkt" width="700" />
   <figcaption>Obr.: Testovanie – finálny produkt</figcaption>
 </figure>
 
+![Obr.: Testovanie – finálny produkt](../sdlc/images/final3.jpg)
+
 <figure>
-  <img src="../sdlc/images/final3.jpg" alt="Finalny produkt" width="700" />
+  <img src="/sthdf_2025/PRJ_027/images/final3.jpg" alt="Finalny produkt" width="700" />
   <figcaption>Obr.: Testovanie – finálny produkt</figcaption>
 </figure>
 
+![Obr.: Testovanie – finálny produkt](../sdlc/images/final4.jpg)
+
 <figure>
-  <img src="../sdlc/images/final4.jpg" alt="Finalny produkt" width="700" />
+  <img src="/sthdf_2025/PRJ_027/images/final4.jpg" alt="Finalny produkt" width="700" />
   <figcaption>Obr.: Testovanie – finálny produkt</figcaption>
 </figure>
 
+![Obr.: Testovanie – finálny produkt](../sdlc/images/final5.jpg)
+
 <figure>
-  <img src="../sdlc/images/final5.jpg" alt="Finalny produkt" width="700" />
+  <img src="/sthdf_2025/PRJ_027/images/final5.jpg" alt="Finalny produkt" width="700" />
   <figcaption>Obr.: Testovanie – finálny produkt</figcaption>
 </figure>
 
+![Obr.: Testovanie – finálny produkt](../sdlc/images/final6.jpg)
+
 <figure>
-  <img src="../sdlc/images/final6.jpg" alt="Finalny produkt" width="700" />
+  <img src="/sthdf_2025/PRJ_027/images/final6.jpg" alt="Finalny produkt" width="700" />
   <figcaption>Obr.: Testovanie – finálny produkt</figcaption>
 </figure>
 
+![Obr.: Testovanie – finálny produkt](../sdlc/images/final7.jpg)
+
 <figure>
-  <img src="../sdlc/images/final7.jpg" alt="Finalny produkt" width="700" />
+  <img src="/sthdf_2025/PRJ_027/images/final7.jpg" alt="Finalny produkt" width="700" />
   <figcaption>Obr.: Testovanie – finálny produkt</figcaption>
 </figure>
 
 
+![Obr.: Testovanie – finálny produkt](../sdlc/images/final9.jpg)
+
 <figure>
-  <img src="../sdlc/images/final9.jpg" alt="Finalny produkt" width="700" />
+  <img src="/sthdf_2025/PRJ_027/images/final9.jpg" alt="Finalny produkt" width="700" />
   <figcaption>Obr.: Testovanie – finálny produkt</figcaption>
 </figure>
 
+![Obr.: Testovanie – finálny produkt](../sdlc/images/final10.jpg)
+
 <figure>
-  <img src="../sdlc/images/final10.jpg" alt="Finalny produkt" width="700" />
+  <img src="/sthdf_2025/PRJ_027/images/final10.jpg" alt="Finalny produkt" width="700" />
   <figcaption>Obr.: Testovanie – finálny produkt</figcaption>
 </figure>
 

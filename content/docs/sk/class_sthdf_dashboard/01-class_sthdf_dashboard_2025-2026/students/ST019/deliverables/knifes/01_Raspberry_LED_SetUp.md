@@ -5,7 +5,7 @@ locale: sk
 fm_build: '2025-12-09T21:04:48Z'
 ---
 
-# 📚 Knowledge Contribution
+# 📚 Hardvérové zapojenie adresovateľného LED pásika k Raspberry Pi Pico
 
 ## 🔖 Názov a stručný popis
 **Hardvérové zapojenie adresovateľného LED pásika k Raspberry Pi Pico**
@@ -63,12 +63,26 @@ Pre správnu funkčnosť postupuj presne podľa pinov na obrázku:
 - **GND (Pin 38):** Uzemnenie. Na Pico je ich viac, ale pin 38 je ideálne umiestnený pri VBUS.
 - **GP0 (Pin 1):** Dátový výstup, ktorý bude hovoriť každej LED dióde, akou farbou má svietiť.
 
-<figure> <img src="../images/pico_led_schema.png" width="600"> </figure>
+<!-- Docusaurus (docs-relative) -->
+![Schéma zapojenia Pico + LED pásik](../images/pico_led_schema.png)
+
+<!-- Static fallback (HTML / GitHub Pages) -->
+<img src="/PRJ007/pico_led_schema.png" width="600" alt="Schéma zapojenia Pico + LED pásik" />
 
 ### 3️⃣ Fyzická realizácia
 Pri fyzickom zapájaní sa uisti, že sú jumper káble pevne zasunuté v breadboarde. Ak tvoj LED pásik nemá predpripravené konektory, budeš musieť na jeho konce pripájkovať piny alebo použiť svorkovnicu.
 
-<figure> <img src="../images/pico_led_realita.jpg" width="600"> </figure>
+<!-- Docusaurus (docs-relative) -->
+![Fyzické zapojenie Pico + LED pásik](../images/pico_led_realita.jpg)
+
+<!-- Static fallback (HTML / GitHub Pages) -->
+<img src="/PRJ007/pico_led_realita.jpg" width="600" alt="Fyzické zapojenie Pico + LED pásik" />
+
+<!-- Docusaurus (docs-relative) -->
+![Akai – register product](../images/akai_register_product.png)
+
+<!-- Static fallback (HTML / GitHub Pages) -->
+<img src="/PRJ007/akai_register_product.png" width="600" alt="Akai – register product" />
 
 ---
 
