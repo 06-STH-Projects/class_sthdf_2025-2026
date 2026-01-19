@@ -135,6 +135,9 @@ fm_reserved2: ""
 
 # 04-Analysis
 
+- porovnanie rôznych bezdrôtových technológií ako LoRaWAN, Bluetooth Low Energy, ZigBee a iné,
+- zvolenie komponentov a softvérového stacku riešenia.
+
 - [Backlog a analýzy](./backlog.md)
 
 **Navigation:** [⬆️ SDLC](../index.md) · [⬅️ Projekt](../../index.md)

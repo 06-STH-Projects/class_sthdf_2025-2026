@@ -135,6 +135,8 @@ fm_reserved2: ""
 
 # 09-Change Management
 
-- Change log / CR / impact analysis (doplníš podľa potreby).
+- zmena vadného senzoru,
+- zmena LMIC-node knižnice za inú, ktorá korektne implementuje hlboký spánok.
+
 
 **Navigation:** [⬆️ SDLC](../index.md) · [⬅️ Projekt](../../index.md)
