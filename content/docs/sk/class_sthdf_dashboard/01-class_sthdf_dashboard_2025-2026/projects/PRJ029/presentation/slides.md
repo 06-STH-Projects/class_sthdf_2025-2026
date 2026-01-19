@@ -288,6 +288,19 @@ Tlač realizovaná na **Original Prusa XL**.
   />
 </div>
 
+<div style={{ textAlign: "center"}}>
+<img
+  src={require("../images/final_zapojenie.jpg").default}
+  style={{ width: "35%", maxWidth:"420px", height: "auto"}}
+  alt="Zapojenie"
+/>
+<img
+  src={require("../images/final_rukavice.jpg").default}
+  style={{ width: "35%", maxWidth:"420px", height: "auto"}}
+  alt="Final"
+/>
+</div>
+
 Produkt je:
 - mechanicky stabilný,
 - plne funkčný,
