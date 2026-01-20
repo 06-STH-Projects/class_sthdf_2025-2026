@@ -135,6 +135,8 @@ fm_reserved2: ""
 
 # 08-Operation
 
-- [Prevádzka a podpora](./operations.md)
+Táto kapitola popisuje používanie zariadenia.
 
-**Navigation:** [⬆️ SDLC](../index.md) · [⬅️ Projekt](../../index.md)
+**Navigation:** [⬅️ Testing](../07-testing-verification/index.md) · [➡️ Operations](./operations.md)
+
+
