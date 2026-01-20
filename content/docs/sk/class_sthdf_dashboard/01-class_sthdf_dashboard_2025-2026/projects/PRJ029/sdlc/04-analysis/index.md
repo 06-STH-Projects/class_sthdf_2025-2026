@@ -137,6 +137,6 @@ fm_reserved2: ""
 
 Kapitola sumarizuje analýzu riešenia a rozhodnutí počas návrhu.
 
-**Navigation:** [⬅️ Solution Architecture](../03-solution-architecture/index.md) · [➡️ Backlog](./backlogs.md)
+**Navigation:** [⬅️ Solution Architecture](../03-solution-architecture/index.md) · [➡️ Backlog](./backlog.md)
 
 
