@@ -135,6 +135,8 @@ fm_reserved2: ""
 
 # 08-Operation
 
+- Riešenie zatiaľ nie je produkčne nasadné, ale len podrobne otestované.
+
 - [Prevádzka a podpora](./operations.md)
 
 **Navigation:** [⬆️ SDLC](../index.md) · [⬅️ Projekt](../../index.md)
