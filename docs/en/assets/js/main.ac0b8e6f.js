@@ -404,7 +404,7 @@ function concatDocumentPath(pathItems){return pathItems.join(" › ");}
         },
         {
           "href": "https://github.com/06-STH-Projects/class_sthdf_2025-2026/releases",
-          "label": "Release v2025_12_01_1400-207-g3a6eee88a • 3a6eee88a",
+          "label": "Release v2025_12_01_1400-208-ge14ce4b8c • e14ce4b8c",
           "position": "right"
         }
       ],
@@ -412,7 +412,7 @@ function concatDocumentPath(pathItems){return pathItems.join(" › ");}
     },
     "footer": {
       "style": "dark",
-      "copyright": "\n  <div style=\"text-align:center;\">\n    © 2026 SystemThinking<br/>\n    🔖 Release: <strong>v2025_12_01_1400-207-g3a6eee88a</strong><br/>\n    💡 Commit: <code>3a6eee88a</code><br/>\n    🕒 Build: 2026-01-20 12:37:44 UTC\n  </div>\n",
+      "copyright": "\n  <div style=\"text-align:center;\">\n    © 2026 SystemThinking<br/>\n    🔖 Release: <strong>v2025_12_01_1400-208-ge14ce4b8c</strong><br/>\n    💡 Commit: <code>e14ce4b8c</code><br/>\n    🕒 Build: 2026-01-20 12:54:29 UTC\n  </div>\n",
       "links": []
     },
     "prism": {
@@ -2956,7 +2956,7 @@ var normalizeContextByPath = __webpack_require__(43385);
 // EXTERNAL MODULE: ./node_modules/lunr/lunr.js
 var lunr = __webpack_require__(58291);
 ;// ./.docusaurus/@easyops-cn/docusaurus-search-local/default/generated-constants.js
-const removeDefaultStopWordFilter=(/* unused pure expression or super */ null && ([]));const language=(/* unused pure expression or super */ null && (["en"]));const searchIndexUrl="search-index{dir}.json?_=d70c941f";const searchResultLimits=8;const fuzzyMatchingDistance=1;
+const removeDefaultStopWordFilter=(/* unused pure expression or super */ null && ([]));const language=(/* unused pure expression or super */ null && (["en"]));const searchIndexUrl="search-index{dir}.json?_=9e8d44e4";const searchResultLimits=8;const fuzzyMatchingDistance=1;
 ;// ./node_modules/@easyops-cn/docusaurus-search-local/dist/client/client/utils/proxiedGeneratedConstants.js
 // This file is auto generated while building.
 

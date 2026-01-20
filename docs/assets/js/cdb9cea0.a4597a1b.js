@@ -113,7 +113,7 @@ __webpack_require__.d(__webpack_exports__, {
 });
 
 ;// ./.docusaurus/docusaurus-plugin-content-docs/default/site-docs-sk-about-md-cdb.json
-const site_docs_sk_about_md_cdb_namespaceObject = /*#__PURE__*/JSON.parse('{"id":"sk/about","title":"O projekte KNIFE Overview","description":"KNIFE je projekt na podpporu znalostných pracovníkov.","source":"@site/docs/sk/about.md","sourceDirName":"sk","slug":"/sk/about","permalink":"/en/sk/about","draft":false,"unlisted":false,"tags":[],"version":"current","frontMatter":{"title":"O projekte KNIFE Overview"}}');
+const site_docs_sk_about_md_cdb_namespaceObject = /*#__PURE__*/JSON.parse('{"id":"sk/about","title":"O projekte KNIFE Overview","description":"KNIFE je projekt na podporu znalostných pracovníkov.","source":"@site/docs/sk/about.md","sourceDirName":"sk","slug":"/sk/about","permalink":"/sk/about","draft":false,"unlisted":false,"tags":[],"version":"current","frontMatter":{"title":"O projekte KNIFE Overview"}}');
 // EXTERNAL MODULE: ./node_modules/react/jsx-runtime.js
 var jsx_runtime = __webpack_require__(74848);
 // EXTERNAL MODULE: ./node_modules/@mdx-js/react/lib/index.js
@@ -187,9 +187,15 @@ function _createMdxContent(props) {
         children: "O projekte KNIFE Overview - Knowledge In Friendly Examples"
       })
     }), "\n", (0,jsx_runtime.jsx)(_components.p, {
-      children: "KNIFE je projekt na podpporu znalostných pracovníkov.\n\"Dokumentácia sa NEVYTVÁRA až j epráca hotová. Je to ilúzia, sebaklam.\nKnowledge, poznanie vzniká ako produkt našich každodenných aktivít.\nBolo by prínosom, keby sme dokázali v každom okamihu našich aktivít zachytávať vzbinkajúce poznanie.\nDokumentácia - ako fotografia v čase do našeho poznanie by sa generovalo z jedného zdroja pravdy (SSOT-Single Source Of truth)."
+      children: "KNIFE je projekt na podporu znalostných pracovníkov."
     }), "\n", (0,jsx_runtime.jsx)(_components.p, {
-      children: "Detaily o tomto projekte o zmene paradigmy spravovania znalostí a tvorby dokumentácie v rámci SDLC sú tu:"
+      children: "\"Dokumentácia sa NEVYTVÁRA až je práca hotová."
+    }), "\n", (0,jsx_runtime.jsx)(_components.p, {
+      children: "Je to ilúzia, sebaklam."
+    }), "\n", (0,jsx_runtime.jsx)(_components.p, {
+      children: "Knowledge, poznanie vzniká ako produkt našich každodenných aktivít.\nBolo by prínosom, keby sme dokázali v každom okamihu našich aktivít zachytávať vznikajúce poznanie.\nDokumentácia - ako fotografia v čase do našeho poznania - by sa generovala z jedného zdroja pravdy (SSOT-Single Source Of truth)."
+    }), "\n", (0,jsx_runtime.jsx)(_components.p, {
+      children: "Detaily o tomto projekte,  o zmene paradigmy spravovania znalostí a tvorby dokumentácie v rámci SDLC sú tu:"
     }), "\n", (0,jsx_runtime.jsx)(_components.p, {
       children: (0,jsx_runtime.jsx)(_components.a, {
         href: "https://knifes.systemthinking.sk/sk/help",
@@ -259,7 +265,7 @@ function _createMdxContent(props) {
         children: ["\n", (0,jsx_runtime.jsx)(_components.h3, {
           id: "students",
           children: (0,jsx_runtime.jsx)(_components.a, {
-            href: "/en/sk/class_sthdf_dashboard/class_sthdf_dashboard_2025-2026/students/ST_INDEX",
+            href: "/sk/class_sthdf_dashboard/class_sthdf_dashboard_2025-2026/students/ST_INDEX",
             children: "Students"
           })
         }), "\n"]
@@ -267,7 +273,7 @@ function _createMdxContent(props) {
         children: ["\n", (0,jsx_runtime.jsx)(_components.h3, {
           id: "projects",
           children: (0,jsx_runtime.jsx)(_components.a, {
-            href: "/en/sk/class_sthdf_dashboard/class_sthdf_dashboard_2025-2026/projects/PRJ_INDEX",
+            href: "/sk/class_sthdf_dashboard/class_sthdf_dashboard_2025-2026/projects/PRJ_INDEX",
             children: "Projects"
           })
         }), "\n"]
@@ -275,7 +281,7 @@ function _createMdxContent(props) {
         children: ["\n", (0,jsx_runtime.jsxs)(_components.h3, {
           id: "best-students-project-in-the-year-2025-2026",
           children: [(0,jsx_runtime.jsx)(_components.a, {
-            href: "/en/sk/class_sthdf_dashboard/class_sthdf_dashboard_2025-2026/class-sthdf/showcase/",
+            href: "/sk/class_sthdf_dashboard/class_sthdf_dashboard_2025-2026/class-sthdf/showcase/",
             children: "Best students Project in the year 2025-2026"
           }), "."]
         }), "\n"]
