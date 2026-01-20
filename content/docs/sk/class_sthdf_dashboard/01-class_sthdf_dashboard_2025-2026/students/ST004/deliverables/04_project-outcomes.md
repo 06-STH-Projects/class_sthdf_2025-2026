@@ -3,6 +3,7 @@ fm_version: 1.0.1
 fm_version_comment: ''
 locale: sk
 fm_build: '2025-12-09T21:04:48Z'
+title: 📦 Project Outcomes
 ---
 
 # 📦 Project Outcomes
@@ -71,3 +72,4 @@ Tím dodal:
 ---
 ## Navigácia
 - [↩️ Späť](../index.md)
+

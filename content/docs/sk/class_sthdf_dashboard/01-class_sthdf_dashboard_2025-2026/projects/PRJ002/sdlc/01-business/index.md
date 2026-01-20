@@ -138,3 +138,47 @@ fm_reserved2: ""
 - [Business poznámky](./notes.md)
 
 **Navigation:** [⬆️ SDLC](../index.md) · [⬅️ Projekt](../../index.md)
+
+### Názov projektu: Inteligentné monitorovanie včelích úľov pomocou IoT
+
+## Project Summary
+Navrhovaný systém slúži na inteligentné monitorovanie stavu včelích úľov prostredníctvom siete IoT senzorov, ktoré priebežne zhromažďujú údaje o vnútorných a vonkajších podmienkach úľa, ako sú teplota, vlhkosť, aktivita včelstva a ďalšie relevantné parametre. Získané dáta sú spracovávané v reálnom čase a následne prezentované používateľovi prostredníctvom prehľadného a interaktívneho používateľského rozhrania.
+
+Súčasťou riešenia je inteligentný notifikačný modul, ktorý na základe analyzovaných meraní automaticky identifikuje neštandardné alebo potenciálne rizikové situácie. V prípade detekcie anomálií systém bezodkladne informuje používateľa, čím umožňuje včasnú reakciu a podporuje efektívnejšiu starostlivosť o včelstvá.
+## Základný opis fungovania systému
+Systém funguje na princípe kontinuálneho zberu dát z fyzických senzorov umiestnených vo včelích úľoch. Tieto senzory monitorujú vybrané environmentálne a behaviorálne parametre včelstva a odosielajú namerané hodnoty do centrálneho softvérového systému.
+
+Centrálna časť systému zabezpečuje spracovanie, ukladanie a vyhodnocovanie prijatých dát. Používateľ má k dispozícii webové rozhranie, prostredníctvom ktorého môže sledovať aktuálny stav jednotlivých úľov, historický vývoj meraných hodnôt a prehľadné vizualizácie trendov. 
+
+## Projektový tím
+
+- **Členovia:**
+    - Adam Grík – Vývoj softvéru
+    - Maximilián Strečanský – Vývoj hardvéru
+  
+
+## Hlavné ciele projektu
+
+- Navrhnúť a implementovať hardvérové zariadenie pre monitorovanie vybraných parametrov včelích úľov, založené na princípoch internetu vecí (IoT).
+- Implementovať, alebo prispôsobiť existujúcu IoT platformu zabezpečujúcu zber, prenos, ukladanie a základné spracovanie dát zo senzorov umiestnených vo včelích úľoch.
+- Navrhnúť a implementovať prezentačnú webovú aplikáciu, ktorá umožní používateľovi prehľadné zobrazenie aktuálnych aj historických dát, ako aj sledovanie stavu jednotlivých úľov.
+
+## Zámer projektu a pridaná hodnota
+Zámerom projektu je poskytnúť včelárom možnosť kontinuálneho a vzdialeného monitorovania stavu včelích úľov prostredníctvom IoT riešenia. Systém má umožniť včasnú identifikáciu výnimočných stavov včelstva na základe analýzy jeho aktivity a automaticky o nich informovať používateľa.
+
+Navrhované riešenie prispieva k efektívnejšej starostlivosti o včelstvá a k zníženiu rizika chorobnosti včiel prostredníctvom včasného upozornenia na neštandardné situácie. Zároveň znižuje potrebu manuálnych kontrol úľov a zvyšuje dostupnosť relevantných informácií pre včelára aj pri vzdialenom prístupe.
+
+## Rozsah projektu
+
+
+- **V rozsahu projektu:**
+  - Implementácia prototypu hardvérového zariadenia určeného na monitorovanie včelieho úľa.
+  - Zber a spracovanie základných monitorovaných hodnôt, konkrétne teploty, vlhkosti a detekcie prevrátenia úľa.
+  - Základná integrácia hardvérového zariadenia so softvérovou časťou systému a vizualizácia nameraných dát v prezentačnej aplikácii.
+  
+- **Mimo rozsahu projektu:**
+  - Implementácia produkčného alebo certifikovaného hardvérového riešenia.
+  - Monitorovanie rozšírených alebo špecializovaných parametrov včelstva.
+  - Testovanie systému v reálnych prevádzkových podmienkach.
+
+

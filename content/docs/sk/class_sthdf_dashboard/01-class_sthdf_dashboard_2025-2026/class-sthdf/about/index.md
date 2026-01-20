@@ -12,7 +12,7 @@ fm_version_comment: ""
 # 🆔 IDENTITY --------------------------------------------------------
 
 # ID generuje CLI / skript
-id: Home
+id: class-sthdf-about
 # Unikátne UUID – generuje skript
 guid: "dc14de04-7845-4c96-9117-aedb7d0474e7"
 
@@ -124,7 +124,7 @@ origin_imported_from: ""
 # Dátum importu
 origin_import_date: ""
 
-# slug: /
+# slug intentionally omitted to keep default path and avoid root collision
 # 🧱 RESERVED ---------------------------------------------------------
 
 fm_reserved1: ""
@@ -136,9 +136,17 @@ keywords: [STHDF, course, overview]
 
 # System thinking in IT and Digital Fabrication
 
-![Journey-Banner.png](./img/Journey-Banner.png)
+![Journey-Banner.png](./img/Journey-Banner.png)	
+
+## Class 2025-2026 - Navigation
+
+### [Students](../../students/ST_INDEX.md)
+### [Projects](../../projects/PRJ_INDEX.md)
+### [Best students Project in the year 2025-2026](../showcase/index.md)
+
 
 ## Vision
+
 
 * We are building Trusted Single source of truth <br /> **3Rs: Right Information - For Right Role - in Right Time**
 
@@ -178,6 +186,47 @@ keywords: [STHDF, course, overview]
 
 * aligning with the principles of **system thinking and holistic problem-solving**.
 
+
+## Principles
+
+### 1) Core principles
+
+1. **The goal is the journey.**
+2. **Knowledge is a by-product of every activity of a knowledge worker.**
+3. **Documentation is a snapshot of my current state of knowledge in a given context.**
+4. **A learning organization mindset (inspired by Peter Senge) – we practice:**
+   - **Shared vision** (values)
+   - **Mental models** (culture)
+   - **Knowledge sharing** (*"I share knowledge so that we can grow together."*)
+   - **Team learning** (creating synergies)
+   - **Systems thinking** (success is not an accident)
+
+### 2) Grading – 75% of the final grade
+
+1. **Contributions to shared knowledge (KNIFEs).**
+2. **Systematic work**
+   - Ongoing capture of activities and ideas (**PWES**)
+   - KNIFEs
+3. **Project intent and quality**
+   - Helping others through the project
+   - Professional know-how
+   - Level of completeness across SDLC
+   - Quality of outputs
+     - Interim outputs
+     - Final outputs
+4. **Responsibility for the shared final outcome.**
+5. **Teamwork and synergy seeking**
+   - Within the class
+   - Within the KNIFE ecosystem (world-wide)
+     - Number and quality of contributions
+
+### 3) Grading – 25% of the final grade
+
+1. **Final presentation of outcomes**
+   - Individual contribution
+   - Team collaboration
+   - Delivered KNIFE(s)
+
 ## Strategy
 
 Based on 5 principles of Self learning organisation:
@@ -206,7 +255,7 @@ Based on 5 principles of Self learning organisation:
    >> Coordinations, Templates, communication is performed via Class confluence
    >> Final Students Outputs is via class Bitbucket
 
-## Conditions for completing the course 2023-2024
+## Conditions for completing the course 2025-2026
 
 There are defined 5 maturity levels:
 
@@ -222,7 +271,9 @@ There are defined 5 maturity levels:
 
 * A - Real World Modeler
 
-*Presentation of final outputs in Confluence.*
+
+
+*Presentation of final outputs in GitHub.*
 
 Original in own organization, copy in SystemThinking-In-IT, Bitbucket
 
@@ -256,5 +307,7 @@ Ing. Roman Kazička, PhD| Knowledge Management Enterprise Architect | Teacher | 
 ### [Best students Project in the year 2025-2026](../showcase/index.md)
 
 [Back to Home](../index.md)
+
+[🏠 Domov](../../index.md) · [⬅️ Nahor](../index.md)
 
 [🏠 Domov](../../index.md) · [⬅️ Nahor](../index.md)
