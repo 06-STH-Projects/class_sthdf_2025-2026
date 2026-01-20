@@ -133,7 +133,6 @@ fm_reserved2: ""
 
 <!-- class_sthdf_dashboard_INSTANCE_ID: 01-class_sthdf_dashboard_2025-2026 -->
 
-[🏠 Domov](../../../index.md) · [⬅️ Nahor](../)
 # PRJ005 — Presentation
 
 --- Headline ---
@@ -141,7 +140,7 @@ fm_reserved2: ""
 **2025-PRJ-005-ST_005-ST_005-Nazov projektu**
 
 <figure>
-  <img src="../sdlc/obrazky/inspiracia.jpg" alt="Vizuálna inšpirácia" width="500" />
+  <img src="/sthdf_2025/PRJ_005/obrazky/inspiracia.jpg" alt="Vizuálna inšpirácia" width="500" />
   <figcaption>Obr. 1: Požadovaný vizuálny štýl a inšpirácia pre projekt.</figcaption>
 </figure>
 
@@ -173,7 +172,7 @@ Strucny text o projekte (zhrnutie zadania + prinos).
 ## 01-Business
 
 <figure>
-  <img src="../sdlc/obrazky/nakresy.jpg" alt="Vizuálna inšpirácia" width="500" />
+  <img src="/sthdf_2025/PRJ_005/obrazky/nakresy.jpg" alt="Vizuálna inšpirácia" width="500" />
   <figcaption>Obr. 2 a 3: Moje vlastné počiatočné nákresy a detailnejšie rozpracovanie dizajnu.</figcaption>
 </figure>
 
@@ -183,7 +182,7 @@ Strucny text o projekte (zhrnutie zadania + prinos).
 Fyzický model zobrazuje konkrétne hardvérové komponenty, z ktorých sa systém skladá, a ich prepojenie. Identifikuje hlavné časti ako Arduino, senzor, ovládač motora (MOSFET) a samotnú pumpu.
 
 <figure>
-  <img src="../sdlc/obrazky/fyzicky_model.png" alt="Fyzický model komponentov" width="700" />
+  <img src="/sthdf_2025/PRJ_005/obrazky/fyzicky_model.png" alt="Fyzický model komponentov" width="700" />
   <figcaption>Obr.: Fyzický model hardvérových komponentov a ich prepojení.</figcaption>
 </figure>
 
@@ -191,7 +190,7 @@ Fyzický model zobrazuje konkrétne hardvérové komponenty, z ktorých sa syst�
 Logický model sa zameriava na softvérovú architektúru. Definuje hlavné triedy a ich metódy, ako napríklad `MiskaController`, `PumpaController` a `SenzorHladiny`, a ukazuje, ako spolu komunikujú.
 
 <figure>
-  <img src="../sdlc/obrazky/logicky_model.png" alt="Logický model a štruktúra kódu" width="700" />
+  <img src="/sthdf_2025/PRJ_005/obrazky/logicky_model.png" alt="Logický model a štruktúra kódu" width="700" />
   <figcaption>Obr.: Logický model definujúci štruktúru softvéru.</figcaption>
 </figure>
 
@@ -201,7 +200,7 @@ Logický model sa zameriava na softvérovú architektúru. Definuje hlavné trie
 Práca začala experimentovaním s hardvérom. Prvotný plán bol použiť ultrazvukový senzor na meranie hladiny vody. Zostavila som testovací obvod s Arduinom a senzorom na breadboarde, aby som overila jeho funkčnosť.
 
 <figure>
-  <img src="../sdlc/obrazky/prototyp-na-stole.jpg" alt="Vizuálna inšpirácia" width="500" />
+  <img src="/sthdf_2025/PRJ_005/obrazky/prototyp-na-stole.jpg" alt="Vizuálna inšpirácia" width="500" />
   <figcaption>Obr. 4: Testovacie prostredie – Arduino, breadboard, ultrazvukový senzor a ďalšie komponenty.</figcaption>
 </figure>
 
@@ -241,3 +240,5 @@ void loop() {
 ## 07-Testing & Verification
 ## 08-Operation
 ## 09-Change Management
+
+[🏠 Domov](../../../index.md) · [⬅️ Nahor](../)

@@ -138,3 +138,9 @@ fm_reserved2: ""
 - [Solution design](./design.md)
 
 **Navigation:** [⬆️ SDLC](../index.md) · [⬅️ Projekt](../../index.md)
+
+Technologická vrstva riešenia pozostáva z hardvérového IoT zariadenia, centrálnej serverovej infraštruktúry a prezentačnej webovej časti systému. IoT zariadenie zabezpečuje zber telemetrických dát z včelích úľov a ich odosielanie do externej IoT platformy, ktorá slúži ako vstupný bod pre spracovanie dát.
+
+Prezentačný web slúži len ako prezentovanie celého projektu a zobrazenie verejne dostupných včelích úľov na interaktívnej mape. 
+
+![Technology](../../images/solution.jpg)

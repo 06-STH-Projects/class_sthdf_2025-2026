@@ -133,7 +133,6 @@ fm_reserved2: ""
 
 <!-- class_sthdf_dashboard_INSTANCE_ID: 01-class_sthdf_dashboard_2025-2026 -->
 
-[🏠 Domov](../../../index.md) · [⬅️ Nahor](../)
 # PRJ013 — WorkNest
 
 --- Headline ---
@@ -215,3 +214,5 @@ Našou víziou je zlepšiť život a pracovné prostredie ľudí, ktorí trávia
 - **Odkaz na model (Figma)**
   - [Smart Cable Management App – prototyp](https://www.figma.com/make/x6OcLtSWBVfoPrO1ktyxl8/Smart-Cable-Management-App?node-id=0-4&t=ov0OmfD7uj8mJ02F-1)
   
+
+[🏠 Domov](../../../index.md) · [⬅️ Nahor](../)

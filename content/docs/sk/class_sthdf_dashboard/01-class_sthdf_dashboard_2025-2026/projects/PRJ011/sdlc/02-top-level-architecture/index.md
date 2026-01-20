@@ -135,6 +135,10 @@ fm_reserved2: ""
 
 # 02-Top Level Architecture
 
-- Pridaj high-level diagram alebo popis architektúry.
+- koncové zariadenia komunikujú s LoRa bránou, ktorá cez IP sieť preposiela komunikáciu sieťovému serveru,
+- sieťový server komunikáciu overuje a zasiela aplikačnému serveru na spracovanie,
+- aplikačný server obsluhuje webovú aplikáciu, ktorá je hlavným bodom interakcie s používateľom.
+
+![Architektura](../../../../projects/PRJ011/pictures/architektura.png)
 
 **Navigation:** [⬆️ SDLC](../index.md) · [⬅️ Projekt](../../index.md)

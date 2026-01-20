@@ -135,6 +135,12 @@ fm_reserved2: ""
 
 # 06-Implementation
 
+- nastavenie sieťového serveru (tenant, registrácia zariadení),
+- aplikačný server (implementácia aplikácie),
+- spustenie koncového zariadenia (poskladanie komponentov, injekcia kódu).
+
+![State Machine](../../../../projects/PRJ011/pictures/statemachine.png)
+
 - [Odkazy na kód / repozitáre](./code-links.md)
 
 **Navigation:** [⬆️ SDLC](../index.md) · [⬅️ Projekt](../../index.md)

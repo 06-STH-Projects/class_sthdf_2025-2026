@@ -1,4 +1,11 @@
-[🏠 Domov](../../index.md) · [⬅️ Nahor](../ST_INDEX.md)
+---
+fm_version: 1.0.1
+fm_version_comment: ''
+locale: sk
+fm_build: '2025-12-09T21:04:48Z'
+title: ST019
+---
+
 # ST019
 
 - [A1 – About Me](./deliverables/01_about-me.md)

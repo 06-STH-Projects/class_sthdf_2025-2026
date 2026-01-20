@@ -133,44 +133,195 @@ fm_reserved2: ""
 
 <!-- class_sthdf_dashboard_INSTANCE_ID: 01-class_sthdf_dashboard_2025-2026 -->
 
-[🏠 Domov](../../../index.md) · [⬅️ Nahor](../)
 # PRJ029 — Presentation
 
---- Headline ---
 ## Headline
-**2025-PRJ-029-ST_029-ST_029-Nazov projektu**
+**2025-PRJ-029-ST_029-GloveBlower**
 
-> Uvodny obrazok: TODO (dopln odkaz alebo subor).
+<div style={{ textAlign: "center" }}>
+  <img
+    src={require("../images/gloveblower_final.jpg").default}
+    style={{ width: "25%", maxWidth: "420px", height: "auto" }}
+    alt="GloveBlower"
+  />
+</div>
 
-Strucny text o projekte (1-3 vety, doplni tim).
---- Headline ---
+**GloveBlower** je 3D tlačený sušič boxerských rukavíc, ktorý pomocou USB ventilátora vháňa vzduch priamo do vnútra rukavice a výrazne skracuje čas sušenia.
 
---- introduction ---
+
 ## Introduction
-**2025-PRJ-029-ST_029-ST_029-Nazov projektu**
 
-Strucny text o projekte (zhrnutie zadania + prinos).
---- introduction ---
+GloveBlower je študentský projekt zameraný na návrh jednoduchého fyzického produktu podporeného **systematickým architektonickým myslením** a metodikou SDLC.
 
---- obsah ---
-## Obsah
-- [01-Business](../sdlc/01-business/index.md)
-- [02-Top Level Architecture](../sdlc/02-top-level-architecture/index.md)
-- [03-Solution Architecture](../sdlc/03-solution-architecture/index.md)
-- [04-Analysis](../sdlc/04-analysis/index.md)
-- [05-Design](../sdlc/05-design/index.md)
-- [06-Implementation](../sdlc/06-implementation/index.md)
-- [07-Testing & Verification](../sdlc/07-testing-verification/index.md)
-- [08-Operation](../sdlc/08-operation/index.md)
-- [09-Change Management](../sdlc/09-Change-Management/index.md)
---- obsah ---
+Projekt kombinuje:
+- 3D tlač,
+- mechanický dizajn,
+- modelovanie architektúry v nástroji Enterprise Architect.
 
-## 01-Business
-## 02-Top Level Architecture
-## 03-Solution Architecture
-## 04-Analysis
-## 05-Design
-## 06-Implementation
-## 07-Testing & Verification
-## 08-Operation
-## 09-Change Management
+Zariadenie pozostáva z:
+- 3D tlačeného stojana (GloveBlower),
+- adaptéra pre ventilátor 60×60 mm,
+- USB ventilátora ako zdroja prúdenia vzduchu.
+
+
+## Business Domain
+
+Používateľ po tréningu potrebuje **rýchlo a hygienicky vysušiť boxerské rukavice**.
+
+![Business Domain](../images/ea1.png)
+
+## Požiadavky
+
+### Funkčné požiadavky
+- prúdenie vzduchu do rukavice,
+- ventilátor vháňa vzduch zdola nahor,
+- adaptér kompatibilný s ventilátorom 60×60 mm,
+- stabilné nasadenie rukavice,
+- sušenie jednej rukavice.
+
+### Nefunkčné požiadavky
+- mechanická stabilita,
+- odolnosť voči vlhkosti,
+- jednoduchá výroba pomocou 3D tlače.
+
+![Requirements](../images/ea2.png)
+
+
+## Business Process – Sušenie rukavíc
+
+![Business Process](../images/ea3.png)
+
+**Postup:**
+1. Používateľ nasadí rukavicu na GloveBlower  
+2. Zapne USB ventilátor  
+3. Ventilátor vytvorí prúdenie vzduchu  
+4. Vzduch vysušuje vnútro rukavice  
+5. Výsledkom je suchá rukavica  
+
+
+## Top Level Architecture
+
+![Top Level Architecture](../images/ea4.png)
+
+**Komponenty systému:**
+- USB napájanie,
+- USB ventilátor (60×60 mm),
+- 3D tlačený GloveBlower,
+- boxerská rukavica.
+
+
+
+## Návrh riešenia – vývoj tvaru
+
+<div style={{ textAlign: "center" }}>
+  <img
+    src={require("../images/23.jpg").default}
+    style={{ width: "35%", maxWidth: "420px", height: "auto" }}
+    alt="GloveBlower"
+  />
+</div>
+
+
+Návrh GloveBlower vznikol iteratívne – od ručného náčrtu až po
+prakticky funkčný 3D model. Hlavným cieľom bolo zabezpečiť stabilné
+nasadenie rukavice a efektívne vedenie vzduchu.
+
+
+
+## 3D model – Fusion 360 (pracovný návrh)
+
+<div style={{ textAlign: "center" }}>
+  <img
+    src={require("../images/image.png").default}
+    style={{ width: "35%", maxWidth: "420px", height: "auto" }}
+    alt="GloveBlower"
+  />
+  <img
+    src={require("../images/image2.png").default}
+    style={{ width: "35%", maxWidth: "420px", height: "auto" }}
+    alt="GloveBlower"
+  />
+</div>
+
+
+Model bol vytvorený vo Fusion 360 s dôrazom na:
+- jednoduchú geometriu,
+- optimalizáciu pre 3D tlač,
+- správny tok vzduchu smerom do rukavice.
+
+
+
+## Implementácia – 3D tlač
+
+Tlač realizovaná na **Original Prusa XL**.
+
+<div style={{ textAlign: "center" }}>
+  <img
+    src={require("../images/9.png").default}
+    style={{ width: "35%", maxWidth: "420px", height: "auto" }}
+    alt="GloveBlower"
+  />
+  <img
+    src={require("../images/10.png").default}
+    style={{ width: "35%", maxWidth: "420px", height: "auto" }}
+    alt="GloveBlower"
+  />
+</div>
+
+
+- bez skrutiek,
+- bez lepenia,
+- jednoduchá montáž.
+
+## Hotový prototyp
+<div style={{ textAlign: "center" }}>
+  <img
+    src={require("../images/gloveblower_final.jpg").default}
+    style={{ width: "35%", maxWidth: "420px", height: "auto" }}
+    alt="GloveBlower"
+  />
+  <img
+    src={require("../images/final.jpg").default}
+    style={{ width: "35%", maxWidth: "420px", height: "auto" }}
+    alt="GloveBlower"
+  />
+</div>
+
+<div style={{ textAlign: "center"}}>
+<img
+  src={require("../images/final_zapojenie.jpg").default}
+  style={{ width: "35%", maxWidth:"420px", height: "auto"}}
+  alt="Zapojenie"
+/>
+<img
+  src={require("../images/final_rukavice.jpg").default}
+  style={{ width: "35%", maxWidth:"420px", height: "auto"}}
+  alt="Final"
+/>
+</div>
+
+Produkt je:
+- mechanicky stabilný,
+- plne funkčný,
+- reálne použiteľný po tréningu.
+
+
+
+## Zhodnotenie projektu
+
+Projekt GloveBlower demonštruje:
+- návrh fyzického produktu,
+- prácu s požiadavkami,
+- architektonické myslenie,
+- prepojenie návrhu a reálneho prototypu.
+
+Riešenie je jednoduché, lacné a prakticky využiteľné.
+
+
+## Možné rozšírenia
+
+- sušenie dvoch rukavíc naraz,
+- časovač sušenia,
+- výkonnejší alebo tichší ventilátor,
+- antibakteriálny filter,
+- skladacia alebo cestovná verzia.

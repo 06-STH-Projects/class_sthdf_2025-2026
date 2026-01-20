@@ -5,7 +5,7 @@ locale: sk
 fm_build: '2025-12-09T21:04:48Z'
 ---
 
-# 📚 Knowledge Contribution
+# 📚 Nastavenie Thonny IDE pre Raspberry Pi Pico
 
 ## 🔖 Názov a stručný popis
 **Nastavenie Thonny IDE pre Raspberry Pi Pico**
@@ -63,7 +63,15 @@ Prejdite na oficiálnu stránku:
 
 Vyberte operačný systém a stiahnite inštalačný súbor.
 
-<figure> <img src="../images/thonny_download.png" width="600"> </figure>
+**Obrázok (GitHub Pages / MD):**
+
+![Thonny – stiahnutie](../images/thonny_download.png)
+
+**Obrázok (Docusaurus / HTML zo static):**
+
+<figure>
+  <img src="/sthdf_2025/ST019/images/thonny_download.png" width="600" alt="Thonny – stiahnutie" />
+</figure>
 
 ---
 
@@ -84,7 +92,15 @@ V Thonny otvorte:
 
 Zobrazí sa okno:
 
-<figure> <img src="../images/thonny_interpreter.png" width="600"> </figure>
+**Obrázok (GitHub Pages / MD):**
+
+![Thonny – výber interpretéra](../images/thonny_interpreter.png)
+
+**Obrázok (Docusaurus / HTML zo static):**
+
+<figure>
+  <img src="/sthdf_2025/ST019/images/thonny_interpreter.png" width="600" alt="Thonny – výber interpretéra" />
+</figure>
 
 Nastavte:
 

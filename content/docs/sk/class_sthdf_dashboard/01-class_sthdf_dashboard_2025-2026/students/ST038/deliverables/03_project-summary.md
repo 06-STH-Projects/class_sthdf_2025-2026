@@ -1,6 +1,7 @@
 ---
 fm_version: 1.0.1
 fm_build: '2025-11-24T15:50:07.127712+00:00'
+title: 🧭 CONTEXT ---------------------------------------------------------
 fm_version_comment: ''
 locale: sk
 ---
@@ -237,3 +238,4 @@ Projekt čerpá z:
 
 ## Navigácia
 - [↩️ Späť](../index.md)
+

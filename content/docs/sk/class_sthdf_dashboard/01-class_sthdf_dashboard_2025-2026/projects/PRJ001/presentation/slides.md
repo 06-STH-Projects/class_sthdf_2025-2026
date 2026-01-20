@@ -134,7 +134,6 @@ fm_reserved2: ""
 
 <!-- class_sthdf_dashboard_INSTANCE_ID: 01-class_sthdf_dashboard_2025-2026 -->
 
-[🏠 Domov](../../../index.md) · [⬅️ Nahor](../)
 # PRJ001 — Presentation
 ## Headline
 **2025-PRJ-001-ST_007-ST_022-Revia**
@@ -761,3 +760,4 @@ Projekt je pripravený na produkčné nasadenie s vedomím, že budúce verzie m
 
 
 
+[🏠 Domov](../../../index.md) · [⬅️ Nahor](../)

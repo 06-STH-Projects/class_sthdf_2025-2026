@@ -3,6 +3,7 @@ fm_version: 1.0.1
 fm_version_comment: ''
 locale: sk
 fm_build: '2025-12-09T21:04:48Z'
+title: 📚 Knowledge Contribution
 ---
 
 # 📚 Knowledge Contribution
@@ -83,3 +84,4 @@ Je to projekt, ktorý spája 3D modelovanie, praktický športový problém.
 
 ## Navigácia
 - [↩️ Späť](../index.md)
+

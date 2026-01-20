@@ -133,7 +133,6 @@ fm_reserved2: ""
 
 <!-- class_sthdf_dashboard_INSTANCE_ID: 01-class_sthdf_dashboard_2025-2026 -->
 
-[🏠 Domov](../../../index.md) · [⬅️ Nahor](../)
 # PRJ023 — Presentation
 
 **2025-PRJ-023-ST_023-ST_023-Air quality monitor**
