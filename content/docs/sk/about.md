@@ -4,13 +4,17 @@ title: O projekte KNIFE Overview
 
 # O projekte KNIFE Overview - Knowledge In Friendly Examples
 
-KNIFE je projekt na podpporu znalostných pracovníkov.
-"Dokumentácia sa NEVYTVÁRA až j epráca hotová. Je to ilúzia, sebaklam.
-Knowledge, poznanie vzniká ako produkt našich každodenných aktivít.
-Bolo by prínosom, keby sme dokázali v každom okamihu našich aktivít zachytávať vzbinkajúce poznanie.
-Dokumentácia - ako fotografia v čase do našeho poznanie by sa generovalo z jedného zdroja pravdy (SSOT-Single Source Of truth).
+KNIFE je projekt na podporu znalostných pracovníkov.
 
-Detaily o tomto projekte o zmene paradigmy spravovania znalostí a tvorby dokumentácie v rámci SDLC sú tu:
+"Dokumentácia sa NEVYTVÁRA až je práca hotová. 
+
+Je to ilúzia, sebaklam.
+
+Knowledge, poznanie vzniká ako produkt našich každodenných aktivít.
+Bolo by prínosom, keby sme dokázali v každom okamihu našich aktivít zachytávať vznikajúce poznanie.
+Dokumentácia - ako fotografia v čase do našeho poznania - by sa generovala z jedného zdroja pravdy (SSOT-Single Source Of truth).
+
+Detaily o tomto projekte,  o zmene paradigmy spravovania znalostí a tvorby dokumentácie v rámci SDLC sú tu:
 
 [KNIFE-Knowledge in Friendly Examples- projekt na správu a zdieľanie znalostí](https://knifes.systemthinking.sk/sk/help)
 
