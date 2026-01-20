@@ -135,6 +135,7 @@ fm_reserved2: ""
 
 # 07-Testing & Verification
 
-- [Test report a QA výstupy](./test-report.md)
+Kapitola popisuje testovanie funkčnosti riešenia.
 
-**Navigation:** [⬆️ SDLC](../index.md) · [⬅️ Projekt](../../index.md)
+**Navigation:** [⬅️ Implementation](../06-implementation/index.md) · [➡️ Test Report](./test-report.md)
+

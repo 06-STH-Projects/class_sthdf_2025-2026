@@ -135,6 +135,8 @@ fm_reserved2: ""
 
 # 04-Analysis
 
-- [Backlog a analýzy](./backlog.md)
+Kapitola sumarizuje analýzu riešenia a rozhodnutí počas návrhu.
 
-**Navigation:** [⬆️ SDLC](../index.md) · [⬅️ Projekt](../../index.md)
+**Navigation:** [⬅️ Solution Architecture](../03-solution-architecture/index.md) · [➡️ Backlog](./backlogs.md)
+
+

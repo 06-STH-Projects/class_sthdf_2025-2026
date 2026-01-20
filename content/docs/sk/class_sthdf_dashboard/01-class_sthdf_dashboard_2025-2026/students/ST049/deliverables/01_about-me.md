@@ -8,20 +8,18 @@ title: 🙋 About Me
 
 # 🙋 About Me
 ## 🔖 Základné informácie
-- Meno a priezvisko 
-- Študentský GitHub profil (link) 
-- Kontaktný e-mail 
+- Samuel Sventek
+- https://github.com/sejmjul
+- samuel.sventek@stuba.sk
 ## 🎯 Profesijné záujmy
-- Oblasti, ktoré ma bavia (IT, dizajn, podnikanie, …) 
-- Aké skúsenosti by som chcel získať 
+- Linux, disky, systémy 
+- podnikové systémy
 ## 💡 Moje hobby / záujmy
-- Šport, hudba, varenie, cestovanie … 
-- Čokoľvek, čo odhaľuje „ľudskú stránku“ 
+- Šport, filmy, rodina 
 ## 🚀 Očakávania od predmetu
-- Čo chcem dosiahnuť v rámci kurzu 
-- Čo očakávam od spolupráce s tímom a komunitou 
+- zlepšiť sa v systémovom prístupe k problémom 
 ## 🚀 Čo viem ponúknuť
-- Čo chcem ponúknuť v rámci kurzu 
+- ochotu spolupracovať na zaujímavých problémoch aj mimo pracovnej doby :)
 
 ## Navigácia
 - [↩️ Späť](../index.md)

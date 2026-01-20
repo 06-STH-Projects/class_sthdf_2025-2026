@@ -135,6 +135,11 @@ fm_reserved2: ""
 
 # 01-Business
 
+- vytvoriť cost-effective riešenie pre optimalizáciu parkovacieho procesu,
+- sústrediť sa na spoľahlivosť a jednoduchosť prevádzky riešenia,
+- priblížiť riešenie bližšie ku koncovým použiívateľom pomocou webového rozhrania,
+- využiť bezdrôtové technológie s nízkoou spotrebou energie a ďalekým komunikačným dosahom.
+
 - [Business poznámky](./notes.md)
 
 **Navigation:** [⬆️ SDLC](../index.md) · [⬅️ Projekt](../../index.md)

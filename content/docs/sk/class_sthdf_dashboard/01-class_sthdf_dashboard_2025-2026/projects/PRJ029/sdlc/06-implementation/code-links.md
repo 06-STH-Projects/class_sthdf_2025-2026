@@ -134,3 +134,10 @@ fm_reserved2: ""
 <!-- class_sthdf_dashboard_INSTANCE_ID: 01-class_sthdf_dashboard_2025-2026 -->
 
 PRJ029 / 06-implementation / code-links.md
+## Použité komponenty
+- USB ventilátor 60×60×15 mm (5 V)
+- USB napájací kábel
+- 3D tlačené telo GloveBlower
+
+## Implementácia
+Model bol vytlačený na 3D tlačiarni a ventilátor bol vložený do spodnej časti bez skrutiek.

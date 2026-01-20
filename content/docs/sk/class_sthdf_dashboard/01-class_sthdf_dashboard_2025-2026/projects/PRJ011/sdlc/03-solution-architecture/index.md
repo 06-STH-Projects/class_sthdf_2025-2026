@@ -135,6 +135,23 @@ fm_reserved2: ""
 
 # 03-Solution Architecture
 
+## Koncové zariadenie
+
+- TTGO LoRa T3,
+- vodeodolného ultrazvukového sensora,
+- batérie (nevyžaduje elektrickú sieť),
+- vlastného kódu, ktorý optimalizuje životnosť batérie.
+
+![Zariadenie v krabici](../../../../projects/PRJ011/pictures/zariadenieKrabica.jpg)
+
+## LoRa brána
+
+- RaspBerry Pi 4B,
+- IMST iC880A-SPI koncentrátoru,
+- napájaná zo siete.
+
+![LoRa brána](../../../../projects/PRJ011/pictures/LoraBrana.png)
+
 - [Solution design](./design.md)
 
 **Navigation:** [⬆️ SDLC](../index.md) · [⬅️ Projekt](../../index.md)
