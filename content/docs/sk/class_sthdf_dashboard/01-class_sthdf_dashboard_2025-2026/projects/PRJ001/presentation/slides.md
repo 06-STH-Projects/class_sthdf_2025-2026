@@ -180,6 +180,9 @@ Cieľom projektu je vytvoriť kompaktnú, vizuálne atraktívnu počasovú stani
 - Vzdelávací projekt pre embedded systémy a Python GUI development
 - Možnosť rozšírenia o vlastné senzory (teplota, vlhkosť, tlak)
 
+![drawing](./images/drawing.jpg)
+  
+
 ## 02-Top Level Architecture
 ![Top-level-architektura](./images/top-level.png)
 
