@@ -134,6 +134,72 @@ fm_reserved2: ""
 <!-- class_sthdf_dashboard_INSTANCE_ID: 01-class_sthdf_dashboard_2025-2026 -->
 
 # 01-Business
+## 1. Vízia a misia
+
+### Vízia
+Stať sa rozpoznateľnou značkou digitálne navrhnutých drevených hlavolamov, ktoré spájajú remeselný charakter dreva s moderným parametrickým dizajnom pripraveným pre CNC.
+
+### Misia
+Navrhovať estetické, funkčné a opakovateľne vyrobiteľné drevené hlavolamy, ktoré:
+- rozvíjajú priestorové a logické myslenie,
+- sú navrhnuté s dôrazom na tolerancie a „prácu“ dreva,
+- umožňujú personalizáciu ako je gravírovanie či varianty obtiažnosti,
+- majú pripravenú dokumentáciu
+
+
+## 2. Problém a príležitosť
+
+### Problém
+Trh s hlavolamami je bohatý, no:
+- kvalitné drevené hlavolamy bývajú drahé,
+- lacné varianty trpia zlým spracovaním a toleranciami,
+- mnoho návrhov nie je „CNC-friendly“ a nie je parametrických
+
+### Príležitosť
+Woodies bude kombinovať výrobu s digitálnym produktom ako sú CAD modely
+
+Týmto sa dá:
+- rýchlo iterovať dizajn,
+- vytvoriť knižnicu produktov,
+- ponúknuť B2C aj B2B bez potreby vlastnej výroby.
+
+## 3. Cieľové segmenty
+
+### 3.1 B2C
+- zberatelia mechanických hlavolamov
+- zákazníci hľadajúci originálny darček
+- rodičia/učitelia
+
+### 3.2 B2B
+- prevádzkovatelia escape roomov - rekvizity, puzzle komponenty
+- školy / krúžky
+
+## 4. Konkurenčný kontext a diferenciácia
+
+### Existujúci trh
+- Handmade výrobky – variabilná kvalita, často bez výrobnej dokumentácie
+- Masová výroba  – tlak na cenu, slabé tolerancie/finishing
+- Prémiové puzzle box – vysoká cena, tradičný prístup
+
+### Diferenciácia Woodies
+- zameranie na digitálny návrh a opakovateľnosť,
+- „design system“ pre puzzle 
+
+## 5. Produktové portfólio
+
+Podľa analýzy v `analysis.md` je vhodné pokryť 3–4 typy, aby sa ukázali rozdielne výrobky
+
+1. **Interlocking (Burr)** – 6-piece burr (klasika, stredná náročnosť výroby)  
+2. **Assembly (Soma Cube / Snake Cube)** – edukatívne, dobré na parametrizáciu  
+3. **Sequential discovery (Puzzle box – jednoduchší variant)** – vyššia komplexita, ukážka tolerancií  
+4. (voliteľné) **Disentanglement (ring & string)** – jednoduchá výroba, zaujímavý user experience
+
+## 6. Riziká
+
+- Neodhadnuté tolerancie → dizajn nevhodný pre drevo 
+- Slabá diferenciácia → mnoho „podobných“ puzzle na trhu
+- Autorské práva pri inšpirácii tradičnými puzzle 
+
 
 - [Business poznámky](./notes.md)
 

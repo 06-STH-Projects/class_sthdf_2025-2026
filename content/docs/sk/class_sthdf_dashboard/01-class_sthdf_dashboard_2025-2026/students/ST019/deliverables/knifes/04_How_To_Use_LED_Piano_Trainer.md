@@ -5,7 +5,7 @@ locale: sk
 fm_build: '2025-12-09T21:04:48Z'
 ---
 
-# 📚 Spustenie a ovládanie systému Piano Trainer
+# 📚 Knowledge Contribution
 
 ## 🔖 Názov a stručný popis
 **Spustenie a ovládanie systému Piano Trainer**
@@ -42,13 +42,7 @@ Tento systém využiješ pri:
 4. **Zvoľ skladbu:** Vyber MIDI súbor z disku alebo vlož YouTube link a klikni na *Transcribe*.
 5. **Trénuj:** Klikni na **Launch Trainer** a sleduj svetlá nad klávesmi.
 
-
-![Sites](../images/piano_trainer_setup.png)
-
-
-<figure>
-  <img src="/sthdf_2025/PRJ_007/images/piano_trainer_setup.png" width="400" alt="Piano Trainer – setup" />
-</figure>
+<figure> <img src="../images/piano_trainer_setup.png" width="400"> </figure>
 
 ---
 
@@ -62,18 +56,14 @@ Po spustení by mal program automaticky detekovať pripojené zariadenia. Dôle�
 - **Pico Serial Port:** Predvolene môže byť nastavený na COM3, ale pre správnu komunikáciu s Pico ho zmeň na **COM5** (alebo port, ktorý priradil tvoj systém).
 - **Keyboard Input:** Vyber svoju pripojenú MIDI klávesnicu (napr. LPK25).
 
-**Obrázok:** ![Sites](../images/piano_trainer_gui_local.png) 
-
-<figure><img src="/sthdf_2025/PRJ_007/images/piano_trainer_gui_local.png" width="600" alt="Piano Trainer – GUI (local)" /></figure>
+<figure> <img src="../images/piano_trainer_gui_local.png" width="600"> </figure>
 
 ### 3️⃣ Výber zdroja hudby
 Aplikácia ponúka dve cesty k tréningu:
 - **Lokálny súbor (Option B):** Klikni na *Browse* a vyber si akýkoľvek `.mid` súbor. Program ho rozloží na jednotlivé noty a vypočíta čakacie doby medzi nimi.
 - **YouTube Transkripcia (Option A):** Vlož odkaz na YouTube video (ideálne piano cover). Po kliknutí na *Transcribe* softvér video spracuje, stiahne zvuk a pomocou AI vytvorí MIDI súbor s notami.
 
-**Obrázok:** ![Sites](../images/piano_trainer_gui_youtube.png) 
-
-<figure><img src="/sthdf_2025/PRJ_007/images/piano_trainer_gui_youtube.png" width="600" alt="Piano Trainer – GUI (YouTube)" /></figure>
+<figure> <img src="../images/piano_trainer_gui_youtube.png" width="600"> </figure>
 
 ### 4️⃣ Spustenie tréningu
 Kliknutím na **Launch Trainer** aktivuješ motor aplikácie. Softvér začne v reálnom čase posielať informácie o notách do Raspberry Pi Pico. LED diódy sa rozsvietia nad tými klávesmi, ktoré máš v danom momente stlačiť. V konzole aplikácie môžeš sledovať výpisy o tom, či si stlačil správny kláves alebo si spravil chybu.

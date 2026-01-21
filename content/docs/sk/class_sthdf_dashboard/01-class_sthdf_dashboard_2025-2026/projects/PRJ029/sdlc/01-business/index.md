@@ -135,6 +135,6 @@ fm_reserved2: ""
 
 # 01-Business
 
-Táto kapitola popisuje biznisový kontext projektu GloveBlower, problém používateľa a hodnotu riešenia.
+- [Business poznámky](./notes.md)
 
-**Navigation:** [⬆️ SDLC](../index.md) · [➡️ Business Notes](./notes.md)
+**Navigation:** [⬆️ SDLC](../index.md) · [⬅️ Projekt](../../index.md)

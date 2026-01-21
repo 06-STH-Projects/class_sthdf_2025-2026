@@ -1,7 +1,6 @@
 ---
 fm_version: 1.0.1
 fm_build: '2025-11-24T15:50:07.130400+00:00'
-title: 🧭 CONTEXT ---------------------------------------------------------
 fm_version_comment: ''
 locale: sk
 ---
@@ -273,4 +272,3 @@ MVP je stabilné, funkčné a pripravené na ďalší vývoj.
 
 ## Navigácia
 - [↩️ Späť](../index.md)
-
