@@ -5,7 +5,7 @@ locale: sk
 fm_build: '2025-12-09T21:04:48Z'
 ---
 
-# 📚 Nastavenie AKAI MIDI klávesnice 
+# 📚 Knowledge Contribution
 
 ## 🔖 Názov a stručný popis
 **Nastavenie AKAI MIDI klávesnice – registrácia, softvér a prvé spustenie**
@@ -43,9 +43,7 @@ Tento postup použiješ pri:
 2. Vytvor si účet alebo sa prihlás.  
 3. Klikni na **Register New Product**  
   
-![AKAI – Register New Product](../images/akai_register_product.png)
-
-<figure><img src="/sthdf_2025/PRJ_007/images/akai_register_product.png" width="600" alt="AKAI – Register New Product" /></figure>
+<figure> <img src="../images/akai_register_product.png" width="600"> </figure>
   
 4. Odpíš sériové číslo zo spodnej strany klávesnice.  
 5. Po registrácii si stiahni softvér dostupný pre tvoje zariadenie.  
@@ -80,9 +78,7 @@ Po prihlásení prejdime do sekcie:
 Zobrazí sa formulár, do ktorého zadáš sériové číslo.  
 Zospodu klávesnice nájdeš štítok so sériovým kódom — treba ho opísať presne.
 
-![AKAI – Sériové číslo zariadenia](../images/akai_serial_number.png)
-
-<figure><img src="/sthdf_2025/PRJ_007/images/akai_serial_number.png" width="600" alt="AKAI – Sériové číslo zariadenia" /></figure>
+<figure> <img src="../images/akai_serial_number.png" width="600"> </figure>
 
 Po potvrdení sa produkt uloží do účtu.
 
@@ -91,9 +87,7 @@ Po potvrdení sa produkt uloží do účtu.
 ### 4️⃣ Stiahnutie softvéru
 Po registrácii sa ti zobrazí zoznam softvéru pripraveného na stiahnutie:
 
-![AKAI – Dostupné downloady softvéru](../images/akai_software_downloads.png)
-
-<figure><img src="/sthdf_2025/PRJ_007/images/akai_software_downloads.png" width="600" alt="AKAI – Dostupné downloady softvéru" /></figure>
+<figure> <img src="../images/akai_software_downloads.png" width="600"> </figure>
 
 Typické možnosti:
 - **Hype**

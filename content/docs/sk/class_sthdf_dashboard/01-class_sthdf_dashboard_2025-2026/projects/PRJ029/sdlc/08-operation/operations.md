@@ -134,9 +134,3 @@ fm_reserved2: ""
 <!-- class_sthdf_dashboard_INSTANCE_ID: 01-class_sthdf_dashboard_2025-2026 -->
 
 PRJ029 / 08-operation / operations.md
-## Použitie
-1. Nasadiť rukavicu na GloveBlower
-2. Pripojiť USB napájanie
-3. Po vysušení rukavicu zložiť
-
-Zariadenie pracuje s bezpečným napätím 5 V.

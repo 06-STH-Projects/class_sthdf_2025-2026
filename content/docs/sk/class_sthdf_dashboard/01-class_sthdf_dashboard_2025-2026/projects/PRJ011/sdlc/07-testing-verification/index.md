@@ -135,18 +135,6 @@ fm_reserved2: ""
 
 # 07-Testing & Verification
 
-## Pokrytie LoRa bránou
-
-![Pokrytie](../../../../projects/PRJ011/pictures/pokrytie.png)
-
-## Spotreba energie koncového zariadenia
-
-![Spotreba energie](../../../../projects/PRJ011/pictures/spotreba.png)
-
-## Korektný prenos a spracovanie údajov
-
-Overenie korektného prenosu a spracovania údajov.
-
 - [Test report a QA výstupy](./test-report.md)
 
 **Navigation:** [⬆️ SDLC](../index.md) · [⬅️ Projekt](../../index.md)

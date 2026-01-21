@@ -3,10 +3,9 @@ fm_version: 1.0.1
 fm_version_comment: ''
 locale: sk
 fm_build: '2025-12-09T21:04:48Z'
-title: 9. Reflexia a spätná väzba
 ---
 
-# 9. Reflexia a spätná väzba
+## 9. Reflexia a spätná väzba
 1. Čo bolo pre teba v tomto predmet/úlohe najľahšie?  
 - zlepiť produkt z vyrezaných komponentov
 2. Čo bolo najťažšie a prečo?

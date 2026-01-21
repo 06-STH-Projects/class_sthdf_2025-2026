@@ -3,25 +3,19 @@ fm_version: 1.0.1
 fm_version_comment: ''
 locale: sk
 fm_build: '2025-12-09T21:04:48Z'
-title: 🙋 About Me
 ---
 
-# 🙋 About Me
+🙋 About Me
 ## 🔖 Základné informácie
-- Meno a priezvisko 
-- Študentský GitHub profil (link) 
-- Kontaktný e-mail 
+- Viktória Bordácsová
 ## 🎯 Profesijné záujmy
-- Oblasti, ktoré ma bavia (IT, dizajn, podnikanie, …) 
-- Aké skúsenosti by som chcel získať 
+- Jeden z mojich hlavných záujmov je IT, ako aj videoherny dizajn
+- Rada by som v rámci predmetu získala skúsenosti s novými  tehcnológiami, ku ktorým som predtým nemala možnosť sa dostať. 
 ## 💡 Moje hobby / záujmy
-- Šport, hudba, varenie, cestovanie … 
-- Čokoľvek, čo odhaľuje „ľudskú stránku“ 
+- Hudba, knihy, videohry, filmy, seriály.
 ## 🚀 Očakávania od predmetu
-- Čo chcem dosiahnuť v rámci kurzu 
-- Čo očakávam od spolupráce s tímom a komunitou 
-## 🚀 Čo viem ponúknuť
-- Čo chcem ponúknuť v rámci kurzu 
+- Vyskúšať si niečo nové, čo som rpedtým ešte nerobila / nemám s tým skúsenosti.
+
 
 ## Navigácia
 - [↩️ Späť](../index.md)

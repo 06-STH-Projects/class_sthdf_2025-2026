@@ -134,13 +134,3 @@ fm_reserved2: ""
 <!-- class_sthdf_dashboard_INSTANCE_ID: 01-class_sthdf_dashboard_2025-2026 -->
 
 PRJ029 / 05-design / prototype.md
-## Návrh 3D modelu
-Model GloveBlower bol navrhnutý vo Fusion 360 s dôrazom na tlačiteľnosť.
-
-### Dizajnové prvky
-- eliptický tvar tela,
-- bočné otvory na odvod vzduchu,
-- plynulý loft adaptéra,
-- zaoblené hrany.
-
-Model je optimalizovaný pre 3D tlač bez podpier.
