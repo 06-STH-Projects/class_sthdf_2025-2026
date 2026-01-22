@@ -134,21 +134,3 @@ fm_reserved2: ""
 <!-- class_sthdf_dashboard_INSTANCE_ID: 01-class_sthdf_dashboard_2025-2026 -->
 
 PRJ029 / 03-solution-architecture / design.md
-## Dizajnový princíp
-Riešenie je založené na **pasívnej mechanike + aktívnom prúdení vzduchu** pomocou ventilátora.
-
----
-
-## Kľúčové rozhodnutia
-- použitie štandardného USB ventilátora 60×60 mm,
-- eliptický tvar stojana pre lepšie vedenie vzduchu,
-- bočné otvory pre cirkuláciu,
-- žiadne skrutky ani lepenie.
-
----
-
-## Výhody návrhu
-- jednoduchá výroba,
-- jednoduchá montáž,
-- nízke riziko poruchy,
-- dobrá stabilita rukavice.

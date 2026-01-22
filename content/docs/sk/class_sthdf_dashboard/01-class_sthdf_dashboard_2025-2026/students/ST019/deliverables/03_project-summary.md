@@ -4,7 +4,8 @@ fm_version_comment: ''
 locale: sk
 fm_build: '2025-12-09T21:04:48Z'
 ---
-## `STHDF-LEDPIAN` Project summary  
+
+## <STHDF-LEDPIANO> Project summary  
 
 **ID projektu:** STHDF-LEDPIANO  
 **Názov projektu:** Svetelná pomôcka na učenie hry na klavíri  

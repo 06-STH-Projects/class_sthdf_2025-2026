@@ -3,10 +3,9 @@ fm_version: 1.0.1
 fm_version_comment: ''
 locale: sk
 fm_build: '2025-12-09T21:04:48Z'
-title: 🙋 About Me
 ---
 
-# 🙋 About Me
+ 🙋 About Me
 ## 🔖 Základné informácie
 Juraj Marcinech  
 https://github.com/Jammz-kekw  
@@ -27,4 +26,3 @@ Premenu ideu do produktu
 
 ## Navigácia
 - [↩️ Späť](../index.md)
-

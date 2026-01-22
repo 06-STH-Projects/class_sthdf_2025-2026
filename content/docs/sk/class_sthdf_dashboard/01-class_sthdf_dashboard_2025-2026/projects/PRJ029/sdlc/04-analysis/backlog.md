@@ -134,14 +134,3 @@ fm_reserved2: ""
 <!-- class_sthdf_dashboard_INSTANCE_ID: 01-class_sthdf_dashboard_2025-2026 -->
 
 PRJ029 / 04-analysis / backlog.md
-## Analyzované možnosti
-- pasívne vs. aktívne sušenie,
-- jeden vs. viac ventilátorov,
-- USB vs. sieťové napájanie.
-
-## Riziká
-- nízky výkon ventilátora,
-- nestabilita rukavice,
-- vlhkosť materiálu.
-
-Riziká boli riešené tvarom stojana a výberom vhodného materiálu.

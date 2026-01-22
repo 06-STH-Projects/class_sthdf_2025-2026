@@ -3,10 +3,9 @@ fm_version: 1.0.1
 fm_version_comment: ''
 locale: sk
 fm_build: '2025-12-09T21:04:47Z'
-title: 🙋 About Me
 ---
 
-# 🙋 About Me
+ 🙋 About Me
 ## 🔖 Základné informácie
 - Lukáš Lovás
 - Študentský GitHub profil (https://github.com/LukasLovas) 

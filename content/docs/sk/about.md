@@ -2,22 +2,9 @@
 title: O projekte KNIFE Overview
 ---
 
-# O projekte KNIFE Overview - Knowledge In Friendly Examples
+# O projekte KNIFE Overview
 
-KNIFE je projekt na podpporu znalostných pracovníkov.
-"Dokumentácia sa NEVYTVÁRA až j epráca hotová. Je to ilúzia, sebaklam.
-Knowledge, poznanie vzniká ako produkt našich každodenných aktivít.
-Bolo by prínosom, keby sme dokázali v každom okamihu našich aktivít zachytávať vzbinkajúce poznanie.
-Dokumentácia - ako fotografia v čase do našeho poznanie by sa generovalo z jedného zdroja pravdy (SSOT-Single Source Of truth).
-
-Detaily o tomto projekte o zmene paradigmy spravovania znalostí a tvorby dokumentácie v rámci SDLC sú tu:
-
-[KNIFE-Knowledge in Friendly Examples- projekt na správu a zdieľanie znalostí](https://knifes.systemthinking.sk/sk/help)
-
-Tento repozitár (pre triedu STHDF) slúži ako **centrálny prehľad** (overview) 
-na prácu študentov počas školského roka 2025-2026 v rámci predmetu
-## Systémové myslenie v IT a digitálna fabrikácia
-
+Tento repozitár slúži ako **centrálny prehľad** (overview) všetkých KNIFE príspevkov a súvisiacich rámcov (7Ds, SDLC, STHDF).
 
 ## Čo je jeho úlohou
 
@@ -37,8 +24,5 @@ na prácu študentov počas školského roka 2025-2026 v rámci predmetu
 
 ## Ako pokračovať
 
-- ## Class 2025-2026 - Navigation
-
-- ### [Students](./class_sthdf_dashboard/01-class_sthdf_dashboard_2025-2026/students/ST_INDEX.md)
-- ### [Projects](./class_sthdf_dashboard/01-class_sthdf_dashboard_2025-2026/projects/PRJ_INDEX.md)
-- ### [Best students Project in the year 2025-2026](./class_sthdf_dashboard/01-class_sthdf_dashboard_2025-2026//class-sthdf/showcase/index.md).
+- Ak si nový → začni v sekcii [Help](/sk/help).
+- Ak hľadáš konkrétny KNIFE → pozri si prehľad v časti *KNIFE príspevky* v hlavnom menu.

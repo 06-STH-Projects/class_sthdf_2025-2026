@@ -134,28 +134,3 @@ fm_reserved2: ""
 <!-- class_sthdf_dashboard_INSTANCE_ID: 01-class_sthdf_dashboard_2025-2026 -->
 
 PRJ029 / 01-business / notes.md
-# Business Notes – GloveBlower
-
-## Kontext problému
-Boxerské rukavice po tréningu zostávajú vlhké, čo vedie k:
-- nepríjemnému zápachu,
-- skracovaniu životnosti materiálu,
-- vzniku baktérií a plesní.
-
-Používateľ často nemá čas ani vhodné podmienky na ich správne sušenie.
-
----
-
-## Cieľ riešenia
-Navrhnúť jednoduché, lacné a dostupné riešenie, ktoré:
-- urýchli sušenie rukavíc,
-- nevyžaduje zložitú elektroniku,
-- je použiteľné doma aj v šatni.
-
----
-
-## Hodnota pre používateľa
-- suché rukavice po kratšom čase,
-- menší zápach,
-- jednoduchá obsluha,
-- nízke náklady.

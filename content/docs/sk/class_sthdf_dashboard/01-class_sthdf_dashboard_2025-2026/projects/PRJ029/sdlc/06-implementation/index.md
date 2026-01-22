@@ -135,7 +135,6 @@ fm_reserved2: ""
 
 # 06-Implementation
 
-Táto kapitola popisuje realizáciu riešenia.
+- [Odkazy na kód / repozitáre](./code-links.md)
 
-**Navigation:** [⬅️ Design](../05-design/index.md) · [➡️ Code Links](./code-links.md)
-
+**Navigation:** [⬆️ SDLC](../index.md) · [⬅️ Projekt](../../index.md)

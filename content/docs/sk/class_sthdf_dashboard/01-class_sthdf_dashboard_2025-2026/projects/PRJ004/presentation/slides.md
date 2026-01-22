@@ -135,6 +135,7 @@ fm_reserved2: ""
 
 <!-- class_sthdf_dashboard_INSTANCE_ID: 01-class_sthdf_dashboard_2025-2026 -->
 
+[🏠 Domov](../../../index.md) · [⬅️ Nahor](../)
 # PRJ004 — Presentation
 
 ## Headline
@@ -164,4 +165,5 @@ Projekt rieši problém neefektívneho debugovania pri práci so sériovou komun
 - [08-Operation](../sdlc/08-operation/index.md)
 - [09-Change Management](../sdlc/09-Change-Management/index.md)
 
-[🏠 Domov](../../../index.md) · [⬅️ Nahor](../)
+
+

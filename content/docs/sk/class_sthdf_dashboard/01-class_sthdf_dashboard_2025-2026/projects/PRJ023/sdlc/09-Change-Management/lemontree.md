@@ -1,64 +1,28 @@
-[🏠 Domov](../../index.md) · [⬅️ Nahor](../index.md)
+[🏠 Domov](../../../index.md) · [⬅️ Nahor](../index.md)
 
 ## EA & Lemontree
 
 Tieto obrázky zobrazujú proces porovnávania a zlúčenia modelov v nástroji Lemontree, ktorý sa používa na správu verzovania modelov vytvorených v Enterprise Architect (EA). Lemontree umožňuje identifikovať rozdiely medzi dvoma verziami modelu, vizualizovať zmeny a vykonať ich zlúčenie.
 
-### Obr. 1 — Porovnanie dvoch verzií modelu komponentov
-Porovnanie dvoch verzií modelu komponentov. V hornej časti sú zobrazené rozdiely v štruktúre modelu (ľavá verzia vs pravá verzia). V strede je vizualizovaný diagram komponentov, kde sú zmenené prvky zvýraznené. V spodnej časti sú detailné vlastnosti vybraného prvku s označením, čo sa zmenilo.
-
-**MD (repo docs /projects/PRJ023/images):**
-
-![lemontree_1 — md](../../images/lemontree_1.png)
-
-
-
-**Pages (Docusaurus static):**
-
 <figure>
-  <img src="/sthdf_2025/PRJ_023/images/lemontree_1.png" alt="lemontree_1 — pages" />
+  <img src="../../images/lemontree_1.png" alt="lemontree" width="700" />
+  <figcaption>Obr.: Porovnanie dvoch verzií modelu komponentov. V hornej časti sú zobrazené rozdiely v štruktúre modelu (ľavá verzia vs pravá verzia). V strede je vizualizovaný diagram komponentov, kde sú zmenené prvky zvýraznené. V spodnej časti sú detailné vlastnosti vybraného prvku s označením, čo sa zmenilo.</figcaption>
 </figure>
 
-### Obr. 2 — Porovnanie dvoch verzií Use Case diagramu
-Porovnanie dvoch verzií Use Case diagramu. Lemontree zvýrazňuje zmenené prvky (napr. názvy prípadov použitia) a umožňuje kontrolu rozdielov v atribútoch. V spodnej časti sú zobrazené konkrétne zmeny v názvoch a vlastnostiach.
-
-**MD (repo docs /projects/PRJ023/images):**
-
-![lemontree_2 — md](../../images/lemontree_2.png)
-
-**Pages (Docusaurus static):**
-
 <figure>
-  <img src="/sthdf_2025/PRJ_023/images/lemontree_2.png" alt="lemontree_2 — pages" />
+  <img src="../../images/lemontree_2.png" alt="lemontree" width="700" />
+  <figcaption>Obr.: Porovnanie dvoch verzií Use Case diagramu. Lemontree zvýrazňuje zmenené prvky (napr. názvy prípadov použitia) a umožňuje kontrolu rozdielov v atribútoch. V spodnej časti sú zobrazené konkrétne zmeny v názvoch a vlastnostiach.</figcaption>
 </figure>
 
-### Obr. 3 — Porovnanie modulov v hierarchii komponentov
-Porovnanie modulov v hierarchii komponentov. Lemontree zobrazuje rozdiely v štruktúre modulov a ich vlastnostiach. V spodnej časti sú detailné zmeny atribútov (napr. názvy, typy).
-
-**MD (repo docs /projects/PRJ023/images):**
-
-![lemontree_3 — md](../../images/lemontree_3.png)
-
-**Pages (Docusaurus static):**
-
 <figure>
-  <img src="/sthdf_2025/PRJ_023/images/lemontree_3.png" alt="lemontree_3 — pages" />
+  <img src="../../images/lemontree_3.png" alt="lemontree" width="700" />
+  <figcaption>Obr.: Porovnanie modulov v hierarchii komponentov. Lemontree zobrazuje rozdiely v štruktúre modulov a ich vlastnostiach. V spodnej časti sú detailné zmeny atribútov (napr. názvy, typy).</figcaption>
 </figure>
 
-
-### Obr. 4 — Zlúčenie rozdielov medzi dvoma verziami modelu
-Zlúčenie rozdielov medzi dvoma verziami modelu. V hornej časti sú zobrazené tri stĺpce: pôvodná verzia, upravená verzia a cieľová verzia po zlúčení. V strede je vizualizovaný Use Case diagram s vyznačenými zmenami. V spodnej časti sú detailné informácie o zlúčených vlastnostiach.
-
-**MD (repo docs /projects/PRJ023/images):**
-
-![lemontree_4 — md](../../images/lemontree_4.png)
-
-**Pages (Docusaurus static):**
-
 <figure>
-  <img src="/sthdf_2025/PRJ_023/images/lemontree_4.png" alt="lemontree_4 — pages" />
+  <img src="../../images/lemontree_4.png" alt="lemontree" width="700" />
+  <figcaption>Obr.: Zlúčenie rozdielov medzi dvoma verziami modelu. V hornej časti sú zobrazené tri stĺpce: pôvodná verzia, upravená verzia a cieľová verzia po zlúčení. V strede je vizualizovaný Use Case diagram s vyznačenými zmenami. V spodnej časti sú detailné informácie o zlúčených vlastnostiach.</figcaption>
 </figure>
-
 
 ---
 

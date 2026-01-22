@@ -3,7 +3,6 @@ fm_version: 1.0.1
 fm_version_comment: ''
 locale: sk
 fm_build: '2025-12-09T21:04:48Z'
-title: 📚 Knowledge Contribution
 ---
 
 # 📚 Knowledge Contribution  
@@ -87,4 +86,3 @@ Predchádza zápachu, chráni materiál a je ľahko prenosný vďaka USB napája
 
 ## Navigácia
 [↩️ Späť](../index.md)
-

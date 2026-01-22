@@ -135,16 +135,6 @@ fm_reserved2: ""
 
 # 09-Change Management
 
-Táto kapitola popisuje možné budúce rozšírenia a úpravy riešenia.
+- Change log / CR / impact analysis (doplníš podľa potreby).
 
-## Možné zmeny a vylepšenia
-- verzia pre sušenie dvoch rukavíc naraz,
-- výkonnejší alebo tichší ventilátor,
-- časovač sušenia,
-- antibakteriálny filter,
-- skladacia verzia pre cestovanie.
-
-Návrh GloveBloweru je otvorený ďalšiemu vývoju bez potreby zásadných konštrukčných zmien.
-
-**Navigation:** [⬅️ Operation](../08-operation/index.md) · [⬆️ SDLC](../index.md)
-
+**Navigation:** [⬆️ SDLC](../index.md) · [⬅️ Projekt](../../index.md)
