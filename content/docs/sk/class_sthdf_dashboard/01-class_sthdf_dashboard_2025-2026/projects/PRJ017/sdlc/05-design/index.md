@@ -135,7 +135,7 @@ fm_reserved2: ""
 
 # 05-Design
 
-Dizajn rieši geometriu obalu (fit a ochrana), vizuálne FIIT varianty, sustainable balenie a návrh zberu (dropbox).
+V tejto kapitole ukazujeme vizuálny a produktový dizajn FiitCase: STU identita na obale, varianty farieb a základné princípy (minimal, čitateľnosť, fit a ochrana).
 
 - [Prototypy / dizajn](./prototype.md)
 

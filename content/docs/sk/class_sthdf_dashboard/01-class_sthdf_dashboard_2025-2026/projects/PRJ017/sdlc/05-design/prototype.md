@@ -134,3 +134,33 @@ fm_reserved2: ""
 <!-- class_sthdf_dashboard_INSTANCE_ID: 01-class_sthdf_dashboard_2025-2026 -->
 
 PRJ017 / 05-design / prototype.md
+
+Táto časť sumarizuje, ako sme navrhli vzhľad obalov ako STU merch a ako sme riešili praktické aspekty (fit, výrezy, ochrana). Vizuálne ukážky sú doplnené prototypovaním a výrobou.
+
+## 1) Vizuálny smer (STU merch)
+Cieľ bol jednoduchý: aby obal pôsobil ako **oficiálny merch STU** – čistý, čitateľný, bez preplácaných prvkov a s konzistentným umiestnením loga.
+
+![FiitCase – prehľad variantov (render)](./05-fiitcase1.png)
+
+**Čo je na dizajne dôležité:**
+- STU logo je malé, ale jasne čitateľné a vždy na rovnakom mieste (konzistentná identita).
+- Varianty farieb pokrývajú “basic” (čierna/biela) aj “hero” (gradient/živé farby) pre marketingový efekt.
+- Dizajn je použiteľný na viac modelov telefónov (rôzne výrezy na kamery).
+
+## 2) Produktový dizajn
+Okrem vzhľadu musí obal:
+- sedieť na konkrétny model telefónu,
+- mať presné výrezy (kamera/porty/tlačidlá),
+- mať bezpečné hrany (neškrabe telefón ani ruku),
+- mať minimálnu ochranu rohov (aspoň základná).
+
+![FiitCase – Concept Art](./05-concept-art.jpg)
+![FiitCase1](./05-fiitcase2.png)
+![FiitCase2](./05-fiitcase3.jpg)
+
+## 3) Sustainable balenie + info o vrátení
+Balenie musí byť jednoduché a udržateľné a zároveň má komunikovať:
+- čo je to za produkt,
+- ako sa oň starať,
+- ako vrátiť použitý obal (waste collection).
+

@@ -134,3 +134,13 @@ fm_reserved2: ""
 <!-- class_sthdf_dashboard_INSTANCE_ID: 01-class_sthdf_dashboard_2025-2026 -->
 
 PRJ017 / 06-implementation / code-links.md
+
+## Odkazy na súbory z modelovacieho programu
+
+- [iPhone 16 Pro model](./iphone_16_pro.fbx)
+- [Samsung Galaxy S20 model](./SMVIT_Galaxy_s20.fbx)
+- [iPhone 16e model](./SMVIT_iphone_16_e.fbx)
+- [iPhone 16 Pro Max model](./SMVIT_iphone_16_pro_max.fbx)
+- [iPhone 16 model](./SMVIT_iphone_16.fbx)
+- [iPhone 17 plus model](./SMVIT_iphone_17_plus.fbx)
+- [iPhone 17 model](./SMVIT_iphone_17.fbx)

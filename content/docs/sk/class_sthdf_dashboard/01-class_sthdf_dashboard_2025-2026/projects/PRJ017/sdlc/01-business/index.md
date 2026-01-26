@@ -135,11 +135,11 @@ fm_reserved2: ""
 
 # 01-Business (PR017 – FiitCase)
 
-FiitCase je študentský projekt zameraný na **marketingový merch pre FIIT**: obaly na mobil s FIIT identitou (logo / tematické varianty), **udržateľné balenie** a možnosť **vrátiť použitý obal na recykláciu**.
+FiitCase je študentský projekt zameraný na **marketingový merch pre STU**: obaly na mobil s **STU identitou (logo / tematické varianty)**, **udržateľné balenie** a možnosť **vrátiť použitý obal na recykláciu** (zberné miesto napr. na FIIT).
 
 ## Prečo to robíme
-- FIIT komunita chce praktický merch, ktorý ľudia reálne používajú každý deň.
-- Obal na mobil má vysokú viditeľnosť → podporuje identitu a “patrím k FIIT”.
+- STU komunita chce praktický merch, ktorý ľudia reálne používajú každý deň.
+- Obal na mobil má vysokú viditeľnosť → podporuje školskú identitu a “patrím k STU”.
 - Udržateľný prístup (balenie + zber) dáva projektu zmysel aj mimo “len ďalší merch”.
 
 ## Biznis cieľ (v našom scope)
@@ -147,16 +147,15 @@ FiitCase je študentský projekt zameraný na **marketingový merch pre FIIT**: 
 - ukázať, že vieme zvládnuť celý lifecycle: dizajn → výroba → balenie → distribúcia → zber.
 
 ## Hlavný problém (čo si nesmieme klamať)
-Obal je **komodita**. Ak je jediná výhoda “je tam FIIT logo”, je to slabé. Aby to fungovalo ako merch, musíme vyhrať aspoň v dvoch bodoch:
+Obal je **komodita**. Ak je jediná výhoda “je tam STU logo”, je to slabé. Aby to fungovalo ako merch, musíme vyhrať aspoň v dvoch bodoch:
 - **dizajn** (vyzerá to profesionálne, nie lacno),
 - **kvalita a fit** (sedí na telefón, chráni, neškriabe),
 - **dostupnosť** (na fakulte/eventoch),
 - **udržateľnosť** (balenie bez zbytočného plastu + reálny zber/recyklácia).
 
 ## Riziká
-- **FIIT identita/brand:** nesprávne použitie loga = stopka alebo reputačný problém.
+- **STU identita/brand:** nesprávne použitie loga = stopka alebo reputačný problém.
 - **Greenwashing:** “zber” bez jasného procesu čo sa s tým stane = hanba, nie benefit.
 
-- [Business poznámky](./notes.md)
 
 **Navigation:** [⬆️ SDLC](../index.md) · [⬅️ Projekt](../../index.md)
