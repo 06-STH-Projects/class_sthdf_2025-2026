@@ -1,0 +1,143 @@
+---
+# roles/lxc_networking/tasks/main.yml
+- name: Ensure Nginx is installed
+  ansible.builtin.apt:
+    name: nginx
+    state: present
+    update_cache: true
+  become: true
+
+- name: Hide Nginx version and configure security settings
+  ansible.builtin.lineinfile:
+    path: /etc/nginx/nginx.conf
+    line: "{{ item }}"
+    insertafter: 'http {'
+    state: present
+  loop:
+    - '    server_tokens off;'
+    - '    client_max_body_size 10M;'
+    - '    client_body_buffer_size 128k;'
+  notify: Reload nginx
+  become: true
+
+- name: Configure rate limiting zones in nginx.conf
+  ansible.builtin.blockinfile:
+    path: /etc/nginx/nginx.conf
+    marker: "# {mark} ANSIBLE RATE LIMITING"
+    insertafter: 'http {'
+    block: |2
+          limit_req_zone $binary_remote_addr zone=req_limit:10m rate=10r/s;
+          limit_conn_zone $binary_remote_addr zone=conn_limit:10m;
+  notify: Reload nginx
+  become: true
+
+- name: Ensure Certbot is installed
+  ansible.builtin.apt:
+    name: certbot
+    state: present
+    update_cache: true
+  when: reverse_proxy_enable_https | default(false)
+  become: true
+
+- name: Ensure ACME webroot directory exists
+  ansible.builtin.file:
+    path: /var/www/letsencrypt/.well-known/acme-challenge
+    state: directory
+    owner: www-data
+    group: www-data
+    mode: '0755'
+  when: reverse_proxy_enable_https | default(false)
+  become: true
+
+- name: Build list of certificate domains from reverse_proxy_sites
+  ansible.builtin.set_fact:
+    reverse_proxy_cert_domains: "{{ reverse_proxy_sites | map(attribute='server_name') | unique | list }}"
+    reverse_proxy_cert_primary_domain: "{{ (reverse_proxy_sites | map(attribute='server_name') | list)[0] }}"
+  when:
+    - reverse_proxy_enable_https | default(false)
+    - (reverse_proxy_sites | default([])) | length > 0
+
+- name: Check if certificate already exists
+  ansible.builtin.stat:
+    path: "/etc/letsencrypt/live/{{ reverse_proxy_cert_primary_domain }}/fullchain.pem"
+  register: reverse_proxy_cert_stat
+  when:
+    - reverse_proxy_enable_https | default(false)
+    - reverse_proxy_cert_primary_domain is defined
+  become: true
+
+- name: Set flag if certificate is installed
+  ansible.builtin.set_fact:
+    reverse_proxy_cert_installed: "{{ reverse_proxy_cert_stat.stat.exists | default(false) }}"
+  when: reverse_proxy_enable_https | default(false)
+
+- name: Disable default nginx site in conf.d
+  ansible.builtin.file:
+    path: /etc/nginx/conf.d/default.conf
+    state: absent
+  notify: Reload nginx
+  become: true
+
+- name: Deploy reverse proxy vhosts (HTTP only or HTTP+HTTPS depending on flag)
+  ansible.builtin.template:
+    src: reverse_proxy_vhost.conf.j2
+    dest: "/etc/nginx/conf.d/{{ site.name }}.conf"
+    mode: '0644'
+    owner: root
+    group: root
+  loop: "{{ reverse_proxy_sites | default([]) }}"
+  loop_control:
+    loop_var: site
+  notify: Reload nginx
+  become: true
+
+- name: Secure Nginx configuration directory permissions
+  ansible.builtin.file:
+    path: /etc/nginx/conf.d
+    mode: '0755'
+    owner: root
+    group: root
+    recurse: true
+  become: true
+
+# Make sure nginx has the new ACME config BEFORE running Certbot
+- name: Flush handlers so nginx reloads before Certbot
+  ansible.builtin.meta: flush_handlers
+
+- name: Obtain Let's Encrypt certificate per site
+  ansible.builtin.command: >
+    certbot certonly --webroot -w /var/www/letsencrypt
+    -d {{ site.server_name }}
+    --email {{ reverse_proxy_cert_email }}
+    --agree-tos --non-interactive --keep-until-expiring
+  args:
+    creates: "/etc/letsencrypt/live/{{ site.server_name }}/fullchain.pem"
+  loop: "{{ reverse_proxy_sites }}"
+  loop_control:
+    loop_var: site
+  when:
+    - reverse_proxy_enable_https | default(false)
+  become: true
+  notify: Reload nginx
+
+- name: Re-deploy reverse proxy vhosts with HTTPS enabled
+  ansible.builtin.template:
+    src: reverse_proxy_vhost.conf.j2
+    dest: "/etc/nginx/conf.d/{{ site.name }}.conf"
+    mode: '0644'
+    owner: root
+    group: root
+  loop: "{{ reverse_proxy_sites | default([]) }}"
+  loop_control:
+    loop_var: site
+  when: reverse_proxy_enable_https | default(false)
+  notify: Reload nginx
+  become: true
+
+- name: Ensure certbot renewal timer is enabled (if using systemd)
+  ansible.builtin.systemd:
+    name: certbot.timer
+    state: started
+    enabled: true
+  when: reverse_proxy_enable_https | default(false)
+  become: true

@@ -135,6 +135,8 @@ fm_reserved2: ""
 
 # 05-Design
 
+V tejto kapitole ukazujeme vizuálny a produktový dizajn FiitCase: STU identita na obale, varianty farieb a základné princípy (minimal, čitateľnosť, fit a ochrana).
+
 - [Prototypy / dizajn](./prototype.md)
 
 **Navigation:** [⬆️ SDLC](../index.md) · [⬅️ Projekt](../../index.md)

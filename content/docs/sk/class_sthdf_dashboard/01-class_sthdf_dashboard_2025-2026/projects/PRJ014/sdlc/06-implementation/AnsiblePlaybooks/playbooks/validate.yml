@@ -1,0 +1,24 @@
+---
+- name: Validate LXC health
+  hosts: lxc_hosts
+  gather_facts: true
+  become: true
+  tasks:
+    - name: Check disk space
+      ansible.builtin.shell: df -h / | tail -1 | awk '{print $5}' | sed 's/%//'
+      register: disk_usage
+      changed_when: false
+
+    - name: Warn if disk > 80%
+      ansible.builtin.debug:
+        msg: "WARNING: Disk usage is {{ disk_usage.stdout }}%"
+      when: disk_usage.stdout | int > 80
+
+    - name: Check UFW status
+      ansible.builtin.command: ufw status
+      register: ufw_status
+      changed_when: false
+
+    - name: Verify SSH hardening
+      ansible.builtin.shell: grep -q "PasswordAuthentication no" /etc/ssh/sshd_config
+      changed_when: false
