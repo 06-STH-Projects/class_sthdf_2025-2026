@@ -126,6 +126,6 @@ Domáce testy ukázali, že algoritmy fungujú perfektne. Ale až po testovaní 
 
 ## Navigácia
 - [↩️ Späť](../index.md)
-- [📊 Projekt PRJ025](../../projects/PRJ025/index.md)
+- [📊 Projekt PRJ025](../../../projects/PRJ025/index.md)
 - [📝 Project Summary](./03_project-summary.md)
 - [🎤 Final Presentation](./06_final_presentation.md)

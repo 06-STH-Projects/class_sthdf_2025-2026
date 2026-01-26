@@ -1,4 +1,4 @@
-[🏠 Domov](../../../index.md) · [⬅️ Nahor](../index.md)
+[🏠 Domov](../../index.md) · [⬅️ Nahor](../index.md)
 
 ## EA & Lemontree
 

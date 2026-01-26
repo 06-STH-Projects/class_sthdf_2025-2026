@@ -169,7 +169,8 @@ fm_build: '2025-12-09T21:04:48Z'
 - 3D vizualizácia hlavy v reálnom čase
 - Kalibračný nástroj
 - Telemetria a štatistiky relácií
-- Kompletný zdrojový kód: [PRJ025 - Implementation](../../projects/PRJ025/sdlc/06-implementation/index.md)
+- Kompletný zdrojový kód: [PRJ025 - Implementation](../../../projects/PRJ025/sdlc/06-implementation/index.md)
+  
 
 ## 📚 Kontext
 
@@ -190,7 +191,7 @@ fm_build: '2025-12-09T21:04:48Z'
 - Three.js Documentation
 
 **Projekt dokumentácia:**
-- [PRJ025 - Nodyne systém detekcie spánku](../../projects/PRJ025/index.md)
+- [PRJ025 - Nodyne systém detekcie spánku](../../../projects/PRJ025/index.md)
 
 ## 🧭 Riziká a závislosti
 
@@ -233,5 +234,5 @@ fm_build: '2025-12-09T21:04:48Z'
 
 ## Navigácia
 - [↩️ Späť](../index.md)
-- [📊 Projekt PRJ025](../../projects/PRJ025/index.md)
+- [📊 Projekt PRJ025](../../../projects/PRJ025/index.md)
 - [📚 KNIFE článok](./02_knowledge-contribution.md)

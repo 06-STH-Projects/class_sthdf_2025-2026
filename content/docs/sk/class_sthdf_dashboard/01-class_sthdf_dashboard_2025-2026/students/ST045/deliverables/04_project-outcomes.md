@@ -32,10 +32,10 @@ Projekt dosiahol všetky primárne ciele MVP. Zariadenie je plne funkčné, otes
 
 ## 🧩 Výstupy podľa SDLC / V-modelu
 
-Kompletná dokumentácia projektu: **[PRJ025 - Nodyne systém detekcie spánku](../../projects/PRJ025/index.md)**
+Kompletná dokumentácia projektu: **[PRJ025 - Nodyne systém detekcie spánku](../../../projects/PRJ025/index.md)**
 
 ### 1. Business požiadavky
-**Dokumentácia:** [01-Business](../../projects/PRJ025/sdlc/01-business/index.md)
+**Dokumentácia:** [01-Business](../../../projects/PRJ025/sdlc/01-business/index.md)
 
 **Výstupy:**
 - Definícia problému: 20% nehôd spôsobených ospalosťou, 1,200+ úmrtí ročne v USA
@@ -46,7 +46,7 @@ Kompletná dokumentácia projektu: **[PRJ025 - Nodyne systém detekcie spánku](
 - Roadmap: MVP (dokončené 8 týždňov) → Pilot → B2B Expansion → Growth
 
 ### 2. Top Level Architecture
-**Dokumentácia:** [02-Top Level Architecture](../../projects/PRJ025/sdlc/02-top-level-architecture/index.md)
+**Dokumentácia:** [02-Top Level Architecture](../../../projects/PRJ025/sdlc/02-top-level-architecture/index.md)
 
 **Výstupy:**
 - 3 hlavné komponenty: Hardware (M5StickC Plus 2), Firmware (Arduino), Web Dashboard (Next.js)
@@ -55,7 +55,7 @@ Kompletná dokumentácia projektu: **[PRJ025 - Nodyne systém detekcie spánku](
 - Výkonnostné charakteristiky: 50Hz IMU, detekcia \<500ms, batéria 5-8h
 
 ### 3. Solution Architecture
-**Dokumentácia:** [03-Solution Architecture](../../projects/PRJ025/sdlc/03-solution-architecture/index.md)
+**Dokumentácia:** [03-Solution Architecture](../../../projects/PRJ025/sdlc/03-solution-architecture/index.md)
 
 **Výstupy:**
 - Detailný popis 5 detekčných algoritmov s prahmi a logikou
@@ -65,7 +65,7 @@ Kompletná dokumentácia projektu: **[PRJ025 - Nodyne systém detekcie spánku](
 - JSON telemetria @ 10Hz, príkazy z dashboardu
 
 ### 4. Analysis
-**Dokumentácia:** [04-Analysis](../../projects/PRJ025/sdlc/04-analysis/index.md)
+**Dokumentácia:** [04-Analysis](../../../projects/PRJ025/sdlc/04-analysis/index.md)
 
 **Výstupy:**
 - Funkčné požiadavky: 10 požiadaviek (FR-01 až FR-10)
@@ -74,7 +74,7 @@ Kompletná dokumentácia projektu: **[PRJ025 - Nodyne systém detekcie spánku](
 - Analýza obmedzení: hardvérové, softvérové, používateľské
 
 ### 5. Design
-**Dokumentácia:** [05-Design](../../projects/PRJ025/sdlc/05-design/index.md)
+**Dokumentácia:** [05-Design](../../../projects/PRJ025/sdlc/05-design/index.md)
 
 **Výstupy:**
 - 6 obrazoviek UI: Welcome, Calibration, Ready, Monitoring, Alert, Statistics
@@ -83,7 +83,7 @@ Kompletná dokumentácia projektu: **[PRJ025 - Nodyne systém detekcie spánku](
 - Alert screen: červená obrazovka + typ detekcie (Strong Nod, Micro Nods, atď.)
 
 ### 6. Implementation
-**Dokumentácia:** [06-Implementation](../../projects/PRJ025/sdlc/06-implementation/index.md)
+**Dokumentácia:** [06-Implementation](../../../projects/PRJ025/sdlc/06-implementation/index.md)
 
 **Výstupy:**
 - Arduino Firmware: 5 detekčných algoritmov, kalibrácia, EMA filter, JSON telemetria
@@ -95,7 +95,7 @@ Kompletná dokumentácia projektu: **[PRJ025 - Nodyne systém detekcie spánku](
 - Dashboard: [github.com/paulintheclub/nodyne-web](https://github.com/paulintheclub/nodyne-web)
 
 ### 7. Verification & Testing
-**Dokumentácia:** [07-Testing & Verification](../../projects/PRJ025/sdlc/07-testing-verification/index.md)
+**Dokumentácia:** [07-Testing & Verification](../../../projects/PRJ025/sdlc/07-testing-verification/index.md)
 
 **Výstupy:**
 - Domáce testovanie: optimalizácia parametrov v1.0 → v2.0 (2-6x citlivejšie)
@@ -104,7 +104,7 @@ Kompletná dokumentácia projektu: **[PRJ025 - Nodyne systém detekcie spánku](
 - Video dokumentácia: [YouTube - Real-World Testing](https://youtu.be/x0nncwOG13A)
 
 ### 8. Operation
-**Dokumentácia:** [08-Operation](../../projects/PRJ025/sdlc/08-operation/index.md)
+**Dokumentácia:** [08-Operation](../../../projects/PRJ025/sdlc/08-operation/index.md)
 
 **Výstupy:**
 - Deployment: Arduino IDE setup, M5StickC Plus 2 firmware nahratie, Vercel web dashboard
@@ -113,7 +113,7 @@ Kompletná dokumentácia projektu: **[PRJ025 - Nodyne systém detekcie spánku](
 - Updates: firmware v1.0 → v2.0, dashboard continuous deployment
 
 ### 9. Change Management
-**Dokumentácia:** [09-Change Management](../../projects/PRJ025/sdlc/09-Change-Management/index.md)
+**Dokumentácia:** [09-Change Management](../../../projects/PRJ025/sdlc/09-Change-Management/index.md)
 
 **Výstupy:**
 - Súčasný stav v1.0: M5StickC Plus 2, 5 algoritmov, obmedzenia (nízka hlasitosť, chýbajúce vibrácie)
@@ -218,7 +218,7 @@ Kompletná dokumentácia projektu: **[PRJ025 - Nodyne systém detekcie spánku](
 - GitHub Firmware: [Firmware implementation](https://github.com/paulintheclub/nodyne-firmware)
 
 **Projekt dokumentácia:**
-- 📚 SDLC: [PRJ025](../../projects/PRJ025/index.md)
+- 📚 SDLC: [PRJ025](../../../projects/PRJ025/index.md)
 - 📖 KNIFE článok: [Detekcia spánku pomocou IMU](./02_knowledge-contribution.md)
 
 ---
@@ -306,6 +306,6 @@ Kompletná dokumentácia projektu: **[PRJ025 - Nodyne systém detekcie spánku](
 
 ## Navigácia
 - [↩️ Späť](../index.md)
-- [📊 Projekt PRJ025](../../projects/PRJ025/index.md)
+- [📊 Projekt PRJ025](../../../projects/PRJ025/index.md)
 - [📝 Project Summary](./03_project-summary.md)
 - [📚 KNIFE článok](./02_knowledge-contribution.md)

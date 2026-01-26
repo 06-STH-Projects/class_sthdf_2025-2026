@@ -92,7 +92,7 @@ fm_build: '2025-12-09T21:04:48Z'
 
 **Načítanie kódu projektu Nodyne:**
 3. **Prejdi na dokumentáciu projektu** s kompletným kódom:
-   - [Nodyne - Implementácia](../../projects/PRJ025/sdlc/06-implementation/index.md)
+   - [Nodyne - Implementácia](../../../projects/PRJ025/sdlc/06-implementation/index.md)
    - Všetok zdrojový kód firmvéru vrátane detekčných algoritmov, kalibrácie a komunikačného protokolu
 4. **Skompiluj a nahraj** firmvér do M5StickC Plus 2 cez Arduino IDE
 
@@ -109,7 +109,7 @@ fm_build: '2025-12-09T21:04:48Z'
 
 ## Detailný článok
 
-> Kompletná dokumentácia projektu: [PRJ025 - Nodyne systém detekcie spánku](../../projects/PRJ025/index.md)
+> Kompletná dokumentácia projektu: [PRJ025 - Nodyne systém detekcie spánku](../../../projects/PRJ025/index.md)
 
 ### Prečo monitorovať hlavu, nie oči?
 
@@ -163,12 +163,12 @@ Projekt Nodyne obsahuje kompletnú implementáciu systému detekcie spánku vrá
 - **Komunikačný protokol** - JSON telemetria pre webový dashboard
 
 **Kompletný zdrojový kód a detailná implementácia:**
-- [Nodyne - Implementácia (06-implementation)](../../projects/PRJ025/sdlc/06-implementation/index.md)
+- [Nodyne - Implementácia (06-implementation)](../../../projects/PRJ025/sdlc/06-implementation/index.md)
 - Obsahuje všetok firmvér, algoritmy, prahy a komunikačný protokol
 
 **Technické detaily architektúry:**
-- [Nodyne - Solution Architecture](../../projects/PRJ025/sdlc/03-solution-architecture/index.md)
-- [Nodyne - Projekt (hlavná dokumentácia)](../../projects/PRJ025/index.md)
+- [Nodyne - Solution Architecture](../../../projects/PRJ025/sdlc/03-solution-architecture/index.md)
+- [Nodyne - Projekt (hlavná dokumentácia)](../../../projects/PRJ025/index.md)
 
 ### Webový dashboard (demonštračný nástroj)
 

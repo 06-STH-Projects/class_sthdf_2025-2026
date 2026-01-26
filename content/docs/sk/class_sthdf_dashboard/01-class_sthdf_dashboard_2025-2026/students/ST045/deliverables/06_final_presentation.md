@@ -263,7 +263,7 @@ fm_build: '2025-12-09T21:04:48Z'
 
 ## Navigácia
 - [↩️ Späť](../index.md)
-- [📊 Projekt PRJ025](../../projects/PRJ025/index.md)
+- [📊 Projekt PRJ025](../../../projects/PRJ025/index.md)
 - [📝 Project Summary](./03_project-summary.md)
 - [📦 Project Outcomes](./04_project-outcomes.md)
 - [🎤 Pitch Presentation](./05_pitch_presentation.md)

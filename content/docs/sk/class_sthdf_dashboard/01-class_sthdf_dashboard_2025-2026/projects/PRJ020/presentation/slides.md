@@ -166,7 +166,8 @@ fm_reserved2: ""
 
 ---
 
-# 01-Business
+<a id="01-business"></a>
+## 01 Business
 
 ## 1.1 Čo je PixelPet?
 
@@ -348,7 +349,8 @@ Toto je to čo robí PixelPet výnimočným - nie je to len nástroj, je to spol
 
 
 
-# 02-Top Level Architecture
+<a id="02-top-level-architecture"></a>
+## 02 Top Level Architecture
 
 ## 2.1 Ako je to celé postavené?
 
@@ -451,7 +453,8 @@ Systém funguje ako nekonečná slučka - každých pár milisekúnd kontroluje 
 
 ---
 
-# 03-Solution Architecture
+<a id="03-solution-architecture"></a>
+## 03 Solution Architecture
 
 ## 3.1 Architektúra riešenia
 
@@ -572,7 +575,8 @@ Všetky moduly spolu komunikujú cez jasne definované rozhrania. Napríklad `Fa
 
 ---
 
-# 04-Analysis
+<a id="04-analysis"></a>
+## 04 Analysis
 
 ## 4.1 Funkčné požiadavky
 
@@ -592,9 +596,7 @@ Všetky moduly spolu komunikujú cez jasne definované rozhrania. Napríklad `Fa
 ### FR-03: Animácia tváre
 
 - 9 emočných stavov
-- Automatické mrk
-
-anie každých 3-6 sekúnd (random)
+- Automatické mrkanie každých 3-6 sekúnd (random)
 - Pohľad do strán každých 15-30 sekúnd
 - Okamžitá reakcia na dotyk (< 100ms)
 
@@ -679,7 +681,8 @@ anie každých 3-6 sekúnd (random)
 
 ---
 
-# 05-Design
+<a id="05-design"></a>
+## 05 Design
 
 ## 5.1 Hardware dizajn
 
@@ -902,7 +905,8 @@ enum PomoState {
 
 ---
 
-# 06-Implementation
+<a id="06-implementation"></a>
+## 06 Implementation
 
 ## 6.1 Vývojové prostredie
 
@@ -1051,7 +1055,8 @@ void goodUpdate() {
 **Výsledok:** Životnosť roky namiesto týždňov ✅
 
 
-# 07-Testing & Verification
+<a id="07-testing--verification"></a>
+## 07 Testing & Verification
 
 ## 7.1 Testové scenáre
 
@@ -1152,7 +1157,8 @@ void goodUpdate() {
 
 ---
 
-# 08-Operation
+<a id="08-operation"></a>
+## 08 Operation
 
 ## 8.1 Používateľská príručka
 
@@ -1277,7 +1283,8 @@ Long press na Face page otvorí Modes menu:
 
 ---
 
-# 09-Change Management
+<a id="09-change-management"></a>
+## 09 Change Management
 
 ## 9.1 História verzií
 
@@ -1323,7 +1330,8 @@ Long press na Face page otvorí Modes menu:
 
 
 
-# 10-Future Work
+<a id="10-future-work"></a>
+## 10 Future Work
 
 ## 10.1 Plánované rozšírenia hardvéru
 

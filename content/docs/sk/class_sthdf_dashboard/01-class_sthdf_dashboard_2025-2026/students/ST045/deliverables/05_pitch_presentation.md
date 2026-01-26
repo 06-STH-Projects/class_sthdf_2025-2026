@@ -136,7 +136,7 @@ fm_build: '2025-12-09T21:04:48Z'
   - [Dashboard](https://github.com/paulintheclub/nodyne-web)
 
 **Dokumentácia:**
-- [PRJ025 - SDLC](../../projects/PRJ025/index.md)
+- [PRJ025 - SDLC](../../../projects/PRJ025/index.md)
 - [KNIFE článok](./02_knowledge-contribution.md)
 
 ---
@@ -149,5 +149,5 @@ fm_build: '2025-12-09T21:04:48Z'
 
 ## Navigácia
 - [↩️ Späť](../index.md)
-- [📊 Projekt PRJ025](../../projects/PRJ025/index.md)
+- [📊 Projekt PRJ025](../../../projects/PRJ025/index.md)
 - [🎤 Final Presentation](./06_final_presentation.md)
