@@ -1,0 +1,12 @@
+---
+# inventory/group_vars/all.yml
+lxc_general_username: andrej
+vault_lxc_default_password: "123456"
+lxc_general_user_groups: [sudo]
+lxc_general_user_shell: /bin/bash
+lxc_general_user_password_hash: "*"
+lxc_general_authorized_keys_url: "https://raw.githubusercontent.com/AndrejStreicher/My-Homelab/main/SSH/Keys/keys.txt"
+lxc_general_github_token: "{{ vault_github_token | default('') }}"
+lxc_general_private_key_path: "~/.ssh/id_ed25519"
+lxc_general_verify_key_login: true
+ansible_ssh_common_args: '-o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null'

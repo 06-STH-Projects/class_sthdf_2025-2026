@@ -1,0 +1,117 @@
+---
+# roles/proxmox_api/tasks/provision.yml
+- name: Merge defaults with requested spec
+  ansible.builtin.set_fact:
+    proxmox_api_current: "{{ proxmox_api_defaults | combine(proxmox_api_spec, recursive=True) }}"
+
+- name: Ensure hostname and name fields are populated
+  ansible.builtin.set_fact:
+    proxmox_api_current: >-
+      {{
+        proxmox_api_current
+        | combine({'hostname': proxmox_api_current.hostname | default(proxmox_api_spec.name, true)}, recursive=True)
+        | combine({'name': proxmox_api_spec.name | default(proxmox_api_current.hostname)}, recursive=True)
+      }}
+
+- name: Calculate IP address from octet when needed
+  when:
+    - proxmox_api_current.ip_address in [none, '']
+    - proxmox_api_current.ip_octet not in [none, '']
+  ansible.builtin.set_fact:
+    proxmox_api_current: >-
+      {{
+        proxmox_api_current
+        | combine({'ip_address': proxmox_api_network_base ~ '.' ~ (proxmox_api_current.ip_octet | string)}, recursive=True)
+      }}
+
+- name: Request next available VMID for {{ proxmox_api_current.name }}
+  when: proxmox_api_current.vmid in [none, '']
+  ansible.builtin.uri:
+    url: "{{ proxmox_api_base_url }}/cluster/nextid"
+    method: GET
+    headers: "{{ proxmox_api_headers }}"
+    validate_certs: "{{ proxmox_api_validate_certs | bool }}"
+  register: proxmox_api_nextid_response
+
+- name: Apply dynamically assigned VMID
+  when: proxmox_api_current.vmid in [none, '']
+  ansible.builtin.set_fact:
+    proxmox_api_current: "{{ proxmox_api_current | combine({'vmid': proxmox_api_nextid_response.json.data | int}, recursive=True) }}"
+
+- name: Assert we have enough data to create the container
+  ansible.builtin.assert:
+    that:
+      - proxmox_api_current.vmid is not none
+      - proxmox_api_current.ip_address not in [none, '']
+      - proxmox_api_current.hostname not in [none, '']
+    fail_msg: "Missing vmid, hostname, or ip_address for LXC {{ proxmox_api_current }}"
+
+- name: Remove old SSH host key for {{ proxmox_api_current.ip_address }}
+  delegate_to: localhost
+  ansible.builtin.command: "ssh-keygen -R {{ proxmox_api_current.ip_address }}"
+  ignore_errors: true
+
+- name: Download authorized keys for root
+  ansible.builtin.get_url:
+    url: "{{ lxc_general_authorized_keys_url }}"
+    headers:
+      Authorization: "token {{ lxc_general_github_token | default('') }}"
+      Accept: "application/vnd.github.v3.raw"
+    dest: "/tmp/lxc_general_root_keys_{{ proxmox_api_current.vmid }}.pub"
+    mode: '0644'
+  delegate_to: localhost
+
+- name: Ensure LXC {{ proxmox_api_current.name }} exists
+  community.proxmox.proxmox:
+    api_host: "{{ proxmox_api_host }}"
+    api_user: "{{ proxmox_api_user }}"
+    api_token_id: "{{ proxmox_api_token_id }}"
+    api_token_secret: "{{ proxmox_api_token_secret }}"
+    vmid: "{{ proxmox_api_current.vmid }}"
+    node: "{{ proxmox_api_current.node }}"
+    hostname: "{{ proxmox_api_current.hostname }}"
+    ostemplate: "{{ proxmox_api_current.ostemplate }}"
+    cores: "{{ proxmox_api_current.cores }}"
+    memory: "{{ proxmox_api_current.memory }}"
+    swap: "{{ proxmox_api_current.swap }}"
+    disk: "{{ proxmox_api_current.storage }}:{{ proxmox_api_current.disk }}"
+    netif:
+      net0: "name={{ proxmox_api_current.netif_name }},bridge={{ proxmox_api_current.bridge }},gw={{ proxmox_api_current.gateway }},ip={{ proxmox_api_current.ip_address }}/{{ proxmox_api_current.netmask }}"
+    password: "{{ vault_lxc_default_password }}"
+    pubkey: "{{ lookup('file', '~/.ssh/id_ed25519.pub') }}"
+    unprivileged: false
+    onboot: true
+    state: present
+
+- name: Ensure LXC is running
+  community.proxmox.proxmox:
+    api_host: "{{ proxmox_api_host }}"
+    api_user: "{{ proxmox_api_user }}"
+    api_token_id: "{{ proxmox_api_token_id }}"
+    api_token_secret: "{{ proxmox_api_token_secret }}"
+    vmid: "{{ proxmox_api_current.vmid }}"
+    node: "{{ proxmox_api_current.node }}"
+    state: started
+
+- name: Wait for SSH to come up on {{ proxmox_api_current.ip_address }}
+  when: proxmox_api_wait_for_ssh | bool
+  ansible.builtin.wait_for:
+    host: "{{ proxmox_api_current.ip_address }}"
+    port: 22
+    timeout: "{{ proxmox_api_wait_timeout | int }}"
+    state: started
+  delegate_to: localhost
+
+- name: Register LXC for downstream plays
+  ansible.builtin.add_host:
+    name: "{{ proxmox_api_current.name }}"
+    groups:
+      - new_lxcs
+    ansible_host: "{{ proxmox_api_current.ip_address }}"
+    ansible_user: root
+    ansible_password: "{{ vault_lxc_default_password }}"
+    ansible_ssh_common_args: '-o StrictHostKeyChecking=no'
+    proxmox_vmid: "{{ proxmox_api_current.vmid }}"
+    extra_roles: "{{ proxmox_api_current.extra_roles | default([]) }}"
+  delegate_to: localhost
+

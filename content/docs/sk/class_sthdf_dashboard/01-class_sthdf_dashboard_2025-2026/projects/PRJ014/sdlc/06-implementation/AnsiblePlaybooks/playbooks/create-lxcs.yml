@@ -1,0 +1,40 @@
+---
+- name: Provision requested LXC containers on Proxmox
+  hosts: proxmox
+  gather_facts: false
+  roles:
+    - proxmox_api
+
+- name: Configure and initialize new LXCs
+  hosts: new_lxcs
+  gather_facts: true
+  become: true
+  serial: 1
+  roles:
+    - lxc_general
+  tasks:
+    - name: Run extra roles when defined
+      ansible.builtin.include_role:
+        name: "{{ item }}"
+      loop: "{{ extra_roles | default([]) }}"
+
+- name: Update existing LXCs
+  hosts: lxc_hosts
+  gather_facts: true
+  become: true
+  tasks:
+    - name: Get LXC configuration from proxmox group_vars
+      ansible.builtin.set_fact:
+        lxc_config: "{{ hostvars['proxmox-node']['proxmox_api_instances'] | selectattr('name', 'equalto', inventory_hostname) | first }}"
+
+    - name: Load LXC-specific vars if they exist
+      ansible.builtin.include_vars:
+        file: "../inventory/local_vars/{{ inventory_hostname }}.yml"
+      when: lookup('fileglob', '../inventory/local_vars/' + inventory_hostname + '.yml') | length > 0
+
+    - name: Apply roles for this LXC
+      ansible.builtin.include_role:
+        name: "{{ role_item }}"
+      loop: "{{ lxc_config.extra_roles | default([]) }}"
+      loop_control:
+        loop_var: role_item

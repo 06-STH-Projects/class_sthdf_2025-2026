@@ -1,0 +1,13 @@
+---
+# roles/lxc_networking/handlers/main.yml
+- name: Reload nginx
+  ansible.builtin.systemd:
+    name: nginx
+    state: reloaded
+  become: true
+
+- name: Restart nginx
+  ansible.builtin.systemd:
+    name: nginx
+    state: restarted
+  become: true

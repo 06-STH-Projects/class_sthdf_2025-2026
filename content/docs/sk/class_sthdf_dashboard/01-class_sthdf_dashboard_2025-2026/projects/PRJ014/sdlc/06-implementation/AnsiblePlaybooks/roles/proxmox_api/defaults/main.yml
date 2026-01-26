@@ -1,0 +1,39 @@
+---
+# roles/proxmox_api/defaults/main.yml
+# API defaults intentionally empty; override via inventory/group_vars and keep secrets in vault
+proxmox_api_host: ""
+proxmox_api_user: ""
+proxmox_api_token_id: ""
+proxmox_api_token_secret: ""
+proxmox_api_validate_certs: false
+proxmox_api_base_url: "https://{{ proxmox_api_host }}:8006/api2/json"
+proxmox_api_headers:
+  Authorization: "PVEAPIToken={{ proxmox_api_user }}!{{ proxmox_api_token_id }}={{ proxmox_api_token_secret }}"
+
+proxmox_api_network_base: 192.168.1
+proxmox_api_wait_for_ssh: true
+proxmox_api_wait_timeout: 240
+
+# Define desired guests in inventory; role stays no-op when list is empty
+proxmox_api_instances: []
+
+proxmox_api_defaults:
+  node: proxmox
+  vmid: null
+  hostname: null
+  ip_octet: null
+  ip_address: null
+  netmask: 24
+  gateway: "{{ proxmox_api_network_base }}.1"
+  bridge: vmbr0
+  netif_name: eth0
+  ostemplate: local:vztmpl/debian-12-standard_12.7-1_amd64.tar.zst
+  storage: local-lvm
+  disk: 8  # GiB
+  cores: 2
+  memory: 2048  # MiB
+  swap: 512  # MiB
+  unprivileged: true
+  onboot: true
+  password: null
+  start: true

@@ -1,0 +1,26 @@
+---
+# roles/proxmox_api/tasks/main.yml
+- name: Ensure Proxmox API credentials are defined
+  ansible.builtin.assert:
+    that:
+      - proxmox_api_host | length > 0
+      - proxmox_api_user | length > 0
+      - proxmox_api_token_id | length > 0
+      - proxmox_api_token_secret | length > 0
+    fail_msg: "Missing Proxmox API credential variables; set them in group_vars and keep secrets in vault"
+  run_once: true
+
+- name: Report when no LXC instances are requested
+  ansible.builtin.debug:
+    msg: "No proxmox_api_instances defined; nothing to provision."
+  when: proxmox_api_instances | length == 0
+  run_once: true
+
+- name: Provision or reconcile requested LXCs
+  ansible.builtin.include_tasks:
+    file: provision.yml
+  loop: "{{ proxmox_api_instances }}"
+  loop_control:
+    loop_var: proxmox_api_spec
+  when: proxmox_api_instances | length > 0
+  run_once: true

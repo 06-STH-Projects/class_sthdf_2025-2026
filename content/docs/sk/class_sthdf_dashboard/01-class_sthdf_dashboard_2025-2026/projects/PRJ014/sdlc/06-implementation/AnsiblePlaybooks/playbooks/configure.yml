@@ -1,0 +1,19 @@
+---
+- name: Configure existing LXCs
+  hosts: lxc_hosts
+  gather_facts: true
+  become: true
+  vars:
+    lxc_spec: "{{ lxc_definitions[inventory_hostname] }}"
+  tasks:
+    - name: Load LXC variables
+      ansible.builtin.include_vars:
+        file: "{{ inventory_dir }}/local_vars/{{ lxc_spec.vars_file }}"
+      when: lxc_spec.vars_file is defined
+
+    - name: Apply service roles
+      ansible.builtin.include_role:
+        name: "{{ role_name }}"
+      loop: "{{ lxc_spec.roles }}"
+      loop_control:
+        loop_var: role_name

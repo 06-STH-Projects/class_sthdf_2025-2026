@@ -1,0 +1,19 @@
+---
+# inventory/local_vars/networking.yml
+reverse_proxy_sites:
+  - name: navidrome
+    server_name: "music.streicher.tech"
+    upstream_url: "http://192.168.1.102:4533"
+    websocket: false
+  - name: firefly
+    server_name: "firefly.streicher.tech"
+    upstream_url: "http://192.168.1.201:7688"
+    websocket: false
+
+lxc_general_ufw_allowed_ports:
+  - 22
+  - 80
+  - 443  
+
+reverse_proxy_enable_https: true
+reverse_proxy_cert_email: "andrej@streicher.tech"  

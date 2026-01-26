@@ -1,0 +1,30 @@
+---
+- name: Create and configure Docker VM
+  hosts: proxmox
+  gather_facts: false
+  tasks:
+  - name: Create Photos OS VM
+    community.proxmox.proxmox_kvm:
+      api_host: "{{ proxmox_api_host }}"
+      api_user: "{{ proxmox_api_user }}"
+      api_token_id: "{{ proxmox_api_token_id }}"
+      api_token_secret: "{{ proxmox_api_token_secret }}"
+      node: "proxmox"
+      vmid: "201"
+      name: "docker"
+      # CPU / RAM
+      cores: "6"
+      memory: "8192"
+      # main disk
+      scsihw: virtio-scsi-pci
+      scsi:
+        scsi0: "local-lvm:32"
+      # attach ISO as CDROM
+      ide:
+        ide2: "local:iso/photos-os-5.iso,media=cdrom"
+      # network
+      net:
+        net0: "virtio,bridge=vmbr0"
+      ostype: l26
+      onboot: true
+      state: present

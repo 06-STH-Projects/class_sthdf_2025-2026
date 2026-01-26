@@ -1,0 +1,3 @@
+---
+# /lxc-networking.yml
+- import_playbook: playbooks/update_networking.yml
