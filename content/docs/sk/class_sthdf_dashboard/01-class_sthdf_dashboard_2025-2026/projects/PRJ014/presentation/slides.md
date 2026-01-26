@@ -91,8 +91,6 @@ fm_reserved2: ""
 ## Headline
 **2025-PRJ-014-ST_014-ST_014 – Efektívny server z dostupného hardvéru**
 
-> Úvodný obrazok: schéma mini-servera / homelabu (TODO)
-
 Projekt sa zameriava na návrh a realizáciu malého serverového riešenia s dôrazom na **nízke náklady**, **automatizáciu** a **dlhodobú udržateľnosť**. Praktický dôkaz, že aj repasovaný hardvér dokáže poskytovať profesionálne výsledky.
 
 ---
@@ -145,6 +143,7 @@ Projekt cielene počíta s **použitým / repasovaným počítačom** ako validn
 ---
 
 ## 02-Top Level Architecture
+<img width="1478" height="847" alt="proxmox" src="https://github.com/user-attachments/assets/47fe71cc-ef3f-4742-b40b-cd755f14bfa9" />
 
 ### Prehľad
 - 1× fyzický server (mini PC)
@@ -189,6 +188,8 @@ Projekt cielene počíta s **použitým / repasovaným počítačom** ako validn
 ---
 
 ## 05-Design
+![RPI_Networking_Diagram](https://github.com/user-attachments/assets/8d0ed585-6640-4675-b5b7-8ca65b87c318)
+![decision_flowchart](https://github.com/user-attachments/assets/430ff8e9-93c2-4bcc-9cf6-f218cab05767)
 
 ### Architektonické rozhodnutia
 - preferencia jednoduchosti pred komplexitou
