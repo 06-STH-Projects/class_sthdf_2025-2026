@@ -139,9 +139,11 @@ fm_reserved2: ""
 **2025-PRJ-023-ST_023-ST_023-Air quality monitor**
 
 <figure>
-  <img src="../images/intro.png" alt="clickbait" width="700" />
+  <img src="/sthdf_2025/PRJ_023/images/intro.png" alt="clickbait" width="700" />
   <figcaption>Obr.:  Model senzoru kvality ovzdušia</figcaption>
 </figure>
+
+![Obr.:  Model senzoru kvality ovzdušia](../images/intro.png)
 
 ## Project Summary [🗂️ [zobraziť]](../sdlc/00-project-summary/index.md)
 
@@ -196,25 +198,31 @@ Riadenie ventilácie v kancelárii podľa CO₂
 
 #### Hardware architektúra
 <figure>
-  <img src="../images/hardware_architecture.png" alt="hardware architecture" width="700" />
+  <img src="/sthdf_2025/PRJ_023/images/hardware_architecture.png" alt="hardware architecture" width="700" />
   <figcaption>Obr.:  Diagram zobrazujúci fyzické komponenty</figcaption>
 </figure>
+
+![Obr.:  Diagram zobrazujúci fyzické komponenty](../images/hardware_architecture.png)
 
 
 #### System architektúra
 <figure>
-  <img src="../images/component_architecture.png" alt="component architecture" width="700" />
+  <img src="/sthdf_2025/PRJ_023/images/component_architecture.png" alt="component architecture" width="700" />
   <figcaption>Obr.:  Diagram zobrazujúci softvérové a systémové komponenty</figcaption>
 </figure>
+
+![Obr.:  Diagram zobrazujúci softvérové a systémové komponenty](../images/component_architecture.png)
 
 ## 03-Solution Architecture
 ESP32 so senzormi (I²C) vykresľuje merania na displej a zároveň ich posiela cez Wi‑Fi v JSON formáte na REST server, ktorý ich validuje, ukladá do SQLite a sprístupňuje ich vo webovom dashboarde.
 
 #### Vývojový diagram
 <figure>
-  <img src="../images/flow_chart.png" alt="flow chart" width="700" />
+  <img src="/sthdf_2025/PRJ_023/images/flow_chart.png" alt="flow chart" width="700" />
   <figcaption>Obr.:  Diagram vizualizuje tok riešenia. Mikrokontrolér číta senzorové dáta a vykresľuje na displej. Zároveň ich zasiela v intervaloch cez sieť na server, kde sa ukladajú do databázy. Dáta si môže používa hocikedy prezrieť z PC alebo mobilu.</figcaption>
 </figure>
+
+![Obr.:  Diagram vizualizuje tok riešenia. Mikrokontrolér číta senzorové dáta a vykresľuje na displej. Zároveň ich zasiela v intervaloch cez sieť na server, kde sa ukladajú do databázy. Dáta si môže používa hocikedy prezrieť z PC alebo mobilu.](../images/flow_chart.png)
 
 
 ## 04-Analysis
@@ -257,19 +265,25 @@ Cieľom projektu je vytvoriť zariadenie na monitorovanie kvality ovzdušia, kto
 ## 05-Design
 
 <figure>
-  <img src="../images/skica.png" alt="skica" width="700" />
+  <img src="/sthdf_2025/PRJ_023/images/skica.png" alt="skica" width="700" />
   <figcaption>Obr.:  Náčrť drevenej krabičky, ktorá zakrýva hardvér.</figcaption>
 </figure>
 
+![Obr.:  Náčrť drevenej krabičky, ktorá zakrýva hardvér.](../images/skica.png)
+
 <figure>
-  <img src="../images/3d_dizajn.png" alt="3d dizajn" width="700" />
+  <img src="/sthdf_2025/PRJ_023/images/3d_dizajn.png" alt="3d dizajn" width="700" />
   <figcaption>Obr.:  3D model drevenej krabičky.</figcaption>
 </figure>
 
+![Obr.:  3D model drevenej krabičky.](../images/3d_dizajn.png)
+
 <figure>
-  <img src="../images/wiring.png" alt="kabeláž" width="700" />
+  <img src="/sthdf_2025/PRJ_023/images/wiring.png" alt="kabeláž" width="700" />
   <figcaption>Obr.:  Návrh kabeláže medzi mikrokontrolérom a senzorom.</figcaption>
 </figure>
+
+![Obr.:  Návrh kabeláže medzi mikrokontrolérom a senzorom.](../images/wiring.png)
 
 
 ### Server API
@@ -307,19 +321,25 @@ Cieľom projektu je vytvoriť zariadenie na monitorovanie kvality ovzdušia, kto
 
 ## 06-Implementation
 <figure>
-  <img src="../images/package.png" alt="balík" width="700" />
+  <img src="/sthdf_2025/PRJ_023/images/package.png" alt="balík" width="700" />
   <figcaption>Obr.:  Balík s hardvérom.</figcaption>
 </figure>
 
+![Obr.:  Balík s hardvérom.](../images/package.png)
+
 <figure>
-  <img src="../images/esp32.png" alt="balík mikrokontroléra" width="700" />
+  <img src="/sthdf_2025/PRJ_023/images/esp32.png" alt="balík mikrokontroléra" width="700" />
   <figcaption>Obr.:  Balík s ESP32.</figcaption>
 </figure>
 
+![Obr.:  Balík s ESP32.](../images/esp32.png)
+
 <figure>
-  <img src="../images/sensor.png" alt="balík senzora" width="700" />
+  <img src="/sthdf_2025/PRJ_023/images/sensor.png" alt="balík senzora" width="700" />
   <figcaption>Obr.:  Balík s ENS160+AHT21.</figcaption>
 </figure>
+
+![Obr.:  Balík s ENS160+AHT21.](../images/sensor.png)
 
 #### Úryvok kódu senzora:
 ```ino
@@ -394,31 +414,41 @@ Server je hostovaný na platforme **Azure**.
 
 #### Zapojenie hardvéru a prototypovanie
 <figure>
-  <img src="../images/esp32_wired.jpg" alt="zapojený mikrokontrolér" width="700" />
+  <img src="/sthdf_2025/PRJ_023/images/esp32_wired.jpg" alt="zapojený mikrokontrolér" width="700" />
   <figcaption>Obr.:  Zapojený ESP32.</figcaption>
 </figure>
 
+![Obr.:  Zapojený ESP32.](../images/esp32_wired.jpg)
+
 <figure>
-  <img src="../images/sensor_wired.jpg" alt="zapojený senzor" width="700" />
+  <img src="/sthdf_2025/PRJ_023/images/sensor_wired.jpg" alt="zapojený senzor" width="700" />
   <figcaption>Obr.:  Zapojený senzor ENS160+AHT21.</figcaption>
 </figure>
+
+![Obr.:  Zapojený senzor ENS160+AHT21.](../images/sensor_wired.jpg)
 
 
 #### Vloženie hardvéru do krabičky z dreva
 <figure>
-  <img src="../images/final_1.jpg" alt="box 1" width="700" />
+  <img src="/sthdf_2025/PRJ_023/images/final_1.jpg" alt="box 1" width="700" />
   <figcaption>Obr.:  Otvor na vzduch.</figcaption>
 </figure>
 
+![Obr.:  Otvor na vzduch.](../images/final_1.jpg)
+
 <figure>
-  <img src="../images/final_2.jpg" alt="box 2" width="700" />
+  <img src="/sthdf_2025/PRJ_023/images/final_2.jpg" alt="box 2" width="700" />
   <figcaption>Obr.:  Otvor na display.</figcaption>
 </figure>
 
+![Obr.:  Otvor na display.](../images/final_2.jpg)
+
 <figure>
-  <img src="../images/final_3.jpg" alt="box 3" width="700" />
+  <img src="/sthdf_2025/PRJ_023/images/final_3.jpg" alt="box 3" width="700" />
   <figcaption>Obr.:  Otvor na napájanie.</figcaption>
 </figure>
+
+![Obr.:  Otvor na napájanie.](../images/final_3.jpg)
 
 
 ## 07-Testing & Verification
@@ -428,17 +458,21 @@ Nechali sme na internáte bežať senzor 8 dní. 4 dni bol senzor bez krytu, 4 d
 #### Bez krytu
 
 <figure>
-  <img src="../images/data_before.png" alt="data before" width="700" />
+  <img src="/sthdf_2025/PRJ_023/images/data_before.png" alt="data before" width="700" />
   <figcaption>Obr.:  Hodnoty teploty a vlhkosti sú pomerne presné. Hodnoty oxidu uhličitého primerané.</figcaption>
 </figure>
+
+![Obr.:  Hodnoty teploty a vlhkosti sú pomerne presné. Hodnoty oxidu uhličitého primerané.](../images/data_before.png)
 
 
 #### S krytom
 
 <figure>
-  <img src="../images/data_after.png" alt="data after" width="700" />
+  <img src="/sthdf_2025/PRJ_023/images/data_after.png" alt="data after" width="700" />
   <figcaption>Obr.:  Hodnoty teploty sú značne zvýšené (v priemere o 4 stupne). Vlhkosť rovnaká. Oxid uhličitý zvýšený (v priemere o hodnotu 300).</figcaption>
 </figure>
+
+![Obr.:  Hodnoty teploty sú značne zvýšené (v priemere o 4 stupne). Vlhkosť rovnaká. Oxid uhličitý zvýšený (v priemere o hodnotu 300).](../images/data_after.png)
 
 #### Výsledky
 
@@ -502,11 +536,15 @@ Implementácia týchto vylepšení by zvýšila presnosť meraní, mechanickú s
 Nasledujúce obrázky zobrazujú proces porovnávania a zlúčenia modelov v nástroji Lemontree, ktorý sa používa na správu verzovania modelov vytvorených v Enterprise Architect (EA). Lemontree umožňuje identifikovať rozdiely medzi dvoma verziami modelu, vizualizovať zmeny a vykonať ich zlúčenie.
 
 <figure>
-  <img src="../images/lemontree_3.png" alt="lemontree" width="700" />
+  <img src="/sthdf_2025/PRJ_023/images/lemontree_3.png" alt="lemontree" width="700" />
   <figcaption>Obr.: Porovnanie modulov v hierarchii komponentov. Lemontree zobrazuje rozdiely v štruktúre modulov a ich vlastnostiach. V spodnej časti sú detailné zmeny atribútov (napr. názvy, typy).</figcaption>
 </figure>
 
+![Obr.: Porovnanie modulov v hierarchii komponentov. Lemontree zobrazuje rozdiely v štruktúre modulov a ich vlastnostiach. V spodnej časti sú detailné zmeny atribútov (napr. názvy, typy).](../images/lemontree_3.png)
+
 <figure>
-  <img src="../images/lemontree_4.png" alt="lemontree" width="700" />
+  <img src="/sthdf_2025/PRJ_023/images/lemontree_4.png" alt="lemontree" width="700" />
   <figcaption>Obr.: Zlúčenie rozdielov medzi dvoma verziami modelu. V hornej časti sú zobrazené tri stĺpce: pôvodná verzia, upravená verzia a cieľová verzia po zlúčení. V strede je vizualizovaný Use Case diagram s vyznačenými zmenami. V spodnej časti sú detailné informácie o zlúčených vlastnostiach.</figcaption>
 </figure>
+
+![Obr.: Zlúčenie rozdielov medzi dvoma verziami modelu. V hornej časti sú zobrazené tri stĺpce: pôvodná verzia, upravená verzia a cieľová verzia po zlúčení. V strede je vizualizovaný Use Case diagram s vyznačenými zmenami. V spodnej časti sú detailné informácie o zlúčených vlastnostiach.](../images/lemontree_4.png)
