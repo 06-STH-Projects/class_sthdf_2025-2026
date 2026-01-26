@@ -137,4 +137,9 @@ fm_reserved2: ""
 
 - [Backlog a analýzy](./backlog.md)
 
+FiitCase je marketingový merch projekt: obaly na mobil s FIIT identitou, udržateľné balenie a dobrovoľný spätný zber použitých obalov na recykláciu.
+
+![Use cases](./04-usecases.png)
+![Requirements](./04-requirements.png)
+
 **Navigation:** [⬆️ SDLC](../index.md) · [⬅️ Projekt](../../index.md)

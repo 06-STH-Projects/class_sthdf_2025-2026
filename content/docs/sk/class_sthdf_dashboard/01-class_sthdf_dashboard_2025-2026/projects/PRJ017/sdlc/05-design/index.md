@@ -135,6 +135,8 @@ fm_reserved2: ""
 
 # 05-Design
 
+Dizajn rieši geometriu obalu (fit a ochrana), vizuálne FIIT varianty, sustainable balenie a návrh zberu (dropbox).
+
 - [Prototypy / dizajn](./prototype.md)
 
 **Navigation:** [⬆️ SDLC](../index.md) · [⬅️ Projekt](../../index.md)

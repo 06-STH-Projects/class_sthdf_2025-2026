@@ -135,6 +135,8 @@ fm_reserved2: ""
 
 # 03-Solution Architecture
 
+Riešenie je rozdelené na produktový dizajn, výrobu, udržateľné balenie, distribúciu a spätný zber (waste collection) s recykláciou.
+
 - [Solution design](./design.md)
 
 **Navigation:** [⬆️ SDLC](../index.md) · [⬅️ Projekt](../../index.md)

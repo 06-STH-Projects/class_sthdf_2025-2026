@@ -26,7 +26,7 @@ dao: "class_sthdf_dashboard"
 title: "01 business"
 
 # Krátky popis – dopĺňa používateľ (voliteľné)
-description: "{{DESCRIPTION}}"
+description: "Biznis kontext projektu FiitCase (PR017): obaly na mobily s FIIT identitou – cieľ, zákazník, hodnota, financie, riziká."
 
 
 # 👥 AUTHORSHIP ------------------------------------------------------
@@ -42,13 +42,13 @@ authors:
 # 🗂 CLASSIFICATION ---------------------------------------------------
 
 # Nadradená kategória – môže doplniť používateľ
-category: ""
+category: "sdlc"
 
 # Typ dokumentu (guide, case, tutorial...) – používateľ (voliteľné)
-type: ""
+type: "section"
 
 # Priorita (low/medium/high) – voliteľné
-priority: ""
+priority: "high"
 
 # Tagy – odporúča sa 2–6 tagov.
 # Typy tagov:
@@ -56,7 +56,7 @@ priority: ""
 #   - účel: tutorial, guide, pattern, case-study
 #   - téma: git, backup, ai, communication
 #   - úroveň: beginner, intermediate, advanced
-tags: []
+tags: ["sdlc","business","PR017","FiitCase","FIIT","merch","ecommerce"]
 
 
 # 🌍 LOCALIZATION -----------------------------------------------------
@@ -71,10 +71,10 @@ locale: "sk"
 created: "2025-11-28 16:54"
 
 # Dátum poslednej úpravy – dopĺňa človek
-modified: "2025-11-28 16:54"
+modified: "2026-01-20 12:00"
 
 # Stav dokumentu – default "backlog"
-status: "backlog"
+status: "draft"
 
 # Viditeľnosť – default "public"
 privacy: "public"
@@ -133,7 +133,29 @@ fm_reserved2: ""
 
 <!-- class_sthdf_dashboard_INSTANCE_ID: 01-class_sthdf_dashboard_2025-2026 -->
 
-# 01-Business
+# 01-Business (PR017 – FiitCase)
+
+FiitCase je študentský projekt zameraný na **marketingový merch pre FIIT**: obaly na mobil s FIIT identitou (logo / tematické varianty), **udržateľné balenie** a možnosť **vrátiť použitý obal na recykláciu**.
+
+## Prečo to robíme
+- FIIT komunita chce praktický merch, ktorý ľudia reálne používajú každý deň.
+- Obal na mobil má vysokú viditeľnosť → podporuje identitu a “patrím k FIIT”.
+- Udržateľný prístup (balenie + zber) dáva projektu zmysel aj mimo “len ďalší merch”.
+
+## Biznis cieľ (v našom scope)
+- dodať funkčný produktový koncept + prototypy (3D návrh a vytlačené kusy),
+- ukázať, že vieme zvládnuť celý lifecycle: dizajn → výroba → balenie → distribúcia → zber.
+
+## Hlavný problém (čo si nesmieme klamať)
+Obal je **komodita**. Ak je jediná výhoda “je tam FIIT logo”, je to slabé. Aby to fungovalo ako merch, musíme vyhrať aspoň v dvoch bodoch:
+- **dizajn** (vyzerá to profesionálne, nie lacno),
+- **kvalita a fit** (sedí na telefón, chráni, neškriabe),
+- **dostupnosť** (na fakulte/eventoch),
+- **udržateľnosť** (balenie bez zbytočného plastu + reálny zber/recyklácia).
+
+## Riziká
+- **FIIT identita/brand:** nesprávne použitie loga = stopka alebo reputačný problém.
+- **Greenwashing:** “zber” bez jasného procesu čo sa s tým stane = hanba, nie benefit.
 
 - [Business poznámky](./notes.md)
 
