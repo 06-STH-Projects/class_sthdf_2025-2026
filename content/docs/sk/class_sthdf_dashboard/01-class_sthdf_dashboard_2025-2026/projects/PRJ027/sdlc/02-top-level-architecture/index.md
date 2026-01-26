@@ -135,6 +135,9 @@ fm_reserved2: ""
 
 # 02-Top Level Architecture
 
-- Pridaj high-level diagram alebo popis architektúry.
+<figure>
+  <img src="../../sdlc/images/Product.png" alt="Schema zapojenia" width="700" />
+  <figcaption>Obr.:  3D model inteligentného kvetináča</figcaption>
+</figure>
 
 **Navigation:** [⬆️ SDLC](../index.md) · [⬅️ Projekt](../../index.md)

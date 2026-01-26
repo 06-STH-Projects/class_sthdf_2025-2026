@@ -1,0 +1,67 @@
+---
+# roles/lxc_general/tasks/main.yml
+- name: Update apt cache and upgrade all packages before installing sudo
+  ansible.builtin.apt:
+    update_cache: true
+    upgrade: dist
+    cache_valid_time: 3600
+  become: true
+
+- name: Ensure sudo is installed
+  ansible.builtin.apt:
+    name: sudo
+    state: present
+  become: true
+
+- name: Create administrative user {{ lxc_general_username }}
+  ansible.builtin.user:
+    name: "{{ lxc_general_username }}"
+    groups: "{{ lxc_general_user_groups | join(',') }}"
+    append: true
+    shell: "{{ lxc_general_user_shell }}"
+    password: "{{ lxc_general_user_password_hash if lxc_general_user_password_hash not in [none, '', '*'] else omit }}"
+    password_lock: "{{ (lxc_general_user_password_hash in [none, '', '*']) | ternary(true, false) }}"
+    create_home: true
+    state: present
+  become: true
+
+- name: Ensure authorized keys are installed for {{ lxc_general_username }}
+  ansible.builtin.authorized_key:
+    user: "{{ lxc_general_username }}"
+    key: "{{ item }}"
+    state: present
+    exclusive: false
+  loop: "{{ lookup('file', '/tmp/lxc_general_root_keys_' ~ hostvars[inventory_hostname].proxmox_vmid ~ '.pub').splitlines() | select('match', '.+') | list }}"
+  become: true
+
+- name: Allow passwordless sudo for {{ lxc_general_username }}
+  ansible.builtin.copy:
+    dest: "/etc/sudoers.d/{{ lxc_general_username }}"
+    content: "{{ lxc_general_username }} ALL=(ALL) NOPASSWD: ALL"
+    mode: '0440'
+  become: true
+
+- name: Verify SSH key access for {{ lxc_general_username }}
+  ansible.builtin.wait_for_connection:
+    timeout: 30
+  vars:
+    ansible_user: "{{ lxc_general_username }}"
+    ansible_ssh_private_key_file: "{{ lxc_general_private_key_path }}"
+  become: false
+
+
+- name: Abort when SSH verification failed
+  ansible.builtin.fail:
+    msg: "SSH verification for {{ lxc_general_username }} failed. Check authorized_keys and private key."
+  when:
+    - lxc_general_verify_key_login | bool
+    - lxc_general_ssh_check.rc is defined
+    - lxc_general_ssh_check.rc != 0
+
+- name: Include SSH hardening
+  ansible.builtin.include_tasks: harden_ssh.yml
+  tags: [harden]
+
+- name: Include firewall setup
+  ansible.builtin.include_tasks: firewall.yml
+  tags: [firewall, security]

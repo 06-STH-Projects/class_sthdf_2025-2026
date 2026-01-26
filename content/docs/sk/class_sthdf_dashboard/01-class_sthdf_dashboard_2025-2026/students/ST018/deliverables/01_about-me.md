@@ -7,20 +7,20 @@ fm_build: '2025-12-09T21:04:48Z'
 
  🙋 About Me
 ## 🔖 Základné informácie
-- Meno a priezvisko 
-- Študentský GitHub profil (link) 
-- Kontaktný e-mail 
+- Richard Kello
+- [github.com/xkello](https://github.com/xkello)
+- xkello@stuba.sk
 ## 🎯 Profesijné záujmy
-- Oblasti, ktoré ma bavia (IT, dizajn, podnikanie, …) 
-- Aké skúsenosti by som chcel získať 
+- Backend dev
+- Bit of linux
+- Chcel by som sa zlepsit ako backend dev
 ## 💡 Moje hobby / záujmy
-- Šport, hudba, varenie, cestovanie … 
-- Čokoľvek, čo odhaľuje „ľudskú stránku“ 
+- Sporty in general
+- Stolovky
 ## 🚀 Očakávania od predmetu
-- Čo chcem dosiahnuť v rámci kurzu 
-- Čo očakávam od spolupráce s tímom a komunitou 
+- Chcel by som sa zlepsit v modelovani a dokumentacii
 ## 🚀 Čo viem ponúknuť
-- Čo chcem ponúknuť v rámci kurzu 
+- Skusenosti ktore nadobudnem pocas predmetu
 
 ## Navigácia
 - [↩️ Späť](../index.md)

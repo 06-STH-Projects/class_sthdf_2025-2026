@@ -133,4 +133,11 @@ fm_reserved2: ""
 
 <!-- class_sthdf_dashboard_INSTANCE_ID: 01-class_sthdf_dashboard_2025-2026 -->
 
+[Github repozitár](https://github.com/PeterBartos157/smvit-air-sensor)
+- zdrojový kód pre senzor aj server
+- analýza
+- dokumentácia
+
 PRJ023 / 06-implementation / code-links.md
+
+**Navigation:** [⬆️ SDLC](../index.md) · [⬅️ Implementation](../index.md)

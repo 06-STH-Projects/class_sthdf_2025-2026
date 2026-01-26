@@ -135,6 +135,28 @@ fm_reserved2: ""
 
 # 05-Design
 
+
+Prvotný nákres
+<figure>
+  <img src="../../sdlc/images/drawing.jpg" alt="Drawing" width="700" />
+  <figcaption>Obr.:  Produkt</figcaption>
+</figure>
+
+
+Finálny 3D model 
+<figure>
+  <img src="../../sdlc/images/3dModel.png" alt="3D model" width="700" />
+  <figcaption>Obr.:  3D model inteligentného kvetináča</figcaption>
+</figure>
+
+
+Finálny produkt
+<figure>
+  <img src="../../sdlc/images/Product.png" alt="Produkt" width="700" />
+  <figcaption>Obr.:  Produkt</figcaption>
+</figure>
+
+
 - [Prototypy / dizajn](./prototype.md)
 
 **Navigation:** [⬆️ SDLC](../index.md) · [⬅️ Projekt](../../index.md)

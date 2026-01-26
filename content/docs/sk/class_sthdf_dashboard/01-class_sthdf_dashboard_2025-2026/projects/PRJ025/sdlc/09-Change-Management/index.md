@@ -135,6 +135,108 @@ fm_reserved2: ""
 
 # 09-Change Management
 
-- Change log / CR / impact analysis (doplníš podľa potreby).
+
+## 1. Súčasný stav (v1.0)
+
+**Aktuálna implementácia:**
+- M5StickC Plus 2 s MPU6886 IMU senzorom
+- 5 detekčných algoritmov (Strong Nod, Micro Nods, Slow Drift, Freeze, Side Tilt)
+- Alert System: Zvukový alarm (1000-1500Hz), Vizuálna obrazovka, RGB LED, Dashboard notifikácia
+- Web Dashboard (Next.js 16 + Three.js)
+
+**Zistené obmedzenia:**
+1. **Nízka hlasitosť alarmu** - 8-bitový DAC má obmedzenú hlasitosť v hlučnom prostredí
+2. **Chýbajúce haptické upozornenie** - Vodič môže ignorovať len zvukový alarm
+3. **Obmedzená efektivita** - Pri silnej únave nemusí vodič reagovať na zvuk
+
+---
+
+## 2. Navrhované zmeny (v2.0)
+
+### 2.1 Pridanie externého Audio modulu (CR-001)
+
+**Riešenie:** M5StickCPLUS Speaker 2 Hat (MAX98357)
+- Link: [M5Stack Speaker 2 Hat](https://shop.m5stack.com/products/m5stickcplus-speaker-2-hat-max98357)
+- 3.2W reproduktor integrovaný
+- Nastaviteľná hlasitosť
+- HAT modul (externý komponent)
+
+### 2.2 Pridanie vibračného modulu (CR-002)
+
+**Riešenie:** M5StickC Vibration HAT
+- Link: [M5Stack Vibration HAT](https://shop.m5stack.com/products/m5stickc-vibration-hat)
+- Integrovaný vibračný motor
+- Nastaviteľná intenzita vibrácií
+- HAT modul (externý komponent)
+
+---
+
+## 3. Zmeny v architektúre (Lemontree)
+
+### 3.1 Súčasná Top-Level Architektúra (v1.0)
+
+![Top-Level Architecture v2.0](./images/nodyne-top-level-architecture.png)
+*Aktuálna architektúra s M5StickC Plus 2, IMU senzorom a Web Dashboard*
+
+---
+
+### 3.2 Lemontree Conflict - Identifikácia potreby zmeny
+
+![Lemontree Conflict Analysis](./images/lemontree.png)
+*Analýza konfliktu: Nízka hlasitosť a chýbajúce haptické upozornenie vytvárajú riziko nedostatočnej reakcie vodiča*
+
+**Konflikt:**
+- **Problém:** Existujúci alert systém má obmedzenú hlasitosť a chýbajú vibrácie
+- **Dôsledok:** Vodič nemusí zaregistrovať alarm v hlučnom prostredí alebo pri silnej únave
+- **Riešenie:** Pridanie M5StickCPLUS Speaker 2 Hat (hlasitosť) + M5StickC Vibration HAT (haptická spätná väzba)
+
+**Zmeny v architektúre (Lemontree):**
+- **Odstránené:** Audio komponent z M5StickC Plus 2 (interný)
+- **Pridané:** M5StickCPLUS Speaker 2 Hat (externý komponent)
+- **Pridané:** M5StickC Vibration HAT (externý komponent)
+- **Nové väzby:** Firmware → "controls" → Speaker 2 Hat
+- **Nové väzby:** Firmware → "controls" → Vibration HAT
+
+---
+
+### 3.3 Navrhovaná Top-Level Architektúra (v2.0)
+
+![Top-Level Architecture v3.0](./images/architecture-v2.png)
+*Aktualizovaná architektúra s M5StickCPLUS Speaker 2 Hat (MAX98357) a M5StickC Vibration HAT modulmi*
+
+**Kľúčové zmeny:**
+1. **M5StickCPLUS Speaker 2 Hat** - externý audio modul (3.2W reproduktor)
+2. **M5StickC Vibration HAT** - externý vibračný modul
+3. **Firmware** riadi oba HAT moduly (controls relationship)
+4. **Web Dashboard** s nastavením hlasitosti a intenzity vibrácií
+
+---
+
+## 4. Impact Analysis
+
+**Hardvérové zmeny:**
+- M5StickCPLUS Speaker 2 Hat (MAX98357) - €9.95
+- M5StickC Vibration HAT - €5.95
+- Žiadne dodatočné káble (HAT moduly sa nasadia priamo)
+
+**Softvérové zmeny:**
+- Firmware: Pridať podporu pre Speaker 2 Hat a Vibration HAT, funkcie `playAlarmSound()` a `vibratePattern()`
+- Dashboard: Pridať ovládacie prvky pre hlasitosť a intenzitu vibrácií
+
+**Náklady:**
+- Hardvér: +€16 (Speaker Hat €9.95 + Vibration HAT €5.95)
+- Čas implementácie: ~1-2 týždne (jednoduchšia montáž vďaka HAT modulom)
+
+---
+
+## 5. Ďalšie kroky
+
+1. Vytvoriť hardware prototyp (breadboard test)
+2. Implementovať software (firmware + dashboard)
+3. Testovať v reálnych podmienkach (v aute)
+4. Aktualizovať dokumentáciu (Top-Level Architecture, Implementation, Testing)
+5. Publikovať release v2.0
+
+---
 
 **Navigation:** [⬆️ SDLC](../index.md) · [⬅️ Projekt](../../index.md)

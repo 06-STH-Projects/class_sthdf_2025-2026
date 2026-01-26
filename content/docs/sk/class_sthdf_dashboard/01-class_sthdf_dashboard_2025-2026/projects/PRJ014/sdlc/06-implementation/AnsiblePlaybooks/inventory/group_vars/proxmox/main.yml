@@ -1,0 +1,43 @@
+---
+# /inventory/group_vars/proxmox/main.yml
+proxmox_api_host: 192.168.1.200
+proxmox_api_user: root@pam
+proxmox_api_token_id: ansible
+proxmox_api_token_secret: "{{ vault_proxmox_api_token_secret }}"
+proxmox_api_network_base: 192.168.1
+ansible_python_interpreter: /root/ansible-env/bin/python3
+
+proxmox_api_instances:
+  - name: networking
+    node: proxmox
+    vmid: 107
+    ip_octet: 107
+    cores: 2
+    memory: 2048
+    swap: 1024
+    disk: 8
+    description: "Public networking LXC with reverse proxy"
+    extra_roles:
+      - lxc_networking
+
+  - name: finance
+    node: proxmox
+    vmid: 108
+    ip_octet: 108
+    cores: 2
+    memory: 2048
+    swap: 1024
+    disk: 8
+    description: "Applications for budgeting and general finance overview"
+    extra_roles:
+      - lxc_finance
+
+  - name: navidrome
+    node: proxmox
+    vmid: 102       
+    ip_octet: 102     
+    cores: 2
+    memory: 1024      
+    swap: 512
+    disk: 16  
+    description: "Navidrome music streaming server and associated files"

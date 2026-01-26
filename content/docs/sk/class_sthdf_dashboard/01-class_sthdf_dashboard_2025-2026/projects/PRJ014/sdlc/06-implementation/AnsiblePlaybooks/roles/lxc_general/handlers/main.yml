@@ -1,0 +1,13 @@
+---
+# roles/lxc_general/handlers/main.yml
+- name: Restart sshd
+  ansible.builtin.service:
+    name: ssh
+    state: restarted
+  become: true
+
+- name: Restart fail2ban
+  ansible.builtin.service:
+    name: fail2ban
+    state: restarted
+  become: true

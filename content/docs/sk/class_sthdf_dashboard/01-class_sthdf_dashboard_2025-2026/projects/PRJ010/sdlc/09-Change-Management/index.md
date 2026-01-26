@@ -135,6 +135,6 @@ fm_reserved2: ""
 
 # 09-Change Management
 
-- Change log / CR / impact analysis (doplníš podľa potreby).
+* Drobné úpravy boli potrebné (spevnenie 1 z rakiev lepiacou páskou po páde, pilníkovanie hrán 1 z komponentov)
 
 **Navigation:** [⬆️ SDLC](../index.md) · [⬅️ Projekt](../../index.md)

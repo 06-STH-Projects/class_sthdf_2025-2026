@@ -21,11 +21,13 @@ fm_build: '2025-12-09T21:04:48Z'
 8. Operation  
 
 ## 🏆 Finálny produkt
-- Čo tím reálne dodal  
-- Ako to vyzerá (screenshoty, demo, repo link)  
+**Navigation:** [⬅️ Projekt](/sk/class_sthdf_dashboard/class_sthdf_dashboard_2025-2026/projects/PRJ027/presentation/slides)
+ 
 
 ## 🧭 Porovnanie s Project Summary
-- Čo sme plánovali vs. čo sme naozaj dodali  
+- **Dodané:** 3D tlačený kvetináč, STM32 s C++ kódom, senzory vlhkosti + svetla, pumpa + LED, USB napájanie. 
+
+Dosiahli sme všetky plánované funkcie.
 
 
 ---

@@ -135,6 +135,12 @@ fm_reserved2: ""
 
 # 04-Analysis
 
+**Požiadavky:**
+- Automatické zavlažovanie pri nízke vlhkosti
+- Monitorovanie vlhkosti a svetla
+- LED osvetlenie pri nedostatku svetla
+- Výdrž nádrže min. 2 týždne
+- Bezpečnosť
 - [Backlog a analýzy](./backlog.md)
 
 **Navigation:** [⬆️ SDLC](../index.md) · [⬅️ Projekt](../../index.md)

@@ -1,176 +1,123 @@
----
-# 🧩 Versioning – systém dopĺňa automaticky
-fm_version: "1.0.1"
+# PRJ015 - AshLock
 
-# Dátum buildu – generuje skript
-fm_build: "2025-11-28T15:54:47.989011+00:00"
+## 1. Prehľad projektu
+**AshLock** je koncept prenosného uzatvárateľného popolníka a zároveň puzdra na cigarety, navrhnutého ako **kľúčenka**.  
+Cieľom projektu je vytvoriť **kompaktné, bezpečné a zápach minimalizujúce riešenie**, ktoré umožní:
+- bezpečne uhasiť cigaretu,
+- krátkodobo uložiť popol,
+- prípadne prenášať niekoľko čistých cigariet,
+bez rizika vysypania, zápachu alebo poškodenia okolia.
 
-# Poznámka k verzii – voliteľné
-fm_version_comment: ""
+Projekt kombinuje:
+- **mechanický dizajn (3D tlač)**,
+- **tepelnú ochranu pomocou vložky**,
+- **uzatvárateľný systém so závitom a tesnením**.
 
+## 2. Hlavná myšlienka dizajnu
+Pôvodný dizajn zahŕňal iba prenosný popolník, bez ďalšej funkcionality.
 
-# 🆔 IDENTITY --------------------------------------------------------
+![](obrazky/povodny-nacrt.jpg)
 
-# ID generuje CLI / skript
+![](obrazky/povodny-dizajn.png)
 
-# Unikátne UUID – generuje skript
-guid: "406ce5b8-85c9-417f-beff-dd33a4ff50dd"
+Druhá verzia s pridanou možnosťou úschovy cigariet bola navrhnutá tak, aby kľúčenka **pripomínala cigaretu**:
+- **horná časť (žltá)** – imituje filter, je odskrutkovateľná,
+- **spodná časť (biela)** – imituje papier cigarety a tvorí hlavný objem.
 
+![](obrazky/nacrt.jpg)
 
-# 🧭 CONTEXT ---------------------------------------------------------
+![](obrazky/3d-dizajn.png)
 
-# DAO / doména (knife, sdlc, q12, 7ds...) dopĺňa skript
-dao: "class_sthdf_dashboard"
+Celkovo má teda AshLock:
+- **funkčný popolník** (s kovovou vložkou),
+- **menší úložný priestor** (až 6 cigariet),
+- **kľúčenku** – vhodnú na každodenné nosenie.
 
-# Názov zápisu – dopĺňa používateľ
-title: "slides"
+## 3. Scenáre použitia
+- rýchle zahasenie cigarety na cestách,
+- krátkodobé uloženie popola bez koša,
+- prenášanie cigariet bez krabičky,
+- festivaly, turistika, mestské prostredie.
 
-# Krátky popis – dopĺňa používateľ (voliteľné)
-description: "{{DESCRIPTION}}"
+## 4. Mechanická konštrukcia
+### 4.1 Základné časti
+- **Spodná časť (base)**  
+  - biely 3D tlačený obal  
+  - vnútorný priestor pre cigarety / popol  
 
+- **Horná časť (lid / filter)**  
+  - žltý 3D tlačený diel
+  - integrované očko pre kľúčenku    
+  - závitové spojenie  
+  - drážka pre gumové tesnenie (O-ring)  
 
-# 👥 AUTHORSHIP ------------------------------------------------------
-
-# Hlavný autor – z globálneho configu
-author: "Roman Kazicka"
-
-# Zoznam autorov – generuje skript
-authors:
-  - "Roman Kazicka"
-
-
-# 🗂 CLASSIFICATION ---------------------------------------------------
-
-# Nadradená kategória – môže doplniť používateľ
-category: ""
-
-# Typ dokumentu (guide, case, tutorial...) – používateľ (voliteľné)
-type: ""
-
-# Priorita (low/medium/high) – voliteľné
-priority: ""
-
-# Tagy – odporúča sa 2–6 tagov.
-# Typy tagov:
-#   - rámce: knife, 7ds, sdlc, q12
-#   - účel: tutorial, guide, pattern, case-study
-#   - téma: git, backup, ai, communication
-#   - úroveň: beginner, intermediate, advanced
-tags: []
+- **Vnútorná vložka**  
+  - kovová (nerez / hliník)  
+  - chráni plast pred teplom a žeravým popolom  
 
 
-# 🌍 LOCALIZATION -----------------------------------------------------
+## 5. Vypočítané parametre (na základe návrhu)
+### 5.1 Rozmery (odhad podľa použitia ako kľúčenka)
+- **Vonkajší priemer:** ~35–38 mm  
+- **Vnútorný priemer:** ~22–24 mm  
+- **Celková výška:** ~120–130 mm  
+  - cca 2,5× vyššia verzia oproti pôvodnému popolníku  
+- **Hmotnosť (bez cigariet):** ~70–90 g (s kovovou vložkou)
 
-# Jazyk dokumentu – doplní skript podľa štruktúry
-locale: "sk"
+### 5.2 Kapacita
+- **Maximálny počet cigariet:** 6 ks  
+  - usporiadanie v kruhu (5 + 1 stred)  
+- Zachovaná prenosnosť a použiteľnosť ako kľúčenka
 
+## 6. Uzatváranie a tesnenie
+- **Závitové spojenie** (šróbovanie) medzi hornou a spodnou časťou  
 
-# 🕒 LIFECYCLE --------------------------------------------------------
+Tesnenie bolo inšpirované zaváraninovým pohárom, ktorého tesnenie je účinné pred únikom plynov.
 
-# Dátum vytvorenia – generuje skript
-created: "2025-11-28 16:54"
+![](obrazky/pohar.jpg)
 
-# Dátum poslednej úpravy – dopĺňa človek
-modified: "2025-11-28 16:54"
+- **Gumové tesnenie**:
+  - priemer tesnenia: cca 6/4" (≈ 19 mm vnútorný)
+  - kompresia ~10–20 %
+- Výsledok:
+  - výrazné zníženie zápachu,
+  - ochrana pred vysypaním popola,
+  - bezpečné nosenie vo vrecku alebo na kľúčoch.
 
-# Stav dokumentu – default "backlog"
-status: "backlog"
+## 7. Tepelná ochrana (kritická časť návrhu)
+### Aktuálny stav prototypu
+**Finálny produkt zatiaľ nebolo možné dodať**, pretože:
+- bežné 3D tlačové materiály (PLA, PETG, ABS)  
+  **nie sú odolné voči priamemu žiaru**,
+- žeravý popol môže dosahovať **400–500 °C**,
+- existuje riziko:
+  - deformácie plastu,
+  - poškodenia tesnenia,
+  - ohrozenia kľúčenky.
 
-# Viditeľnosť – default "public"
-privacy: "public"
+### Riešenia, ktoré sa aktuálne zvažujú:
+- kovová vložka s **tepelnou medzerou (air gap)**,
+- oddelenie plastu od horúcej zóny,
+- použitie vysokoteplotného lepidla alebo mechanického uchytenia vložky.
 
+## 8. Stav projektu
+- ✔ hotový **koncept a vizuálny dizajn**
+- ✔ overená **ergonómia a kapacita**
+- ✔ uzatvárateľný a prenosný mechanizmus
+- ❌ prebieha riešenie **termoregulácie a bezpečnosti**
 
-# ⚖ INTELLECTUAL PROPERTY -------------------------------------------
+## 9. Záver
+Projekt **AshLock** predstavuje praktické a dizajnovo výrazné riešenie problému prenosného fajčenia v mestskom prostredí.  
+Spája:
+- mechanický dizajn,
+- 3D tlač,
+- materiálové obmedzenia,
+- a reálne používateľské scenáre.
 
-# Držiteľ práv k obsahu – dopĺňa skript
-rights_holder_content: "Roman Kazicka"
+Ďalší krok projektu je **finalizácia tepelnej ochrany**, po ktorej bude možné dodať plnohodnotný funkčný prototyp.
 
-# Systémový vlastník práv
-rights_holder_system: "CAA / KNIFE / LetItGrow"
-
-# Licencia
-license: "CC-BY-NC-SA-4.0"
-
-# Disclaimer
-disclaimer: "Use at your own risk. Methods provided as-is; participation is voluntary and context-aware."
-
-# Copyright
-copyright: "© 2025 Roman Kazicka"
-
-
-# 🔗 ORIGIN / PROVENANCE ---------------------------------------------
-
-# Repozitár pôvodu
-origin_repo: ""
-
-# URL pôvodného repozitára
-origin_repo_url: ""
-
-# Commit pôvodu
-origin_commit: ""
-
-# Branch pôvodu
-origin_branch: ""
-
-# Systém pôvodu (CAA/KNIFE/STHDF…)
-origin_system: "CAA"
-
-# Pôvodný autor
-origin_author: "Roman Kazicka"
-
-# Importovaný zdroj
-origin_imported_from: ""
-
-# Dátum importu
-origin_import_date: ""
-
-
-# 🧱 RESERVED ---------------------------------------------------------
-
-fm_reserved1: ""
-fm_reserved2: ""
----
-
-<!-- class_sthdf_dashboard_INSTANCE_ID: 01-class_sthdf_dashboard_2025-2026 -->
-
-[🏠 Domov](../../../index.md) · [⬅️ Nahor](../)
-# PRJ015 — Presentation
-
---- Headline ---
-## Headline
-**2025-PRJ-015-ST_015-ST_015-Nazov projektu**
-
-> Uvodny obrazok: TODO (dopln odkaz alebo subor).
-
-Strucny text o projekte (1-3 vety, doplni tim).
---- Headline ---
-
---- introduction ---
-## Introduction
-**2025-PRJ-015-ST_015-ST_015-Nazov projektu**
-
-Strucny text o projekte (zhrnutie zadania + prinos).
---- introduction ---
-
---- obsah ---
-## Obsah
-- [01-Business](../sdlc/01-business/index.md)
-- [02-Top Level Architecture](../sdlc/02-top-level-architecture/index.md)
-- [03-Solution Architecture](../sdlc/03-solution-architecture/index.md)
-- [04-Analysis](../sdlc/04-analysis/index.md)
-- [05-Design](../sdlc/05-design/index.md)
-- [06-Implementation](../sdlc/06-implementation/index.md)
-- [07-Testing & Verification](../sdlc/07-testing-verification/index.md)
-- [08-Operation](../sdlc/08-operation/index.md)
-- [09-Change Management](../sdlc/09-Change-Management/index.md)
---- obsah ---
-
-## 01-Business
-## 02-Top Level Architecture
-## 03-Solution Architecture
-## 04-Analysis
-## 05-Design
-## 06-Implementation
-## 07-Testing & Verification
-## 08-Operation
-## 09-Change Management
+Možné budúce rozšírenia:
+- viacfarebné varianty,
+- verzia len ako popolník / len ako puzdro,
+- vymeniteľné vložky,
+- branding a custom dizajn.

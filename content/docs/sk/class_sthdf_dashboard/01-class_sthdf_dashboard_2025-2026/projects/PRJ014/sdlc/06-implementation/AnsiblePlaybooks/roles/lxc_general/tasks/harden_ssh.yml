@@ -1,0 +1,132 @@
+---
+# roles/lxc_general/tasks/harden_ssh.yml
+- name: Harden sshd
+  ansible.builtin.blockinfile:
+    path: /etc/ssh/sshd_config
+    block: |
+      PasswordAuthentication no
+      ChallengeResponseAuthentication no
+      PermitRootLogin prohibit-password
+      PermitEmptyPasswords no
+      KexAlgorithms curve25519-sha256@libssh.org
+      Ciphers chacha20-poly1305@openssh.com
+      MACs hmac-sha2-512-etm@openssh.com
+    marker: "# {mark} ANSIBLE HARDENING BLOCK"
+  become: true
+
+- name: Ensure fail2ban is installed
+  ansible.builtin.apt:
+    name: fail2ban
+    state: present
+  become: true
+
+- name: Install python3-systemd for systemd backend support
+  ansible.builtin.apt:
+    name: python3-systemd
+    state: present
+  become: true
+
+- name: Create UFW action file for Fail2ban
+  ansible.builtin.copy:
+    dest: /etc/fail2ban/action.d/ufw.conf
+    content: |
+      [Definition]
+      actionstart =
+      actionstop =
+      actioncheck =
+      actionban = ufw insert 1 deny from <ip> to any
+      actionunban = ufw delete deny from <ip> to any
+  become: true
+
+- name: Gather package facts to check for Nginx
+  ansible.builtin.package_facts:
+    manager: auto
+
+- name: Configure SSH jail in jail.local (with Nginx jails if present)
+  ansible.builtin.copy:
+    dest: /etc/fail2ban/jail.local
+    content: |
+      [DEFAULT]
+      backend = systemd
+      banaction = ufw
+      bantime = 10m
+      findtime = 10m
+      [sshd]
+      enabled = true
+      port = ssh
+      filter = sshd
+      logpath = /var/log/auth.log
+      maxretry = 3
+      {% if 'nginx' in ansible_facts.packages or 'nginx-core' in ansible_facts.packages or 'nginx-full' in ansible_facts.packages %}
+      [nginx-http-auth]
+      enabled = true
+      port = http,https
+      filter = nginx-http-auth
+      logpath = /var/log/nginx/*error.log
+      maxretry = 5
+      bantime = 1h
+      findtime = 10m
+      [nginx-limit-req]
+      enabled = true
+      port = http,https
+      filter = nginx-limit-req
+      logpath = /var/log/nginx/*error.log
+      maxretry = 10
+      bantime = 1h
+      findtime = 10m
+      [nginx-botsearch]
+      enabled = true
+      port = http,https
+      filter = nginx-botsearch
+      logpath = /var/log/nginx/*access.log
+      maxretry = 2
+      bantime = 24h
+      findtime = 10m
+      [nginx-4xx]
+      enabled = true
+      port = http,https
+      filter = nginx-4xx
+      logpath = /var/log/nginx/*access.log
+      maxretry = 20
+      bantime = 2h
+      findtime = 5m
+      {% endif %}
+  notify: Restart fail2ban
+  become: true
+
+- name: Create custom Fail2Ban filter for nginx-limit-req
+  ansible.builtin.copy:
+    dest: /etc/fail2ban/filter.d/nginx-limit-req.conf
+    content: |
+      [Definition]
+      failregex = limiting requests, excess:.* by zone.*client: <HOST>
+      ignoreregex =
+  when: "'nginx' in ansible_facts.packages or 'nginx-core' in ansible_facts.packages or 'nginx-full' in ansible_facts.packages"
+  become: true
+
+- name: Create custom Fail2Ban filter for nginx-botsearch
+  ansible.builtin.copy:
+    dest: /etc/fail2ban/filter.d/nginx-botsearch.conf
+    content: |
+      [Definition]
+      failregex = <HOST> -.*GET.*(\.php|\.asp|\.exe|\.pl|\.cgi|\.scgi)
+      ignoreregex =
+  when: "'nginx' in ansible_facts.packages or 'nginx-core' in ansible_facts.packages or 'nginx-full' in ansible_facts.packages"
+  become: true
+
+- name: Create custom Fail2Ban filter for nginx-4xx errors
+  ansible.builtin.copy:
+    dest: /etc/fail2ban/filter.d/nginx-4xx.conf
+    content: |
+      [Definition]
+      failregex = ^<HOST>.*\"(GET|POST|HEAD|PUT|DELETE|PATCH).*\" (404|444|403|400|401) .*$
+      ignoreregex =
+  when: "'nginx' in ansible_facts.packages or 'nginx-core' in ansible_facts.packages or 'nginx-full' in ansible_facts.packages"
+  become: true
+
+- name: Ensure fail2ban is running
+  ansible.builtin.systemd:
+    name: fail2ban
+    state: started
+    enabled: true
+  become: true

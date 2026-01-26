@@ -146,7 +146,7 @@ Pre lepšie pochopenie štruktúry a funkčnosti systému som v nástroji Sparx 
 Fyzický model zobrazuje konkrétne hardvérové komponenty, z ktorých sa systém skladá, a ich prepojenie. Identifikuje hlavné časti ako Arduino, senzor, ovládač motora (MOSFET) a samotnú pumpu.
 
 <figure>
-  <img src="../obrazky/fyzicky_model.png" alt="Fyzický model komponentov" width="700" />
+  <img src="../obrazky/obrazky/fyzicky_model.png" alt="Fyzický model komponentov" width="700" />
   <figcaption>Obr.: Fyzický model hardvérových komponentov a ich prepojení.</figcaption>
 </figure>
 
