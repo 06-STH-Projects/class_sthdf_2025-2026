@@ -11,118 +11,67 @@ fm_version_comment: ""
 
 # 🆔 IDENTITY --------------------------------------------------------
 
-# ID generuje CLI / skript
-
 # Unikátne UUID – generuje skript
 guid: "98ab3b4e-7f74-4916-877a-590cd19edaff"
 
 
 # 🧭 CONTEXT ---------------------------------------------------------
 
-# DAO / doména (knife, sdlc, q12, 7ds...) dopĺňa skript
 dao: "class_sthdf_dashboard"
-
-# Názov zápisu – dopĺňa používateľ
 title: "slides"
 
-# Krátky popis – dopĺňa používateľ (voliteľné)
-description: "{{DESCRIPTION}}"
+description: "Prezentácia projektu zameraného na návrh, realizáciu a prevádzku malého serverového riešenia s dôrazom na efektivitu, automatizáciu a použitie repasovaného hardvéru."
 
 
 # 👥 AUTHORSHIP ------------------------------------------------------
 
-# Hlavný autor – z globálneho configu
 author: "Roman Kazicka"
 
-# Zoznam autorov – generuje skript
 authors:
   - "Roman Kazicka"
 
 
 # 🗂 CLASSIFICATION ---------------------------------------------------
 
-# Nadradená kategória – môže doplniť používateľ
-category: ""
+category: "project"
+type: "presentation"
+priority: "medium"
 
-# Typ dokumentu (guide, case, tutorial...) – používateľ (voliteľné)
-type: ""
-
-# Priorita (low/medium/high) – voliteľné
-priority: ""
-
-# Tagy – odporúča sa 2–6 tagov.
-# Typy tagov:
-#   - rámce: knife, 7ds, sdlc, q12
-#   - účel: tutorial, guide, pattern, case-study
-#   - téma: git, backup, ai, communication
-#   - úroveň: beginner, intermediate, advanced
-tags: []
+tags:
+  - sdlc
+  - infrastructure
+  - automation
+  - ansible
+  - homelab
+  - intermediate
 
 
 # 🌍 LOCALIZATION -----------------------------------------------------
 
-# Jazyk dokumentu – doplní skript podľa štruktúry
 locale: "sk"
 
 
 # 🕒 LIFECYCLE --------------------------------------------------------
 
-# Dátum vytvorenia – generuje skript
 created: "2025-11-28 16:54"
-
-# Dátum poslednej úpravy – dopĺňa človek
 modified: "2025-11-28 16:54"
-
-# Stav dokumentu – default "backlog"
 status: "backlog"
-
-# Viditeľnosť – default "public"
 privacy: "public"
 
 
 # ⚖ INTELLECTUAL PROPERTY -------------------------------------------
 
-# Držiteľ práv k obsahu – dopĺňa skript
 rights_holder_content: "Roman Kazicka"
-
-# Systémový vlastník práv
 rights_holder_system: "CAA / KNIFE / LetItGrow"
-
-# Licencia
 license: "CC-BY-NC-SA-4.0"
-
-# Disclaimer
 disclaimer: "Use at your own risk. Methods provided as-is; participation is voluntary and context-aware."
-
-# Copyright
 copyright: "© 2025 Roman Kazicka"
 
 
 # 🔗 ORIGIN / PROVENANCE ---------------------------------------------
 
-# Repozitár pôvodu
-origin_repo: ""
-
-# URL pôvodného repozitára
-origin_repo_url: ""
-
-# Commit pôvodu
-origin_commit: ""
-
-# Branch pôvodu
-origin_branch: ""
-
-# Systém pôvodu (CAA/KNIFE/STHDF…)
 origin_system: "CAA"
-
-# Pôvodný autor
 origin_author: "Roman Kazicka"
-
-# Importovaný zdroj
-origin_imported_from: ""
-
-# Dátum importu
-origin_import_date: ""
 
 
 # 🧱 RESERVED ---------------------------------------------------------
@@ -134,25 +83,32 @@ fm_reserved2: ""
 <!-- class_sthdf_dashboard_INSTANCE_ID: 01-class_sthdf_dashboard_2025-2026 -->
 
 [🏠 Domov](../../../index.md) · [⬅️ Nahor](../)
+
 # PRJ014 — Presentation
 
---- Headline ---
+---
+
 ## Headline
-**2025-PRJ-014-ST_014-ST_014-Nazov projektu**
+**2025-PRJ-014-ST_014-ST_014 – Efektívny server z dostupného hardvéru**
 
-> Uvodny obrazok: TODO (dopln odkaz alebo subor).
+> Úvodný obrazok: schéma mini-servera / homelabu (TODO)
 
-Strucny text o projekte (1-3 vety, doplni tim).
---- Headline ---
+Projekt sa zameriava na návrh a realizáciu malého serverového riešenia s dôrazom na **nízke náklady**, **automatizáciu** a **dlhodobú udržateľnosť**. Praktický dôkaz, že aj repasovaný hardvér dokáže poskytovať profesionálne výsledky.
 
---- introduction ---
+---
+
 ## Introduction
-**2025-PRJ-014-ST_014-ST_014-Nazov projektu**
+**2025-PRJ-014-ST_014-ST_014 – Efektívny server z dostupného hardvéru**
 
-Strucny text o projekte (zhrnutie zadania + prinos).
---- introduction ---
+Cieľom projektu je ukázať, že:
+- modernú infraštruktúru nie je nutné stavať na drahom novom hardvéri,
+- automatizácia (Ansible) výrazne znižuje chybovosť a čas potrebný na správu,
+- princípy SDLC sú použiteľné aj pri malých a osobných projektoch.
 
---- obsah ---
+Projekt prepája **technické rozhodnutia**, **architektúru**, **implementáciu** a **prevádzku** do jedného konzistentného celku.
+
+---
+
 ## Obsah
 - [01-Business](../sdlc/01-business/index.md)
 - [02-Top Level Architecture](../sdlc/02-top-level-architecture/index.md)
@@ -163,14 +119,148 @@ Strucny text o projekte (zhrnutie zadania + prinos).
 - [07-Testing & Verification](../sdlc/07-testing-verification/index.md)
 - [08-Operation](../sdlc/08-operation/index.md)
 - [09-Change Management](../sdlc/09-Change-Management/index.md)
---- obsah ---
+
+---
 
 ## 01-Business
+
+### Motivácia
+- Minimalizovať náklady na infraštruktúru
+- Zvýšiť kontrolu nad dátami a službami
+- Získať praktické skúsenosti so serverovou architektúrou
+
+### Použitie repasovaného hardvéru
+Projekt cielene počíta s **použitým / repasovaným počítačom** ako validnou voľbou.
+
+**Konkrétny príklad:**
+- Lenovo M720q Mini PC
+- Intel i5-9400T (6 jadier)
+- 16 GB DDR4 RAM
+- 256 GB NVMe SSD
+- Spotreba ~65 W
+- Cena: ~170 €
+
+➡️ Pomer **cena / výkon / spotreba** je výrazne lepší než pri novom hardvéri v rovnakej kategórii.
+
+---
+
 ## 02-Top Level Architecture
+
+### Prehľad
+- 1× fyzický server (mini PC)
+- Linux OS
+- Docker / kontajnerové služby
+- Automatizovaná konfigurácia
+
+### Kľúčové vlastnosti
+- nízka spotreba energie
+- tichá prevádzka
+- jednoduchá rozšíriteľnosť
+
+---
+
 ## 03-Solution Architecture
+
+### Softvérové vrstvy
+- OS: Linux (server-oriented distro)
+- Runtime: Docker
+- Automatizácia: Ansible
+- Monitoring a logging (voliteľné)
+
+### Izolácia
+- každá služba beží v samostatnom kontajneri
+- jasne definované porty a volume mounty
+
+---
+
 ## 04-Analysis
+
+### Požiadavky
+- stabilná prevádzka 24/7
+- jednoduchý redeploy
+- možnosť rýchlej obnovy systému
+
+### Riziká
+- zlyhanie disku
+- ľudská chyba pri konfigurácii
+
+➡️ Obe riešené pomocou automatizácie a záloh.
+
+---
+
 ## 05-Design
+
+### Architektonické rozhodnutia
+- preferencia jednoduchosti pred komplexitou
+- infraštruktúra ako kód
+- opakovateľné deploymenty
+
+### Prečo Ansible
+- bez agentov
+- čitateľné YAML playbooky
+- ideálne pre malé aj stredné prostredia
+
+---
+
 ## 06-Implementation
+
+### Použitie Ansible (kľúčová časť projektu)
+
+Ansible sa používa na:
+- základnú konfiguráciu servera
+- inštaláciu balíkov
+- nastavenie Docker prostredia
+- deployment služieb
+- správu používateľov a SSH prístupov
+
+#### Príklady automatizácie
+- inicializácia nového servera jedným príkazom
+- opätovné nasadenie systému po zlyhaní
+- konzistentné prostredie medzi testom a produkciou
+
+➡️ Výsledok: menej manuálnych zásahov, menej chýb, vyššia istota.
+
+---
+
 ## 07-Testing & Verification
+
+### Overovanie
+- testovanie dostupnosti služieb
+- kontrola kontajnerov po deployi
+- validácia konfigurácie
+
+### Prístup
+- jednoduché sanity testy
+- opakovateľné scenáre
+
+---
+
 ## 08-Operation
+
+### Prevádzka
+- server beží autonómne
+- aktualizácie riadené skriptami
+- monitoring základných metrík
+
+### Údržba
+- minimálna manuálna interakcia
+- rýchla obnova v prípade problému
+
+---
+
 ## 09-Change Management
+
+### Zmeny
+- verzovanie konfigurácií
+- dokumentované úpravy
+- rollback možný vďaka automatizácii
+
+### Budúci rozvoj
+- rozšírenie o ďalšie služby
+- lepší monitoring
+- centralizovaný logging
+
+---
+
+**Záver:**  
+Projekt ukazuje, že kombinácia **repasovaného hardvéru**, **dobrého návrhu** a **automatizácie pomocou Ansible** dokáže vytvoriť spoľahlivý a profesionálny serverový systém s minimálnymi nákladmi.
