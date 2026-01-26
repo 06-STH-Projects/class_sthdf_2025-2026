@@ -136,7 +136,7 @@ fm_reserved2: ""
 # 06-Implementation
 Implementácia popisuje, ako sme vytvorili STU merch od 3D modelu po fyzický prototyp: Maya (modeling + varianty) → Arnold (render) → export pre 3D tlač → slicing → tlač → post-processing → QC → sustainable balenie → distribúcia + návrh zberu použitých obalov.
 
-- [Odkazy na kód / repozitáre](./code-links.md)
+- [Odkazy na súbory](./code-links.md)
 
 ![Fiitcase - Worklof](./06-workflow.png)
 ![Fiitcase - Roadmapa](./06-roadmap.png)

@@ -164,3 +164,6 @@ Balenie musí byť jednoduché a udržateľné a zároveň má komunikovať:
 - ako sa oň starať,
 - ako vrátiť použitý obal (waste collection).
 
+![FiitCase - Packaging](./05-packaging.png)
+
+[Next](../06-implementation/index.md)

@@ -140,4 +140,5 @@ FiitCase je marketingový merch systém: návrh obalov s FIIT identitou -> výro
 ![Top-level context](./02-toplvlcontext.png)
 ![End-to-end flow](./02-lifecycleflow.png)
 
+[Next](../03-solution-architecture/index.md)
 **Navigation:** [⬆️ SDLC](../index.md) · [⬅️ Projekt](../../index.md)

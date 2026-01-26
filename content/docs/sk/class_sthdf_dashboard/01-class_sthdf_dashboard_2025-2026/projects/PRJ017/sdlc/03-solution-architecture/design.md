@@ -139,3 +139,5 @@ Komponenty riešenia sú zamerané na výrobu a udržateľnosť (bez systému ob
 
 ![Solution components](./03-components.png)
 ![Circular loop](./03-economyloop.png)
+
+[Next](../04-analysis/index.md)

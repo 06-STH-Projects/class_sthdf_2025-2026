@@ -157,5 +157,6 @@ Obal je **komodita**. Ak je jediná výhoda “je tam STU logo”, je to slabé.
 - **STU identita/brand:** nesprávne použitie loga = stopka alebo reputačný problém.
 - **Greenwashing:** “zber” bez jasného procesu čo sa s tým stane = hanba, nie benefit.
 
+[Next](../02-top-level-architecture/index.md)
 
 **Navigation:** [⬆️ SDLC](../index.md) · [⬅️ Projekt](../../index.md)
