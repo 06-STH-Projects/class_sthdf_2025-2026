@@ -135,6 +135,10 @@ fm_reserved2: ""
 
 # 02-Top Level Architecture
 
-- Pridaj high-level diagram alebo popis architektúry.
+FiitCase je marketingový merch systém: návrh obalov s FIIT identitou -> výroba -> udržateľné balenie -> distribúcia na fakulte/eventoch -> zber použitých obalov a recyklácia.
 
+![Top-level context](./02-toplvlcontext.png)
+![End-to-end flow](./02-lifecycleflow.png)
+
+[Next](../03-solution-architecture/index.md)
 **Navigation:** [⬆️ SDLC](../index.md) · [⬅️ Projekt](../../index.md)
