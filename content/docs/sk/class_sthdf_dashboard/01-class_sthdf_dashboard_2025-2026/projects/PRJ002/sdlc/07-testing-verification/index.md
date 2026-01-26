@@ -138,3 +138,16 @@ fm_reserved2: ""
 - [Test report a QA výstupy](./test-report.md)
 
 **Navigation:** [⬆️ SDLC](../index.md) · [⬅️ Projekt](../../index.md)
+  
+# Nasadenie zariadenia, testovanie a validácia
+
+Testovanie a validácia systému prebiehali v rámci funkčného prototypu, ktorého cieľom bolo overiť správnu spolupárcu hardvérovej a softvérovej časti. ESP mikrokontroler sa nám podarilo úspešne zapojiť a bolo nakonfigurované tak, aby sa pravidelne zbierali údaje zo senzorov. Prijaté dáta sa v reálnom čase ukladali a spracovali v ThingsBoard.
+
+Validácia používateľského rozhrania nám ukázala správnu funkčnosť webového dashboardu, na ktorom boli namerané hodnoty priebežne aktualizované a vizualizované. Na základe vykonaných testov možno povedať, že základné funkčné požiadavky systému boli splnené a prototyp úspešne ukazuje schopnosť monitorovania včelieho úľa a prenosu dát v rámci navrhovaného IoT riešenia.
+
+![ESP32](../../images/IMG_4347.HEIC)
+
+
+
+
+
