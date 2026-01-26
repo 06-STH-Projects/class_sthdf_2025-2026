@@ -3,24 +3,24 @@ fm_version: 1.0.1
 fm_version_comment: ''
 locale: sk
 fm_build: '2025-12-09T21:04:48Z'
-title: 🙋 About Me
 ---
 
-# 🙋 About Me
+ 🙋 About Me
 ## 🔖 Základné informácie
-- Matej Šplhák
-- https://github.com/MatejSplhak
-- matej.splhak@stuba.sk
+- Meno a priezvisko 
+- Študentský GitHub profil (link) 
+- Kontaktný e-mail 
 ## 🎯 Profesijné záujmy
-- data processing, parallel computing, bioinformatics
-- systematické myslenie a dekompozícia problémov
+- Oblasti, ktoré ma bavia (IT, dizajn, podnikanie, …) 
+- Aké skúsenosti by som chcel získať 
 ## 💡 Moje hobby / záujmy
-- varenie, stolné hry, filmy
+- Šport, hudba, varenie, cestovanie … 
+- Čokoľvek, čo odhaľuje „ľudskú stránku“ 
 ## 🚀 Očakávania od predmetu
-- priblíženie sa doteraz slabo skúmanej stránke IT a to hardvér integráciu
-- promptnú komunikáciu a vrelý prístup
+- Čo chcem dosiahnuť v rámci kurzu 
+- Čo očakávam od spolupráce s tímom a komunitou 
 ## 🚀 Čo viem ponúknuť
-- ochotu sa učit nové veci mimo môjho zámeru, záujem vytvoriť hmatateľný finálny produkt
+- Čo chcem ponúknuť v rámci kurzu 
 
 ## Navigácia
 - [↩️ Späť](../index.md)

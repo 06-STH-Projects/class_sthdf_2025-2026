@@ -135,16 +135,6 @@ fm_reserved2: ""
 
 # 05-Design
 
-## Webová aplikácia
-
-Intuitívne prostredie webovej aplikácie.
-
-![GUI parkovacieho priestoru](../../../../projects/PRJ011/pictures/GUIparkinglot.png)
-
-## Login stránka
-
-![Login stránka](../../../../projects/PRJ011/pictures/Login_final.png)
-
 - [Prototypy / dizajn](./prototype.md)
 
 **Navigation:** [⬆️ SDLC](../index.md) · [⬅️ Projekt](../../index.md)

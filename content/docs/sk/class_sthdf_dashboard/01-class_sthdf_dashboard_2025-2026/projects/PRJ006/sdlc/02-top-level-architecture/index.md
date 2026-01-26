@@ -135,6 +135,78 @@ fm_reserved2: ""
 
 # 02-Top Level Architecture
 
-- Pridaj high-level diagram alebo popis architektúry.
+# Woodies – Top Level Architecture
+
+## 1. Kontext systému (čo je „systém“ v našom projekte)
+
+V projekte Woodies je produkt primárne **digitálny artefakt**: CAD model + výkresy + dokumentácia.  
+Top-level architektúra preto opisuje **tok práce, dáta a komponenty** potrebné na návrh.
+
+![Systémový kontext](../../images/context_diagram_tla.png)
+
+### 1.1 Zainteresované strany
+- **Designer/CAD Engineer**: tvorí modely, parametre, zostavy.
+- **Reviewer**: kontrola konzistencie, DFM pravidlá.
+- **CNC dielňa**: konzument výkresov, DXF, CAM nastavení.
+- **Zákazník**: konzument montážneho manuálu, vizualizácií.
+
+
+## 2. Architektúrne ciele a kvalitatívne atribúty
+
+### 2.1 Ciele
+- Opakovateľný proces tvorby puzzle dizajnov
+- Parametrizácia
+- Konzistentná dokumentácia
+
+### 2.2 Kvalitatívne atribúty
+- **Maintainability:** zmena parametrov nevyžaduje redizajn.
+- **Reusability:** diely/komponenty použiteľné naprieč puzzle.
+- **Verifiability:** kontrola kolízií, montážnych krokov v CAD.
+- **Manufacturability:** dizajn rešpektuje vyrobné obmedzenia.
+
+## 3. Top-level komponenty - moduly systému
+
+### 3.1 Návrhový pipeline
+![Návrhový pipeline Woodies](../../images/pipeline_diagram_tla.png)
+1. **Research & Requirements**
+   - definícia typu puzzle 
+   - ciele obtiažnosti, počet dielov, požiadavky na toleranciu
+
+2. **Parametrický CAD model**
+   - skice s parametrami 
+   - diely → zostavenie
+   - kontrola kolízií
+
+3. **Príprava pre výrobu**
+   - výkresy s toleranciami
+   - exporty 
+   - poznámky k nástrojom
+
+4. **Dokumentácia produktu**
+   - BOM - zoznam dielov, materiál, rozmery
+   - montážny manuál
+   - render/vizualizácie
+
+5. **Verifikácia**
+   - CAD interference check
+   - kontrola pravidiel: min. hrúbky, rádiusy, vôľa
+
+## 4. Dátová architektúra - artefakty
+![Dátová architektúra](../../images/data_diagram_tla.png)
+
+- **CAD zdroje:** `.f3d`, `.sldprt`, `.FCStd`
+- **Neutral CAD:** `.step` / `.iges`
+- **2D výkresy:** `.pdf`, `.dxf`
+- **Dokumenty:** `.md` 
+- **Vizualizácie:** `.png`, `.jpg`
+
+
+## 5. Rozhrania medzi komponentmi
+![Rozhrania komponentov](../../images/interface_diagram_tla.png)
+- **Requirements → CAD:** parametre, počet dielov, cieľový rozmer.
+- **CAD → DFM:** výkresy, tolerancie, exporty.
+- **CAD/DFM → Dokumentácia:** BOM, explodované pohľady
+- **Verifikácia → Change management:** bug reports, revízie parametrov.
+
 
 **Navigation:** [⬆️ SDLC](../index.md) · [⬅️ Projekt](../../index.md)

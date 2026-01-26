@@ -133,25 +133,23 @@ fm_reserved2: ""
 
 <!-- class_sthdf_dashboard_INSTANCE_ID: 01-class_sthdf_dashboard_2025-2026 -->
 
+[🏠 Domov](../../../index.md) · [⬅️ Nahor](../)
 # PRJ011 — Presentation
 
 --- Headline ---
 ## Headline
-**2025-PRJ-011-ST_011-ST_011-ParkSense**
+**2025-PRJ-011-ST_011-ST_011-Nazov projektu**
 
+> Uvodny obrazok: TODO (dopln odkaz alebo subor).
 
+Strucny text o projekte (1-3 vety, doplni tim).
 --- Headline ---
 
-![Inspiration](../../../projects/PRJ011/pictures/zariadenieTycka.jpg)
-
 --- introduction ---
-
 ## Introduction
-**2025-PRJ-011-ST_011-ST_011-ParkSense**
+**2025-PRJ-011-ST_011-ST_011-Nazov projektu**
 
-V projekte sa zamieravame na zvýšenie efektivity parkovacích priestorov v snahe znížiť emisie spôsobené automobilmi, ktorých vodiči hľadajú vhodné parkovacie miesto. Navrhli a implementovali sme smart parkovací systém, ktorý reflektuje stav parkoviska v reálnom čase pomocou webovej aplikácie a API.  
-
-
+Strucny text o projekte (zhrnutie zadania + prinos).
 --- introduction ---
 
 --- obsah ---
@@ -168,84 +166,11 @@ V projekte sa zamieravame na zvýšenie efektivity parkovacích priestorov v sna
 --- obsah ---
 
 ## 01-Business
-
-- vytvoriť cost-effective riešenie pre optimalizáciu parkovacieho procesu,
-- sústrediť sa na spoľahlivosť a jednoduchosť prevádzky riešenia,
-- priblížiť riešenie bližšie ku koncovým použiívateľom pomocou webového rozhrania,
-- využiť bezdrôtové technológie s nízkoou spotrebou energie a ďalekým komunikačným dosahom.
-
-
 ## 02-Top Level Architecture
-
-- koncové zariadenia komunikujú s LoRa bránou, ktorá cez IP sieť preposiela komunikáciu sieťovému serveru,
-- sieťový server komunikáciu overuje a zasiela aplikačnému serveru na spracovanie,
-- aplikačný server obsluhuje webovú aplikáciu, ktorá je hlavným bodom interakcie s používateľom.
-
-![Inspiration](../../../projects/PRJ011/pictures/architektura.png)
-
 ## 03-Solution Architecture
-
-- koncové zariadenie pozostávajúce z:
-  - TTGO LoRa T3,
-  - vodeodolného ultrazvukového sensora,
-  - batérie (nevyžaduje elektrickú sieť),
-  - vlastného kódu, ktorý optimalizuje životnosť batérie.
-
-![Inspiration](../../../projects/PRJ011/pictures/zariadenieKrabica.jpg)
-
-- LoRa brána pozostávajúca z:
-  - RaspBerry Pi 4B,
-  - IMST iC880A-SPI koncentrátoru,
-  - napájaná zo siete.
-
-![Inspiration](../../../projects/PRJ011/pictures/LoraBrana.png)
-
-
-
-
 ## 04-Analysis
-
-- porovnanie rôznych bezdôtových technológií ako LoRaWAN, Bluetooth Low Energy, ZigBee a iné,
-- zvolenie komponentov a softvérového stacku riešenia.
-
 ## 05-Design
-
-- intuitívne prostredie webovej aplikácie,
-![Inspiration](../../../projects/PRJ011/pictures/GUIparkinglot.png)
-
-- login stránka,
-![Inspiration](../../../projects/PRJ011/pictures/Login_final.png)
-
-
-
 ## 06-Implementation
-
-- nastavenie sieťového serveru (tenant, registrácia zariadení),
-- aplikačný server (implementácia aplikácie),
-- spustenie koncového zariadenia (poskladanie komponentov, injekcia kódu).
-
-![Inspiration](../../../projects/PRJ011/pictures/statemachine.png)
-
-
 ## 07-Testing & Verification
-
-- overenie pokrytia LoRa bránou,
-
-
-![Inspiration](../../../projects/PRJ011/pictures/pokrytie.png)
-
-- spotreba energie koncového zariadenia,
-
-![Inspiration](../../../projects/PRJ011/pictures/spotreba.png)
-
-- korektný prenos a spracovanie údajov
-
 ## 08-Operation
-
-- riešenie zatiaľ nie je produkčne nasadné, ale len podrobne otestované,
-
-
 ## 09-Change Management
-
-- zmena vadného senzoru,
-- zmena LMIC-node knižnice za inú, ktorá korektne implementuje hlboký spánok.

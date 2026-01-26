@@ -21,7 +21,9 @@ Detaily o tomto projekte,  o zmene paradigmy spravovania znalostí a tvorby doku
 Tento repozitár (pre triedu STHDF) slúži ako **centrálny prehľad** (overview) 
 na prácu študentov počas školského roka 2025-2026 v rámci predmetu
 ## Systémové myslenie v IT a digitálna fabrikácia
+# O projekte KNIFE Overview
 
+Tento repozitár slúži ako **centrálny prehľad** (overview) všetkých KNIFE príspevkov a súvisiacich rámcov (7Ds, SDLC, STHDF).
 
 ## Čo je jeho úlohou
 
@@ -41,8 +43,5 @@ na prácu študentov počas školského roka 2025-2026 v rámci predmetu
 
 ## Ako pokračovať
 
-- ## Class 2025-2026 - Navigation
-
-- ### [Students](./class_sthdf_dashboard/01-class_sthdf_dashboard_2025-2026/students/ST_INDEX.md)
-- ### [Projects](./class_sthdf_dashboard/01-class_sthdf_dashboard_2025-2026/projects/PRJ_INDEX.md)
-- ### [Best students Project in the year 2025-2026](./class_sthdf_dashboard/01-class_sthdf_dashboard_2025-2026//class-sthdf/showcase/index.md).
+- Ak si nový → začni v sekcii [Help](/sk/help).
+- Ak hľadáš konkrétny KNIFE → pozri si prehľad v časti *KNIFE príspevky* v hlavnom menu.
