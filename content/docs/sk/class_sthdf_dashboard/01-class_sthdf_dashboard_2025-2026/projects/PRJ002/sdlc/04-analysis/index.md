@@ -138,3 +138,30 @@ fm_reserved2: ""
 - [Backlog a analýzy](./backlog.md)
 
 **Navigation:** [⬆️ SDLC](../index.md) · [⬅️ Projekt](../../index.md)
+
+### Funkčné požiadavky
+- Systém musí umožniť zber telemetrických dát z IoT zariadenia.
+- Systém musí ukladať namerané hodnoty do databázy.
+- Systém musí zobrazovať aktuálne a historické dáta v prezentačnej aplikácii.
+- Systém musí detegovať výnimočné stavy na základe definovaných pravidiel.
+- Systém musí informovať používateľa o výnimočných stavoch prostredníctvom notifikácií.
+
+### Nefunkčné požiadavky
+- Systém musí umožňovať vzdialený prístup k dátam.
+- Systém musí zabezpečiť základnú dostupnosť služby.
+- Systém musí byť navrhnutý ako prototypové riešenie.
+- Systém musí byť rozšíriteľný o ďalšie monitorované parametre.
+
+### Používateľské roly 
+- Včelár 
+- Administrátor IoT platformy 
+
+![Thinsboard - štruktúra používateľov](../../images/struktura_thingsboard.png)
+
+### Analýza stavov včelstva na základe frekvencie 
+Na základe analýzy sme zistili, aké výnimočné stavy včelstva, môžeme vyhodnotiť a identifikovať na základe nameranej frekvencie.
+Ak namerané hodnoty frekvencie budú v týchto rozsahoch, budeme včelárovi odosielať notifikácie. 
+
+![Stavy včelstva](../../images/stavy.png)
+
+
