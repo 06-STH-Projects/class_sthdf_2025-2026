@@ -138,8 +138,14 @@ fm_reserved2: ""
 **Autor:** Samuel Kohút
 
 
-<figure> <img src="./images/piano_trainer_setup.png" width="400" alt="Finálny produkt">
-</figure>
+<figure><img src="/sthdf_2025/PRJ_007/images/piano_trainer_setup.png" width="400" alt="Finálny produkt" /></figure>
+
+<details>
+<summary>🖼️ GitHub náhľad (bez Sites)</summary>
+
+![Finálny produkt](../images/piano_trainer_setup.png)
+
+</details>
 
 ---
 
@@ -149,7 +155,7 @@ Moje prvé úvahy smerovali k zjednodušeniu života v záhrade alebo tréningu 
 
 | Pomôcky pre psa (Nákres) | Záhradný systém (Nákres) |
 |:---:|:---:|
-| <figure> <img src="./images/psie_napady.png" width="400"> </figure> | <figure> <img src="./images/zahradny_system.jpg" width="400"> </figure> |
+| <figure><img src="/sthdf_2025/PRJ_007/images/psie_napady.png" width="400" alt="Pomôcky pre psa (nákres)" /></figure><br/>![Pomôcky pre psa (nákres)](../images/psie_napady.png) | <figure><img src="/sthdf_2025/PRJ_007/images/zahradny_system.jpg" width="400" alt="Záhradný systém (nákres)" /></figure><br/>![Záhradný systém (nákres)](../images/zahradny_system.jpg) |
 
 *   **Problém:** Testovanie a implementovanie by vyžadovalo dochádzanie 10 hodín (Snina vs. Bratislava). To bolo počas semestra nereálne.
 *   **Rozhodnutie:** Vydať sa smerom k nápadu, ktorý môžem plne vyvinúť a testovať v domácich "lab" podmienkach na stole.
@@ -162,7 +168,7 @@ Spomenul som si na svoj starý nápad. Pomôcka, ktorá ti ukáže, čo máš hr
 
 | LED Piano (nákres) |
 |:---:|
-| <figure> <img src="./images/led_Piano_nakres.jpg" width="400"> </figure> |
+| <figure><img src="/sthdf_2025/PRJ_007/images/led_Piano_nakres.jpg" width="400" alt="LED Piano (nákres)" /></figure><br/>![LED Piano (nákres)](../images/led_Piano_nakres.jpg) |
 
 **Základný princíp** bol, že LED diódy sa zasvetia na konkrétnu farbu podľa typu ackcie, čo má používateľ vykonať:
   1.  **Zelená:** = Stlač
@@ -252,7 +258,7 @@ Tu je zjednodušený pohľad na komunikáciu medzi jednotlivými časťami:
 ```mermaid
 sequenceDiagram
     participant YT as YouTube / MIDI File
-    participant PC as Python App (PC)
+    participant PC as Python App (PC)roman
     participant Pico as Raspberry Pi Pico
     participant LED as LED Pás
 
@@ -265,13 +271,29 @@ sequenceDiagram
 
 Tu je pvotný pohľaď a ako sa časom menil na finálnu detailnejšiu verziu:
 
-<figure> <img src="./images/SekvencakFirstDraft.png" width="600" alt="Detailná schéma zapojenia"> </figure>
-<figure> <img src="./images/LemonTreePorovnanieSekvencakov.png" width="1200" alt="Detailná schéma zapojenia"> </figure>
+<figure><img src="/sthdf_2025/PRJ_007/images/SekvencakFirstDraft.png" width="600" alt="Sekvenčák – prvý draft" /></figure>
+<figure><img src="/sthdf_2025/PRJ_007/images/LemonTreePorovnanieSekvencakov.png" width="1200" alt="LemonTree porovnanie sekvenčákov" /></figure>
+
+<details>
+<summary>🖼️ GitHub náhľad (bez Sites)</summary>
+
+![Sekvenčák – prvý draft](../images/SekvencakFirstDraft.png)
+
+![LemonTree porovnanie sekvenčákov](../images/LemonTreePorovnanieSekvencakov.png)
+
+</details>
 
 #### 🔌 Fyzická schéma zapojenia
 Tu vidíme, ako Raspberry Pi Pico slúži ako most medzi digitálnym príkazom a elektrickým signálom pre LED pás.
 
-<figure> <img src="./images/pico_led_schema.png" width="500" alt="Detailná schéma zapojenia"> </figure>
+<figure><img src="/sthdf_2025/PRJ_007/images/pico_led_schema.png" width="500" alt="Detailná schéma zapojenia" /></figure>
+
+<details>
+<summary>🖼️ GitHub náhľad (bez Sites)</summary>
+
+![Detailná schéma zapojenia](../images/pico_led_schema.png)
+
+</details>
 
 **Najdôležitejšie technické aspekty zapojenia (Podrobnejšie v Knife):**
 - **Napájanie:** Pico aj LED pás sú napájané spoločne z 5V VBUS linky (USB). To zjednodušuje kabeláž.
@@ -287,7 +309,14 @@ Po hĺbkovej analýze fyzického MIDI keyboardu (rozobratie) som identifikoval t
 *   **Mechanické obmedzenie:** Čierne klávesy majú mechaniku, ktorá neumožňuje vedenie káblov bez deštrukcie nástroja.
 *   **Verdikt:** Architektonická zmena z vnútorného svietenia na externú LED nadstavbu, ktorá sa položí/pripevní na piano.
 
-<figure> <img src="./images/rozobrate_piano.png" width="600" alt="Rozobraté MIDI piano"> </figure>
+<figure><img src="/sthdf_2025/PRJ_007/images/rozobrate_piano.png" width="600" alt="Rozobraté MIDI piano" /></figure>
+
+<details>
+<summary>🖼️ GitHub náhľad (bez Sites)</summary>
+
+![Rozobraté MIDI piano](../images/rozobrate_piano.png)
+
+</details>
 
   
   
@@ -314,13 +343,20 @@ graph LR
 
 Design musel vyriešiť nesúlad viacerých vecí. Najprv sa musela vyriešiť správna izolácia svetla. Hrúbka priečok musela byť optimalizovaná aby sa zamedzilo presvitaniu do susedných boxov a zároveň presvítaniu hlavnej steny. Ďalším problémom bol nesúlad medzi rozostupom LED diód a samotnej šírke klávesov. Modulárna lišta teda musela byť navrhnutá tak, aby sa LED pás v každom boxe mierne ohol. Tým by sa dído vycentrovala presne na stred klávesu.
 
-<figure> <img src="./images/ledbar_experiments.png" width="300" alt="Experimentovanie s hrúbkou priečok"> </figure>
+<figure><img src="/sthdf_2025/PRJ_007/images/ledbar_experiments.png" width="300" alt="Experimentovanie s hrúbkou priečok" /></figure>
+
+<details>
+<summary>🖼️ GitHub náhľad (bez Sites)</summary>
+
+![Experimentovanie s hrúbkou priečok](../images/ledbar_experiments.png)
+
+</details>
 
 Vzhľadom na tieto obmedzenia a experimenty vznikla finálna verzia boxu pre jednu oktávu + krabička pre ochranu mikrokontroléra a kabeláže.
 
 | Finálna lišta pre LED pás | Finálna krabička pre mikrokontrolér  |
 |:---:|:---:|
-| <figure> <img src="./images/Led_holder_model.png" width="400"> </figure> | <figure> <img src="./images/box_model.png" width="400"> </figure> |
+| <figure><img src="/sthdf_2025/PRJ_007/images/Led_holder_model.png" width="400" alt="Finálna lišta pre LED pás" /></figure><br/>![Finálna lišta pre LED pás](../images/Led_holder_model.png) | <figure><img src="/sthdf_2025/PRJ_007/images/box_model.png" width="400" alt="Finálna krabička pre mikrokontrolér" /></figure><br/>![Finálna krabička pre mikrokontrolér](../images/box_model.png) |
 
 ---
 
@@ -334,7 +370,14 @@ Softvér nie je len prehrávač, je to orchestračný nástroj. Vývoj prebiehal
 
 Vyvinul som komplexnú desktopovú aplikáciu "Piano Trainer" v Pythone, ktorá slúži ako riadiace centrum.
 
-<figure> <img src="./images/all_versions_app.png" width="700" alt="App All versions"> </figure>
+<figure><img src="/sthdf_2025/PRJ_007/images/all_versions_app.png" width="700" alt="App – všetky verzie" /></figure>
+
+<details>
+<summary>🖼️ GitHub náhľad (bez Sites)</summary>
+
+![App – všetky verzie](../images/all_versions_app.png)
+
+</details>
 
 
 *   **Vlastnosti:** Detekcia MIDI zariadení, správa portov, AI transkripcia nôt z YouTube a komplexný prehrávač MIDI súborov.
@@ -350,7 +393,14 @@ Systém bol testovaný na latenciu a presnosť mapovania nôt na jednotlivé LED
 
 > YouTube demonštrácia LED reakcií na prehrávané tóny.
 
-<figure> <img src="./images/ledbar_v1.png" width="600" alt="Demo"> </figure>
+<figure><img src="/sthdf_2025/PRJ_007/images/ledbar_v1.png" width="600" alt="Demo" /></figure>
+
+<details>
+<summary>🖼️ GitHub náhľad (bez Sites)</summary>
+
+![Demo](../images/ledbar_v1.png)
+
+</details>
 
 *   **Výsledok:** Systém úspešne čaká na vstup používateľa (stlačenie klávesu), kým pokračuje v skladbe.
 *   **PS:** Schválené aj mladšou sesternicou a bratrancom
@@ -364,13 +414,20 @@ Projekt splnil a v mnohom prekonal pôvodné očakávania.
 
 | LED Lišta na klavíri | Vyvinutá aplikácia |
 |:---:|:---:|
-| <figure> <img src="./images/ledbar_final.png" width="400"> </figure> | <figure> <img src="./images/app_final.png" width="300"> </figure> |
+| <figure><img src="/sthdf_2025/PRJ_007/images/ledbar_final.png" width="400" alt="LED lišta na klavíri" /></figure><br/>![LED lišta na klavíri](../images/ledbar_final.png) | <figure><img src="/sthdf_2025/PRJ_007/images/app_final.png" width="300" alt="Vyvinutá aplikácia" /></figure><br/>![Vyvinutá aplikácia](../images/app_final.png) |
 
 *   ✅ **Plne funkčný hardvér:** 3D tlačená lišta + riadiaca jednotka.
 *   ✅ **Kompletný softvér:** Pipeline od YouTube linku až po rozsvietenie LED.
 *   ✅ **Dokumentácia:** Vytvorené detailné Knowledge Contributions (KNIFES) pre každý krok.
 
-<figure> <img src="./images/piano_trainer_setup.png" width="800"> </figure>
+<figure><img src="/sthdf_2025/PRJ_007/images/piano_trainer_setup.png" width="800" alt="Finálny produkt" /></figure>
+
+<details>
+<summary>🖼️ GitHub náhľad (bez Sites)</summary>
+
+![Finálny produkt](../images/piano_trainer_setup.png)
+
+</details>
 
 ---
 

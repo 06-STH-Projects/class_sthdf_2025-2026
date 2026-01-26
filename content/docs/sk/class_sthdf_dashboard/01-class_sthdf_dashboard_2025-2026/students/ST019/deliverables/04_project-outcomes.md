@@ -27,16 +27,24 @@ fm_build: '2025-12-09T21:04:48Z'
 Po sérii experimentov s hrúbkou priečok a ohýbaním LED pásu vznikla plne funkčná svetelná nadstavba, ktorá rovnomerne osvetľuje jednotlivé klávesy.
 
 #### Počiatočné experimenty s hrúbkou a ohýbaním
-<figure> <img src="./images/ledbar_experiments.png" width="600"> </figure>
+<img src="/sthdf_2025/PRJ_007/images/ledbar_experiments.png" width="600" />
+
+![LED bar experiments](./images/ledbar_experiments.png)
 
 #### Prvá verzia (chybná – chýbajúci posledný box)
-<figure> <img src="./images/ledbar_v1.png" width="600"> </figure>
+<img src="/sthdf_2025/PRJ_007/images/ledbar_v1.png" width="600" />
+
+![LED bar v1](./images/ledbar_v1.png)
 
 #### Opravená finálna verzia s doplneným boxom
-<figure> <img src="./images/ledbar_final.png" width="600"> </figure>
+<img src="/sthdf_2025/PRJ_007/images/ledbar_final.png" width="600" />
+
+![LED bar final](./images/ledbar_final.png)
 
 #### 3D tlačená krabička pre Raspberry + káble
-<figure> <img src="./images/raspberry_box.png" width="600"> </figure>
+<img src="/sthdf_2025/PRJ_007/images/raspberry_box.png" width="600" />
+
+![Raspberry box](./images/raspberry_box.png)
 
 ### 💻 Softvérový výsledok
 Finálna verzia PC aplikácie obsahuje:
@@ -45,13 +53,19 @@ Finálna verzia PC aplikácie obsahuje:
 - generovanie LED sekvencií z MIDI alebo automatickej transkripcie  
 
 #### Piano Trainer App Prvotné
-<figure> <img src="./images/app_first_draft.png" width="600"> </figure>
+<img src="/sthdf_2025/PRJ_007/images/app_first_draft.png" width="600" />
+
+![App first draft](./images/app_first_draft.png)
 
 #### Piano Trainer App Experimentálne
-<figure> <img src="./images/piano_trainer_app.png" width="600"> </figure>
+<img src="/sthdf_2025/PRJ_007/images/piano_trainer_app.png" width="600" />
+
+![Piano trainer app](./images/piano_trainer_app.png)
 
 #### Piano Trainer App Finálne
-<figure> <img src="./images/app_final.png" width="600"> </figure>
+<img src="/sthdf_2025/PRJ_007/images/app_final.png" width="600" />
+
+![App final](./images/app_final.png)
 
 ### 🎬 Demo video
 

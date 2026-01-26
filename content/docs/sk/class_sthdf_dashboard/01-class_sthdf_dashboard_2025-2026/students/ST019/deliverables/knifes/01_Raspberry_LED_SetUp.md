@@ -63,12 +63,24 @@ Pre správnu funkčnosť postupuj presne podľa pinov na obrázku:
 - **GND (Pin 38):** Uzemnenie. Na Pico je ich viac, ale pin 38 je ideálne umiestnený pri VBUS.
 - **GP0 (Pin 1):** Dátový výstup, ktorý bude hovoriť každej LED dióde, akou farbou má svietiť.
 
-<figure> <img src="../images/pico_led_schema.png" width="600"> </figure>
+**GitHub (repo náhľad)**
+
+![Schéma zapojenia Raspberry Pi Pico + LED pásik](../images/pico_led_schema.png)
+
+**Docusaurus (web /static)**
+
+<img src="/sthdf_2025/ST019/images/pico_led_schema.png" alt="Schéma zapojenia Raspberry Pi Pico + LED pásik" />
 
 ### 3️⃣ Fyzická realizácia
 Pri fyzickom zapájaní sa uisti, že sú jumper káble pevne zasunuté v breadboarde. Ak tvoj LED pásik nemá predpripravené konektory, budeš musieť na jeho konce pripájkovať piny alebo použiť svorkovnicu.
 
-<figure> <img src="../images/pico_led_realita.jpg" width="600"> </figure>
+**GitHub (repo náhľad)**
+
+![Fyzická realizácia zapojenia na breadboarde](../images/pico_led_realita.jpg)
+
+**Docusaurus (web /static)**
+
+<img src="/sthdf_2025/ST019/images/pico_led_realita.jpg" alt="Fyzická realizácia zapojenia na breadboarde" />
 
 ---
 

@@ -353,7 +353,7 @@ EndSection
 
 | Test ID | Kategória | Popis | Očakávaný výsledok | Status | Poznámka |
 |---------|-----------|-------|-------------------|---------|----------|
-| TC-001 | Boot | System boot do GUI | GUI zobrazené < 60s | ✅ Pass | ~45s |
+| TC-001 | Boot | System boot do GUI | GUI zobrazené &lt; 60s | ✅ Pass | ~45s |
 | TC-002 | Display | Touchscreen kalibrácia | Presné dotykové vstupy | ✅ Pass | Inverzné osi fungujú |
 | TC-003 | Network | Automatická detekcia polohy | Správne mesto zobrazené | ✅ Pass | IP geolocation OK |
 | TC-004 | API | Získanie aktuálneho počasia | Dáta zobrazené správne | ✅ Pass | Open-Meteo API |
@@ -365,7 +365,7 @@ EndSection
 | TC-010 | Update | Git auto-pull pri boote | Nová verzia stiahnutá | ✅ Pass | GitHub sync OK |
 | TC-011 | Error | WiFi výpadok | Zobrazí posledné dáta | ⚠️ Partial | Chýba offline mód |
 | TC-012 | Error | API nedostupné | Error handling | ⚠️ Partial | Chýba user feedback |
-| TC-013 | Performance | Responzívnosť UI | Akcia < 200ms | ✅ Pass | Average 100ms |
+| TC-013 | Performance | Responzívnosť UI | Akcia &lt; 200ms | ✅ Pass | Average 100ms |
 | TC-014 | Display | Ikony počasia | Všetky ikony zobrazené | ⚠️ Issue | Niektoré štvorčeky |
 
 ### Performance Metrics
@@ -390,8 +390,8 @@ EndSection
 | Operácia | Čas |
 |----------|-----|
 | API Request | 200-500ms |
-| UI Interaction | < 100ms |
-| Touch Input | < 200ms |
+| UI Interaction | &lt; 100ms |
+| Touch Input | &lt; 200ms |
 
 ### Known Issues and Resolutions
 
@@ -628,7 +628,7 @@ v0.1.0 (Initial) → v0.2.0 (Forecast) → feature/graphs → v0.3.0 (Merge)
 - 2 hlavné stránky s automatickým rotovaním každých 10 sekúnd
 - Touchscreen navigácia pomocou tlačidiel (◀ ▶ 🔍)
 - Virtuálna QWERTY klávesnica s číslicami
-- Responzívne ovládanie (< 100ms reakcia)
+- Responzívne ovládanie (&lt; 100ms reakcia)
 - Optimalizovaný layout pre 480x320px displej
 
 ✅ **System Architecture**
@@ -673,7 +673,7 @@ v0.1.0 (Initial) → v0.2.0 (Forecast) → feature/graphs → v0.3.0 (Merge)
 #### Performance
 | Metrika | Hodnota | Status |
 |---------|---------|--------|
-| Boot time | 45s | ✅ Target: <60s |
+| Boot time | 45s | ✅ Target: &lt;60s |
 | Memory usage | 80MB | ✅ Low |
 | CPU idle | 5-15% | ✅ Efficient |
 | CPU active | 30-40% | ✅ Acceptable |
@@ -692,8 +692,8 @@ v0.1.0 (Initial) → v0.2.0 (Forecast) → feature/graphs → v0.3.0 (Merge)
 |---------|---------|--------|
 | Pages | 2 | ✅ Optimized |
 | Auto-rotate interval | 10s | ✅ Good pace |
-| Touch response | <200ms | ✅ Responsive |
-| UI response | <100ms | ✅ Fast |
+| Touch response | &lt;200ms | ✅ Responsive |
+| UI response | &lt;100ms | ✅ Fast |
 ### Naučené lekcie
 
 **Čo fungovalo dobre:**

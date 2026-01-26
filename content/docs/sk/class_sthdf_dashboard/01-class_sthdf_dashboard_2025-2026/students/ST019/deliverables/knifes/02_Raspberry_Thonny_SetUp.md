@@ -63,7 +63,11 @@ Prejdite na oficiálnu stránku:
 
 Vyberte operačný systém a stiahnite inštalačný súbor.
 
-<figure> <img src="../images/thonny_download.png" width="600"> </figure>
+<!-- Docusaurus -->
+<img src="../images/thonny_download.png" width="600" />
+
+<!-- GitHub -->
+![Thonny – download](../images/thonny_download.png)
 
 ---
 
@@ -84,7 +88,11 @@ V Thonny otvorte:
 
 Zobrazí sa okno:
 
-<figure> <img src="../images/thonny_interpreter.png" width="600"> </figure>
+<!-- Docusaurus -->
+<img src="../images/thonny_interpreter.png" width="600" />
+
+<!-- GitHub -->
+![Thonny – select interpreter](../images/thonny_interpreter.png)
 
 Nastavte:
 
