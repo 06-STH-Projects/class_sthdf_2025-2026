@@ -1,0 +1,4 @@
+---
+dependencies:
+  - role: lxc_general
+    tags: [general, base]

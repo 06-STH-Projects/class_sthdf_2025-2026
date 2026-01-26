@@ -1,0 +1,24 @@
+lxcs:
+  networking:
+    vmid: 107
+    ip: 192.168.1.107
+    cores: 2
+    memory: 2048
+    disk: 8
+    roles:
+      - lxc_general
+      - lxc_networking
+    vars:
+      reverse_proxy_sites:
+        - name: navidrome
+          server_name: music.streicher.tech
+          upstream_url: http://192.168.1.102:4533
+
+  navidrome:
+    vmid: 102
+    ip: 192.168.1.102
+    cores: 2
+    memory: 1024
+    disk: 16
+    roles:
+      - lxc_general

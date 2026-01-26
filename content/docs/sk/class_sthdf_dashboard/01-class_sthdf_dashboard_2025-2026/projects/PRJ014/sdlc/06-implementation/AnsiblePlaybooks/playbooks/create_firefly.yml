@@ -1,0 +1,7 @@
+---
+- name: Run docker_firefly role to set up Firefly III stack
+  hosts: docker
+  gather_facts: false
+  become: true
+  roles:
+    - docker_firefly

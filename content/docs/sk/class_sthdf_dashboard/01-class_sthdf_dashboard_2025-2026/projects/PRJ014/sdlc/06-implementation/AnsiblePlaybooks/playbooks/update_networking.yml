@@ -1,0 +1,8 @@
+# playbooks/update_networking.yml
+---
+- name: Update networking LXC only
+  hosts: networking
+  vars_files:
+    - ../inventory/local_vars/networking.yml
+  roles:
+    - lxc_networking

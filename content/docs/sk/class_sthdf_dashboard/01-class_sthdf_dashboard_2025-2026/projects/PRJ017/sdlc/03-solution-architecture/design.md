@@ -134,3 +134,10 @@ fm_reserved2: ""
 <!-- class_sthdf_dashboard_INSTANCE_ID: 01-class_sthdf_dashboard_2025-2026 -->
 
 PRJ017 / 03-solution-architecture / design.md
+
+Komponenty riešenia sú zamerané na výrobu a udržateľnosť (bez systému objednávok): dizajn produktu, výroba, balenie, distribúcia a zber/recyklácia.
+
+![Solution components](./03-components.png)
+![Circular loop](./03-economyloop.png)
+
+[Next](../04-analysis/index.md)

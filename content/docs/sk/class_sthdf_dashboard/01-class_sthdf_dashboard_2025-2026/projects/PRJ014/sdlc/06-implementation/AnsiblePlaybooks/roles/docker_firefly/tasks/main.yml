@@ -1,0 +1,73 @@
+---
+# /roles/docker_firefly/tasks/main.yml
+- name: Create directory for Firefly stack
+  ansible.builtin.file:
+    path: /opt/stacks/firefly
+    state: directory
+    mode: '0755'
+  
+- name: Download docker-compose.yml for Firefly stack
+  ansible.builtin.get_url:
+    url: https://raw.githubusercontent.com/firefly-iii/docker/main/docker-compose-importer.yml
+    dest: /opt/stacks/firefly/docker-compose.yml
+    mode: '0755'
+
+- name: Replace 80:8000 with 7688:8000 in docker-compose.yml
+  ansible.builtin.replace:
+    path: /opt/stacks/firefly/docker-compose.yml
+    regexp: '^80:8000$'
+    replace: '7688:8000'
+
+- name: Replace 81:8000 with 7689:8000 in docker-compose.yml
+  ansible.builtin.replace:
+    path: /opt/stacks/firefly/docker-compose.yml
+    regexp: '^81:8000$'
+    replace: '7689:8000'
+
+- name: Download .env file for Firefly 3 core
+  ansible.builtin.get_url:
+    url: https://raw.githubusercontent.com/firefly-iii/firefly-iii/main/.env.example
+    dest: /opt/stacks/firefly/.env
+    mode: '0755'
+
+- name: Replace DB_PASSWORD with password in .env file
+  ansible.builtin.replace:
+    path: /opt/stacks/firefly/.env
+    regexp: 'DB_PASSWORD=secret_firefly_password'
+    replace: 'DB_PASSWORD={{ FIREFLY_DB_PASSWORD }}'
+
+- name: Download docker-compose.yml for Firefly importer
+  ansible.builtin.get_url:
+    url: https://raw.githubusercontent.com/firefly-iii/data-importer/main/.env.example
+    dest: /opt/stacks/firefly/.importer.env
+    mode: '0755'
+
+- name: Replace 'FIREFLY_III_URL with password in .importer.env file
+  ansible.builtin.replace:
+    path: /opt/stacks/firefly/.importer.env
+    regexp: '^FIREFLY_III_URL=$'
+    replace: 'FIREFLY_III_URL=http://localhost:7688'
+
+- name: Replace VANITY_URL with password in .importer.env file
+  ansible.builtin.replace:
+    path: /opt/stacks/firefly/.importer.env
+    regexp: '^VANITY_URL=$'
+    replace: 'VANITY_URL=https://firefly.streicher.tech'
+
+- name: Download docker-compose.yml for Firefly database
+  ansible.builtin.get_url:
+    url: https://raw.githubusercontent.com/firefly-iii/docker/main/database.env
+    dest: /opt/stacks/firefly/.db.env
+    mode: '0755'
+
+- name: Replace MYSQL_PASSWORD with password in .db.env file
+  ansible.builtin.replace:
+    path: /opt/stacks/firefly/.db.env
+    regexp: 'MYSQL_PASSWORD=secret_firefly_password'
+    replace: 'MYSQL_PASSWORD={{ FIREFLY_DB_PASSWORD }}'
+
+- name: Run `docker-compose up` to start Firefly stack
+  community.docker.docker_compose:
+    project_src: /opt/stacks/firefly
+    build: false
+  register: output
