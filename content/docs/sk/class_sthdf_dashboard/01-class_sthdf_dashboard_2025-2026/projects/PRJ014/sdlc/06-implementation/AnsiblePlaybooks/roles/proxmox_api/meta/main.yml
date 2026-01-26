@@ -1,0 +1,12 @@
+---
+# roles/proxmox_api/meta/main.yml
+galaxy_info:
+  role_name: proxmox_api
+  author: andrej
+  description: Manage and provision LXC containers via the Proxmox API.
+  license: MIT
+  min_ansible_version: '2.13'
+  platforms:
+    - name: Debian
+      versions: ['11', '12']
+dependencies: []

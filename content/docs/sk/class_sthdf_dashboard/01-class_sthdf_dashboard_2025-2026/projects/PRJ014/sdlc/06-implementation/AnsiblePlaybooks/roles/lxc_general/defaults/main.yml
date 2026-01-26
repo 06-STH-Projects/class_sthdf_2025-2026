@@ -1,0 +1,16 @@
+---
+# roles/lxc_general/defaults/main.yml
+lxc_general_username: andrej
+lxc_general_user_groups:
+  - sudo
+lxc_general_user_shell: /bin/bash
+lxc_general_user_password_hash: "*"
+
+lxc_general_authorized_keys: []
+lxc_general_authorized_keys_url: ""
+lxc_general_github_token: ""
+lxc_general_private_key_path: "~/.ssh/id_ed25519"
+lxc_general_verify_key_login: true
+
+# Internal helper defaults
+lxc_general_effective_keys: []
