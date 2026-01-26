@@ -138,7 +138,7 @@ fm_reserved2: ""
 
 ## SmartShot
 
-![SmartShot Flow](/sthdf_2025/PRJ_009/images/smartshot.logo.png)
+![SmartShot Logo](../images/smartshot.logo.png)
 
 **Intelligent Shot Cup for Real-Time Alcohol Tracking**
 
@@ -195,16 +195,20 @@ SmartShot systém funguje na princípe uzavretej slučky spätnej väzby:
 **Data flow:**  
 Shot → senzor → mikroprocesor → BLE → mobilná aplikácia  
 
-![SmartShot Flow](/sthdf_2025/PRJ_009/images/SmartShot.drawio.png)
+![SmartShot Flow](../images/SmartShot.drawio.png)
 
 ## 03-Solution Architecture
 
 ### Main Components
 
+![SmartShot Cup](../images/stamprlik.jpg)
+
 **SmartShot Cup**
 - Meracie senzory  
 - Mikrocontroller  
 - Bluetooth modul  
+
+![SmartShot Cup](../images/komponenty.jpg)
 
 **Mobile Application**
 - Príjem dát v reálnom čase  
@@ -228,26 +232,39 @@ Shot → senzor → mikroprocesor → BLE → mobilná aplikácia
 
 ## 05-Design
 
-![SmartShot Nákres](/sthdf_2025/PRJ_009/images/IMG_2038.jpg)
+![SmartShot Nákres](../images/IMG_2038.jpg)
 
 ### Hardware Design
 
 - Integrované senzory v poháriku  
 - Kompaktné rozloženie komponentov  
 
-![SmartShot HW Design](/sthdf_2025/PRJ_009/images/HW_diagram.png)
+![SmartShot HW Design](../images/HW_diagram.png)
 
 ### Software Design
 
 - Firmware na spracovanie meraní  
 - BLE protokol na prenos dát  
 - Mobilná aplikácia s jednoduchým UI  
+- Výpočet alkoholu krvu pomocou Widmarkovho vzorca
 
-![SmartShot App](/sthdf_2025/PRJ_009/images/mobile_app.png)
+![Widmarkov vzorec](../images/BAC.png)
 
-<img src="/sthdf_2025/PRJ_009/images/Screenshot_20260124_201534_SmartShot.jpg" width="324" alt="SmartShot Design 1" />
+- A - Množstvo skonzumovaného alkoholu (v gramoch)
+- W - Hmotnosť tela (v gramoch)
+- r - Widmarkov faktor. Zvyčajne 0,68 pre mužov a 0,55 pre ženy
+- B - Rýchlosť, akou sa alkohol vylučuje (zvyčajne 0,015 až 0,020 za hodinu)   nastaviteľné v aplikácií
+- T - Čas, ktorý uplynul od konzumácie prvého nápoja
 
-<img src="/sthdf_2025/PRJ_009/images/Screenshot_20260124_201416_SmartShot.jpg" width="324" alt="SmartShot Design 2" />
+![SmartShot App](../images/mobile_app.png)
+
+<div style={{ display: 'flex', gap: '10px' }}>
+  <img src={require('../images/Screenshot_20260124_201534_SmartShot.jpg').default} width="324" alt="Design 1" />
+
+  <img src={require('../images/Screenshot_20260124_201416_SmartShot.jpg').default} width="324" alt="Design 2" />
+
+   <img src={require('../images/nastavenia.png').default} width="324" alt="Design 3" />
+</div>
 
 ## 06-Implementation
 
@@ -293,6 +310,6 @@ Shot → senzor → mikroprocesor → BLE → mobilná aplikácia
 ## Team
 
 - **Patrik Pišta** – System design, backend integration  
-- **Kristián Gerhát** – Hardware & embedded systems  
+- **Kristián Gerhát** – Hardware & embedded systems
 - **Marek Podolský** – Mobile app & UI/UX  
 - **Erik Mokrán** – Prototyping & testing  
