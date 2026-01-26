@@ -135,12 +135,18 @@ keywords: [showcase, highlights]
 <!-- class_sthdf_dashboard_INSTANCE_ID: 01-class_sthdf_dashboard_2025-2026 -->
 
 # Showcase — Best of 2025
-[PRJ002](../../projects/PRJ002/presentation/slides.md)
-[PRJ007](../../projects/PRJ007/presentation/slides.md)
-[PRJ008](../../projects/PRJ008/presentation/slides.md)
-[PRJ016](../../projects/PRJ016/presentation/slides.md)
-[PRJ020](../../projects/PRJ020/presentation/slides.md)
-[PRJ025](../../projects/PRJ025/presentation/slides.md)
+
+#[PRJ002](../../projects/PRJ002/presentation/slides.md)
+
+#[PRJ007](../../projects/PRJ007/presentation/slides.md)
+
+#[PRJ008](../../projects/PRJ008/presentation/slides.md)
+
+#[PRJ016](../../projects/PRJ016/presentation/slides.md)
+
+#[PRJ020](../../projects/PRJ020/presentation/slides.md)
+
+#[PRJ025](../../projects/PRJ025/presentation/slides.md)
 
 - Tip: Pri každej položke uveď alias študenta a projekt (STxxx / PRJxxx) a link na konkrétny artefakt.
 
