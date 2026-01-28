@@ -5,22 +5,38 @@ locale: sk
 fm_build: '2025-12-09T21:04:48Z'
 ---
 
- 🙋 About Me
-## 🔖 Základné informácie
-- Meno a priezvisko 
-- Študentský GitHub profil (link) 
-- Kontaktný e-mail 
+# 🙋‍♂️ About Me
+
+## 📦 Základné informácie
+
+Ján Sližik
+Študent FIIT STU, 2. ročník inžinierskeho štúdia, odbor Informačná bezpečnosť
+
 ## 🎯 Profesijné záujmy
-- Oblasti, ktoré ma bavia (IT, dizajn, podnikanie, …) 
-- Aké skúsenosti by som chcel získať 
+
+- Kybernetická bezpečnosť - ochrana digitálnych systémov, OSINT a forenzná analýza
+- Automatizácia infraštruktúry - optimalizácia procesov
+- Systémová administrácia - inštalácia, konfigurácia a správa systémov a aplikácií
+
 ## 💡 Moje hobby / záujmy
-- Šport, hudba, varenie, cestovanie … 
-- Čokoľvek, čo odhaľuje „ľudskú stránku“ 
+
+- Šport, kultúrne podujatia, filmy, divadlo
+- Cestovanie a spoznávanie nových kultúr
+
 ## 🚀 Očakávania od predmetu
-- Čo chcem dosiahnuť v rámci kurzu 
-- Čo očakávam od spolupráce s tímom a komunitou 
+
+- Rozšírenie znalostí o mikropočítačoch a praktickej práci s elektronickými komponentmi
+- Získanie nového pohľadu na informatiku cez hardvér
+
 ## 🚀 Čo viem ponúknuť
-- Čo chcem ponúknuť v rámci kurzu 
+
+- Marketing: správa tímovej stránky, YouTube kanála a Patreon účtu
+- Technický vývoj: softvérový návrh systému IRIS
+- Vizualizácia návrhov pomocou Enterprise Architect
+- Vyťahovanie dát zo senzorov, kalibrácia senzorov pre presné merania
+- Komunikácia pomocou LoRa modulu so systémom Hermes
+- Dizajn konečného automatu na detekciu letových stavov
 
 ## Navigácia
+
 - [↩️ Späť](../index.md)

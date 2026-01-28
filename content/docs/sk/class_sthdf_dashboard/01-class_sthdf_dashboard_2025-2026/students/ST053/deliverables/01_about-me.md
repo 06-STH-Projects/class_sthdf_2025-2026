@@ -5,22 +5,39 @@ locale: sk
 fm_build: '2025-12-09T21:04:48Z'
 ---
 
- 🙋 About Me
-## 🔖 Základné informácie
-- Meno a priezvisko 
-- Študentský GitHub profil (link) 
-- Kontaktný e-mail 
+# 🙋‍♂️ About Me
+
+## 📦 Základné informácie
+
+UR, 25 r., narodený a žijúci vo veľkej Bratislave 😎
+Študent FIIT STU, 2. ročník inžinierskeho štúdia, odbor informatická bezpečnosť
+
 ## 🎯 Profesijné záujmy
-- Oblasti, ktoré ma bavia (IT, dizajn, podnikanie, …) 
-- Aké skúsenosti by som chcel získať 
+
+- Ofenzívna IT bezpečnosť
+- Automatizácia testovacej infraštruktúry
+- Vytváranie nástrojov na uľahčenie testovania
+- Programovacie jazyky: C, Python, Golang
+- Systémová administrácia a sieťovanie
+
 ## 💡 Moje hobby / záujmy
-- Šport, hudba, varenie, cestovanie … 
-- Čokoľvek, čo odhaľuje „ľudskú stránku“ 
+
+- Hardvérová časť informatiky - mikropočítače (Arduino, ESP32, Teensy)
+- Práca so senzormi a modulmi
+- Projekty: automatická závlaha kvetináčov, experimentovanie s rádio modulmi
+- FDM 3D tlač
+- CNC frézovanie
+
 ## 🚀 Očakávania od predmetu
-- Čo chcem dosiahnuť v rámci kurzu 
-- Čo očakávam od spolupráce s tímom a komunitou 
+
+Popri štúdiu nemám moc veľa času na ďalšie hobby / záujmy. Od tohto predmetu teda očakávam príležitosť pracovať s predošle spomenutými technológiami v školskom prostred“ (resp. inak povedané, chcel by som, aby mi tento predmet umožnil stráviť viac času nad touto záľubou). Určite by som chcel pracovať na hardvérovom projekte so skupinou spolužiakov, s ktorými sme si predmet zapísali. Dodatočne by som bol rád, kebyže sa mi podarí vyskúšať si nástroje alebo technológie, ku ktorým som nemal ešte prístup – napr. kvalitný osciloskop, ohýbačka plechu, sústruh, SLA tlačiarne, SLS tlačiarne...
+
 ## 🚀 Čo viem ponúknuť
-- Čo chcem ponúknuť v rámci kurzu 
+
+- Skúsenosti s bezpečnosťou a penetračným testovaním
+- Znalosti programovania v C, Python a Golang
+- Praktické skúsenosti s mikropočítačmi a 3D tlačou a frézovaním
 
 ## Navigácia
+
 - [↩️ Späť](../index.md)

@@ -5,22 +5,32 @@ locale: sk
 fm_build: '2025-12-09T21:04:47Z'
 ---
 
- 🙋 About Me
-## 🔖 Základné informácie
-- Meno a priezvisko 
-- Študentský GitHub profil (link) 
-- Kontaktný e-mail 
-## 🎯 Profesijné záujmy
-- Oblasti, ktoré ma bavia (IT, dizajn, podnikanie, …) 
-- Aké skúsenosti by som chcel získať 
-## 💡 Moje hobby / záujmy
-- Šport, hudba, varenie, cestovanie … 
-- Čokoľvek, čo odhaľuje „ľudskú stránku“ 
-## 🚀 Očakávania od predmetu
-- Čo chcem dosiahnuť v rámci kurzu 
-- Čo očakávam od spolupráce s tímom a komunitou 
-## 🚀 Čo viem ponúknuť
-- Čo chcem ponúknuť v rámci kurzu 
+🙋‍♂️ About Me
+
+# 📦 Základné informácie
+
+Adam H.
+Študent FIIT STU, 2. ročník inžinierskeho štúdia, odbor Inteligentné softvérové systémy
+
+# 🎯 Profesijné záujmy
+
+- Webové a mobilné aplikácie (frontend aj backend)
+- TypeScript, Vue.js, Nuxt, SvelteKit, Adonis, Node.js, Deno, Postgres
+- Ďalšie jazyky: C++, Rust, Python
+
+# 💡 Moje hobby / záujmy
+
+- Programovanie od základnej školy
+
+# 🚀 Očakávania od predmetu
+
+- Spolupráca na zaujímavom projekte
+
+# 🚀 Čo viem ponúknuť
+
+- 7 rokov profesionálnych skúseností ako software developer
+- Expertíza vo webových a mobilných technológiách
 
 ## Navigácia
+
 - [↩️ Späť](../index.md)
