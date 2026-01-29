@@ -5,22 +5,35 @@ locale: sk
 fm_build: '2025-12-09T21:04:48Z'
 ---
 
- 🙋 About Me
-## 🔖 Základné informácie
-- Meno a priezvisko 
-- Študentský GitHub profil (link) 
-- Kontaktný e-mail 
+# 🙋‍♂️ About Me
+
+## 📦 Základné informácie
+
+Dominik Mifkovič, 24 r.
+Študent FIIT STU, odbor Inteligentné softvérové systémy
+
 ## 🎯 Profesijné záujmy
-- Oblasti, ktoré ma bavia (IT, dizajn, podnikanie, …) 
-- Aké skúsenosti by som chcel získať 
+
+- Low-level programovanie, počítačová grafika a technický vývoj hier
+- Architektúra herných systémov, logika herných mechaník
+- Implementácia 2D aj 3D herných mechaník a tvorba vlastných grafických engine-ov
+- Shader grafika, generovanie vizuálnych efektov a optimalizácia renderovania
+- Webové technológie, predovšetkým frontend
+
 ## 💡 Moje hobby / záujmy
-- Šport, hudba, varenie, cestovanie … 
-- Čokoľvek, čo odhaľuje „ľudskú stránku“ 
+
+- Skúmanie interakcie medzi CPU a GPU
+- Optimalizácia aplikácií pre plynulý chod
+
 ## 🚀 Očakávania od predmetu
-- Čo chcem dosiahnuť v rámci kurzu 
-- Čo očakávam od spolupráce s tímom a komunitou 
+
+- Efektívna spolupráca s tímom, s ktorým som už pracoval na predchádzajúcich projektoch
+
 ## 🚀 Čo viem ponúknuť
-- Čo chcem ponúknuť v rámci kurzu 
+
+- Užívateľské rozhranie systému Hermes - prehľadná a intuitívna logika rozhrania
+- Skúsenosti s grafickými algoritmami a webovými technológiami
 
 ## Navigácia
+
 - [↩️ Späť](../index.md)
